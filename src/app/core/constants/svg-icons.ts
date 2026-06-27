@@ -1,3 +1,31 @@
-export const SVG_ICON_NAMES = ['github', 'gitlab', 'gmail', 'linkedin'] as const;
+export const SVG_ICON_NAMES = [
+  'angular',
+  'angularmaterial',
+  'bootstrap',
+  'confluence',
+  'css',
+  'eslint',
+  'git',
+  'github',
+  'github-copilot',
+  'gitlab',
+  'gmail',
+  'intellij-idea',
+  'java',
+  'jira',
+  'linkedin',
+  'logo-dark-theme-white-writing',
+  'mui',
+  'oracle',
+  'react',
+  'redux',
+  'rxjs',
+  'sass',
+  'spring-boot',
+  'swagger',
+  'tailwind-css',
+  'typescript',
+  'visual-studio-code',
+] as const;
 
 export type SvgIconName = (typeof SVG_ICON_NAMES)[number];
