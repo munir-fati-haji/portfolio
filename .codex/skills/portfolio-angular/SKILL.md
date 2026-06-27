@@ -43,6 +43,7 @@ description: 'Project-specific workflow for the Angular portfolio app in C:\User
 ## Editing Guidance
 
 - Prefer Angular 22 patterns already present in the repo: standalone imports, signals where local state is simple, and separate template/style files for the root component.
+- For auto-provided Angular services in this Angular 22 project, prefer `@Service()` from `@angular/core` over `@Injectable({ providedIn: 'root' })`.
 - Preserve the existing package manager choice: npm.
 - Keep changes scoped to `src/` unless the task needs build, dependency, editor, or asset updates.
 - Replace Angular starter placeholder markup when building the actual portfolio experience.
