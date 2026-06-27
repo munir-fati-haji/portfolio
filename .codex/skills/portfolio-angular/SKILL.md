@@ -28,6 +28,7 @@ description: 'Project-specific workflow for the Angular portfolio app in C:\User
 - Use `core/` for singleton app-level services, guards, interceptors, configuration, layout shell code, and cross-cutting infrastructure.
 - Use `pages/` for routed or top-level screens. Keep page-specific components, enums, models, and services inside the owning page folder when they are not reused elsewhere.
 - Use `shared/` for reusable presentational components, directives, pipes, models, enums, utilities, and services used by more than one page or feature.
+- For component-owned static data that is not reused outside the feature, colocate `data/` and `models/` under that component and expose grouped data through `data/index.ts`.
 - Under `core`, `pages`, and `shared`, create `components/`, `enums/`, `models/`, and `services/` subfolders when that category exists. Do not create empty folders.
 - Keep each model, enum, service, component, directive, and pipe in its own file. Do not define models or enums inline in component, service, or page files unless the type is truly private and trivial.
 - Name files by responsibility with Angular conventions, such as `profile-card.component.ts`, `contact-message.model.ts`, `project-status.enum.ts`, and `portfolio-data.service.ts`.
@@ -47,6 +48,7 @@ description: 'Project-specific workflow for the Angular portfolio app in C:\User
 - Preserve the existing package manager choice: npm.
 - Keep changes scoped to `src/` unless the task needs build, dependency, editor, or asset updates.
 - Replace Angular starter placeholder markup when building the actual portfolio experience.
+- Use Tailwind v4 utility syntax for styling by default; avoid adding component CSS unless Tailwind cannot express the behavior cleanly or an existing CSS file already owns that concern.
 - Keep CSS responsive and inspect mobile behavior for layout-heavy changes.
 - Add code in the right layer: templates for structure, component TypeScript for state and derived data, component CSS for local presentation, global CSS only for app-wide tokens or resets, and public assets only for static files.
 - Keep UX changes feature-complete enough to run: include empty/loading/error states, keyboard/focus behavior, and mobile layout when relevant.
