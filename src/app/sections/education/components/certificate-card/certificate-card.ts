@@ -5,6 +5,7 @@ import { EducationCertificate } from '../../models/education-certificate.model';
 @Component({
   selector: 'app-certificate-card',
   imports: [MatIconModule],
+  host: { class: 'block' },
   templateUrl: './certificate-card.html',
 })
 export class CertificateCard {

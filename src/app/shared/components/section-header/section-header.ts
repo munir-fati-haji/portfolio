@@ -2,6 +2,7 @@ import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-section-header',
+  host: { class: 'block' },
   templateUrl: './section-header.html',
 })
 export class SectionHeader {

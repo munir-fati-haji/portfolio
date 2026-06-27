@@ -5,6 +5,7 @@ import { ContactLink } from '../../models/contact-link.model';
 @Component({
   selector: 'app-contact-link-card',
   imports: [MatIconModule],
+  host: { class: 'block' },
   templateUrl: './contact-link-card.html',
 })
 export class ContactLinkCard {

@@ -5,6 +5,7 @@ import { ExperienceItem } from '../../models/experience-item.model';
 @Component({
   selector: 'app-experience-card',
   imports: [MatIconModule],
+  host: { class: 'block' },
   templateUrl: './experience-card.html',
 })
 export class ExperienceCard {

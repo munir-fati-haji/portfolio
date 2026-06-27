@@ -5,6 +5,7 @@ import { SkillCategory } from '../../models/skill-category.model';
 @Component({
   selector: 'app-skill-category-card',
   imports: [MatIconModule],
+  host: { class: 'block' },
   templateUrl: './skill-category-card.html',
 })
 export class SkillCategoryCard {
