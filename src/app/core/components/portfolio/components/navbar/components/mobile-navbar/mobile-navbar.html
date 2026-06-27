@@ -64,8 +64,8 @@
           class="app-mobile-theme-toggle mb-4 flex h-12 w-full items-center justify-between rounded-2xl border px-4 text-left text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
           [ngClass]="
             themeService.isDark()
-              ? 'border-white/10 bg-white/[0.045] text-slate-200 hover:border-cyan-300/20 hover:bg-cyan-300/10 hover:text-cyan-100'
-              : 'border-slate-200 bg-white/80 text-slate-700 hover:border-cyan-500/30 hover:bg-cyan-50 hover:text-cyan-700'
+              ? 'border-white/20 bg-white/90 text-slate-950 hover:bg-white'
+              : 'border-slate-950/15 bg-slate-950 text-white hover:bg-slate-800'
           "
           [attr.aria-label]="themeService.toggleLabel()"
           (click)="toggleTheme()">

@@ -195,3 +195,41 @@ body {
   color: #0e7490 !important;
   background: rgba(255, 255, 255, 0.5) !important;
 }
+
+.app-theme-light .app-code-card {
+  background: rgba(255, 255, 255, 0.86) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.14) !important;
+}
+
+.app-theme-light .app-code-card-header {
+  background: rgba(226, 232, 240, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+.app-theme-light .app-code-block,
+.app-theme-light .app-code-block .hljs {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.app-theme-light .app-code-block .hljs-keyword,
+.app-theme-light .app-code-block .hljs-literal,
+.app-theme-light .app-code-block .hljs-built_in,
+.app-theme-light .app-code-block .hljs-type {
+  color: #7c3aed !important;
+}
+
+.app-theme-light .app-code-block .hljs-string {
+  color: #0369a1 !important;
+}
+
+.app-theme-light .app-code-block .hljs-title,
+.app-theme-light .app-code-block .hljs-attr,
+.app-theme-light .app-code-block .hljs-property {
+  color: #0e7490 !important;
+}
+
+.app-theme-light .app-code-block .hljs-comment {
+  color: #64748b !important;
+}
