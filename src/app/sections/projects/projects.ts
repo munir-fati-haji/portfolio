@@ -1,35 +1,17 @@
 import { Component } from '@angular/core';
+import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { PROJECTS, PROJECTS_DESCRIPTION, PROJECTS_EYEBROW, PROJECTS_TITLE } from './data';
+import { ProjectCard } from './components/project-card/project-card';
 
 @Component({
   selector: 'app-projects',
+  imports: [ProjectCard, SectionHeader],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
 export class Projects {
-  protected readonly projects = [
-    {
-      title: 'Automotive Request System Modernization',
-      type: 'Freelance project',
-      description:
-        'Replaced a VBA and Excel-driven internal workflow with a cleaner request management system for an automotive company.',
-      impact: [
-        'Improved how teams submit, review, and track operational requests.',
-        'Reduced manual spreadsheet handling and made request status easier to follow.',
-        'Focused on a practical migration path from existing Excel habits to a structured application workflow.',
-      ],
-      stack: ['Angular', 'TypeScript', 'Workflow design', 'Legacy VBA replacement'],
-    },
-    {
-      title: 'Multiple Object Tracking for Vehicles',
-      type: 'Thesis project',
-      description:
-        'Built a video-based vehicle detection and tracking pipeline using YOLOv8 with ByteTrack for multi-object tracking.',
-      impact: [
-        'Detected cars frame by frame with YOLOv8, a state-of-the-art model at the time of the research.',
-        'Associated detections across frames with ByteTrack to preserve vehicle identities over time.',
-        'Explored practical computer vision tradeoffs around accuracy, tracking stability, and video conditions.',
-      ],
-      stack: ['YOLOv8', 'ByteTrack', 'Computer vision', 'Python', 'MOT'],
-    },
-  ];
+  protected readonly eyebrow = PROJECTS_EYEBROW;
+  protected readonly title = PROJECTS_TITLE;
+  protected readonly description = PROJECTS_DESCRIPTION;
+  protected readonly projects = PROJECTS;
 }

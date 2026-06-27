@@ -1,46 +1,33 @@
 import { Component, signal } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { ContactLinkCard } from './components/contact-link-card/contact-link-card';
+import { CONTACT_DESCRIPTION, CONTACT_EYEBROW, CONTACT_LINKS, CONTACT_TITLE } from './data';
+import { ContactLink } from './models/contact-link.model';
 
 @Component({
   selector: 'app-contact',
-  imports: [MatIconModule],
+  imports: [ContactLinkCard, SectionHeader],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
 export class Contact {
-  protected readonly contactLinks = [
-    {
-      label: 'Email',
-      value: 'munir.fati.haji@gmail.com',
-      href: 'mailto:munir.fati.haji@gmail.com',
-      external: false,
-    },
-    {
-      label: 'GitHub',
-      value: 'github.com/munir-fati-haji',
-      href: 'https://github.com/munir-fati-haji',
-      external: true,
-    },
-    {
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/munir-fati-haji',
-      href: 'https://www.linkedin.com/in/munir-fati-haji',
-      external: true,
-    },
-  ];
+  protected readonly eyebrow = CONTACT_EYEBROW;
+  protected readonly title = CONTACT_TITLE;
+  protected readonly description = CONTACT_DESCRIPTION;
+  protected readonly contactLinks = CONTACT_LINKS;
   protected readonly copiedLabel = signal<string | null>(null);
 
-  protected async copyContactValue(value: string, label: string): Promise<void> {
+  protected async copyContactValue(link: ContactLink): Promise<void> {
     if (navigator.clipboard) {
-      await navigator.clipboard.writeText(value);
+      await navigator.clipboard.writeText(link.value);
     } else {
-      this.copyWithFallback(value);
+      this.copyWithFallback(link.value);
     }
 
-    this.copiedLabel.set(label);
+    this.copiedLabel.set(link.label);
 
     window.setTimeout(() => {
-      if (this.copiedLabel() === label) {
+      if (this.copiedLabel() === link.label) {
         this.copiedLabel.set(null);
       }
     }, 1600);

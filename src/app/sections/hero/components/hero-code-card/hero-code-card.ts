@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Highlight } from 'ngx-highlightjs';
+import { WINDOW_ACTIONS } from './data';
 
 @Component({
   selector: 'app-hero-code-card',
@@ -8,10 +9,5 @@ import { Highlight } from 'ngx-highlightjs';
 })
 export class HeroCodeCard {
   public readonly code = input.required<string>();
-
-  protected readonly windowActions = [
-    { label: 'Close', className: 'bg-red-400' },
-    { label: 'Minimize', className: 'bg-yellow-400' },
-    { label: 'Maximize', className: 'bg-green-400' },
-  ];
+  protected readonly windowActions = WINDOW_ACTIONS;
 }

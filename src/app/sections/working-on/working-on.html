@@ -6,12 +6,7 @@
   <div class="relative mx-auto flex min-h-[calc(100svh-64px)] max-w-6xl items-center">
     <div class="grid w-full gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Now</p>
-        <h2 class="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">What I am improving next</h2>
-        <p class="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-          This section keeps the portfolio current without turning it into a placeholder. It shows the direction of my
-          practice and the kind of engineering habits I am sharpening.
-        </p>
+        <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
       </div>
 
       <div class="space-y-4">

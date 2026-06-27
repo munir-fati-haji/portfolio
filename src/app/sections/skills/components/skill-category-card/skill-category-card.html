@@ -1,0 +1,65 @@
+<article
+  class="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065] sm:p-7">
+  <div class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"></div>
+
+  <span class="pointer-events-none absolute bottom-4 right-6 hidden text-7xl font-black leading-none text-white/[0.04] sm:block">
+    0{{ index() + 1 }}
+  </span>
+
+  <div class="relative z-10 flex items-start gap-4">
+    <div
+      class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur">
+      <mat-icon>{{ category().icon }}</mat-icon>
+    </div>
+
+    <div class="min-w-0">
+      <h3 class="text-2xl font-bold tracking-tight text-white">
+        {{ category().title }}
+      </h3>
+
+      <p class="mt-2 text-sm leading-6 text-slate-400">
+        {{ category().description }}
+      </p>
+    </div>
+  </div>
+
+  <div class="relative z-10 mt-7 flex flex-wrap gap-2">
+    @for (skill of category().skills; track skill.name) {
+      <span
+        class="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold shadow-sm backdrop-blur transition hover:text-white"
+        [class]="{
+          'border-cyan-300/30 bg-cyan-300/15 text-cyan-100 shadow-cyan-950/30 hover:border-cyan-300/50 hover:bg-cyan-300/20':
+            skill.level === 'Advanced',
+          'border-emerald-300/25 bg-emerald-300/10 text-emerald-100 shadow-emerald-950/30 hover:border-emerald-300/40 hover:bg-emerald-300/15':
+            skill.level === 'Strong',
+          'border-amber-300/30 bg-amber-300/10 text-amber-100 shadow-amber-950/30 hover:border-amber-300/45 hover:bg-amber-300/15':
+            skill.level === 'Practical',
+          'border-slate-300/15 bg-white/5 text-slate-300 shadow-black/20 hover:border-slate-300/25 hover:bg-white/10':
+            skill.level === 'Basic',
+        }">
+        <mat-icon class="!h-4 !w-4 !text-base">
+          {{ skill.icon }}
+        </mat-icon>
+
+        {{ skill.name }}
+
+        <span
+          class="ml-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em]"
+          [class]="{
+            'bg-cyan-300/15 text-cyan-100': skill.level === 'Advanced',
+            'bg-emerald-300/15 text-emerald-100': skill.level === 'Strong',
+            'bg-amber-300/15 text-amber-100': skill.level === 'Practical',
+            'bg-white/10 text-slate-300': skill.level === 'Basic',
+          }">
+          {{ skill.level }}
+        </span>
+
+        @if (skill.experience) {
+          <span class="text-[10px] font-semibold text-white/50">
+            {{ skill.experience }}
+          </span>
+        }
+      </span>
+    }
+  </div>
+</article>

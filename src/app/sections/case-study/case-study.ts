@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { CASE_STUDY_DESCRIPTION, CASE_STUDY_EYEBROW, CASE_STUDY_STEPS, CASE_STUDY_TITLE } from './data';
 
 @Component({
   selector: 'app-case-study',
+  imports: [SectionHeader],
   templateUrl: './case-study.html',
   styleUrl: './case-study.css',
 })
 export class CaseStudy {
-  protected readonly steps = [
-    'Problem framing: understand the existing manual process or research challenge before choosing tools.',
-    'System design: define the data flow, core states, and user journey so implementation stays focused.',
-    'Implementation: build iteratively, validate behavior, and keep the interface clear for real users.',
-  ];
+  protected readonly eyebrow = CASE_STUDY_EYEBROW;
+  protected readonly title = CASE_STUDY_TITLE;
+  protected readonly description = CASE_STUDY_DESCRIPTION;
+  protected readonly steps = CASE_STUDY_STEPS;
 }

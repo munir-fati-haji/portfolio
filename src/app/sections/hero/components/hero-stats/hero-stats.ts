@@ -1,9 +1,5 @@
 import { Component, input } from '@angular/core';
-
-type HeroStat = {
-  value: string;
-  label: string;
-};
+import { HeroStat } from '../../models/hero-stat.model';
 
 @Component({
   selector: 'app-hero-stats',

@@ -1,0 +1,23 @@
+<div
+  class="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-cyan-300/25 hover:bg-cyan-300/10">
+  <a
+    class="min-w-0 flex-1 no-underline"
+    [href]="link().href"
+    [attr.target]="link().external ? '_blank' : null"
+    [attr.rel]="link().external ? 'noreferrer' : null">
+    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">{{ link().label }}</p>
+    <p class="mt-2 break-words text-base font-semibold text-slate-100 transition group-hover:text-cyan-100">
+      {{ link().value }}
+    </p>
+  </a>
+
+  <button
+    type="button"
+    class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-cyan-100 shadow-lg shadow-cyan-950/20 transition hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a]"
+    [attr.aria-label]="'Copy ' + link().label"
+    (click)="copyRequested.emit(link())">
+    <mat-icon class="text-[20px]!" aria-hidden="true">
+      {{ isCopied() ? 'check' : 'content_copy' }}
+    </mat-icon>
+  </button>
+</div>
