@@ -1,5 +1,10 @@
 <mat-toolbar
-  class="relative hidden! h-auto! min-h-0! overflow-hidden border-t border-white/10 bg-[#070b1a]! px-4! py-3! text-slate-400! shadow-[0_-12px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl xl:flex!">
+  class="app-footer relative hidden! h-auto! min-h-0! overflow-hidden border-t px-4! py-3! shadow-[0_-12px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl xl:flex!"
+  [ngClass]="
+    themeService.isDark()
+      ? 'border-white/10 bg-[#070b1a]! text-slate-400!'
+      : 'border-slate-200/80 bg-slate-50/95! text-slate-600!'
+  ">
   <div
     class="pointer-events-none absolute left-1/2 top-0 h-16 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-3xl"></div>
 
@@ -11,10 +16,16 @@
 
     <nav
       aria-label="Footer links"
-      class="flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_10px_24px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+      class="app-footer-links flex items-center justify-center gap-1.5 rounded-full border p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_10px_24px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+      [ngClass]="themeService.isDark() ? 'border-white/10 bg-white/[0.06]' : 'border-slate-200 bg-white/80'">
       @for (link of links; track link.label) {
         <a
-          class="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-cyan-100 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300/50 hover:bg-cyan-300/20 hover:text-white hover:shadow-[0_0_20px_rgba(34,211,238,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a]"
+          class="app-footer-icon group inline-flex h-9 w-9 items-center justify-center rounded-full border shadow-sm transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a]"
+          [ngClass]="
+            themeService.isDark()
+              ? 'border-white/10 bg-white/[0.08] text-cyan-100 hover:border-cyan-300/50 hover:bg-cyan-300/20 hover:text-white'
+              : 'border-slate-200 bg-white text-cyan-700 hover:border-cyan-500/40 hover:bg-cyan-50 hover:text-cyan-800'
+          "
           [href]="link.href"
           [matTooltip]="link.label"
           [attr.aria-label]="link.label"
