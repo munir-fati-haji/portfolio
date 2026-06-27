@@ -1,1 +1,127 @@
-<p>experience works!</p>
+<section id="experience" class="relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12">
+  <!-- Background decoration -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute left-[-10rem] top-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl"></div>
+    <div class="absolute right-[-12rem] top-1/3 h-[32rem] w-[32rem] rounded-full bg-blue-600/10 blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-7xl">
+    <!-- Header -->
+    <div class="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+      <div>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">
+          {{ eyebrow }}
+        </p>
+
+        <h2 class="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          {{ title }}
+        </h2>
+
+        <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          {{ description }}
+        </p>
+      </div>
+
+      <!-- Metrics -->
+      <div class="grid gap-5 sm:grid-cols-2">
+        @for (metric of metrics; track metric.label) {
+          <div class="border-l border-cyan-300/30 pl-4">
+            <p class="text-3xl font-black tracking-tight text-cyan-300">
+              {{ metric.value }}
+            </p>
+
+            <p class="mt-1 text-sm leading-6 text-slate-400">
+              {{ metric.label }}
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Experience list -->
+    <div class="mt-16 space-y-8">
+      @for (experience of experiences; track experience.company; let index = $index) {
+        <article
+          class="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065] sm:p-7 lg:p-8">
+          <!-- Top glow line -->
+          <div
+            class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"></div>
+
+          <!-- Bottom corner number -->
+          <span
+            class="pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block lg:bottom-6 lg:right-8">
+            0{{ index + 1 }}
+          </span>
+
+          <!-- Header row -->
+          <div class="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+            <!-- Left: role/company -->
+            <div class="min-w-0">
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur">
+                  <mat-icon>{{ experience.icon }}</mat-icon>
+                </div>
+
+                <div class="min-w-0">
+                  <h3 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                    {{ experience.role }}
+                  </h3>
+
+                  <p class="mt-2 text-sm font-medium text-slate-400">
+                    {{ experience.company }} · {{ experience.location }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: type/date -->
+            <div class="flex flex-wrap gap-2 lg:justify-end">
+              <span
+                class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-cyan-200">
+                {{ experience.type }}
+              </span>
+
+              <span
+                class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-300">
+                {{ experience.period }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <p class="relative z-10 mt-7 max-w-5xl text-sm leading-7 text-slate-300 sm:text-base">
+            {{ experience.summary }}
+          </p>
+
+          <!-- Skills -->
+          <div class="relative z-10 mt-6 flex max-w-5xl flex-wrap gap-2">
+            @for (skill of experience.skills; track skill.name) {
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold text-cyan-100 shadow-sm shadow-cyan-950/30 backdrop-blur transition hover:border-cyan-300/40 hover:bg-cyan-300/15 hover:text-white">
+                <mat-icon class="!h-4 !w-4 !text-base">
+                  {{ skill.icon }}
+                </mat-icon>
+
+                {{ skill.name }}
+              </span>
+            }
+          </div>
+
+          <!-- Highlights: one column, no inner cards -->
+          <ul class="relative z-10 mt-8 max-w-5xl space-y-3">
+            @for (highlight of experience.highlights; track highlight) {
+              <li class="flex gap-3 text-sm leading-6 text-slate-400">
+                <span
+                  class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)]"></span>
+
+                <span>{{ highlight }}</span>
+              </li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

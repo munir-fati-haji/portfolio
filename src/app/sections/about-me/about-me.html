@@ -1,1 +1,21 @@
-<p>about-me works!</p>
+<app-section-container>
+  <div class="min-w-0">
+    <app-about-intro
+      [eyebrow]="eyebrow"
+      [title]="title"
+      [description]="description"
+      [secondDescription]="secondDescription" />
+
+    <app-about-skills [skills]="skills" />
+
+    <div class="mt-10">
+      <a
+        href="#projects"
+        class="inline-flex items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:bg-cyan-200">
+        View My Work
+      </a>
+    </div>
+  </div>
+
+  <app-about-highlights [highlights]="highlights" />
+</app-section-container>

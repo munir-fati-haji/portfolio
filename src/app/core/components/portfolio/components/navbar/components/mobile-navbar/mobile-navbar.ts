@@ -1,6 +1,7 @@
 import { Component, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FOOTER_LINKS } from '../../../footer/data';
 import { NavbarLink } from '../../models/navbar-link.model';
 
 @Component({
@@ -13,6 +14,7 @@ export class MobileNavbar {
   public readonly isOpen = input.required<boolean>();
   public readonly links = input.required<NavbarLink[]>();
   public readonly closed = output<void>();
+  protected readonly footerLinks = FOOTER_LINKS;
 
   protected close(): void {
     this.closed.emit();

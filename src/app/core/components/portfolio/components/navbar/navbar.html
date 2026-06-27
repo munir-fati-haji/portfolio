@@ -1,21 +1,31 @@
 <mat-toolbar
-  class="h-auto! min-h-0! border-b border-slate-200 bg-white/95! px-3! py-2! text-slate-700! shadow-sm backdrop-blur sm:px-5!">
-  <div class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
+  class="relative z-40 h-16! min-h-16! overflow-hidden border-b border-white/10 bg-[#070b1a]/80! px-3! py-0! text-white! shadow-[0_12px_36px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:px-5!">
+  <div class="pointer-events-none absolute -left-16 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute right-20 top-0 h-20 w-20 rounded-full bg-blue-500/10 blur-3xl"></div>
+
+  <div class="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-4">
     <a
-      class="font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal text-slate-950 no-underline sm:text-3xl"
+      class="rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal text-white no-underline transition hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:text-3xl"
       href="#hero">
       {{ brand }}
     </a>
 
-    <nav aria-label="Primary navigation" class="hidden items-center gap-1 sm:flex">
+    <nav
+      aria-label="Primary navigation"
+      class="hidden items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.045] p-1 shadow-lg shadow-black/10 backdrop-blur xl:flex">
       @for (link of links; track link.label) {
-        <a mat-button class="h-8! min-w-0! px-3! text-xs! leading-none!" [href]="link.href"> {{ link.label }} </a>
+        <a
+          mat-button
+          class="h-9! min-w-0! rounded-full! px-3! text-xs! font-semibold! leading-none! text-slate-300! transition hover:bg-cyan-300/10! hover:text-cyan-200! focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          [href]="link.href">
+          {{ link.label }}
+        </a>
       }
     </nav>
 
     <button
       mat-icon-button
-      class="h-9! w-9! sm:hidden!"
+      class="h-10! w-10! rounded-full! border border-cyan-300/20! bg-cyan-300/10! text-cyan-200! shadow-lg shadow-cyan-950/30 transition hover:bg-cyan-300/15! xl:hidden!"
       type="button"
       aria-label="Open navigation menu"
       [attr.aria-expanded]="isMobileMenuOpen()"

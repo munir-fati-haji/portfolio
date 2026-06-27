@@ -4,14 +4,15 @@ import { HeroCodeCard } from './components/hero-code-card/hero-code-card';
 import { HeroStats } from './components/hero-stats/hero-stats';
 import { HERO_CODE_SNIPPET } from './constants/hero-code-snippet';
 import { SKILL_GROUPS } from './components/hero-intro/constants/hero-skills-group';
+import { SectionContainer } from '../../shared/components/full-page-wrapper/section-container';
 
 @Component({
   selector: 'app-hero',
-  imports: [HeroIntro, HeroCodeCard, HeroStats],
+  imports: [HeroIntro, HeroCodeCard, HeroStats, SectionContainer],
   templateUrl: './hero.html',
 })
 export class Hero {
-  protected readonly name = 'Munir Fati';
+  protected readonly name = 'Munir';
   protected readonly role = 'Angular Frontend Developer';
 
   protected readonly description =
