@@ -1,0 +1,4 @@
+interface:
+  display_name: "Portfolio Angular"
+  short_description: "Architect-first Angular workflows with clean folder structure"
+  default_prompt: "Use $portfolio-angular to architect the Angular app with SOLID, DRY, KISS, clean folders, and then implement the code."
