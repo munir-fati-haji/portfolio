@@ -17,6 +17,6 @@ export class SvgIconRegistry {
   }
 
   private getTrustedIconUrl(name: SvgIconName): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`/icons/${name}.svg`);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`icons/${name}.svg`);
   }
 }

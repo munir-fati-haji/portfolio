@@ -43,7 +43,7 @@ describe('SvgIconRegistry', () => {
     TestBed.inject(SvgIconRegistry).register();
 
     SVG_ICON_NAMES.forEach((iconName) => {
-      expect(bypassSecurityTrustResourceUrl).toHaveBeenCalledWith(`/icons/${iconName}.svg`);
+      expect(bypassSecurityTrustResourceUrl).toHaveBeenCalledWith(`icons/${iconName}.svg`);
     });
   });
 });
