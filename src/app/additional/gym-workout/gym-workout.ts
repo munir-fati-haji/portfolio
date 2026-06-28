@@ -21,7 +21,7 @@ export class GymWorkout {
       return this.sessions;
     }
 
-    return this.sessions.filter((session) => session.id === selectedDay);
+    return this.sessions.filter(({ id }) => id === selectedDay);
   });
 
   protected readonly totalExercises = computed(() =>
