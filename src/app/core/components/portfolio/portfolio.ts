@@ -8,6 +8,5 @@ import { Content } from './components/content/content';
   host: { class: 'flex h-dvh flex-col overflow-hidden max-sm:h-svh' },
   imports: [Navbar, Footer, Content],
   templateUrl: './portfolio.html',
-  styleUrl: './portfolio.css',
 })
 export class Portfolio {}

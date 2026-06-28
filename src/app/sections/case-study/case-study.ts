@@ -7,7 +7,6 @@ import { CASE_STUDY_STEPS } from './data/case-study-steps';
   selector: 'app-case-study',
   imports: [SectionHeader],
   templateUrl: './case-study.html',
-  styleUrl: './case-study.css',
 })
 export class CaseStudy {
   protected readonly eyebrow = CASE_STUDY_EYEBROW;

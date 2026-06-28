@@ -11,7 +11,6 @@ import { WUT_AMBASSADOR_PROFILE_URL } from './data/education-links';
   selector: 'app-education',
   imports: [CertificateCard, EducationCard, SectionHeader],
   templateUrl: './education.html',
-  styleUrl: './education.css',
 })
 export class Education {
   public readonly ambassadorProfileUrl = WUT_AMBASSADOR_PROFILE_URL;

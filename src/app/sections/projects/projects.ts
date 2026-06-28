@@ -8,7 +8,6 @@ import { ProjectCard } from './components/project-card/project-card';
   selector: 'app-projects',
   imports: [ProjectCard, SectionHeader],
   templateUrl: './projects.html',
-  styleUrl: './projects.css',
 })
 export class Projects {
   protected readonly eyebrow = PROJECTS_EYEBROW;
