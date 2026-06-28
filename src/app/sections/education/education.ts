@@ -8,6 +8,7 @@ import {
   EDUCATION_EYEBROW,
   EDUCATION_ITEMS,
   EDUCATION_TITLE,
+  WUT_AMBASSADOR_PROFILE_URL,
 } from './data';
 
 @Component({
@@ -17,6 +18,7 @@ import {
   styleUrl: './education.css',
 })
 export class Education {
+  public readonly ambassadorProfileUrl = WUT_AMBASSADOR_PROFILE_URL;
   public readonly eyebrow = EDUCATION_EYEBROW;
   public readonly title = EDUCATION_TITLE;
   public readonly description = EDUCATION_DESCRIPTION;

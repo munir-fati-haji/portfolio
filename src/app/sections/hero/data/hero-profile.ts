@@ -1,6 +1,6 @@
 export const HERO_NAME = 'Munir';
 
-export const HERO_ROLE = 'Angular Frontend Developer';
+export const HERO_ROLE = 'Frontend Software Developer';
 
 export const HERO_DESCRIPTION =
-  'I build modern, responsive, and maintainable web applications using Angular, TypeScript, RxJS, and clean UI architecture. I enjoy turning complex enterprise workflows into simple, elegant user experiences.';
+  'Specializing in Angular, TypeScript, and enterprise web applications. I build scalable, maintainable, and high-performance frontend systems using Angular, RxJS, AG Grid, WebSockets, and modern UI architecture.';
