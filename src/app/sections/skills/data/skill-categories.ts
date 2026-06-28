@@ -21,8 +21,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Enterprise UI',
     icon: 'dashboard',
-    description:
-      'Experience building complex business interfaces, dashboards, workflows, forms, and reporting tools.',
+    description: 'Experience building complex business interfaces, dashboards, workflows, forms, and reporting tools.',
     skills: [
       { name: 'AG Grid Enterprise', icon: 'table_chart', level: 'Advanced' },
       { name: 'Dashboards', icon: 'space_dashboard', level: 'Strong' },
