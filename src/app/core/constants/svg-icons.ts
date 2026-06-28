@@ -4,6 +4,7 @@ export const SVG_ICON_NAMES = [
   'bootstrap',
   'confluence',
   'css',
+  'cursive-m',
   'eslint',
   'git',
   'github',

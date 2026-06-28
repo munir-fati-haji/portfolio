@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 160" role="img" aria-labelledby="title">
+  <title id="title">Cursive M</title>
+  <path
+    d="M23 111c21-3 34-24 43-47 4-10 8-20 15-20 8 0 7 18 5 34-1 10-3 21 2 22 6 2 13-12 21-28 9-19 20-40 35-38 17 2 14 28 11 48-2 12-3 23 2 24 8 2 19-21 32-42 13-22 29-42 48-33 9 4 13 13 12 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="13"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+  <path
+    d="M20 118c18-2 31-9 42-20m129 21c16 8 33 6 46-4"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="9"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.9" />
+</svg>
