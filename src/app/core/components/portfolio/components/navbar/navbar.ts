@@ -6,7 +6,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeService } from '../../../../services/theme/theme.service';
 import { MobileNavbar } from './components/mobile-navbar/mobile-navbar';
-import { NAVBAR_BRAND, NAVBAR_LINKS } from './data';
+import { NAVBAR_BRAND } from './data/navbar-brand';
+import { NAVBAR_LINKS } from './data/navbar-links';
 
 @Component({
   selector: 'app-navbar',

@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
 import { ExperienceCard } from './components/experience-card/experience-card';
-import {
-  EXPERIENCE_DESCRIPTION,
-  EXPERIENCE_EYEBROW,
-  EXPERIENCE_ITEMS,
-  EXPERIENCE_METRICS,
-  EXPERIENCE_TITLE,
-} from './data';
+import { EXPERIENCE_DESCRIPTION, EXPERIENCE_EYEBROW, EXPERIENCE_TITLE } from './data/experience-copy';
+import { EXPERIENCE_ITEMS } from './data/experience-items';
+import { EXPERIENCE_METRICS } from './data/experience-metrics';
 
 @Component({
   selector: 'app-experience',

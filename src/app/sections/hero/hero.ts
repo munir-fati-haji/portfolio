@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { HeroIntro } from './components/hero-intro/hero-intro';
 import { HeroCodeCard } from './components/hero-code-card/hero-code-card';
 import { HeroStats } from './components/hero-stats/hero-stats';
-import { SKILL_GROUPS } from './components/hero-intro/data';
+import { SKILL_GROUPS } from './components/hero-intro/data/hero-skills-group';
 import { SectionContainer } from '../../shared/components/full-page-wrapper/section-container';
-import { HERO_CODE_SNIPPET, HERO_DESCRIPTION, HERO_NAME, HERO_ROLE, HERO_STATS } from './data';
+import { HERO_CODE_SNIPPET } from './data/hero-code-snippet';
+import { HERO_DESCRIPTION, HERO_NAME, HERO_ROLE } from './data/hero-profile';
+import { HERO_STATS } from './data/hero-stats';
 
 @Component({
   selector: 'app-hero',

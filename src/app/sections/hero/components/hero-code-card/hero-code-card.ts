@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Highlight } from 'ngx-highlightjs';
-import { WINDOW_ACTIONS } from './data';
+import { WINDOW_ACTIONS } from './data/window-actions';
 
 @Component({
   selector: 'app-hero-code-card',

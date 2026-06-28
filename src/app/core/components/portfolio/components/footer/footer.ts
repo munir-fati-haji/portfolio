@@ -4,7 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeService } from '../../../../services/theme/theme.service';
-import { FOOTER_COPYRIGHT, FOOTER_LINKS } from './data';
+import { FOOTER_COPYRIGHT } from './data/footer-copyright';
+import { FOOTER_LINKS } from './data/footer-links';
 
 @Component({
   selector: 'app-footer',

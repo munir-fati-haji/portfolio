@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
-import { FOCUS_AREAS, WORKING_ON_DESCRIPTION, WORKING_ON_EYEBROW, WORKING_ON_TITLE } from './data';
+import { FOCUS_AREAS } from './data/focus-areas';
+import { WORKING_ON_DESCRIPTION, WORKING_ON_EYEBROW, WORKING_ON_TITLE } from './data/working-on-copy';
 
 @Component({
   selector: 'app-working-on',
