@@ -21,9 +21,9 @@
             <button
               type="button"
               class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-950/15 bg-slate-950 text-cyan-200 shadow-sm shadow-slate-300/70 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:text-white dark:border-white/20 dark:bg-white dark:text-slate-950 dark:shadow-none dark:hover:bg-cyan-50 dark:hover:text-slate-950"
+              matTooltipPosition="below"
               [attr.aria-label]="themeService.toggleLabel()"
               [matTooltip]="themeService.toggleLabel()"
-              matTooltipPosition="below"
               (click)="toggleTheme()">
               <mat-icon aria-hidden="true">{{ themeService.toggleIcon() }}</mat-icon>
             </button>
@@ -59,55 +59,55 @@
 
     <div class="mb-8 flex gap-3 overflow-x-auto pb-2">
       @for (filter of filters; track filter.id) {
-      <button type="button" [class]="filter.id | gymFilterClasses: selectedDay()" (click)="selectDay(filter.id)">
-        {{ filter.label }}
-      </button>
+        <button type="button" [class]="filter.id | gymFilterClasses: selectedDay()" (click)="selectDay(filter.id)">
+          {{ filter.label }}
+        </button>
       }
     </div>
 
     <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       @for (session of visibleSessions(); track session.id) {
-      <article
-        class="group rounded-3xl border border-cyan-100/80 bg-white/90 p-5 shadow-xl shadow-cyan-100/50 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/80 hover:bg-white hover:shadow-cyan-200/60 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20 dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.09]">
-        <div class="mb-5 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm font-semibold text-cyan-700 dark:text-cyan-300">{{ session.day }}</p>
+        <article
+          class="group rounded-3xl border border-cyan-100/80 bg-white/90 p-5 shadow-xl shadow-cyan-100/50 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/80 hover:bg-white hover:shadow-cyan-200/60 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20 dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.09]">
+          <div class="mb-5 flex items-start justify-between gap-4">
+            <div>
+              <p class="text-sm font-semibold text-cyan-700 dark:text-cyan-300">{{ session.day }}</p>
 
-            <h2 class="mt-1 text-2xl font-bold text-slate-950 dark:text-white">{{ session.title }}</h2>
+              <h2 class="mt-1 text-2xl font-bold text-slate-950 dark:text-white">{{ session.title }}</h2>
+            </div>
+
+            <span
+              class="rounded-2xl border border-cyan-100 bg-white px-3 py-2 text-xs font-medium text-slate-600 shadow-sm shadow-cyan-50 dark:border-white/10 dark:bg-white/10 dark:text-slate-300 dark:shadow-none">
+              {{ session.duration }}
+            </span>
           </div>
 
-          <span
-            class="rounded-2xl border border-cyan-100 bg-white px-3 py-2 text-xs font-medium text-slate-600 shadow-sm shadow-cyan-50 dark:border-white/10 dark:bg-white/10 dark:text-slate-300 dark:shadow-none">
-            {{ session.duration }}
-          </span>
-        </div>
-
-        <div class="mb-5 flex flex-wrap gap-2">
-          <span
-            class="rounded-full border border-cyan-200/70 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-800 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300">
-            {{ session.focus }}
-          </span>
-
-          <span [class]="session.intensity | gymIntensityClasses"> {{ session.intensity }} </span>
-        </div>
-
-        <ul class="space-y-3">
-          @for (exercise of session.exercises; track exercise) {
-          <li
-            class="flex items-start gap-3 rounded-2xl border border-cyan-100/70 bg-white/80 px-4 py-3 text-sm leading-6 text-slate-700 shadow-sm shadow-cyan-50 transition hover:border-cyan-200 hover:bg-cyan-50/60 dark:border-white/5 dark:bg-white/[0.04] dark:text-slate-200 dark:shadow-none dark:hover:bg-white/[0.07]">
+          <div class="mb-5 flex flex-wrap gap-2">
             <span
-              class="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-500 shadow-[0_0_16px_rgba(6,182,212,0.55)] dark:bg-cyan-300 dark:shadow-[0_0_16px_rgba(103,232,249,0.9)]"></span>
+              class="rounded-full border border-cyan-200/70 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-800 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300">
+              {{ session.focus }}
+            </span>
 
-            <span>{{ exercise }}</span>
-          </li>
-          }
-        </ul>
-      </article>
+            <span [class]="session.intensity | gymIntensityClasses"> {{ session.intensity }} </span>
+          </div>
+
+          <ul class="space-y-3">
+            @for (exercise of session.exercises; track exercise) {
+              <li
+                class="flex items-start gap-3 rounded-2xl border border-cyan-100/70 bg-white/80 px-4 py-3 text-sm leading-6 text-slate-700 shadow-sm shadow-cyan-50 transition hover:border-cyan-200 hover:bg-cyan-50/60 dark:border-white/5 dark:bg-white/[0.04] dark:text-slate-200 dark:shadow-none dark:hover:bg-white/[0.07]">
+                <span
+                  class="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-500 shadow-[0_0_16px_rgba(6,182,212,0.55)] dark:bg-cyan-300 dark:shadow-[0_0_16px_rgba(103,232,249,0.9)]"></span>
+
+                <span>{{ exercise }}</span>
+              </li>
+            }
+          </ul>
+        </article>
       } @empty {
-      <div
-        class="rounded-3xl border border-cyan-100/80 bg-white/90 p-6 text-slate-600 shadow-xl shadow-cyan-100/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:shadow-black/20">
-        No gym sessions found.
-      </div>
+        <div
+          class="rounded-3xl border border-cyan-100/80 bg-white/90 p-6 text-slate-600 shadow-xl shadow-cyan-100/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:shadow-black/20">
+          No gym sessions found.
+        </div>
       }
     </div>
 
