@@ -2,8 +2,8 @@ import { Component, inject, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from '../../../../../../services/theme/theme.service';
-import { FOOTER_LINKS } from '../../../footer/data';
 import { NavbarLink } from '../../models/navbar-link.model';
+import { FOOTER_LINKS } from '../../../footer/data/footer-links';
 
 @Component({
   selector: 'app-mobile-navbar',

@@ -11,7 +11,7 @@
     }
 
     @if (metaLabel()) {
-      <span class="text-[10px] font-semibold text-white/50">{{ metaLabel() }}</span>
+      <span [class]="metaClasses">{{ metaLabel() }}</span>
     }
   </button>
 } @else {
@@ -27,7 +27,7 @@
     }
 
     @if (metaLabel()) {
-      <span class="text-[10px] font-semibold text-white/50">{{ metaLabel() }}</span>
+      <span [class]="metaClasses">{{ metaLabel() }}</span>
     }
   </span>
 }

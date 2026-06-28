@@ -8,6 +8,7 @@ import { SHARED_CHIP_BUTTON_BASE_CLASSES } from './constants/shared-chip-button-
 import { SHARED_CHIP_BUTTON_DEFAULT_SIZE } from './constants/shared-chip-button-default-size';
 import { SHARED_CHIP_BUTTON_DEFAULT_VARIANT } from './constants/shared-chip-button-default-variant';
 import { SHARED_CHIP_BUTTON_DISABLED_CLASSES } from './constants/shared-chip-button-disabled-classes';
+import { SHARED_CHIP_BUTTON_META_CLASSES } from './constants/shared-chip-button-meta-classes';
 import { SHARED_CHIP_BUTTON_SELECTABLE_CLASSES } from './constants/shared-chip-button-selectable-classes';
 import { SHARED_CHIP_BUTTON_SELECTABLE_CYAN_CLASSES } from './constants/shared-chip-button-selectable-cyan-classes';
 import { SHARED_CHIP_BUTTON_SIZE_CLASSES_BY_SIZE } from './constants/shared-chip-button-size-classes-by-size';
@@ -31,6 +32,7 @@ export class SharedChipButton {
   public readonly size = input<SharedChipButtonSize>(SHARED_CHIP_BUTTON_DEFAULT_SIZE);
   public readonly variant = input<SharedChipButtonVariant>(SHARED_CHIP_BUTTON_DEFAULT_VARIANT);
   public readonly selected = output<void>();
+  protected readonly metaClasses = SHARED_CHIP_BUTTON_META_CLASSES;
 
   protected readonly chipClasses = computed(() => {
     const classes = [SHARED_CHIP_BUTTON_BASE_CLASSES, this.sizeClasses(), this.variantClasses()];
