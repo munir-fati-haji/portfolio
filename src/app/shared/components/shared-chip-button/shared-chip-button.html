@@ -1,0 +1,33 @@
+@if (selectable()) {
+  <button mat-button type="button" [class]="chipClasses()" [disabled]="disabled()" (click)="select()">
+    @if (icon()) {
+      <mat-icon class="!h-4 !w-4 !text-base" aria-hidden="true">{{ icon() }}</mat-icon>
+    }
+
+    <span class="truncate">{{ label() }}</span>
+
+    @if (badgeLabel()) {
+      <span [class]="badgeClasses()">{{ badgeLabel() }}</span>
+    }
+
+    @if (metaLabel()) {
+      <span class="text-[10px] font-semibold text-white/50">{{ metaLabel() }}</span>
+    }
+  </button>
+} @else {
+  <span [class]="chipClasses()">
+    @if (icon()) {
+      <mat-icon class="!h-4 !w-4 !text-base" aria-hidden="true">{{ icon() }}</mat-icon>
+    }
+
+    <span class="truncate">{{ label() }}</span>
+
+    @if (badgeLabel()) {
+      <span [class]="badgeClasses()">{{ badgeLabel() }}</span>
+    }
+
+    @if (metaLabel()) {
+      <span class="text-[10px] font-semibold text-white/50">{{ metaLabel() }}</span>
+    }
+  </span>
+}

@@ -1,8 +1,5 @@
 <div class="mt-8 flex flex-wrap gap-3">
   @for (skill of skills(); track skill) {
-    <span
-      class="inline-flex items-center rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow-sm shadow-cyan-950/30 backdrop-blur transition hover:border-cyan-300/40 hover:bg-cyan-300/15 hover:text-white">
-      {{ skill }}
-    </span>
+    <app-shared-chip-button size="md" variant="cyan" [label]="skill" />
   }
 </div>

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { SharedChipButton } from '../../shared/components/shared-chip-button/shared-chip-button';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
 import { SkillCategoryCard } from './components/skill-category-card/skill-category-card';
-import { SKILL_CATEGORIES, SKILL_STATS, SKILLS_DESCRIPTION, SKILLS_EYEBROW, SKILLS_TITLE } from './data';
+import { SKILL_CATEGORIES } from './data/skill-categories';
+import { SKILL_STATS } from './data/skill-stats';
+import { SKILLS_DESCRIPTION, SKILLS_EYEBROW, SKILLS_TITLE } from './data/skills-copy';
 
 @Component({
   selector: 'app-skills',
-  imports: [SectionHeader, SkillCategoryCard],
+  imports: [SectionHeader, SharedChipButton, SkillCategoryCard],
   templateUrl: './skills.html',
 })
 export class Skills {

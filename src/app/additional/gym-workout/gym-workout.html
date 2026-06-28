@@ -59,9 +59,13 @@
 
     <div class="mb-8 flex gap-3 overflow-x-auto pb-2">
       @for (filter of filters; track filter.id) {
-        <button type="button" [class]="filter.id | gymFilterClasses: selectedDay()" (click)="selectDay(filter.id)">
-          {{ filter.label }}
-        </button>
+        <app-shared-chip-button
+          size="md"
+          variant="cyan"
+          [selectable]="true"
+          [label]="filter.label"
+          [active]="selectedDay() === filter.id"
+          (selected)="selectDay(filter.id)" />
       }
     </div>
 
@@ -83,12 +87,12 @@
           </div>
 
           <div class="mb-5 flex flex-wrap gap-2">
-            <span
-              class="rounded-full border border-cyan-200/70 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-800 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300">
-              {{ session.focus }}
-            </span>
+            <app-shared-chip-button size="xs" variant="slate" [label]="session.focus" />
 
-            <span [class]="session.intensity | gymIntensityClasses"> {{ session.intensity }} </span>
+            <app-shared-chip-button
+              size="xs"
+              [label]="session.intensity"
+              [variant]="session.intensity === 'Hard' ? 'orange' : 'emerald'" />
           </div>
 
           <ul class="space-y-3">
