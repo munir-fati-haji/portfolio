@@ -1,6 +1,6 @@
 <mat-toolbar
   class="app-navbar relative z-40 h-16! min-h-16! overflow-hidden border-b px-3! py-0! shadow-[0_12px_36px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:px-5!"
-  [ngClass]="
+  [class]="
     themeService.isDark()
       ? 'border-white/10 bg-[#070b1a]/80! text-white!'
       : 'border-slate-200/80 bg-slate-50/90! text-slate-950!'
@@ -13,19 +13,19 @@
     <a
       class="app-brand rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:text-3xl"
       href="#hero"
-      [ngClass]="themeService.isDark() ? 'text-white hover:text-cyan-200' : 'text-slate-950 hover:text-cyan-700'">
+      [class]="themeService.isDark() ? 'text-white hover:text-cyan-200' : 'text-slate-950 hover:text-cyan-700'">
       {{ brand }}
     </a>
 
     <nav
       aria-label="Primary navigation"
       class="app-nav-surface hidden items-center gap-0.5 rounded-full border p-1 shadow-lg shadow-black/10 backdrop-blur xl:flex"
-      [ngClass]="themeService.isDark() ? 'border-white/10 bg-white/[0.045]' : 'border-slate-200 bg-white/80'">
+      [class]="themeService.isDark() ? 'border-white/10 bg-white/[0.045]' : 'border-slate-200 bg-white/80'">
       @for (link of links; track link.label) {
         <a
           mat-button
           class="app-nav-link h-9! min-w-0! rounded-full! px-3! text-xs! font-semibold! leading-none! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
-          [ngClass]="
+          [class]="
             themeService.isDark()
               ? 'text-slate-300! hover:bg-cyan-300/10! hover:text-cyan-200!'
               : 'text-slate-700! hover:bg-cyan-100! hover:text-cyan-700!'
@@ -56,7 +56,7 @@
       class="app-menu-toggle h-10! w-10! rounded-full! border shadow-lg transition xl:hidden!"
       type="button"
       aria-label="Open navigation menu"
-      [ngClass]="
+      [class]="
         themeService.isDark()
           ? 'border-cyan-300/20! bg-cyan-300/10! text-cyan-200! shadow-cyan-950/30 hover:bg-cyan-300/15!'
           : 'border-cyan-600/20! bg-cyan-50! text-cyan-700! shadow-slate-300/40 hover:bg-cyan-100!'

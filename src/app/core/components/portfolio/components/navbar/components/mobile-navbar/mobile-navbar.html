@@ -8,7 +8,7 @@
 
     <aside
       class="app-mobile-drawer absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col overflow-hidden rounded-l-3xl border-l p-4 shadow-2xl backdrop-blur-2xl"
-      [ngClass]="
+      [class]="
         themeService.isDark()
           ? 'border-white/10 bg-[#070b1a]/90 text-white shadow-black/40'
           : 'border-slate-200 bg-slate-50/95 text-slate-950 shadow-slate-400/30'
@@ -20,7 +20,7 @@
         <a
           class="app-brand rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
           href="#hero"
-          [ngClass]="themeService.isDark() ? 'text-white hover:text-cyan-200' : 'text-slate-950 hover:text-cyan-700'"
+          [class]="themeService.isDark() ? 'text-white hover:text-cyan-200' : 'text-slate-950 hover:text-cyan-700'"
           (click)="close()">
           {{ brand() }}
         </a>
@@ -30,7 +30,7 @@
           class="h-10! w-10! rounded-full! border transition"
           type="button"
           aria-label="Close navigation menu"
-          [ngClass]="
+          [class]="
             themeService.isDark()
               ? 'border-cyan-300/20! bg-cyan-300/10! text-cyan-200! hover:bg-cyan-300/15!'
               : 'border-cyan-600/20! bg-cyan-50! text-cyan-700! hover:bg-cyan-100!'
@@ -45,7 +45,7 @@
           <a
             mat-button
             class="app-mobile-nav-link h-12! justify-start! rounded-2xl! border px-4! text-sm! font-semibold! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
-            [ngClass]="
+            [class]="
               themeService.isDark()
                 ? 'border-white/10! bg-white/[0.045]! text-slate-200! hover:border-cyan-300/20! hover:bg-cyan-300/10! hover:text-cyan-100!'
                 : 'border-slate-200! bg-white/80! text-slate-700! hover:border-cyan-500/30! hover:bg-cyan-50! hover:text-cyan-700!'
@@ -62,7 +62,7 @@
         <button
           type="button"
           class="app-mobile-theme-toggle mb-4 flex h-12 w-full items-center justify-between rounded-2xl border px-4 text-left text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
-          [ngClass]="
+          [class]="
             themeService.isDark()
               ? 'border-white/20 bg-white/90 text-slate-950 hover:bg-white'
               : 'border-slate-950/15 bg-slate-950 text-white hover:bg-slate-800'
@@ -79,7 +79,7 @@
           @for (link of footerLinks; track link.label) {
             <a
               class="app-footer-icon group inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition hover:shadow-[0_0_22px_rgba(34,211,238,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a]"
-              [ngClass]="
+              [class]="
                 themeService.isDark()
                   ? 'border-white/15 bg-white/10 text-cyan-100 shadow-cyan-950/25 hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white'
                   : 'border-slate-200 bg-white text-cyan-700 shadow-slate-300/40 hover:border-cyan-500/30 hover:bg-cyan-50 hover:text-cyan-800'

@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { NgClass } from '@angular/common';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -10,7 +10,7 @@ import { NAVBAR_BRAND, NAVBAR_LINKS } from './data';
 
 @Component({
   selector: 'app-navbar',
-  imports: [NgClass, MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule, MobileNavbar],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule, MobileNavbar],
   templateUrl: './navbar.html',
 })
 export class Navbar {
