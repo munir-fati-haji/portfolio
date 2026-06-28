@@ -3,6 +3,8 @@
 @import 'tailwindcss';
 @import 'highlight.js/styles/github-dark.css';
 
+@custom-variant dark (&:where(.app-theme-dark, .app-theme-dark *));
+
 :root {
   --portfolio-bg: #070b1a;
   --portfolio-bg-elevated: rgba(255, 255, 255, 0.045);
