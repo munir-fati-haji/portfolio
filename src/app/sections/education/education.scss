@@ -1,131 +1,131 @@
 @reference '../../../styles.css';
 
-.education__style-1 {
+.education__section {
   @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
 }
 
-:host-context(.app-theme-light) .education__style-1 {
+:host-context(.app-theme-light) .education__section {
   background-color: var(--portfolio-bg) !important;
 
   color: var(--portfolio-text) !important;
 }
 
-.education__style-2 {
+.education__background {
   @apply pointer-events-none absolute inset-0;
 }
 
-.education__style-3 {
+.education__glow-primary {
   @apply absolute left-[-10rem] top-24 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl;
 }
 
-:host-context(.app-theme-light) .education__style-3 {
+:host-context(.app-theme-light) .education__glow-primary {
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.education__style-4 {
+.education__glow-secondary {
   @apply absolute right-[-12rem] bottom-10 h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl;
 }
 
-.education__style-5 {
+.education__glow-tertiary {
   @apply absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl;
 }
 
-.education__style-6 {
+.education__content {
   @apply relative mx-auto max-w-7xl;
 }
 
-.education__style-7 {
+.education__header-row {
   @apply grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end;
 }
 
-.education__style-8 {
+.education__stats-grid {
   @apply grid gap-5 sm:grid-cols-2;
 }
 
-.education__style-9 {
+.education__degree-stat {
   @apply border-l border-cyan-300/30 pl-4;
 }
 
-:host-context(.app-theme-light) .education__style-9 {
+:host-context(.app-theme-light) .education__degree-stat {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
-.education__style-10 {
+.education__degree-value {
   @apply text-3xl font-black tracking-tight text-cyan-300;
 }
 
-:host-context(.app-theme-light) .education__style-10 {
+:host-context(.app-theme-light) .education__degree-value {
   color: #0e7490 !important;
 }
 
-.education__style-11 {
+.education__degree-label {
   @apply mt-1 text-sm leading-6 text-slate-400;
 }
 
-:host-context(.app-theme-light) .education__style-11 {
+:host-context(.app-theme-light) .education__degree-label {
   color: var(--portfolio-text-soft) !important;
 }
 
-.education__style-12 {
+.education__certificate-stat {
   @apply border-l border-cyan-300/30 pl-4;
 }
 
-:host-context(.app-theme-light) .education__style-12 {
+:host-context(.app-theme-light) .education__certificate-stat {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
-.education__style-13 {
+.education__certificate-value {
   @apply text-3xl font-black tracking-tight text-cyan-300;
 }
 
-:host-context(.app-theme-light) .education__style-13 {
+:host-context(.app-theme-light) .education__certificate-value {
   color: #0e7490 !important;
 }
 
-.education__style-14 {
+.education__certificate-label {
   @apply mt-1 text-sm leading-6 text-slate-400;
 }
 
-:host-context(.app-theme-light) .education__style-14 {
+:host-context(.app-theme-light) .education__certificate-label {
   color: var(--portfolio-text-soft) !important;
 }
 
-.education__style-15 {
+.education__ambassador-link {
   @apply mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300;
 }
 
-.education__style-16 {
+.education__external-icon {
   @apply text-base leading-none;
 }
 
-.education__style-17 {
+.education__timeline {
   @apply mt-16 space-y-8;
 }
 
-.education__style-18 {
+.education__certificates-section {
   @apply mt-20;
 }
 
-.education__style-19 {
+.education__certificates-heading {
   @apply mb-8 flex items-center gap-4;
 }
 
-.education__style-20 {
+.education__heading-line-start {
   @apply h-px flex-1 bg-gradient-to-r from-cyan-300/40 to-transparent;
 }
 
-.education__style-21 {
+.education__heading-title {
   @apply shrink-0 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300;
 }
 
-:host-context(.app-theme-light) .education__style-21 {
+:host-context(.app-theme-light) .education__heading-title {
   color: #0e7490 !important;
 }
 
-.education__style-22 {
+.education__heading-line-end {
   @apply h-px flex-1 bg-gradient-to-l from-cyan-300/40 to-transparent;
 }
 
-.education__style-23 {
+.education__certificate-grid {
   @apply grid gap-5 lg:grid-cols-2;
 }

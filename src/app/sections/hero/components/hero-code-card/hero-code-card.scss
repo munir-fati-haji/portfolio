@@ -1,43 +1,43 @@
 @reference '../../../../../styles.css';
 
-.hero-code-card__style-1 {
+.hero-code-card__card {
   @apply min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#10172a] shadow-xl;
 }
 
-:host-context(.app-theme-light) .hero-code-card__style-1 {
+:host-context(.app-theme-light) .hero-code-card__card {
   border-color: var(--portfolio-border) !important;
 }
 
-.hero-code-card__style-2 {
+.hero-code-card__header {
   @apply flex items-center gap-3 border-b border-white/10 bg-white/3 px-4 py-3 sm:px-6;
 }
 
-:host-context(.app-theme-light) .hero-code-card__style-2 {
+:host-context(.app-theme-light) .hero-code-card__header {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
 }
 
-.hero-code-card__style-3 {
+.hero-code-card__window-action {
   @apply h-3 w-3 rounded-full;
 }
 
-.hero-code-card__style-3--close {
+.hero-code-card__window-action--close {
   @apply bg-red-400;
 }
 
-.hero-code-card__style-3--minimize {
+.hero-code-card__window-action--minimize {
   @apply bg-yellow-400;
 }
 
-.hero-code-card__style-3--maximize {
+.hero-code-card__window-action--maximize {
   @apply bg-green-400;
 }
 
-.hero-code-card__style-4 {
+.hero-code-card__body {
   @apply p-4 sm:p-6;
 }
 
-.hero-code-card__style-5 {
+.hero-code-card__code {
   @apply max-w-full overflow-x-auto rounded-xl text-xs leading-6 sm:text-sm sm:leading-7;
 }

@@ -1,48 +1,48 @@
 @reference '../../../styles.css';
 
-.contact__style-1 {
+.contact__section {
   @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
 }
 
-:host-context(.app-theme-light) .contact__style-1 {
+:host-context(.app-theme-light) .contact__section {
   background-color: var(--portfolio-bg) !important;
 
   color: var(--portfolio-text) !important;
 }
 
-.contact__style-2 {
+.contact__background {
   @apply pointer-events-none absolute inset-0;
 }
 
-.contact__style-3 {
+.contact__glow-primary {
   @apply absolute right-[-12rem] top-16 h-[32rem] w-[32rem] rounded-full bg-cyan-300/10 blur-3xl;
 }
 
-:host-context(.app-theme-light) .contact__style-3 {
+:host-context(.app-theme-light) .contact__glow-primary {
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.contact__style-4 {
+.contact__glow-secondary {
   @apply absolute bottom-0 left-[-8rem] h-[26rem] w-[26rem] rounded-full bg-blue-600/10 blur-3xl;
 }
 
-.contact__style-5 {
+.contact__content {
   @apply relative mx-auto grid min-h-[calc(100svh-64px)] max-w-7xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr];
 }
 
-.contact__style-6 {
+.contact__actions {
   @apply mt-8 flex flex-wrap gap-3;
 }
 
-.contact__style-7 {
+.contact__email-action {
   @apply inline-flex items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:bg-cyan-200;
 }
 
-.contact__style-8 {
+.contact__projects-action {
   @apply inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-cyan-300/30 hover:bg-cyan-300/10 hover:text-cyan-100;
 }
 
-:host-context(.app-theme-light) .contact__style-8 {
+:host-context(.app-theme-light) .contact__projects-action {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
@@ -50,11 +50,11 @@
   color: var(--portfolio-text) !important;
 }
 
-.contact__style-9 {
+.contact__panel {
   @apply rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/25 backdrop-blur sm:p-8;
 }
 
-:host-context(.app-theme-light) .contact__style-9 {
+:host-context(.app-theme-light) .contact__panel {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
@@ -62,32 +62,32 @@
   --tw-shadow-color: var(--portfolio-card-shadow) !important;
 }
 
-.contact__style-10 {
+.contact__link-list {
   @apply grid gap-4;
 }
 
-.contact__style-11 {
+.contact__note-card {
   @apply mt-6 rounded-2xl border border-cyan-300/20 bg-cyan-300/10 p-5;
 }
 
-:host-context(.app-theme-light) .contact__style-11 {
+:host-context(.app-theme-light) .contact__note-card {
   border-color: rgba(8, 145, 178, 0.25) !important;
 
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.contact__style-12 {
+.contact__note-title {
   @apply text-sm font-semibold text-cyan-100;
 }
 
-:host-context(.app-theme-light) .contact__style-12 {
+:host-context(.app-theme-light) .contact__note-title {
   color: #0e7490 !important;
 }
 
-.contact__style-13 {
+.contact__note-text {
   @apply mt-2 text-sm leading-6 text-slate-300;
 }
 
-:host-context(.app-theme-light) .contact__style-13 {
+:host-context(.app-theme-light) .contact__note-text {
   color: var(--portfolio-text-muted) !important;
 }

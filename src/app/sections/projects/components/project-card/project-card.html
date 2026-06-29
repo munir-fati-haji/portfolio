@@ -1,26 +1,26 @@
-<article class="group project-card__style-1">
-  <div class="project-card__style-2"></div>
+<article class="group project-card__card">
+  <div class="project-card__shine"></div>
 
-  <div class="project-card__style-3">
+  <div class="project-card__header">
     <div>
-      <p class="project-card__style-4">{{ project().type }}</p>
-      <h3 class="project-card__style-5">{{ project().title }}</h3>
+      <p class="project-card__type">{{ project().type }}</p>
+      <h3 class="project-card__title">{{ project().title }}</h3>
     </div>
     <app-shared-chip-button size="xs" variant="cyan" label="Featured" />
   </div>
 
-  <p class="project-card__style-6">{{ project().description }}</p>
+  <p class="project-card__description">{{ project().description }}</p>
 
-  <ul class="project-card__style-7">
+  <ul class="project-card__feature-list">
     @for (item of project().impact; track item) {
-      <li class="project-card__style-8">
-        <span class="project-card__style-9"></span>
+      <li class="project-card__feature-item">
+        <span class="project-card__feature-marker"></span>
         <span>{{ item }}</span>
       </li>
     }
   </ul>
 
-  <div class="project-card__style-10">
+  <div class="project-card__tech-list">
     @for (item of project().stack; track item) {
       <app-shared-chip-button size="xs" variant="slate" [label]="item" />
     }

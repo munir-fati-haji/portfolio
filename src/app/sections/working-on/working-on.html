@@ -1,20 +1,20 @@
-<section class="working-on__style-1">
-  <div class="working-on__style-2">
-    <div class="working-on__style-3"></div>
+<section class="working-on__section">
+  <div class="working-on__background">
+    <div class="working-on__glow-primary"></div>
   </div>
 
-  <div class="working-on__style-4">
-    <div class="working-on__style-5">
+  <div class="working-on__content">
+    <div class="working-on__header">
       <div>
         <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
       </div>
 
-      <div class="working-on__style-6">
+      <div class="working-on__focus-grid">
         @for (area of focusAreas; track area) {
-          <div class="working-on__style-7">
-            <div class="working-on__style-8">
-              <span class="working-on__style-9"> 0{{ $index + 1 }} </span>
-              <p class="working-on__style-10">{{ area }}</p>
+          <div class="working-on__focus-card">
+            <div class="working-on__focus-content">
+              <span class="working-on__focus-index"> 0{{ $index + 1 }} </span>
+              <p class="working-on__focus-title">{{ area }}</p>
             </div>
           </div>
         }

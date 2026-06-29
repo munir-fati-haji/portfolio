@@ -1,13 +1,13 @@
 @reference '../../../../styles.css';
 
-.portfolio__style-1 {
+.portfolio__navbar {
   @apply shrink-0;
 }
 
-.portfolio__style-2 {
+.portfolio__content {
   @apply min-h-0 flex-1 overflow-y-auto;
 }
 
-.portfolio__style-3 {
+.portfolio__footer {
   @apply shrink-0;
 }

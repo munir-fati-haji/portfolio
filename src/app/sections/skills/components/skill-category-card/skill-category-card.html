@@ -1,25 +1,25 @@
-<article class="group skill-category-card__style-1">
-  <div class="skill-category-card__style-2"></div>
+<article class="group skill-category-card__card">
+  <div class="skill-category-card__shine"></div>
 
-  <span class="skill-category-card__style-3"> 0{{ index() + 1 }} </span>
+  <span class="skill-category-card__index"> 0{{ index() + 1 }} </span>
 
-  <div class="skill-category-card__style-4">
-    <div class="skill-category-card__style-5">
+  <div class="skill-category-card__header">
+    <div class="skill-category-card__icon-surface">
       <mat-icon>{{ category().icon }}</mat-icon>
     </div>
 
-    <div class="skill-category-card__style-6">
-      <h3 class="skill-category-card__style-7">
+    <div class="skill-category-card__content">
+      <h3 class="skill-category-card__title">
         {{ category().title }}
       </h3>
 
-      <p class="skill-category-card__style-8">
+      <p class="skill-category-card__description">
         {{ category().description }}
       </p>
     </div>
   </div>
 
-  <div class="skill-category-card__style-9">
+  <div class="skill-category-card__skill-list">
     @for (skill of category().skills; track skill.name) {
       <app-shared-chip-button
         size="sm"

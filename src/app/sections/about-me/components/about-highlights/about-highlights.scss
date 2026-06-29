@@ -1,15 +1,15 @@
 @reference '../../../../../styles.css';
 
-.about-highlights__style-1 {
+.about-highlights__grid {
   @apply min-w-0 w-full rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur sm:rounded-4xl sm:p-5 xl:p-6;
 }
 
-:host-context(.app-theme-light) .about-highlights__style-1 {
+:host-context(.app-theme-light) .about-highlights__grid {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
 }
 
-.about-highlights__style-2 {
+.about-highlights__inner-grid {
   @apply grid gap-4;
 }

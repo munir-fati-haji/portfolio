@@ -1,30 +1,30 @@
 <mat-toolbar
-  class="app-navbar navbar__style-1"
-  [class.navbar__style-1--dark]="themeService.isDark()"
-  [class.navbar__style-1--light]="!themeService.isDark()">
-  <div class="navbar__style-2"></div>
-  <div class="navbar__style-3"></div>
+  class="app-navbar navbar__root"
+  [class.navbar__root--dark]="themeService.isDark()"
+  [class.navbar__root--light]="!themeService.isDark()">
+  <div class="navbar__backdrop"></div>
+  <div class="navbar__border"></div>
 
-  <div class="navbar__style-4">
+  <div class="navbar__layout">
     <a
-      class="app-brand navbar__style-5"
+      class="app-brand navbar__brand"
       href="#hero"
-      [class.navbar__style-5--dark]="themeService.isDark()"
-      [class.navbar__style-5--light]="!themeService.isDark()">
+      [class.navbar__brand--dark]="themeService.isDark()"
+      [class.navbar__brand--light]="!themeService.isDark()">
       {{ brand }}
     </a>
 
     <nav
       aria-label="Primary navigation"
-      class="app-nav-surface navbar__style-6"
-      [class.navbar__style-6--dark]="themeService.isDark()"
-      [class.navbar__style-6--light]="!themeService.isDark()">
+      class="app-nav-surface navbar__nav"
+      [class.navbar__nav--dark]="themeService.isDark()"
+      [class.navbar__nav--light]="!themeService.isDark()">
       @for (link of links; track link.label) {
         <a
           mat-button
-          class="app-nav-link navbar__style-7"
-          [class.navbar__style-7--dark]="themeService.isDark()"
-          [class.navbar__style-7--light]="!themeService.isDark()"
+          class="app-nav-link navbar__nav-link"
+          [class.navbar__nav-link--dark]="themeService.isDark()"
+          [class.navbar__nav-link--light]="!themeService.isDark()"
           [href]="link.href">
           {{ link.label }}
         </a>
@@ -33,10 +33,10 @@
 
     <button
       mat-icon-button
-      class="app-theme-toggle navbar__style-8"
+      class="app-theme-toggle navbar__theme-toggle"
       type="button"
-      [class.navbar__style-8--dark]="themeService.isDark()"
-      [class.navbar__style-8--light]="!themeService.isDark()"
+      [class.navbar__theme-toggle--dark]="themeService.isDark()"
+      [class.navbar__theme-toggle--light]="!themeService.isDark()"
       [attr.aria-label]="themeService.toggleLabel()"
       [matTooltip]="themeService.toggleLabel()"
       (click)="toggleTheme()">
@@ -45,11 +45,11 @@
 
     <button
       mat-icon-button
-      class="app-menu-toggle navbar__style-9"
+      class="app-menu-toggle navbar__menu-toggle"
       type="button"
       aria-label="Open navigation menu"
-      [class.navbar__style-9--dark]="themeService.isDark()"
-      [class.navbar__style-9--light]="!themeService.isDark()"
+      [class.navbar__menu-toggle--dark]="themeService.isDark()"
+      [class.navbar__menu-toggle--light]="!themeService.isDark()"
       [attr.aria-expanded]="isMobileMenuOpen()"
       (click)="openMobileMenu()">
       <mat-icon>menu</mat-icon>

@@ -1,152 +1,152 @@
 @reference '../../../../../../../../styles.css';
 
-.mobile-navbar__style-1 {
+.mobile-navbar__overlay {
   @apply fixed inset-0 z-50 overflow-hidden xl:hidden;
 }
 
-.mobile-navbar__style-2 {
+.mobile-navbar__scrim {
   @apply absolute inset-0 bg-[#030712]/70 backdrop-blur-md;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__style-2 {
+:host-context(.app-theme-light) .mobile-navbar__scrim {
   background-color: rgba(15, 23, 42, 0.28) !important;
 }
 
-.mobile-navbar__style-3 {
+.mobile-navbar__drawer {
   @apply absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col overflow-hidden rounded-l-3xl border-l p-4 shadow-2xl backdrop-blur-2xl;
 }
 
-.mobile-navbar__style-3--dark {
+.mobile-navbar__drawer--dark {
   @apply border-white/10 bg-[#070b1a]/90 text-white shadow-black/40;
 }
 
-.mobile-navbar__style-3--light {
+.mobile-navbar__drawer--light {
   @apply border-slate-200 bg-slate-50/95 text-slate-950 shadow-slate-400/30;
 }
 
-.mobile-navbar__style-4 {
+.mobile-navbar__drawer-glow {
   @apply pointer-events-none absolute -right-14 top-10 h-36 w-36 rounded-full bg-cyan-300/15 blur-3xl;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__style-4 {
+:host-context(.app-theme-light) .mobile-navbar__drawer-glow {
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.mobile-navbar__style-5 {
+.mobile-navbar__drawer-content {
   @apply pointer-events-none absolute -bottom-10 left-8 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl;
 }
 
-.mobile-navbar__style-6 {
+.mobile-navbar__drawer-header {
   @apply relative flex items-center justify-between gap-3;
 }
 
-.mobile-navbar__style-7 {
+.mobile-navbar__close-button {
   @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300;
 }
 
-.mobile-navbar__style-7--dark {
+.mobile-navbar__close-button--dark {
   @apply text-white hover:text-cyan-200;
 }
 
-.mobile-navbar__style-7--light {
+.mobile-navbar__close-button--light {
   @apply text-slate-950 hover:text-cyan-700;
 }
 
-.mobile-navbar__style-8 {
+.mobile-navbar__close-icon {
   @apply h-10! w-10! rounded-full! border transition;
 }
 
-.mobile-navbar__style-8--dark {
+.mobile-navbar__close-icon--dark {
   @apply border-cyan-300/20! bg-cyan-300/10! text-cyan-200! hover:bg-cyan-300/15!;
 }
 
-.mobile-navbar__style-8--light {
+.mobile-navbar__close-icon--light {
   @apply border-cyan-600/20! bg-cyan-50! text-cyan-700! hover:bg-cyan-100!;
 }
 
-.mobile-navbar__style-9 {
+.mobile-navbar__nav-list {
   @apply relative mt-8 flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pb-4;
 }
 
-.mobile-navbar__style-10 {
+.mobile-navbar__nav-link {
   @apply h-12! justify-start! rounded-2xl! border px-4! text-sm! font-semibold! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
 }
 
-.mobile-navbar__style-10--dark {
+.mobile-navbar__nav-link--dark {
   @apply border-white/10! bg-white/[0.045]! text-slate-200! hover:border-cyan-300/20! hover:bg-cyan-300/10! hover:text-cyan-100!;
 }
 
-.mobile-navbar__style-10--light {
+.mobile-navbar__nav-link--light {
   @apply border-slate-200! bg-white/80! text-slate-700! hover:border-cyan-500/30! hover:bg-cyan-50! hover:text-cyan-700!;
 }
 
-.mobile-navbar__style-11 {
+.mobile-navbar__nav-icon {
   @apply mr-3! text-[1.25rem]! text-cyan-300!;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__style-11 {
+:host-context(.app-theme-light) .mobile-navbar__nav-icon {
   color: #0e7490 !important;
 }
 
-.mobile-navbar__style-12 {
+.mobile-navbar__nav-footer {
   @apply relative mt-auto border-t border-white/10 pt-4;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__style-12 {
+:host-context(.app-theme-light) .mobile-navbar__nav-footer {
   border-color: var(--portfolio-border) !important;
 }
 
-.mobile-navbar__style-13 {
+.mobile-navbar__theme-button {
   @apply mb-4 flex h-12 w-full items-center justify-between rounded-2xl border px-4 text-left text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
 }
 
-.mobile-navbar__style-13--dark {
+.mobile-navbar__theme-button--dark {
   @apply border-white/20 bg-white/90 text-slate-950 hover:bg-white;
 }
 
-.mobile-navbar__style-13--light {
+.mobile-navbar__theme-button--light {
   @apply border-slate-950/15 bg-slate-950 text-white hover:bg-slate-800;
 }
 
-.mobile-navbar__style-14 {
+.mobile-navbar__theme-icon {
   @apply text-cyan-300!;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__style-14 {
+:host-context(.app-theme-light) .mobile-navbar__theme-icon {
   color: #0e7490 !important;
 }
 
-.mobile-navbar__style-15 {
+.mobile-navbar__connect-label {
   @apply px-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__style-15 {
+:host-context(.app-theme-light) .mobile-navbar__connect-label {
   color: #0e7490 !important;
 }
 
-.mobile-navbar__style-16 {
+.mobile-navbar__social-list {
   @apply mt-3 flex flex-wrap items-center gap-2;
 }
 
-.mobile-navbar__style-17 {
+.mobile-navbar__social-link {
   @apply inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition hover:shadow-[0_0_22px_rgba(34,211,238,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
 }
 
-.mobile-navbar__style-17--dark {
+.mobile-navbar__social-link--dark {
   @apply border-white/15 bg-white/10 text-cyan-100 shadow-cyan-950/25 hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white;
 }
 
-.mobile-navbar__style-17--light {
+.mobile-navbar__social-link--light {
   @apply border-slate-200 bg-white text-cyan-700 shadow-slate-300/40 hover:border-cyan-500/30 hover:bg-cyan-50 hover:text-cyan-800;
 }
 
-.mobile-navbar__style-18 {
+.mobile-navbar__social-icon {
   @apply size-[19px]! text-current! opacity-95 transition group-hover:opacity-100;
 }
 
-.mobile-navbar__style-18 svg,
-.mobile-navbar__style-18 ::ng-deep svg,
-.mobile-navbar__style-18 ::ng-deep svg * {
+.mobile-navbar__social-icon svg,
+.mobile-navbar__social-icon ::ng-deep svg,
+.mobile-navbar__social-icon ::ng-deep svg * {
   fill: currentColor !important;
   color: currentColor !important;
 }

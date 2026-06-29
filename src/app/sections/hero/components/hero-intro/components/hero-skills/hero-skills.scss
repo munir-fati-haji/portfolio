@@ -1,31 +1,31 @@
 @reference '../../../../../../../styles.css';
 
-.hero-skills__style-1 {
+.hero-skills__section {
   @apply mt-8 space-y-4;
 }
 
-.hero-skills__style-2 {
+.hero-skills__background {
   @apply mb-2 text-xs font-bold uppercase tracking-[0.25em] text-slate-500;
 }
 
-:host-context(.app-theme-light) .hero-skills__style-2 {
+:host-context(.app-theme-light) .hero-skills__background {
   color: var(--portfolio-text-soft) !important;
 }
 
-.hero-skills__style-3 {
+.hero-skills__glow-primary {
   @apply flex flex-wrap gap-2.5;
 }
 
-.hero-skills__style-4 {
+.hero-skills__glow-secondary {
   @apply inline-flex size-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-md transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_16px_40px_rgba(34,211,238,0.16)] focus:outline-none focus:ring-2 focus:ring-cyan-400/50 sm:size-12;
 }
 
-:host-context(.app-theme-light) .hero-skills__style-4 {
+:host-context(.app-theme-light) .hero-skills__glow-secondary {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
 }
 
-.hero-skills__style-5 {
+.hero-skills__glow-tertiary {
   @apply size-6! drop-shadow-[0_2px_8px_rgba(255,255,255,0.18)] transition duration-200 group-hover:scale-110;
 }

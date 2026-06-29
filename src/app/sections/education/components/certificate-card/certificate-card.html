@@ -1,23 +1,23 @@
-<article class="group certificate-card__style-1">
-  <div class="certificate-card__style-2"></div>
+<article class="group certificate-card__card">
+  <div class="certificate-card__shine"></div>
 
-  <div class="certificate-card__style-3">
-    <div class="certificate-card__style-4">
+  <div class="certificate-card__icon-surface">
+    <div class="certificate-card__icon">
       <mat-icon>{{ certificate().icon }}</mat-icon>
     </div>
 
-    <div class="certificate-card__style-5">
-      <h3 class="certificate-card__style-6">
+    <div class="certificate-card__content">
+      <h3 class="certificate-card__school">
         {{ certificate().school }}
       </h3>
 
-      <p class="certificate-card__style-7">
+      <p class="certificate-card__certificate">
         {{ certificate().title }}
       </p>
 
-      <p class="certificate-card__style-8">{{ certificate().location }} - {{ certificate().period }}</p>
+      <p class="certificate-card__period">{{ certificate().location }} - {{ certificate().period }}</p>
 
-      <div class="certificate-card__style-9">
+      <div class="certificate-card__skill-list">
         @for (skill of certificate().skills; track skill) {
           <app-shared-chip-button size="xs" variant="slate" [label]="skill" />
         }

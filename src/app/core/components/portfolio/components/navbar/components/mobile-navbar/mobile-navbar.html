@@ -1,77 +1,77 @@
 @if (isOpen()) {
-  <div class="mobile-navbar__style-1">
-    <button class="mobile-navbar__style-2" type="button" aria-label="Close navigation menu" (click)="close()"></button>
+  <div class="mobile-navbar__overlay">
+    <button class="mobile-navbar__scrim" type="button" aria-label="Close navigation menu" (click)="close()"></button>
 
     <aside
-      class="app-mobile-drawer mobile-navbar__style-3"
-      [class.mobile-navbar__style-3--dark]="themeService.isDark()"
-      [class.mobile-navbar__style-3--light]="!themeService.isDark()">
-      <div class="mobile-navbar__style-4"></div>
-      <div class="mobile-navbar__style-5"></div>
+      class="app-mobile-drawer mobile-navbar__drawer"
+      [class.mobile-navbar__drawer--dark]="themeService.isDark()"
+      [class.mobile-navbar__drawer--light]="!themeService.isDark()">
+      <div class="mobile-navbar__drawer-glow"></div>
+      <div class="mobile-navbar__drawer-content"></div>
 
-      <div class="mobile-navbar__style-6">
+      <div class="mobile-navbar__drawer-header">
         <a
-          class="app-brand mobile-navbar__style-7"
+          class="app-brand mobile-navbar__close-button"
           href="#hero"
-          [class.mobile-navbar__style-7--dark]="themeService.isDark()"
-          [class.mobile-navbar__style-7--light]="!themeService.isDark()"
+          [class.mobile-navbar__close-button--dark]="themeService.isDark()"
+          [class.mobile-navbar__close-button--light]="!themeService.isDark()"
           (click)="close()">
           {{ brand() }}
         </a>
 
         <button
           mat-icon-button
-          class="mobile-navbar__style-8"
+          class="mobile-navbar__close-icon"
           type="button"
           aria-label="Close navigation menu"
-          [class.mobile-navbar__style-8--dark]="themeService.isDark()"
-          [class.mobile-navbar__style-8--light]="!themeService.isDark()"
+          [class.mobile-navbar__close-icon--dark]="themeService.isDark()"
+          [class.mobile-navbar__close-icon--light]="!themeService.isDark()"
           (click)="close()">
           <mat-icon>close</mat-icon>
         </button>
       </div>
 
-      <nav aria-label="Mobile navigation" class="mobile-navbar__style-9">
+      <nav aria-label="Mobile navigation" class="mobile-navbar__nav-list">
         @for (link of links(); track link.label) {
           <a
             mat-button
-            class="app-mobile-nav-link mobile-navbar__style-10"
-            [class.mobile-navbar__style-10--dark]="themeService.isDark()"
-            [class.mobile-navbar__style-10--light]="!themeService.isDark()"
+            class="app-mobile-nav-link mobile-navbar__nav-link"
+            [class.mobile-navbar__nav-link--dark]="themeService.isDark()"
+            [class.mobile-navbar__nav-link--light]="!themeService.isDark()"
             [href]="link.href"
             (click)="close()">
-            <mat-icon class="mobile-navbar__style-11" aria-hidden="true">{{ link.icon }}</mat-icon>
+            <mat-icon class="mobile-navbar__nav-icon" aria-hidden="true">{{ link.icon }}</mat-icon>
             {{ link.label }}
           </a>
         }
       </nav>
 
-      <div class="mobile-navbar__style-12">
+      <div class="mobile-navbar__nav-footer">
         <button
           type="button"
-          class="app-mobile-theme-toggle mobile-navbar__style-13"
-          [class.mobile-navbar__style-13--dark]="themeService.isDark()"
-          [class.mobile-navbar__style-13--light]="!themeService.isDark()"
+          class="app-mobile-theme-toggle mobile-navbar__theme-button"
+          [class.mobile-navbar__theme-button--dark]="themeService.isDark()"
+          [class.mobile-navbar__theme-button--light]="!themeService.isDark()"
           [attr.aria-label]="themeService.toggleLabel()"
           (click)="toggleTheme()">
           <span>{{ themeService.toggleLabel() }}</span>
-          <mat-icon class="mobile-navbar__style-14" aria-hidden="true">{{ themeService.toggleIcon() }}</mat-icon>
+          <mat-icon class="mobile-navbar__theme-icon" aria-hidden="true">{{ themeService.toggleIcon() }}</mat-icon>
         </button>
 
-        <p class="mobile-navbar__style-15">Connect</p>
+        <p class="mobile-navbar__connect-label">Connect</p>
 
-        <nav aria-label="Mobile footer links" class="mobile-navbar__style-16">
+        <nav aria-label="Mobile footer links" class="mobile-navbar__social-list">
           @for (link of footerLinks; track link.label) {
             <a
-              class="app-footer-icon group mobile-navbar__style-17"
-              [class.mobile-navbar__style-17--dark]="themeService.isDark()"
-              [class.mobile-navbar__style-17--light]="!themeService.isDark()"
+              class="app-footer-icon group mobile-navbar__social-link"
+              [class.mobile-navbar__social-link--dark]="themeService.isDark()"
+              [class.mobile-navbar__social-link--light]="!themeService.isDark()"
               [href]="link.href"
               [attr.aria-label]="link.label"
               [attr.target]="link.external ? '_blank' : null"
               [attr.rel]="link.external ? 'noreferrer' : null"
               (click)="close()">
-              <mat-icon class="mobile-navbar__style-18" aria-hidden="true" [svgIcon]="link.icon" />
+              <mat-icon class="mobile-navbar__social-icon" aria-hidden="true" [svgIcon]="link.icon" />
             </a>
           }
         </nav>

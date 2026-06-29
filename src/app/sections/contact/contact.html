@@ -1,21 +1,21 @@
-<section class="contact__style-1">
-  <div class="contact__style-2">
-    <div class="contact__style-3"></div>
-    <div class="contact__style-4"></div>
+<section class="contact__section">
+  <div class="contact__background">
+    <div class="contact__glow-primary"></div>
+    <div class="contact__glow-secondary"></div>
   </div>
 
-  <div class="contact__style-5">
+  <div class="contact__content">
     <div>
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-      <div class="contact__style-6">
-        <a href="mailto:munir.fati.haji@gmail.com" class="contact__style-7"> Send Email </a>
-        <a href="#projects" class="contact__style-8"> View Projects </a>
+      <div class="contact__actions">
+        <a href="mailto:munir.fati.haji@gmail.com" class="contact__email-action"> Send Email </a>
+        <a href="#projects" class="contact__projects-action"> View Projects </a>
       </div>
     </div>
 
-    <div class="contact__style-9">
-      <div class="contact__style-10">
+    <div class="contact__panel">
+      <div class="contact__link-list">
         @for (link of contactLinks; track link.label) {
           <app-contact-link-card
             [link]="link"
@@ -24,9 +24,9 @@
         }
       </div>
 
-      <div class="contact__style-11">
-        <p class="contact__style-12">Based in Poland, working internationally.</p>
-        <p class="contact__style-13">
+      <div class="contact__note-card">
+        <p class="contact__note-title">Based in Poland, working internationally.</p>
+        <p class="contact__note-text">
           Best way to reach me is email. Share the problem, expected outcome, and any existing constraints so I can
           respond with useful next steps.
         </p>

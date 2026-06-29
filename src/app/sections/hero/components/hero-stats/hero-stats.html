@@ -1,11 +1,11 @@
-<div class="hero-stats__style-1">
+<div class="hero-stats__grid">
   @for (stat of stats(); track stat.label) {
-    <div class="hero-stats__style-2">
-      <p class="hero-stats__style-3">
+    <div class="hero-stats__stat-card">
+      <p class="hero-stats__value">
         {{ stat.value }}
       </p>
 
-      <p class="hero-stats__style-4">
+      <p class="hero-stats__label">
         {{ stat.label }}
       </p>
     </div>

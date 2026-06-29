@@ -1,39 +1,39 @@
 @reference '../../../styles.css';
 
-.projects__style-1 {
+.projects__section {
   @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
 }
 
-:host-context(.app-theme-light) .projects__style-1 {
+:host-context(.app-theme-light) .projects__section {
   background-color: var(--portfolio-bg) !important;
 
   color: var(--portfolio-text) !important;
 }
 
-.projects__style-2 {
+.projects__background {
   @apply pointer-events-none absolute inset-0;
 }
 
-.projects__style-3 {
+.projects__glow-primary {
   @apply absolute left-[-10rem] top-20 h-[28rem] w-[28rem] rounded-full bg-cyan-300/10 blur-3xl;
 }
 
-:host-context(.app-theme-light) .projects__style-3 {
+:host-context(.app-theme-light) .projects__glow-primary {
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.projects__style-4 {
+.projects__glow-secondary {
   @apply absolute bottom-0 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl;
 }
 
-.projects__style-5 {
+.projects__content {
   @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-7xl flex-col justify-center;
 }
 
-.projects__style-6 {
+.projects__header {
   @apply max-w-3xl;
 }
 
-.projects__style-7 {
+.projects__grid {
   @apply mt-12 grid gap-6 lg:grid-cols-2;
 }

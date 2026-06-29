@@ -1,44 +1,44 @@
 @reference '../../../styles.css';
 
-.working-on__style-1 {
+.working-on__section {
   @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
 }
 
-:host-context(.app-theme-light) .working-on__style-1 {
+:host-context(.app-theme-light) .working-on__section {
   background-color: var(--portfolio-bg) !important;
 
   color: var(--portfolio-text) !important;
 }
 
-.working-on__style-2 {
+.working-on__background {
   @apply pointer-events-none absolute inset-0;
 }
 
-.working-on__style-3 {
+.working-on__glow-primary {
   @apply absolute left-1/2 top-12 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl;
 }
 
-:host-context(.app-theme-light) .working-on__style-3 {
+:host-context(.app-theme-light) .working-on__glow-primary {
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.working-on__style-4 {
+.working-on__content {
   @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-6xl items-center;
 }
 
-.working-on__style-5 {
+.working-on__header {
   @apply grid w-full gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center;
 }
 
-.working-on__style-6 {
+.working-on__focus-grid {
   @apply space-y-4;
 }
 
-.working-on__style-7 {
+.working-on__focus-card {
   @apply rounded-3xl border border-white/10 bg-white/[0.045] p-5 shadow-xl shadow-black/20 backdrop-blur;
 }
 
-:host-context(.app-theme-light) .working-on__style-7 {
+:host-context(.app-theme-light) .working-on__focus-card {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
@@ -46,15 +46,15 @@
   --tw-shadow-color: var(--portfolio-card-shadow) !important;
 }
 
-.working-on__style-8 {
+.working-on__focus-content {
   @apply flex gap-4;
 }
 
-.working-on__style-9 {
+.working-on__focus-index {
   @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-300/10 text-sm font-bold text-cyan-200;
 }
 
-:host-context(.app-theme-light) .working-on__style-9 {
+:host-context(.app-theme-light) .working-on__focus-index {
   border-color: rgba(8, 145, 178, 0.25) !important;
 
   background-color: rgba(8, 145, 178, 0.1) !important;
@@ -62,10 +62,10 @@
   color: #0e7490 !important;
 }
 
-.working-on__style-10 {
+.working-on__focus-title {
   @apply text-sm leading-7 text-slate-300 sm:text-base;
 }
 
-:host-context(.app-theme-light) .working-on__style-10 {
+:host-context(.app-theme-light) .working-on__focus-title {
   color: var(--portfolio-text-muted) !important;
 }

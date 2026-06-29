@@ -1,71 +1,71 @@
 @reference '../../../styles.css';
 
-.experience__style-1 {
+.experience__section {
   @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
 }
 
-:host-context(.app-theme-light) .experience__style-1 {
+:host-context(.app-theme-light) .experience__section {
   background-color: var(--portfolio-bg) !important;
 
   color: var(--portfolio-text) !important;
 }
 
-.experience__style-2 {
+.experience__background {
   @apply pointer-events-none absolute inset-0;
 }
 
-.experience__style-3 {
+.experience__glow-primary {
   @apply absolute left-[-10rem] top-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl;
 }
 
-:host-context(.app-theme-light) .experience__style-3 {
+:host-context(.app-theme-light) .experience__glow-primary {
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.experience__style-4 {
+.experience__glow-secondary {
   @apply absolute right-[-12rem] top-1/3 h-[32rem] w-[32rem] rounded-full bg-blue-600/10 blur-3xl;
 }
 
-.experience__style-5 {
+.experience__glow-tertiary {
   @apply absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl;
 }
 
-.experience__style-6 {
+.experience__content {
   @apply relative mx-auto max-w-7xl;
 }
 
-.experience__style-7 {
+.experience__header-row {
   @apply grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end;
 }
 
-.experience__style-8 {
+.experience__metrics-grid {
   @apply grid gap-5 sm:grid-cols-2;
 }
 
-.experience__style-9 {
+.experience__metric {
   @apply border-l border-cyan-300/30 pl-4;
 }
 
-:host-context(.app-theme-light) .experience__style-9 {
+:host-context(.app-theme-light) .experience__metric {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
-.experience__style-10 {
+.experience__metric-value {
   @apply text-3xl font-black tracking-tight text-cyan-300;
 }
 
-:host-context(.app-theme-light) .experience__style-10 {
+:host-context(.app-theme-light) .experience__metric-value {
   color: #0e7490 !important;
 }
 
-.experience__style-11 {
+.experience__metric-label {
   @apply mt-1 text-sm leading-6 text-slate-400;
 }
 
-:host-context(.app-theme-light) .experience__style-11 {
+:host-context(.app-theme-light) .experience__metric-label {
   color: var(--portfolio-text-soft) !important;
 }
 
-.experience__style-12 {
+.experience__timeline {
   @apply mt-16 space-y-8;
 }

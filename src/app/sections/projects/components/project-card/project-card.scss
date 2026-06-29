@@ -1,10 +1,10 @@
 @reference '../../../../../styles.css';
 
-.project-card__style-1 {
+.project-card__card {
   @apply relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/25 hover:bg-white/[0.065] sm:p-8;
 }
 
-:host-context(.app-theme-light) .project-card__style-1 {
+:host-context(.app-theme-light) .project-card__card {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
@@ -12,54 +12,54 @@
   --tw-shadow-color: var(--portfolio-card-shadow) !important;
 }
 
-.project-card__style-2 {
+.project-card__shine {
   @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
 }
 
-.project-card__style-3 {
+.project-card__header {
   @apply flex flex-wrap items-start justify-between gap-4;
 }
 
-.project-card__style-4 {
+.project-card__type {
   @apply text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300;
 }
 
-:host-context(.app-theme-light) .project-card__style-4 {
+:host-context(.app-theme-light) .project-card__type {
   color: #0e7490 !important;
 }
 
-.project-card__style-5 {
+.project-card__title {
   @apply mt-3 text-2xl font-bold text-white;
 }
 
-:host-context(.app-theme-light) .project-card__style-5 {
+:host-context(.app-theme-light) .project-card__title {
   color: var(--portfolio-text) !important;
 }
 
-.project-card__style-6 {
+.project-card__description {
   @apply mt-5 text-sm leading-7 text-slate-300 sm:text-base;
 }
 
-:host-context(.app-theme-light) .project-card__style-6 {
+:host-context(.app-theme-light) .project-card__description {
   color: var(--portfolio-text-muted) !important;
 }
 
-.project-card__style-7 {
+.project-card__feature-list {
   @apply mt-6 space-y-3;
 }
 
-.project-card__style-8 {
+.project-card__feature-item {
   @apply flex gap-3 text-sm leading-6 text-slate-300;
 }
 
-:host-context(.app-theme-light) .project-card__style-8 {
+:host-context(.app-theme-light) .project-card__feature-item {
   color: var(--portfolio-text-muted) !important;
 }
 
-.project-card__style-9 {
+.project-card__feature-marker {
   @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,0.65)];
 }
 
-.project-card__style-10 {
+.project-card__tech-list {
   @apply mt-7 flex flex-wrap gap-2;
 }

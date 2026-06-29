@@ -1,22 +1,22 @@
-<section id="experience" class="experience__style-1">
-  <div class="experience__style-2">
-    <div class="experience__style-3"></div>
-    <div class="experience__style-4"></div>
-    <div class="experience__style-5"></div>
+<section id="experience" class="experience__section">
+  <div class="experience__background">
+    <div class="experience__glow-primary"></div>
+    <div class="experience__glow-secondary"></div>
+    <div class="experience__glow-tertiary"></div>
   </div>
 
-  <div class="experience__style-6">
-    <div class="experience__style-7">
+  <div class="experience__content">
+    <div class="experience__header-row">
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-      <div class="experience__style-8">
+      <div class="experience__metrics-grid">
         @for (metric of metrics; track metric.label) {
-          <div class="experience__style-9">
-            <p class="experience__style-10">
+          <div class="experience__metric">
+            <p class="experience__metric-value">
               {{ metric.value }}
             </p>
 
-            <p class="experience__style-11">
+            <p class="experience__metric-label">
               {{ metric.label }}
             </p>
           </div>
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="experience__style-12">
+    <div class="experience__timeline">
       @for (experience of experiences; track experience.company; let index = $index) {
         <app-experience-card [experience]="experience" [index]="index" />
       }

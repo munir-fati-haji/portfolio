@@ -1,30 +1,30 @@
 <mat-toolbar
-  class="app-footer footer__style-1"
-  [class.footer__style-1--dark]="themeService.isDark()"
-  [class.footer__style-1--light]="!themeService.isDark()">
-  <div class="footer__style-2"></div>
+  class="app-footer footer__root"
+  [class.footer__root--dark]="themeService.isDark()"
+  [class.footer__root--light]="!themeService.isDark()">
+  <div class="footer__backdrop"></div>
 
-  <div class="footer__style-3">
-    <span class="footer__style-4">
+  <div class="footer__content">
+    <span class="footer__copyright">
       {{ copyright }}
     </span>
 
     <nav
       aria-label="Footer links"
-      class="app-footer-links footer__style-5"
-      [class.footer__style-5--dark]="themeService.isDark()"
-      [class.footer__style-5--light]="!themeService.isDark()">
+      class="app-footer-links footer__links"
+      [class.footer__links--dark]="themeService.isDark()"
+      [class.footer__links--light]="!themeService.isDark()">
       @for (link of links; track link.label) {
         <a
-          class="app-footer-icon group footer__style-6"
-          [class.footer__style-6--dark]="themeService.isDark()"
-          [class.footer__style-6--light]="!themeService.isDark()"
+          class="app-footer-icon group footer__link"
+          [class.footer__link--dark]="themeService.isDark()"
+          [class.footer__link--light]="!themeService.isDark()"
           [href]="link.href"
           [matTooltip]="link.label"
           [attr.aria-label]="link.label"
           [attr.target]="link.external ? '_blank' : null"
           [attr.rel]="link.external ? 'noreferrer' : null">
-          <mat-icon class="footer__style-7" aria-hidden="true" [svgIcon]="link.icon" />
+          <mat-icon class="footer__icon" aria-hidden="true" [svgIcon]="link.icon" />
         </a>
       }
     </nav>

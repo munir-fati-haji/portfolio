@@ -1,75 +1,75 @@
 @reference '../../../styles.css';
 
-.skills__style-1 {
+.skills__section {
   @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
 }
 
-:host-context(.app-theme-light) .skills__style-1 {
+:host-context(.app-theme-light) .skills__section {
   background-color: var(--portfolio-bg) !important;
 
   color: var(--portfolio-text) !important;
 }
 
-.skills__style-2 {
+.skills__background {
   @apply pointer-events-none absolute inset-0;
 }
 
-.skills__style-3 {
+.skills__glow-primary {
   @apply absolute left-[-10rem] top-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl;
 }
 
-:host-context(.app-theme-light) .skills__style-3 {
+:host-context(.app-theme-light) .skills__glow-primary {
   background-color: rgba(8, 145, 178, 0.1) !important;
 }
 
-.skills__style-4 {
+.skills__glow-secondary {
   @apply absolute right-[-12rem] top-1/3 h-[32rem] w-[32rem] rounded-full bg-blue-600/10 blur-3xl;
 }
 
-.skills__style-5 {
+.skills__glow-tertiary {
   @apply absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl;
 }
 
-.skills__style-6 {
+.skills__content {
   @apply relative mx-auto max-w-7xl;
 }
 
-.skills__style-7 {
+.skills__header-row {
   @apply grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end;
 }
 
-.skills__style-8 {
+.skills__stats-grid {
   @apply grid gap-5 sm:grid-cols-2;
 }
 
-.skills__style-9 {
+.skills__stat {
   @apply border-l border-cyan-300/30 pl-4;
 }
 
-:host-context(.app-theme-light) .skills__style-9 {
+:host-context(.app-theme-light) .skills__stat {
   border-color: rgba(8, 145, 178, 0.25) !important;
 }
 
-.skills__style-10 {
+.skills__stat-value {
   @apply text-2xl font-black tracking-tight text-cyan-300 sm:text-3xl;
 }
 
-:host-context(.app-theme-light) .skills__style-10 {
+:host-context(.app-theme-light) .skills__stat-value {
   color: #0e7490 !important;
 }
 
-.skills__style-11 {
+.skills__stat-label {
   @apply mt-1 text-sm leading-6 text-slate-400;
 }
 
-:host-context(.app-theme-light) .skills__style-11 {
+:host-context(.app-theme-light) .skills__stat-label {
   color: var(--portfolio-text-soft) !important;
 }
 
-.skills__style-12 {
+.skills__legend {
   @apply mt-12 flex flex-wrap gap-3;
 }
 
-.skills__style-13 {
+.skills__category-grid {
   @apply mt-10 grid gap-8 lg:grid-cols-2;
 }

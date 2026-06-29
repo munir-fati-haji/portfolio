@@ -1,22 +1,22 @@
-<section id="skills" class="skills__style-1">
-  <div class="skills__style-2">
-    <div class="skills__style-3"></div>
-    <div class="skills__style-4"></div>
-    <div class="skills__style-5"></div>
+<section id="skills" class="skills__section">
+  <div class="skills__background">
+    <div class="skills__glow-primary"></div>
+    <div class="skills__glow-secondary"></div>
+    <div class="skills__glow-tertiary"></div>
   </div>
 
-  <div class="skills__style-6">
-    <div class="skills__style-7">
+  <div class="skills__content">
+    <div class="skills__header-row">
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-      <div class="skills__style-8">
+      <div class="skills__stats-grid">
         @for (stat of stats; track stat.label) {
-          <div class="skills__style-9">
-            <p class="skills__style-10">
+          <div class="skills__stat">
+            <p class="skills__stat-value">
               {{ stat.value }}
             </p>
 
-            <p class="skills__style-11">
+            <p class="skills__stat-label">
               {{ stat.label }}
             </p>
           </div>
@@ -24,14 +24,14 @@
       </div>
     </div>
 
-    <div class="skills__style-12">
+    <div class="skills__legend">
       <app-shared-chip-button size="sm" variant="cyan" label="Advanced" />
       <app-shared-chip-button size="sm" variant="emerald" label="Strong" />
       <app-shared-chip-button size="sm" variant="amber" label="Practical" />
       <app-shared-chip-button size="sm" variant="slate" label="Basic" />
     </div>
 
-    <div class="skills__style-13">
+    <div class="skills__category-grid">
       @for (category of categories; track category.title; let index = $index) {
         <app-skill-category-card [category]="category" [index]="index" />
       }

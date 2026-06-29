@@ -1,25 +1,25 @@
 @reference '../../../../../styles.css';
 
-.hero-stats__style-1 {
+.hero-stats__grid {
   @apply mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3;
 }
 
-.hero-stats__style-2 {
+.hero-stats__stat-card {
   @apply rounded-2xl bg-white/5 px-5 py-6 text-center;
 }
 
-:host-context(.app-theme-light) .hero-stats__style-2 {
+:host-context(.app-theme-light) .hero-stats__stat-card {
   background-color: var(--portfolio-bg-elevated) !important;
 }
 
-.hero-stats__style-3 {
+.hero-stats__value {
   @apply text-3xl font-extrabold text-cyan-400;
 }
 
-.hero-stats__style-4 {
+.hero-stats__label {
   @apply mt-2 text-xs font-medium text-slate-400;
 }
 
-:host-context(.app-theme-light) .hero-stats__style-4 {
+:host-context(.app-theme-light) .hero-stats__label {
   color: var(--portfolio-text-soft) !important;
 }

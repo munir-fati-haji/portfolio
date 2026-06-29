@@ -1,28 +1,28 @@
-<section class="case-study__style-1">
-  <div class="case-study__style-2">
-    <div class="case-study__style-3"></div>
-    <div class="case-study__style-4"></div>
+<section class="case-study__section">
+  <div class="case-study__background">
+    <div class="case-study__glow-primary"></div>
+    <div class="case-study__glow-secondary"></div>
   </div>
 
-  <div class="case-study__style-5">
-    <div class="case-study__style-6">
+  <div class="case-study__content">
+    <div class="case-study__layout">
       <div>
         <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
       </div>
 
-      <div class="case-study__style-7">
-        <div class="case-study__style-8">
+      <div class="case-study__panel">
+        <div class="case-study__step-list">
           @for (step of steps; track step) {
-            <div class="case-study__style-9">
-              <p class="case-study__style-10">Step 0{{ $index + 1 }}</p>
-              <p class="case-study__style-11">{{ step }}</p>
+            <div class="case-study__step-card">
+              <p class="case-study__step-number">Step 0{{ $index + 1 }}</p>
+              <p class="case-study__step-text">{{ step }}</p>
             </div>
           }
         </div>
 
-        <div class="case-study__style-12">
-          <p class="case-study__style-13">Result</p>
-          <p class="case-study__style-14">
+        <div class="case-study__result-card">
+          <p class="case-study__result-label">Result</p>
+          <p class="case-study__result-text">
             The goal is always the same: a maintainable solution that is easier to understand, operate, and improve than
             the process it replaces.
           </p>

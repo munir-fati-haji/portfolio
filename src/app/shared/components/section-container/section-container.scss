@@ -1,15 +1,15 @@
 @reference '../../../../styles.css';
 
-.section-container__style-1 {
+.section-container__section {
   @apply flex min-h-[calc(100svh-64px)] overflow-x-hidden bg-[#070b1a] text-white;
 }
 
-:host-context(.app-theme-light) .section-container__style-1 {
+:host-context(.app-theme-light) .section-container__section {
   background-color: var(--portfolio-bg) !important;
 
   color: var(--portfolio-text) !important;
 }
 
-.section-container__style-2 {
+.section-container__content {
   @apply mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:px-10 lg:py-12 xl:px-12;
 }

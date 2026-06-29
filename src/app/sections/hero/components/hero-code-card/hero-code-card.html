@@ -1,17 +1,17 @@
-<div class="app-code-card hero-code-card__style-1">
-  <div class="app-code-card-header hero-code-card__style-2">
+<div class="app-code-card hero-code-card__card">
+  <div class="app-code-card-header hero-code-card__header">
     @for (action of windowActions; track action.label) {
       <span
-        class="hero-code-card__style-3"
-        [class.hero-code-card__style-3--close]="action.tone === 'close'"
-        [class.hero-code-card__style-3--minimize]="action.tone === 'minimize'"
-        [class.hero-code-card__style-3--maximize]="action.tone === 'maximize'"
+        class="hero-code-card__window-action"
+        [class.hero-code-card__window-action--close]="action.tone === 'close'"
+        [class.hero-code-card__window-action--minimize]="action.tone === 'minimize'"
+        [class.hero-code-card__window-action--maximize]="action.tone === 'maximize'"
         [attr.aria-label]="action.label">
       </span>
     }
   </div>
 
-  <div class="hero-code-card__style-4">
-    <pre class="app-code-block hero-code-card__style-5"><code language="typescript" [highlight]="code()"></code></pre>
+  <div class="hero-code-card__body">
+    <pre class="app-code-block hero-code-card__code"><code language="typescript" [highlight]="code()"></code></pre>
   </div>
 </div>
