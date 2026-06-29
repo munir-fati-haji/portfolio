@@ -1,20 +1,20 @@
-<section class="gym-workout__style-1">
-  <div class="gym-workout__style-2">
-    <div class="gym-workout__style-3"></div>
-    <div class="gym-workout__style-4"></div>
-    <div class="gym-workout__style-5"></div>
+<section class="gym-workout">
+  <div class="gym-workout__background">
+    <div class="gym-workout__glow gym-workout__glow--cyan"></div>
+    <div class="gym-workout__glow gym-workout__glow--violet"></div>
+    <div class="gym-workout__glow gym-workout__glow--blue"></div>
   </div>
 
-  <div class="gym-workout__style-6">
-    <header class="gym-workout__style-7">
-      <div class="gym-workout__style-8">
+  <div class="gym-workout__content">
+    <mat-card class="gym-workout__hero-card">
+      <div class="gym-workout__hero-layout">
         <div>
-          <div class="gym-workout__style-9">
-            <p class="gym-workout__style-10">Gym Sessions</p>
+          <div class="gym-workout__eyebrow-row">
+            <p class="gym-workout__eyebrow">Gym Sessions</p>
 
             <button
               type="button"
-              class="gym-workout__style-11"
+              class="gym-workout__theme-toggle"
               matTooltipPosition="below"
               [attr.aria-label]="themeService.toggleLabel()"
               [matTooltip]="themeService.toggleLabel()"
@@ -23,31 +23,31 @@
             </button>
           </div>
 
-          <h1 class="gym-workout__style-12">Weekly aesthetic training plan</h1>
+          <h1 class="gym-workout__title">Weekly aesthetic training plan</h1>
 
-          <p class="gym-workout__style-13">
+          <p class="gym-workout__description">
             A machine and cable-based workout plan focused on looking fit fast: wider lats, rounder shoulders, stronger
             chest, arms, legs, and core.
           </p>
         </div>
 
-        <div class="gym-workout__style-14">
-          <div class="gym-workout__style-15">
-            <p class="gym-workout__style-16">Visible sessions</p>
+        <div class="gym-workout__summary-grid">
+          <mat-card class="gym-workout__summary-card gym-workout__summary-card--sessions">
+            <p class="gym-workout__summary-label gym-workout__summary-label--sessions">Visible sessions</p>
 
-            <p class="gym-workout__style-17">{{ visibleSessions().length }}</p>
-          </div>
+            <p class="gym-workout__summary-value">{{ visibleSessions().length }}</p>
+          </mat-card>
 
-          <div class="gym-workout__style-18">
-            <p class="gym-workout__style-19">Exercises</p>
+          <mat-card class="gym-workout__summary-card gym-workout__summary-card--exercises">
+            <p class="gym-workout__summary-label gym-workout__summary-label--exercises">Exercises</p>
 
-            <p class="gym-workout__style-20">{{ totalExercises() }}</p>
-          </div>
+            <p class="gym-workout__summary-value">{{ totalExercises() }}</p>
+          </mat-card>
         </div>
       </div>
-    </header>
+    </mat-card>
 
-    <div class="gym-workout__style-21">
+    <div class="gym-workout__filters">
       @for (filter of filters; track filter.id) {
         <app-shared-chip-button
           size="md"
@@ -59,22 +59,22 @@
       }
     </div>
 
-    <div class="gym-workout__style-22">
+    <div class="gym-workout__session-grid">
       @for (session of visibleSessions(); track session.id) {
-        <article class="group gym-workout__style-23">
-          <div class="gym-workout__style-24">
+        <mat-card class="group gym-workout__session-card">
+          <div class="gym-workout__session-header">
             <div>
-              <p class="gym-workout__style-25">{{ session.day }}</p>
+              <p class="gym-workout__session-day">{{ session.day }}</p>
 
-              <h2 class="gym-workout__style-26">{{ session.title }}</h2>
+              <h2 class="gym-workout__session-title">{{ session.title }}</h2>
             </div>
 
-            <span class="gym-workout__style-27">
+            <span class="gym-workout__duration">
               {{ session.duration }}
             </span>
           </div>
 
-          <div class="gym-workout__style-28">
+          <div class="gym-workout__session-tags">
             <app-shared-chip-button size="xs" variant="slate" [label]="session.focus" />
 
             <app-shared-chip-button
@@ -83,33 +83,31 @@
               [variant]="session.intensity === 'Hard' ? 'orange' : 'emerald'" />
           </div>
 
-          <ul class="gym-workout__style-29">
+          <div class="gym-workout__exercise-list">
             @for (exercise of session.exercises; track exercise) {
-              <li class="gym-workout__style-30">
-                <span class="gym-workout__style-31"></span>
-
+              <mat-card class="gym-workout__exercise-card">
                 <span>{{ exercise }}</span>
-              </li>
+              </mat-card>
             }
-          </ul>
-        </article>
+          </div>
+        </mat-card>
       } @empty {
-        <div class="gym-workout__style-32">No gym sessions found.</div>
+        <mat-card class="gym-workout__empty-state">No gym sessions found.</mat-card>
       }
     </div>
 
-    <section class="gym-workout__style-33">
-      <h2 class="gym-workout__style-34">Training rules</h2>
+    <mat-card class="gym-workout__rules-card">
+      <h2 class="gym-workout__rules-title">Training rules</h2>
 
-      <div class="gym-workout__style-35">
-        <div class="gym-workout__style-36">Warm up for 5–10 minutes before lifting.</div>
+      <div class="gym-workout__rules-grid">
+        <mat-card class="gym-workout__rule-card">Warm up for 5-10 minutes before lifting.</mat-card>
 
-        <div class="gym-workout__style-37">Use controlled reps and avoid swinging the weight.</div>
+        <mat-card class="gym-workout__rule-card">Use controlled reps and avoid swinging the weight.</mat-card>
 
-        <div class="gym-workout__style-38">Increase weight only when all reps feel clean.</div>
+        <mat-card class="gym-workout__rule-card">Increase weight only when all reps feel clean.</mat-card>
 
-        <div class="gym-workout__style-39">Rest 60–90 seconds for most exercises.</div>
+        <mat-card class="gym-workout__rule-card">Rest 60-90 seconds for most exercises.</mat-card>
       </div>
-    </section>
+    </mat-card>
   </div>
 </section>

@@ -1,4 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ThemeService } from '../../core/services/theme/theme.service';
@@ -9,7 +10,7 @@ import { TRAINING_FILTERS } from './data/training-filter.data';
 
 @Component({
   selector: 'app-gym-workout',
-  imports: [MatIconModule, MatTooltipModule, SharedChipButton],
+  imports: [MatCardModule, MatIconModule, MatTooltipModule, SharedChipButton],
   templateUrl: './gym-workout.html',
   styleUrl: './gym-workout.scss',
 })

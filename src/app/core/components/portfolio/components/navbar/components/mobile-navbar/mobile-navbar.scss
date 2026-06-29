@@ -141,5 +141,12 @@
 }
 
 .mobile-navbar__style-18 {
-  @apply size-[19px]! text-current! opacity-95 transition group-hover:opacity-100 [&_*]:fill-current!;
+  @apply size-[19px]! text-current! opacity-95 transition group-hover:opacity-100;
+}
+
+.mobile-navbar__style-18 svg,
+.mobile-navbar__style-18 ::ng-deep svg,
+.mobile-navbar__style-18 ::ng-deep svg * {
+  fill: currentColor !important;
+  color: currentColor !important;
 }

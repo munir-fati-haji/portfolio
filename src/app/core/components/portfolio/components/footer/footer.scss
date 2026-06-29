@@ -57,5 +57,12 @@
 }
 
 .footer__style-7 {
-  @apply size-[18px]! text-current! opacity-95 transition group-hover:opacity-100 [&_*]:fill-current!;
+  @apply size-[18px]! text-current! opacity-95 transition group-hover:opacity-100;
+}
+
+.footer__style-7 svg,
+.footer__style-7 ::ng-deep svg,
+.footer__style-7 ::ng-deep svg * {
+  fill: currentColor !important;
+  color: currentColor !important;
 }
