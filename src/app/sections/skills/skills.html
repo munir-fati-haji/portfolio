@@ -1,22 +1,22 @@
-<section id="skills" class="relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12">
-  <div class="pointer-events-none absolute inset-0">
-    <div class="absolute left-[-10rem] top-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl"></div>
-    <div class="absolute right-[-12rem] top-1/3 h-[32rem] w-[32rem] rounded-full bg-blue-600/10 blur-3xl"></div>
-    <div class="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl"></div>
+<section id="skills" class="skills__style-1">
+  <div class="skills__style-2">
+    <div class="skills__style-3"></div>
+    <div class="skills__style-4"></div>
+    <div class="skills__style-5"></div>
   </div>
 
-  <div class="relative mx-auto max-w-7xl">
-    <div class="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+  <div class="skills__style-6">
+    <div class="skills__style-7">
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-      <div class="grid gap-5 sm:grid-cols-2">
+      <div class="skills__style-8">
         @for (stat of stats; track stat.label) {
-          <div class="border-l border-cyan-300/30 pl-4">
-            <p class="text-2xl font-black tracking-tight text-cyan-300 sm:text-3xl">
+          <div class="skills__style-9">
+            <p class="skills__style-10">
               {{ stat.value }}
             </p>
 
-            <p class="mt-1 text-sm leading-6 text-slate-400">
+            <p class="skills__style-11">
               {{ stat.label }}
             </p>
           </div>
@@ -24,14 +24,14 @@
       </div>
     </div>
 
-    <div class="mt-12 flex flex-wrap gap-3">
+    <div class="skills__style-12">
       <app-shared-chip-button size="sm" variant="cyan" label="Advanced" />
       <app-shared-chip-button size="sm" variant="emerald" label="Strong" />
       <app-shared-chip-button size="sm" variant="amber" label="Practical" />
       <app-shared-chip-button size="sm" variant="slate" label="Basic" />
     </div>
 
-    <div class="mt-10 grid gap-8 lg:grid-cols-2">
+    <div class="skills__style-13">
       @for (category of categories; track category.title; let index = $index) {
         <app-skill-category-card [category]="category" [index]="index" />
       }

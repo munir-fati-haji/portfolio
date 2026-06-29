@@ -4,6 +4,7 @@ import { Component, input } from '@angular/core';
   selector: 'app-section-header',
   host: { class: 'block' },
   templateUrl: './section-header.html',
+  styleUrl: './section-header.scss',
 })
 export class SectionHeader {
   public readonly eyebrow = input.required<string>();

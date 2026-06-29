@@ -1,0 +1,39 @@
+@reference '../../../styles.css';
+
+.projects__style-1 {
+  @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
+}
+
+:host-context(.app-theme-light) .projects__style-1 {
+  background-color: var(--portfolio-bg) !important;
+
+  color: var(--portfolio-text) !important;
+}
+
+.projects__style-2 {
+  @apply pointer-events-none absolute inset-0;
+}
+
+.projects__style-3 {
+  @apply absolute left-[-10rem] top-20 h-[28rem] w-[28rem] rounded-full bg-cyan-300/10 blur-3xl;
+}
+
+:host-context(.app-theme-light) .projects__style-3 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+}
+
+.projects__style-4 {
+  @apply absolute bottom-0 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl;
+}
+
+.projects__style-5 {
+  @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-7xl flex-col justify-center;
+}
+
+.projects__style-6 {
+  @apply max-w-3xl;
+}
+
+.projects__style-7 {
+  @apply mt-12 grid gap-6 lg:grid-cols-2;
+}

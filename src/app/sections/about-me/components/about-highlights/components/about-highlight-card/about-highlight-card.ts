@@ -6,6 +6,7 @@ import { AboutHighlight } from '../../../../models/about-highlight.model';
   selector: 'app-about-highlight-card',
   imports: [MatIconModule],
   templateUrl: './about-highlight-card.html',
+  styleUrl: './about-highlight-card.scss',
 })
 export class AboutHighlightCard {
   public readonly highlight = input.required<AboutHighlight>();

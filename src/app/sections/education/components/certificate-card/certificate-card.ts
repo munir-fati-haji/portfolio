@@ -8,6 +8,7 @@ import { EducationCertificate } from '../../models/education-certificate.model';
   imports: [MatIconModule, SharedChipButton],
   host: { class: 'block' },
   templateUrl: './certificate-card.html',
+  styleUrl: './certificate-card.scss',
 })
 export class CertificateCard {
   public readonly certificate = input.required<EducationCertificate>();

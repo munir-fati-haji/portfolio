@@ -11,6 +11,7 @@ import { TRAINING_FILTERS } from './data/training-filter.data';
   selector: 'app-gym-workout',
   imports: [MatIconModule, MatTooltipModule, SharedChipButton],
   templateUrl: './gym-workout.html',
+  styleUrl: './gym-workout.scss',
 })
 export class GymWorkout {
   protected readonly themeService = inject(ThemeService);

@@ -8,6 +8,7 @@ import { ExperienceItem } from '../../models/experience-item.model';
   imports: [MatIconModule, SharedChipButton],
   host: { class: 'block' },
   templateUrl: './experience-card.html',
+  styleUrl: './experience-card.scss',
 })
 export class ExperienceCard {
   public readonly experience = input.required<ExperienceItem>();

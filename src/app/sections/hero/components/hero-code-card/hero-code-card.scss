@@ -1,0 +1,43 @@
+@reference '../../../../../styles.css';
+
+.hero-code-card__style-1 {
+  @apply min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#10172a] shadow-xl;
+}
+
+:host-context(.app-theme-light) .hero-code-card__style-1 {
+  border-color: var(--portfolio-border) !important;
+}
+
+.hero-code-card__style-2 {
+  @apply flex items-center gap-3 border-b border-white/10 bg-white/3 px-4 py-3 sm:px-6;
+}
+
+:host-context(.app-theme-light) .hero-code-card__style-2 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+}
+
+.hero-code-card__style-3 {
+  @apply h-3 w-3 rounded-full;
+}
+
+.hero-code-card__style-3--close {
+  @apply bg-red-400;
+}
+
+.hero-code-card__style-3--minimize {
+  @apply bg-yellow-400;
+}
+
+.hero-code-card__style-3--maximize {
+  @apply bg-green-400;
+}
+
+.hero-code-card__style-4 {
+  @apply p-4 sm:p-6;
+}
+
+.hero-code-card__style-5 {
+  @apply max-w-full overflow-x-auto rounded-xl text-xs leading-6 sm:text-sm sm:leading-7;
+}

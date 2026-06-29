@@ -7,6 +7,7 @@ import { ContactLink } from '../../models/contact-link.model';
   imports: [MatIconModule],
   host: { class: 'block' },
   templateUrl: './contact-link-card.html',
+  styleUrl: './contact-link-card.scss',
 })
 export class ContactLinkCard {
   public readonly link = input.required<ContactLink>();

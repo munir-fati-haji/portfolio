@@ -11,6 +11,7 @@ import { ABOUT_SKILLS } from './data/about-skills';
   selector: 'app-about-me',
   imports: [AboutIntro, AboutSkills, AboutHighlights, SectionContainer],
   templateUrl: './about-me.html',
+  styleUrl: './about-me.scss',
 })
 export class AboutMe {
   public readonly eyebrow = ABOUT_EYEBROW;

@@ -1,22 +1,19 @@
-<div class="mt-8 space-y-4">
+<div class="hero-skills__style-1">
   @for (group of groups(); track group.title) {
     <div>
-      <p class="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-slate-500">
+      <p class="hero-skills__style-2">
         {{ group.title }}
       </p>
 
-      <div class="flex flex-wrap gap-2.5">
+      <div class="hero-skills__style-3">
         @for (skill of group.skills; track skill.label) {
           <button
             type="button"
-            class="group inline-flex size-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-md transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_16px_40px_rgba(34,211,238,0.16)] focus:outline-none focus:ring-2 focus:ring-cyan-400/50 sm:size-12"
+            class="group hero-skills__style-4"
             matTooltipPosition="above"
             [matTooltip]="skill.label"
             [attr.aria-label]="skill.label">
-            <mat-icon
-              class="size-6! drop-shadow-[0_2px_8px_rgba(255,255,255,0.18)] transition duration-200 group-hover:scale-110"
-              aria-hidden="true"
-              [svgIcon]="skill.icon" />
+            <mat-icon class="hero-skills__style-5" aria-hidden="true" [svgIcon]="skill.icon" />
           </button>
         }
       </div>

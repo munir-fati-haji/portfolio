@@ -6,6 +6,7 @@ import { WINDOW_ACTIONS } from './data/window-actions';
   selector: 'app-hero-code-card',
   imports: [Highlight],
   templateUrl: './hero-code-card.html',
+  styleUrl: './hero-code-card.scss',
 })
 export class HeroCodeCard {
   public readonly code = input.required<string>();

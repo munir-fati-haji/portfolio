@@ -9,6 +9,7 @@ import { ContactLink } from './models/contact-link.model';
   selector: 'app-contact',
   imports: [ContactLinkCard, SectionHeader],
   templateUrl: './contact.html',
+  styleUrl: './contact.scss',
 })
 export class Contact {
   protected readonly eyebrow = CONTACT_EYEBROW;

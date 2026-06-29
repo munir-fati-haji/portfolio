@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-under-construction',
   imports: [MatIconModule],
   templateUrl: './under-construction.html',
+  styleUrl: './under-construction.scss',
 })
 export class UnderConstruction {
   public readonly sectionName = input.required<string>();

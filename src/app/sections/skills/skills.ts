@@ -10,6 +10,7 @@ import { SKILLS_DESCRIPTION, SKILLS_EYEBROW, SKILLS_TITLE } from './data/skills-
   selector: 'app-skills',
   imports: [SectionHeader, SharedChipButton, SkillCategoryCard],
   templateUrl: './skills.html',
+  styleUrl: './skills.scss',
 })
 export class Skills {
   public readonly eyebrow = SKILLS_EYEBROW;

@@ -1,0 +1,13 @@
+@reference '../../../styles.css';
+
+.about-me__style-1 {
+  @apply min-w-0;
+}
+
+.about-me__style-2 {
+  @apply mt-10;
+}
+
+.about-me__style-3 {
+  @apply inline-flex items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:bg-cyan-200;
+}

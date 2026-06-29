@@ -13,6 +13,7 @@ import { NAVBAR_LINKS } from './data/navbar-links';
   selector: 'app-navbar',
   imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule, MobileNavbar],
   templateUrl: './navbar.html',
+  styleUrl: './navbar.scss',
 })
 export class Navbar {
   protected readonly themeService = inject(ThemeService);

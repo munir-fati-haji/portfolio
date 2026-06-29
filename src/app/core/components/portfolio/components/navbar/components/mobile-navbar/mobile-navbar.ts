@@ -9,6 +9,7 @@ import { FOOTER_LINKS } from '../../../footer/data/footer-links';
   selector: 'app-mobile-navbar',
   imports: [MatButtonModule, MatIconModule],
   templateUrl: './mobile-navbar.html',
+  styleUrl: './mobile-navbar.scss',
 })
 export class MobileNavbar {
   public readonly brand = input.required<string>();

@@ -1,0 +1,51 @@
+@reference '../../../../../styles.css';
+
+.hero-intro__style-1 {
+  @apply max-w-2xl;
+}
+
+.hero-intro__style-2 {
+  @apply mb-5 text-sm font-bold uppercase tracking-[0.35em] text-cyan-400;
+}
+
+.hero-intro__style-3 {
+  @apply text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl;
+}
+
+.hero-intro__style-4 {
+  @apply text-cyan-400;
+}
+
+.hero-intro__style-5 {
+  @apply mt-5 text-2xl font-extrabold text-white sm:text-3xl;
+}
+
+:host-context(.app-theme-light) .hero-intro__style-5 {
+  color: var(--portfolio-text) !important;
+}
+
+.hero-intro__style-6 {
+  @apply mt-8 max-w-xl text-lg leading-8 text-slate-100;
+}
+
+:host-context(.app-theme-light) .hero-intro__style-6 {
+  color: var(--portfolio-text-muted) !important;
+}
+
+.hero-intro__style-7 {
+  @apply mt-10 flex flex-wrap gap-4;
+}
+
+.hero-intro__style-8 {
+  @apply h-12! rounded-full! bg-cyan-400! px-7! text-sm! font-bold! text-slate-950!;
+}
+
+.hero-intro__style-9 {
+  @apply h-12! rounded-full! border-white/20! px-7! text-sm! font-bold! text-white!;
+}
+
+:host-context(.app-theme-light) .hero-intro__style-9 {
+  border-color: var(--portfolio-border) !important;
+
+  color: var(--portfolio-text) !important;
+}

@@ -9,6 +9,7 @@ import { EXPERIENCE_METRICS } from './data/experience-metrics';
   selector: 'app-experience',
   imports: [ExperienceCard, SectionHeader],
   templateUrl: './experience.html',
+  styleUrl: './experience.scss',
 })
 export class Experience {
   public readonly eyebrow = EXPERIENCE_EYEBROW;

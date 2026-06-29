@@ -1,0 +1,145 @@
+@reference '../../../../../../../../styles.css';
+
+.mobile-navbar__style-1 {
+  @apply fixed inset-0 z-50 overflow-hidden xl:hidden;
+}
+
+.mobile-navbar__style-2 {
+  @apply absolute inset-0 bg-[#030712]/70 backdrop-blur-md;
+}
+
+:host-context(.app-theme-light) .mobile-navbar__style-2 {
+  background-color: rgba(15, 23, 42, 0.28) !important;
+}
+
+.mobile-navbar__style-3 {
+  @apply absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col overflow-hidden rounded-l-3xl border-l p-4 shadow-2xl backdrop-blur-2xl;
+}
+
+.mobile-navbar__style-3--dark {
+  @apply border-white/10 bg-[#070b1a]/90 text-white shadow-black/40;
+}
+
+.mobile-navbar__style-3--light {
+  @apply border-slate-200 bg-slate-50/95 text-slate-950 shadow-slate-400/30;
+}
+
+.mobile-navbar__style-4 {
+  @apply pointer-events-none absolute -right-14 top-10 h-36 w-36 rounded-full bg-cyan-300/15 blur-3xl;
+}
+
+:host-context(.app-theme-light) .mobile-navbar__style-4 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+}
+
+.mobile-navbar__style-5 {
+  @apply pointer-events-none absolute -bottom-10 left-8 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl;
+}
+
+.mobile-navbar__style-6 {
+  @apply relative flex items-center justify-between gap-3;
+}
+
+.mobile-navbar__style-7 {
+  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300;
+}
+
+.mobile-navbar__style-7--dark {
+  @apply text-white hover:text-cyan-200;
+}
+
+.mobile-navbar__style-7--light {
+  @apply text-slate-950 hover:text-cyan-700;
+}
+
+.mobile-navbar__style-8 {
+  @apply h-10! w-10! rounded-full! border transition;
+}
+
+.mobile-navbar__style-8--dark {
+  @apply border-cyan-300/20! bg-cyan-300/10! text-cyan-200! hover:bg-cyan-300/15!;
+}
+
+.mobile-navbar__style-8--light {
+  @apply border-cyan-600/20! bg-cyan-50! text-cyan-700! hover:bg-cyan-100!;
+}
+
+.mobile-navbar__style-9 {
+  @apply relative mt-8 flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pb-4;
+}
+
+.mobile-navbar__style-10 {
+  @apply h-12! justify-start! rounded-2xl! border px-4! text-sm! font-semibold! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+}
+
+.mobile-navbar__style-10--dark {
+  @apply border-white/10! bg-white/[0.045]! text-slate-200! hover:border-cyan-300/20! hover:bg-cyan-300/10! hover:text-cyan-100!;
+}
+
+.mobile-navbar__style-10--light {
+  @apply border-slate-200! bg-white/80! text-slate-700! hover:border-cyan-500/30! hover:bg-cyan-50! hover:text-cyan-700!;
+}
+
+.mobile-navbar__style-11 {
+  @apply mr-3! text-[1.25rem]! text-cyan-300!;
+}
+
+:host-context(.app-theme-light) .mobile-navbar__style-11 {
+  color: #0e7490 !important;
+}
+
+.mobile-navbar__style-12 {
+  @apply relative mt-auto border-t border-white/10 pt-4;
+}
+
+:host-context(.app-theme-light) .mobile-navbar__style-12 {
+  border-color: var(--portfolio-border) !important;
+}
+
+.mobile-navbar__style-13 {
+  @apply mb-4 flex h-12 w-full items-center justify-between rounded-2xl border px-4 text-left text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+}
+
+.mobile-navbar__style-13--dark {
+  @apply border-white/20 bg-white/90 text-slate-950 hover:bg-white;
+}
+
+.mobile-navbar__style-13--light {
+  @apply border-slate-950/15 bg-slate-950 text-white hover:bg-slate-800;
+}
+
+.mobile-navbar__style-14 {
+  @apply text-cyan-300!;
+}
+
+:host-context(.app-theme-light) .mobile-navbar__style-14 {
+  color: #0e7490 !important;
+}
+
+.mobile-navbar__style-15 {
+  @apply px-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300;
+}
+
+:host-context(.app-theme-light) .mobile-navbar__style-15 {
+  color: #0e7490 !important;
+}
+
+.mobile-navbar__style-16 {
+  @apply mt-3 flex flex-wrap items-center gap-2;
+}
+
+.mobile-navbar__style-17 {
+  @apply inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition hover:shadow-[0_0_22px_rgba(34,211,238,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
+}
+
+.mobile-navbar__style-17--dark {
+  @apply border-white/15 bg-white/10 text-cyan-100 shadow-cyan-950/25 hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white;
+}
+
+.mobile-navbar__style-17--light {
+  @apply border-slate-200 bg-white text-cyan-700 shadow-slate-300/40 hover:border-cyan-500/30 hover:bg-cyan-50 hover:text-cyan-800;
+}
+
+.mobile-navbar__style-18 {
+  @apply size-[19px]! text-current! opacity-95 transition group-hover:opacity-100 [&_*]:fill-current!;
+}

@@ -7,6 +7,7 @@ import { ProjectItem } from '../../models/project-item.model';
   imports: [SharedChipButton],
   host: { class: 'block' },
   templateUrl: './project-card.html',
+  styleUrl: './project-card.scss',
 })
 export class ProjectCard {
   public readonly project = input.required<ProjectItem>();

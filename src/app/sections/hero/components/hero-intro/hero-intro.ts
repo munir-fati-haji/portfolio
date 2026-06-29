@@ -8,6 +8,7 @@ import { HeroSkillGroup } from './models/hero-skill-group';
   selector: 'app-hero-intro',
   imports: [MatButtonModule, MatIconModule, HeroSkills],
   templateUrl: './hero-intro.html',
+  styleUrl: './hero-intro.scss',
 })
 export class HeroIntro {
   public readonly name = input.required<string>();

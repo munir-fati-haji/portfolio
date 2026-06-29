@@ -1,0 +1,25 @@
+@reference '../../../../../styles.css';
+
+.about-intro__style-1 {
+  @apply mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300;
+}
+
+:host-context(.app-theme-light) .about-intro__style-1 {
+  color: #0e7490 !important;
+}
+
+.about-intro__style-2 {
+  @apply max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl;
+}
+
+:host-context(.app-theme-light) .about-intro__style-2 {
+  color: var(--portfolio-text) !important;
+}
+
+.about-intro__style-3 {
+  @apply mt-6 max-w-2xl space-y-5 text-base leading-8 text-slate-300 sm:text-lg;
+}
+
+:host-context(.app-theme-light) .about-intro__style-3 {
+  color: var(--portfolio-text-muted) !important;
+}

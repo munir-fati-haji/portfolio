@@ -1,0 +1,99 @@
+@reference '../../../../styles.css';
+
+.under-construction__style-1 {
+  @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
+}
+
+:host-context(.app-theme-light) .under-construction__style-1 {
+  background-color: var(--portfolio-bg) !important;
+
+  color: var(--portfolio-text) !important;
+}
+
+.under-construction__style-2 {
+  @apply pointer-events-none absolute inset-0;
+}
+
+.under-construction__style-3 {
+  @apply absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl;
+}
+
+:host-context(.app-theme-light) .under-construction__style-3 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+}
+
+.under-construction__style-4 {
+  @apply absolute bottom-0 right-[-10rem] h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl;
+}
+
+.under-construction__style-5 {
+  @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-5xl items-center justify-center;
+}
+
+.under-construction__style-6 {
+  @apply relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-8 text-center shadow-2xl shadow-black/25 backdrop-blur sm:p-10 lg:p-12;
+}
+
+:host-context(.app-theme-light) .under-construction__style-6 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+
+  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+}
+
+.under-construction__style-7 {
+  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+}
+
+.under-construction__style-8 {
+  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block;
+}
+
+:host-context(.app-theme-light) .under-construction__style-8 {
+  color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.under-construction__style-9 {
+  @apply relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
+}
+
+:host-context(.app-theme-light) .under-construction__style-9 {
+  border-color: rgba(8, 145, 178, 0.25) !important;
+
+  background-color: rgba(8, 145, 178, 0.1) !important;
+
+  color: #0e7490 !important;
+
+  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+}
+
+.under-construction__style-10 {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  font-size: 40px !important;
+}
+
+.under-construction__style-11 {
+  @apply relative z-10 mt-8 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300;
+}
+
+:host-context(.app-theme-light) .under-construction__style-11 {
+  color: #0e7490 !important;
+}
+
+.under-construction__style-12 {
+  @apply relative z-10 mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl;
+}
+
+:host-context(.app-theme-light) .under-construction__style-12 {
+  color: var(--portfolio-text) !important;
+}
+
+.under-construction__style-13 {
+  @apply relative z-10 mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg;
+}
+
+:host-context(.app-theme-light) .under-construction__style-13 {
+  color: var(--portfolio-text-muted) !important;
+}

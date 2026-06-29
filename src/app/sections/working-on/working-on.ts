@@ -7,6 +7,7 @@ import { WORKING_ON_DESCRIPTION, WORKING_ON_EYEBROW, WORKING_ON_TITLE } from './
   selector: 'app-working-on',
   imports: [SectionHeader],
   templateUrl: './working-on.html',
+  styleUrl: './working-on.scss',
 })
 export class WorkingOn {
   protected readonly eyebrow = WORKING_ON_EYEBROW;

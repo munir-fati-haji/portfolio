@@ -1,0 +1,49 @@
+@reference '../../../../../styles.css';
+
+.contact-link-card__style-1 {
+  @apply flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-cyan-300/25 hover:bg-cyan-300/10;
+}
+
+:host-context(.app-theme-light) .contact-link-card__style-1 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+}
+
+.contact-link-card__style-2 {
+  @apply min-w-0 flex-1 no-underline;
+}
+
+.contact-link-card__style-3 {
+  @apply text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300;
+}
+
+:host-context(.app-theme-light) .contact-link-card__style-3 {
+  color: #0e7490 !important;
+}
+
+.contact-link-card__style-4 {
+  @apply mt-2 break-words text-base font-semibold text-slate-100 transition group-hover:text-cyan-100;
+}
+
+:host-context(.app-theme-light) .contact-link-card__style-4 {
+  color: var(--portfolio-text-muted) !important;
+}
+
+.contact-link-card__style-5 {
+  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-cyan-100 shadow-lg shadow-cyan-950/20 transition hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
+}
+
+:host-context(.app-theme-light) .contact-link-card__style-5 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+
+  color: #0e7490 !important;
+
+  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+}
+
+.contact-link-card__style-6 {
+  @apply text-[20px]!;
+}

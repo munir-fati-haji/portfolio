@@ -1,0 +1,91 @@
+@reference '../../../../styles.css';
+
+.chip-button {
+  @apply inline-flex max-w-full items-center justify-center gap-2 rounded-full border shadow-sm backdrop-blur transition;
+}
+
+.chip-button--xs {
+  @apply px-3 py-1 text-xs;
+}
+
+.chip-button--sm {
+  @apply px-3 py-1.5 text-xs font-semibold;
+}
+
+.chip-button--md {
+  @apply px-5 py-2 text-sm font-medium;
+}
+
+.chip-button--selectable {
+  @apply shrink-0 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+}
+
+.chip-button--disabled {
+  @apply cursor-not-allowed opacity-55;
+}
+
+.chip-button--active {
+  @apply border-cyan-600 bg-cyan-600 text-white shadow-lg shadow-cyan-500/25 hover:border-cyan-500 hover:bg-cyan-500 dark:border-cyan-300 dark:bg-cyan-300 dark:text-slate-950 dark:shadow-cyan-300/25 dark:hover:bg-cyan-200;
+}
+
+.chip-button--amber {
+  @apply border-amber-300/70 bg-amber-50 text-amber-800 shadow-amber-100/70 hover:border-amber-400 hover:bg-amber-100 hover:text-amber-900 dark:border-amber-300/35 dark:bg-amber-300/12 dark:text-amber-100 dark:shadow-amber-950/30 dark:hover:border-amber-300/55 dark:hover:bg-amber-300/18 dark:hover:text-white;
+}
+
+.chip-button--cyan {
+  @apply border-cyan-300/60 bg-cyan-50 text-cyan-800 shadow-cyan-100/70 hover:border-cyan-500/60 hover:bg-cyan-100 hover:text-cyan-900 dark:border-cyan-300/25 dark:bg-cyan-300/12 dark:text-cyan-100 dark:shadow-cyan-950/30 dark:hover:border-cyan-300/50 dark:hover:bg-cyan-300/18 dark:hover:text-white;
+}
+
+.chip-button--emerald {
+  @apply border-emerald-300/65 bg-emerald-50 text-emerald-800 shadow-emerald-100/70 hover:border-emerald-500/60 hover:bg-emerald-100 hover:text-emerald-900 dark:border-emerald-300/35 dark:bg-emerald-300/12 dark:text-emerald-100 dark:shadow-emerald-950/30 dark:hover:border-emerald-300/50 dark:hover:bg-emerald-300/18 dark:hover:text-white;
+}
+
+.chip-button--orange {
+  @apply border-orange-300/75 bg-orange-50 text-orange-800 shadow-orange-100/70 hover:border-orange-500/60 hover:bg-orange-100 hover:text-orange-900 dark:border-orange-300/35 dark:bg-orange-300/12 dark:text-orange-200 dark:shadow-orange-950/30 dark:hover:border-orange-300/55 dark:hover:bg-orange-300/18 dark:hover:text-white;
+}
+
+.chip-button--slate {
+  @apply border-slate-300/70 bg-white text-slate-700 shadow-slate-200/70 hover:border-slate-400 hover:bg-slate-50 hover:text-slate-950 dark:border-white/12 dark:bg-white/[0.07] dark:text-slate-300 dark:shadow-black/20 dark:hover:border-slate-300/30 dark:hover:bg-white/12 dark:hover:text-white;
+}
+
+.chip-button--selectable-cyan {
+  @apply border-slate-300 bg-white/90 text-slate-700 shadow-slate-200/60 hover:border-cyan-500/60 hover:bg-cyan-50 hover:text-cyan-800 dark:border-white/12 dark:bg-white/[0.07] dark:text-slate-300 dark:shadow-black/20 dark:hover:border-cyan-300/35 dark:hover:bg-cyan-300/12 dark:hover:text-cyan-100;
+}
+
+.chip-button__icon {
+  width: 1rem !important;
+  height: 1rem !important;
+  font-size: 1rem !important;
+}
+
+.chip-button__label {
+  @apply truncate;
+}
+
+.chip-button__badge {
+  @apply ml-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em];
+}
+
+.chip-button__badge--amber {
+  @apply bg-amber-200 text-amber-900 dark:bg-amber-300/18 dark:text-amber-100;
+}
+
+.chip-button__badge--cyan {
+  @apply bg-cyan-200 text-cyan-950 dark:bg-cyan-300/18 dark:text-cyan-100;
+}
+
+.chip-button__badge--emerald {
+  @apply bg-emerald-200 text-emerald-950 dark:bg-emerald-300/18 dark:text-emerald-100;
+}
+
+.chip-button__badge--orange {
+  @apply bg-orange-200 text-orange-950 dark:bg-orange-300/18 dark:text-orange-200;
+}
+
+.chip-button__badge--slate {
+  @apply bg-slate-200 text-slate-800 dark:bg-white/12 dark:text-slate-300;
+}
+
+.chip-button__meta {
+  @apply text-[10px] font-semibold text-slate-500 dark:text-white/55;
+}

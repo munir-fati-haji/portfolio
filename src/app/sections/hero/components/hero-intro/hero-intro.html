@@ -1,36 +1,26 @@
-<div class="max-w-2xl">
-  <p class="mb-5 text-sm font-bold uppercase tracking-[0.35em] text-cyan-400">Portfolio</p>
+<div class="hero-intro__style-1">
+  <p class="hero-intro__style-2">Portfolio</p>
 
-  <h1 class="text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+  <h1 class="hero-intro__style-3">
     Hi, I'm
-    <span class="text-cyan-400">
+    <span class="hero-intro__style-4">
       {{ name() }}
     </span>
   </h1>
 
-  <h2 class="mt-5 text-2xl font-extrabold text-white sm:text-3xl">
+  <h2 class="hero-intro__style-5">
     {{ role() }}
   </h2>
 
-  <p class="mt-8 max-w-xl text-lg leading-8 text-slate-100">
+  <p class="hero-intro__style-6">
     {{ description() }}
   </p>
 
   <app-hero-skills [groups]="skills()" />
 
-  <div class="mt-10 flex flex-wrap gap-4">
-    <a
-      mat-flat-button
-      href="#projects"
-      class="h-12! rounded-full! bg-cyan-400! px-7! text-sm! font-bold! text-slate-950!">
-      View Projects
-    </a>
+  <div class="hero-intro__style-7">
+    <a mat-flat-button href="#projects" class="hero-intro__style-8"> View Projects </a>
 
-    <a
-      mat-stroked-button
-      href="#contact"
-      class="app-secondary-action h-12! rounded-full! border-white/20! px-7! text-sm! font-bold! text-white!">
-      Contact Me
-    </a>
+    <a mat-stroked-button href="#contact" class="app-secondary-action hero-intro__style-9"> Contact Me </a>
   </div>
 </div>

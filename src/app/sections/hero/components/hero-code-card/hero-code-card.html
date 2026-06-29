@@ -1,12 +1,17 @@
-<div class="app-code-card min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#10172a] shadow-xl">
-  <div class="app-code-card-header flex items-center gap-3 border-b border-white/10 bg-white/3 px-4 py-3 sm:px-6">
+<div class="app-code-card hero-code-card__style-1">
+  <div class="app-code-card-header hero-code-card__style-2">
     @for (action of windowActions; track action.label) {
-      <span class="h-3 w-3 rounded-full" [class]="action.className" [attr.aria-label]="action.label"> </span>
+      <span
+        class="hero-code-card__style-3"
+        [class.hero-code-card__style-3--close]="action.tone === 'close'"
+        [class.hero-code-card__style-3--minimize]="action.tone === 'minimize'"
+        [class.hero-code-card__style-3--maximize]="action.tone === 'maximize'"
+        [attr.aria-label]="action.label">
+      </span>
     }
   </div>
 
-  <div class="p-4 sm:p-6">
-    <pre
-      class="app-code-block max-w-full overflow-x-auto rounded-xl text-xs leading-6 sm:text-sm sm:leading-7"><code language="typescript" [highlight]="code()"></code></pre>
+  <div class="hero-code-card__style-4">
+    <pre class="app-code-block hero-code-card__style-5"><code language="typescript" [highlight]="code()"></code></pre>
   </div>
 </div>

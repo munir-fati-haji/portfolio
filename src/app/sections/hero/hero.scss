@@ -1,0 +1,15 @@
+@reference '../../../styles.css';
+
+.hero__style-1 {
+  @apply min-w-0;
+}
+
+.hero__style-2 {
+  @apply min-w-0 w-full rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur sm:rounded-4xl sm:p-5 xl:p-6;
+}
+
+:host-context(.app-theme-light) .hero__style-2 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+}

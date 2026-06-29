@@ -8,6 +8,7 @@ import { EducationItem } from '../../models/education-item.model';
   imports: [MatIconModule, SharedChipButton],
   host: { class: 'block' },
   templateUrl: './education-card.html',
+  styleUrl: './education-card.scss',
 })
 export class EducationCard {
   public readonly education = input.required<EducationItem>();

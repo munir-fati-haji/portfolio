@@ -12,6 +12,7 @@ import { HERO_STATS } from './data/hero-stats';
   selector: 'app-hero',
   imports: [HeroIntro, HeroCodeCard, HeroStats, SectionContainer],
   templateUrl: './hero.html',
+  styleUrl: './hero.scss',
 })
 export class Hero {
   protected readonly name = HERO_NAME;

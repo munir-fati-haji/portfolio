@@ -1,53 +1,46 @@
-<article
-  class="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065] sm:p-7 lg:p-8">
-  <div class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"></div>
+<article class="group experience-card__style-1">
+  <div class="experience-card__style-2"></div>
 
-  <span
-    class="pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block lg:bottom-6 lg:right-8">
-    0{{ index() + 1 }}
-  </span>
+  <span class="experience-card__style-3"> 0{{ index() + 1 }} </span>
 
-  <div class="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-    <div class="min-w-0">
-      <div class="flex items-start gap-4">
-        <div
-          class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur">
+  <div class="experience-card__style-4">
+    <div class="experience-card__style-5">
+      <div class="experience-card__style-6">
+        <div class="experience-card__style-7">
           <mat-icon>{{ experience().icon }}</mat-icon>
         </div>
 
-        <div class="min-w-0">
-          <h3 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+        <div class="experience-card__style-8">
+          <h3 class="experience-card__style-9">
             {{ experience().role }}
           </h3>
 
-          <p class="mt-2 text-sm font-medium text-slate-400">
-            {{ experience().company }} - {{ experience().location }}
-          </p>
+          <p class="experience-card__style-10">{{ experience().company }} - {{ experience().location }}</p>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-wrap gap-2 lg:justify-end">
+    <div class="experience-card__style-11">
       <app-shared-chip-button size="xs" variant="cyan" [label]="experience().type" />
 
       <app-shared-chip-button size="xs" variant="slate" [label]="experience().period" />
     </div>
   </div>
 
-  <p class="relative z-10 mt-7 max-w-5xl text-sm leading-7 text-slate-300 sm:text-base">
+  <p class="experience-card__style-12">
     {{ experience().summary }}
   </p>
 
-  <div class="relative z-10 mt-6 flex max-w-5xl flex-wrap gap-2">
+  <div class="experience-card__style-13">
     @for (skill of experience().skills; track skill.name) {
       <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
     }
   </div>
 
-  <ul class="relative z-10 mt-8 max-w-5xl space-y-3">
+  <ul class="experience-card__style-14">
     @for (highlight of experience().highlights; track highlight) {
-      <li class="flex gap-3 text-sm leading-6 text-slate-400">
-        <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)]"></span>
+      <li class="experience-card__style-15">
+        <span class="experience-card__style-16"></span>
         <span>{{ highlight }}</span>
       </li>
     }

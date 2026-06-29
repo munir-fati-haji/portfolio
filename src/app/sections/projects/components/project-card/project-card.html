@@ -1,28 +1,26 @@
-<article
-  class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/25 hover:bg-white/[0.065] sm:p-8">
-  <div class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"></div>
+<article class="group project-card__style-1">
+  <div class="project-card__style-2"></div>
 
-  <div class="flex flex-wrap items-start justify-between gap-4">
+  <div class="project-card__style-3">
     <div>
-      <p class="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">{{ project().type }}</p>
-      <h3 class="mt-3 text-2xl font-bold text-white">{{ project().title }}</h3>
+      <p class="project-card__style-4">{{ project().type }}</p>
+      <h3 class="project-card__style-5">{{ project().title }}</h3>
     </div>
     <app-shared-chip-button size="xs" variant="cyan" label="Featured" />
   </div>
 
-  <p class="mt-5 text-sm leading-7 text-slate-300 sm:text-base">{{ project().description }}</p>
+  <p class="project-card__style-6">{{ project().description }}</p>
 
-  <ul class="mt-6 space-y-3">
+  <ul class="project-card__style-7">
     @for (item of project().impact; track item) {
-      <li class="flex gap-3 text-sm leading-6 text-slate-300">
-        <span
-          class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,0.65)]"></span>
+      <li class="project-card__style-8">
+        <span class="project-card__style-9"></span>
         <span>{{ item }}</span>
       </li>
     }
   </ul>
 
-  <div class="mt-7 flex flex-wrap gap-2">
+  <div class="project-card__style-10">
     @for (item of project().stack; track item) {
       <app-shared-chip-button size="xs" variant="slate" [label]="item" />
     }

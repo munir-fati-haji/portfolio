@@ -8,6 +8,7 @@ import { SkillCategory } from '../../models/skill-category.model';
   imports: [MatIconModule, SharedChipButton],
   host: { class: 'block' },
   templateUrl: './skill-category-card.html',
+  styleUrl: './skill-category-card.scss',
 })
 export class SkillCategoryCard {
   public readonly category = input.required<SkillCategory>();

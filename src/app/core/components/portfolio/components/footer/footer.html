@@ -1,40 +1,30 @@
 <mat-toolbar
-  class="app-footer relative hidden! h-auto! min-h-0! overflow-hidden border-t px-4! py-3! shadow-[0_-12px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl xl:flex!"
-  [class]="
-    themeService.isDark()
-      ? 'border-white/10 bg-[#070b1a]! text-slate-400!'
-      : 'border-slate-200/80 bg-slate-50/95! text-slate-600!'
-  ">
-  <div
-    class="pointer-events-none absolute left-1/2 top-0 h-16 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-3xl"></div>
+  class="app-footer footer__style-1"
+  [class.footer__style-1--dark]="themeService.isDark()"
+  [class.footer__style-1--light]="!themeService.isDark()">
+  <div class="footer__style-2"></div>
 
-  <div
-    class="relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 text-center text-xs leading-normal sm:flex-row sm:text-left">
-    <span class="font-medium text-slate-400">
+  <div class="footer__style-3">
+    <span class="footer__style-4">
       {{ copyright }}
     </span>
 
     <nav
       aria-label="Footer links"
-      class="app-footer-links flex items-center justify-center gap-1.5 rounded-full border p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_10px_24px_rgba(0,0,0,0.22)] backdrop-blur-xl"
-      [class]="themeService.isDark() ? 'border-white/10 bg-white/[0.06]' : 'border-slate-200 bg-white/80'">
+      class="app-footer-links footer__style-5"
+      [class.footer__style-5--dark]="themeService.isDark()"
+      [class.footer__style-5--light]="!themeService.isDark()">
       @for (link of links; track link.label) {
         <a
-          class="app-footer-icon group inline-flex h-9 w-9 items-center justify-center rounded-full border shadow-sm transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a]"
-          [class]="
-            themeService.isDark()
-              ? 'border-white/10 bg-white/[0.08] text-cyan-100 hover:border-cyan-300/50 hover:bg-cyan-300/20 hover:text-white'
-              : 'border-slate-200 bg-white text-cyan-700 hover:border-cyan-500/40 hover:bg-cyan-50 hover:text-cyan-800'
-          "
+          class="app-footer-icon group footer__style-6"
+          [class.footer__style-6--dark]="themeService.isDark()"
+          [class.footer__style-6--light]="!themeService.isDark()"
           [href]="link.href"
           [matTooltip]="link.label"
           [attr.aria-label]="link.label"
           [attr.target]="link.external ? '_blank' : null"
           [attr.rel]="link.external ? 'noreferrer' : null">
-          <mat-icon
-            class="size-[18px]! text-current! opacity-95 transition group-hover:opacity-100 [&_*]:fill-current!"
-            aria-hidden="true"
-            [svgIcon]="link.icon" />
+          <mat-icon class="footer__style-7" aria-hidden="true" [svgIcon]="link.icon" />
         </a>
       }
     </nav>

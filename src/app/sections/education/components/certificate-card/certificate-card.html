@@ -1,25 +1,23 @@
-<article
-  class="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-5 shadow-xl shadow-black/20 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.055] sm:p-6">
-  <div class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"></div>
+<article class="group certificate-card__style-1">
+  <div class="certificate-card__style-2"></div>
 
-  <div class="relative z-10 flex items-start gap-4">
-    <div
-      class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur">
+  <div class="certificate-card__style-3">
+    <div class="certificate-card__style-4">
       <mat-icon>{{ certificate().icon }}</mat-icon>
     </div>
 
-    <div class="min-w-0">
-      <h3 class="text-lg font-bold text-white">
+    <div class="certificate-card__style-5">
+      <h3 class="certificate-card__style-6">
         {{ certificate().school }}
       </h3>
 
-      <p class="mt-1 text-sm leading-6 text-slate-300">
+      <p class="certificate-card__style-7">
         {{ certificate().title }}
       </p>
 
-      <p class="mt-1 text-sm text-slate-500">{{ certificate().location }} - {{ certificate().period }}</p>
+      <p class="certificate-card__style-8">{{ certificate().location }} - {{ certificate().period }}</p>
 
-      <div class="mt-4 flex flex-wrap gap-2">
+      <div class="certificate-card__style-9">
         @for (skill of certificate().skills; track skill) {
           <app-shared-chip-button size="xs" variant="slate" [label]="skill" />
         }

@@ -4,6 +4,7 @@ import { Component, input } from '@angular/core';
   selector: 'app-about-intro',
   imports: [],
   templateUrl: './about-intro.html',
+  styleUrl: './about-intro.scss',
 })
 export class AboutIntro {
   public readonly eyebrow = input.required<string>();

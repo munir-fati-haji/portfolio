@@ -1,0 +1,67 @@
+@reference '../../../../../styles.css';
+
+.skill-category-card__style-1 {
+  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065] sm:p-7;
+}
+
+:host-context(.app-theme-light) .skill-category-card__style-1 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+
+  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+}
+
+.skill-category-card__style-2 {
+  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+}
+
+.skill-category-card__style-3 {
+  @apply pointer-events-none absolute bottom-4 right-6 hidden text-7xl font-black leading-none text-white/[0.04] sm:block;
+}
+
+:host-context(.app-theme-light) .skill-category-card__style-3 {
+  color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.skill-category-card__style-4 {
+  @apply relative z-10 flex items-start gap-4;
+}
+
+.skill-category-card__style-5 {
+  @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
+}
+
+:host-context(.app-theme-light) .skill-category-card__style-5 {
+  border-color: rgba(8, 145, 178, 0.25) !important;
+
+  background-color: rgba(8, 145, 178, 0.1) !important;
+
+  color: #0e7490 !important;
+
+  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+}
+
+.skill-category-card__style-6 {
+  @apply min-w-0;
+}
+
+.skill-category-card__style-7 {
+  @apply text-2xl font-bold tracking-tight text-white;
+}
+
+:host-context(.app-theme-light) .skill-category-card__style-7 {
+  color: var(--portfolio-text) !important;
+}
+
+.skill-category-card__style-8 {
+  @apply mt-2 text-sm leading-6 text-slate-400;
+}
+
+:host-context(.app-theme-light) .skill-category-card__style-8 {
+  color: var(--portfolio-text-soft) !important;
+}
+
+.skill-category-card__style-9 {
+  @apply relative z-10 mt-7 flex flex-wrap gap-2;
+}

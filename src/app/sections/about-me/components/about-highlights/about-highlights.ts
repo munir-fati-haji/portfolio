@@ -6,6 +6,7 @@ import { AboutHighlightCard } from './components/about-highlight-card/about-high
   selector: 'app-about-highlights',
   imports: [AboutHighlightCard],
   templateUrl: './about-highlights.html',
+  styleUrl: './about-highlights.scss',
 })
 export class AboutHighlights {
   public readonly highlights = input.required<AboutHighlight[]>();

@@ -1,0 +1,103 @@
+@reference '../../../../../styles.css';
+
+.experience-card__style-1 {
+  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065] sm:p-7 lg:p-8;
+}
+
+:host-context(.app-theme-light) .experience-card__style-1 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+
+  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+}
+
+.experience-card__style-2 {
+  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+}
+
+.experience-card__style-3 {
+  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block lg:bottom-6 lg:right-8;
+}
+
+:host-context(.app-theme-light) .experience-card__style-3 {
+  color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.experience-card__style-4 {
+  @apply relative z-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between;
+}
+
+.experience-card__style-5 {
+  @apply min-w-0;
+}
+
+.experience-card__style-6 {
+  @apply flex items-start gap-4;
+}
+
+.experience-card__style-7 {
+  @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
+}
+
+:host-context(.app-theme-light) .experience-card__style-7 {
+  border-color: rgba(8, 145, 178, 0.25) !important;
+
+  background-color: rgba(8, 145, 178, 0.1) !important;
+
+  color: #0e7490 !important;
+
+  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+}
+
+.experience-card__style-8 {
+  @apply min-w-0;
+}
+
+.experience-card__style-9 {
+  @apply text-2xl font-bold tracking-tight text-white sm:text-3xl;
+}
+
+:host-context(.app-theme-light) .experience-card__style-9 {
+  color: var(--portfolio-text) !important;
+}
+
+.experience-card__style-10 {
+  @apply mt-2 text-sm font-medium text-slate-400;
+}
+
+:host-context(.app-theme-light) .experience-card__style-10 {
+  color: var(--portfolio-text-soft) !important;
+}
+
+.experience-card__style-11 {
+  @apply flex flex-wrap gap-2 lg:justify-end;
+}
+
+.experience-card__style-12 {
+  @apply relative z-10 mt-7 max-w-5xl text-sm leading-7 text-slate-300 sm:text-base;
+}
+
+:host-context(.app-theme-light) .experience-card__style-12 {
+  color: var(--portfolio-text-muted) !important;
+}
+
+.experience-card__style-13 {
+  @apply relative z-10 mt-6 flex max-w-5xl flex-wrap gap-2;
+}
+
+.experience-card__style-14 {
+  @apply relative z-10 mt-8 max-w-5xl space-y-3;
+}
+
+.experience-card__style-15 {
+  @apply flex gap-3 text-sm leading-6 text-slate-400;
+}
+
+:host-context(.app-theme-light) .experience-card__style-15 {
+  color: var(--portfolio-text-soft) !important;
+}
+
+.experience-card__style-16 {
+  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)];
+}

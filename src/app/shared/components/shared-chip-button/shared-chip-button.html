@@ -1,33 +1,33 @@
 @if (selectable()) {
   <button mat-button type="button" [class]="chipClasses()" [disabled]="disabled()" (click)="select()">
     @if (icon()) {
-      <mat-icon class="!h-4 !w-4 !text-base" aria-hidden="true">{{ icon() }}</mat-icon>
+      <mat-icon class="chip-button__icon" aria-hidden="true">{{ icon() }}</mat-icon>
     }
 
-    <span class="truncate">{{ label() }}</span>
+    <span class="chip-button__label">{{ label() }}</span>
 
     @if (badgeLabel()) {
       <span [class]="badgeClasses()">{{ badgeLabel() }}</span>
     }
 
     @if (metaLabel()) {
-      <span [class]="metaClasses">{{ metaLabel() }}</span>
+      <span class="chip-button__meta">{{ metaLabel() }}</span>
     }
   </button>
 } @else {
   <span [class]="chipClasses()">
     @if (icon()) {
-      <mat-icon class="!h-4 !w-4 !text-base" aria-hidden="true">{{ icon() }}</mat-icon>
+      <mat-icon class="chip-button__icon" aria-hidden="true">{{ icon() }}</mat-icon>
     }
 
-    <span class="truncate">{{ label() }}</span>
+    <span class="chip-button__label">{{ label() }}</span>
 
     @if (badgeLabel()) {
       <span [class]="badgeClasses()">{{ badgeLabel() }}</span>
     }
 
     @if (metaLabel()) {
-      <span [class]="metaClasses">{{ metaLabel() }}</span>
+      <span class="chip-button__meta">{{ metaLabel() }}</span>
     }
   </span>
 }

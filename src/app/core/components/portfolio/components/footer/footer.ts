@@ -11,6 +11,7 @@ import { FOOTER_LINKS } from './data/footer-links';
   selector: 'app-footer',
   imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './footer.html',
+  styleUrl: './footer.scss',
 })
 export class Footer {
   protected readonly themeService = inject(ThemeService);

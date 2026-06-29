@@ -1,0 +1,51 @@
+@reference '../../../../../../../styles.css';
+
+.about-highlight-card__style-1 {
+  @apply rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-white transition hover:border-cyan-300/40 hover:bg-slate-900/90;
+}
+
+:host-context(.app-theme-light) .about-highlight-card__style-1 {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+
+  color: var(--portfolio-text) !important;
+}
+
+.about-highlight-card__style-2 {
+  @apply flex gap-4;
+}
+
+.about-highlight-card__style-3 {
+  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur transition group-hover:scale-105 group-hover:bg-cyan-300/15;
+}
+
+:host-context(.app-theme-light) .about-highlight-card__style-3 {
+  border-color: rgba(8, 145, 178, 0.25) !important;
+
+  background-color: rgba(8, 145, 178, 0.1) !important;
+
+  color: #0e7490 !important;
+
+  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+}
+
+.about-highlight-card__style-4 {
+  @apply min-w-0;
+}
+
+.about-highlight-card__style-5 {
+  @apply font-semibold text-white;
+}
+
+:host-context(.app-theme-light) .about-highlight-card__style-5 {
+  color: var(--portfolio-text) !important;
+}
+
+.about-highlight-card__style-6 {
+  @apply mt-2 text-sm leading-6 text-slate-400;
+}
+
+:host-context(.app-theme-light) .about-highlight-card__style-6 {
+  color: var(--portfolio-text-soft) !important;
+}

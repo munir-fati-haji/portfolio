@@ -1,4 +1,4 @@
 export interface WindowAction {
   label: string;
-  className: string;
+  tone: 'close' | 'minimize' | 'maximize';
 }

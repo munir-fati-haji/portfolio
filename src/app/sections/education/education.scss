@@ -1,0 +1,131 @@
+@reference '../../../styles.css';
+
+.education__style-1 {
+  @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
+}
+
+:host-context(.app-theme-light) .education__style-1 {
+  background-color: var(--portfolio-bg) !important;
+
+  color: var(--portfolio-text) !important;
+}
+
+.education__style-2 {
+  @apply pointer-events-none absolute inset-0;
+}
+
+.education__style-3 {
+  @apply absolute left-[-10rem] top-24 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl;
+}
+
+:host-context(.app-theme-light) .education__style-3 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+}
+
+.education__style-4 {
+  @apply absolute right-[-12rem] bottom-10 h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl;
+}
+
+.education__style-5 {
+  @apply absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl;
+}
+
+.education__style-6 {
+  @apply relative mx-auto max-w-7xl;
+}
+
+.education__style-7 {
+  @apply grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end;
+}
+
+.education__style-8 {
+  @apply grid gap-5 sm:grid-cols-2;
+}
+
+.education__style-9 {
+  @apply border-l border-cyan-300/30 pl-4;
+}
+
+:host-context(.app-theme-light) .education__style-9 {
+  border-color: rgba(8, 145, 178, 0.25) !important;
+}
+
+.education__style-10 {
+  @apply text-3xl font-black tracking-tight text-cyan-300;
+}
+
+:host-context(.app-theme-light) .education__style-10 {
+  color: #0e7490 !important;
+}
+
+.education__style-11 {
+  @apply mt-1 text-sm leading-6 text-slate-400;
+}
+
+:host-context(.app-theme-light) .education__style-11 {
+  color: var(--portfolio-text-soft) !important;
+}
+
+.education__style-12 {
+  @apply border-l border-cyan-300/30 pl-4;
+}
+
+:host-context(.app-theme-light) .education__style-12 {
+  border-color: rgba(8, 145, 178, 0.25) !important;
+}
+
+.education__style-13 {
+  @apply text-3xl font-black tracking-tight text-cyan-300;
+}
+
+:host-context(.app-theme-light) .education__style-13 {
+  color: #0e7490 !important;
+}
+
+.education__style-14 {
+  @apply mt-1 text-sm leading-6 text-slate-400;
+}
+
+:host-context(.app-theme-light) .education__style-14 {
+  color: var(--portfolio-text-soft) !important;
+}
+
+.education__style-15 {
+  @apply mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300;
+}
+
+.education__style-16 {
+  @apply text-base leading-none;
+}
+
+.education__style-17 {
+  @apply mt-16 space-y-8;
+}
+
+.education__style-18 {
+  @apply mt-20;
+}
+
+.education__style-19 {
+  @apply mb-8 flex items-center gap-4;
+}
+
+.education__style-20 {
+  @apply h-px flex-1 bg-gradient-to-r from-cyan-300/40 to-transparent;
+}
+
+.education__style-21 {
+  @apply shrink-0 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300;
+}
+
+:host-context(.app-theme-light) .education__style-21 {
+  color: #0e7490 !important;
+}
+
+.education__style-22 {
+  @apply h-px flex-1 bg-gradient-to-l from-cyan-300/40 to-transparent;
+}
+
+.education__style-23 {
+  @apply grid gap-5 lg:grid-cols-2;
+}

@@ -1,52 +1,48 @@
-<section id="education" class="relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12">
-  <div class="pointer-events-none absolute inset-0">
-    <div class="absolute left-[-10rem] top-24 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl"></div>
-    <div class="absolute right-[-12rem] bottom-10 h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl"></div>
-    <div class="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl"></div>
+<section id="education" class="education__style-1">
+  <div class="education__style-2">
+    <div class="education__style-3"></div>
+    <div class="education__style-4"></div>
+    <div class="education__style-5"></div>
   </div>
 
-  <div class="relative mx-auto max-w-7xl">
-    <div class="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+  <div class="education__style-6">
+    <div class="education__style-7">
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
       <div>
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div class="border-l border-cyan-300/30 pl-4">
-            <p class="text-3xl font-black tracking-tight text-cyan-300">2</p>
-            <p class="mt-1 text-sm leading-6 text-slate-400">Academic degrees completed</p>
+        <div class="education__style-8">
+          <div class="education__style-9">
+            <p class="education__style-10">2</p>
+            <p class="education__style-11">Academic degrees completed</p>
           </div>
 
-          <div class="border-l border-cyan-300/30 pl-4">
-            <p class="text-3xl font-black tracking-tight text-cyan-300">2</p>
-            <p class="mt-1 text-sm leading-6 text-slate-400">Language preparation certificates</p>
+          <div class="education__style-12">
+            <p class="education__style-13">2</p>
+            <p class="education__style-14">Language preparation certificates</p>
           </div>
         </div>
 
-        <a
-          class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-black text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:-translate-y-0.5 hover:bg-cyan-200 hover:shadow-cyan-300/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
-          target="_blank"
-          rel="noreferrer"
-          [href]="ambassadorProfileUrl">
+        <a class="education__style-15" target="_blank" rel="noreferrer" [href]="ambassadorProfileUrl">
           Open Official WUT Ambassador Profile
-          <span class="text-base leading-none" aria-hidden="true">↗</span>
+          <span class="education__style-16" aria-hidden="true">↗</span>
         </a>
       </div>
     </div>
 
-    <div class="mt-16 space-y-8">
+    <div class="education__style-17">
       @for (education of educationItems; track education.degree; let index = $index) {
         <app-education-card [education]="education" [index]="index" />
       }
     </div>
 
-    <div class="mt-20">
-      <div class="mb-8 flex items-center gap-4">
-        <div class="h-px flex-1 bg-gradient-to-r from-cyan-300/40 to-transparent"></div>
-        <p class="shrink-0 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Language Certificates</p>
-        <div class="h-px flex-1 bg-gradient-to-l from-cyan-300/40 to-transparent"></div>
+    <div class="education__style-18">
+      <div class="education__style-19">
+        <div class="education__style-20"></div>
+        <p class="education__style-21">Language Certificates</p>
+        <div class="education__style-22"></div>
       </div>
 
-      <div class="grid gap-5 lg:grid-cols-2">
+      <div class="education__style-23">
         @for (certificate of certificates; track certificate.school) {
           <app-certificate-card [certificate]="certificate" />
         }
