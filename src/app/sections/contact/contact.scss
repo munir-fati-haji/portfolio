@@ -1,17 +1,15 @@
 @reference '../../../styles.css';
 
 .contact__section {
-  @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
+  @apply relative overflow-hidden bg-transparent px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
 }
 
 :host-context(.app-theme-light) .contact__section {
-  background-color: var(--portfolio-bg) !important;
-
   color: var(--portfolio-text) !important;
 }
 
 .contact__background {
-  @apply pointer-events-none absolute inset-0;
+  @apply hidden;
 }
 
 .contact__glow-primary {

@@ -13,5 +13,6 @@ import { WorkingOn } from '../../../../../sections/working-on/working-on';
   selector: 'app-content',
   imports: [AboutMe, CaseStudy, Contact, Education, Experience, Hero, Projects, Skills, WorkingOn],
   templateUrl: './content.html',
+  styleUrl: './content.scss',
 })
 export class Content {}
