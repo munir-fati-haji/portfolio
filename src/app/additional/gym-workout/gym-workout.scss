@@ -32,6 +32,15 @@
   @apply mb-8 rounded-3xl border border-cyan-100/80 bg-white/90 shadow-2xl shadow-cyan-100/60 transition-colors dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/30;
 }
 
+:host-context(.app-theme-light) .gym-workout__hero-card,
+:host-context(.app-theme-light) .gym-workout__session-card,
+:host-context(.app-theme-light) .gym-workout__rules-card,
+:host-context(.app-theme-light) .gym-workout__empty-state {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(8, 145, 178, 0.18) !important;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12) !important;
+}
+
 :host-context(.app-theme-dark) .gym-workout__hero-card,
 :host-context(.app-theme-dark) .gym-workout__session-card,
 :host-context(.app-theme-dark) .gym-workout__rules-card,
@@ -97,8 +106,20 @@
   @apply border border-cyan-200/70 bg-gradient-to-br from-cyan-50 via-white to-blue-50 shadow-cyan-100/70;
 }
 
+:host-context(.app-theme-light) .gym-workout__summary-card--sessions {
+  background: linear-gradient(135deg, #ecfeff 0%, #ffffff 52%, #eff6ff 100%) !important;
+  border-color: rgba(8, 145, 178, 0.22) !important;
+  box-shadow: 0 16px 34px rgba(8, 145, 178, 0.16) !important;
+}
+
 .gym-workout__summary-card--exercises {
   @apply border border-violet-200/70 bg-gradient-to-br from-violet-50 via-white to-cyan-50 shadow-violet-100/70;
+}
+
+:host-context(.app-theme-light) .gym-workout__summary-card--exercises {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 52%, #ecfeff 100%) !important;
+  border-color: rgba(124, 58, 237, 0.2) !important;
+  box-shadow: 0 16px 34px rgba(124, 58, 237, 0.14) !important;
 }
 
 .gym-workout__summary-label {
@@ -276,6 +297,21 @@
 .gym-workout__exercise-item,
 .gym-workout__rule-item {
   @apply h-auto! rounded-2xl border border-cyan-100/70 bg-white/80 px-4! py-3! text-sm leading-6 text-slate-700 shadow-sm shadow-cyan-50 transition hover:border-cyan-200 hover:bg-cyan-50/60 dark:border-white/5 dark:bg-white/[0.04] dark:text-slate-200 dark:shadow-none dark:hover:bg-white/[0.07];
+}
+
+:host-context(.app-theme-light) .gym-workout__exercise-item,
+:host-context(.app-theme-light) .gym-workout__rule-item {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(8, 145, 178, 0.18) !important;
+  color: #334155 !important;
+  box-shadow: 0 8px 18px rgba(8, 145, 178, 0.08) !important;
+}
+
+:host-context(.app-theme-light) .gym-workout__exercise-item:hover,
+:host-context(.app-theme-light) .gym-workout__rule-item:hover {
+  background: #ecfeff !important;
+  border-color: rgba(8, 145, 178, 0.32) !important;
+  color: #0f172a !important;
 }
 
 :host-context(.app-theme-dark) .gym-workout__exercise-item,

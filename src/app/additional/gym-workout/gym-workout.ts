@@ -1,7 +1,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
+import { MatChipListboxChange, MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -37,8 +37,8 @@ export class GymWorkout {
     this.visibleSessions().reduce((total, session) => total + session.exercises.length, 0),
   );
 
-  protected selectDay(day: TrainingDayId): void {
-    this.selectedDay.set(day);
+  protected selectDay({ value }: MatChipListboxChange): void {
+    this.selectedDay.set(value ? (value as TrainingDayId) : 'all');
   }
 
   protected toggleTheme(): void {
