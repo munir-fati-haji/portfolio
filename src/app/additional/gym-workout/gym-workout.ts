@@ -1,16 +1,18 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ThemeService } from '../../core/services/theme/theme.service';
-import { SharedChipButton } from '../../shared/components/shared-chip-button/shared-chip-button';
 import { TrainingDayId } from './models/training-day-id.model';
 import { GYM_SESSIONS } from './data/gym-sessions.data';
 import { TRAINING_FILTERS } from './data/training-filter.data';
 
 @Component({
   selector: 'app-gym-workout',
-  imports: [MatCardModule, MatIconModule, MatTooltipModule, SharedChipButton],
+  imports: [MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatListModule, MatTooltipModule],
   templateUrl: './gym-workout.html',
   styleUrl: './gym-workout.scss',
 })

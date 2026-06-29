@@ -7,12 +7,13 @@
 
   <div class="gym-workout__content">
     <mat-card class="gym-workout__hero-card">
-      <div class="gym-workout__hero-layout">
+      <mat-card-content class="gym-workout__hero-layout">
         <div>
           <div class="gym-workout__eyebrow-row">
-            <p class="gym-workout__eyebrow">Gym Sessions</p>
+            <mat-chip class="gym-workout__eyebrow">Gym Sessions</mat-chip>
 
             <button
+              mat-icon-button
               type="button"
               class="gym-workout__theme-toggle"
               matTooltipPosition="below"
@@ -23,7 +24,7 @@
             </button>
           </div>
 
-          <h1 class="gym-workout__title">Weekly aesthetic training plan</h1>
+          <mat-card-title class="gym-workout__title">Weekly aesthetic training plan</mat-card-title>
 
           <p class="gym-workout__description">
             A machine and cable-based workout plan focused on looking fit fast: wider lats, rounder shoulders, stronger
@@ -33,81 +34,107 @@
 
         <div class="gym-workout__summary-grid">
           <mat-card class="gym-workout__summary-card gym-workout__summary-card--sessions">
-            <p class="gym-workout__summary-label gym-workout__summary-label--sessions">Visible sessions</p>
+            <mat-card-content>
+              <mat-card-subtitle class="gym-workout__summary-label gym-workout__summary-label--sessions">
+                Visible sessions
+              </mat-card-subtitle>
 
-            <p class="gym-workout__summary-value">{{ visibleSessions().length }}</p>
+              <mat-card-title class="gym-workout__summary-value">{{ visibleSessions().length }}</mat-card-title>
+            </mat-card-content>
           </mat-card>
 
           <mat-card class="gym-workout__summary-card gym-workout__summary-card--exercises">
-            <p class="gym-workout__summary-label gym-workout__summary-label--exercises">Exercises</p>
+            <mat-card-content>
+              <mat-card-subtitle class="gym-workout__summary-label gym-workout__summary-label--exercises">
+                Exercises
+              </mat-card-subtitle>
 
-            <p class="gym-workout__summary-value">{{ totalExercises() }}</p>
+              <mat-card-title class="gym-workout__summary-value">{{ totalExercises() }}</mat-card-title>
+            </mat-card-content>
           </mat-card>
         </div>
-      </div>
+      </mat-card-content>
     </mat-card>
 
-    <div class="gym-workout__filters">
+    <mat-chip-listbox class="gym-workout__filters" aria-label="Training day filter" [value]="selectedDay()">
       @for (filter of filters; track filter.id) {
-        <app-shared-chip-button
-          size="md"
-          variant="cyan"
-          [selectable]="true"
-          [label]="filter.label"
-          [active]="selectedDay() === filter.id"
-          (selected)="selectDay(filter.id)" />
+        <mat-chip-option
+          class="gym-workout__filter-chip"
+          [value]="filter.id"
+          [selected]="selectedDay() === filter.id"
+          (click)="selectDay(filter.id)">
+          {{ filter.label }}
+        </mat-chip-option>
       }
-    </div>
+    </mat-chip-listbox>
 
     <div class="gym-workout__session-grid">
       @for (session of visibleSessions(); track session.id) {
         <mat-card class="group gym-workout__session-card">
-          <div class="gym-workout__session-header">
-            <div>
-              <p class="gym-workout__session-day">{{ session.day }}</p>
+          <mat-card-header class="gym-workout__session-header">
+            <mat-card-title class="gym-workout__session-title">{{ session.title }}</mat-card-title>
 
-              <h2 class="gym-workout__session-title">{{ session.title }}</h2>
-            </div>
+            <mat-card-subtitle class="gym-workout__session-day">{{ session.day }}</mat-card-subtitle>
 
-            <span class="gym-workout__duration">
+            <mat-chip class="gym-workout__duration">
               {{ session.duration }}
-            </span>
-          </div>
+            </mat-chip>
+          </mat-card-header>
 
-          <div class="gym-workout__session-tags">
-            <app-shared-chip-button size="xs" variant="slate" [label]="session.focus" />
+          <mat-card-content>
+            <mat-chip-set class="gym-workout__session-tags" aria-label="Session metadata">
+              <mat-chip class="gym-workout__metadata-chip gym-workout__metadata-chip--focus">
+                {{ session.focus }}
+              </mat-chip>
 
-            <app-shared-chip-button
-              size="xs"
-              [label]="session.intensity"
-              [variant]="session.intensity === 'Hard' ? 'orange' : 'emerald'" />
-          </div>
+              <mat-chip
+                class="gym-workout__metadata-chip"
+                [class.gym-workout__metadata-chip--hard]="session.intensity === 'Hard'"
+                [class.gym-workout__metadata-chip--moderate]="session.intensity !== 'Hard'">
+                {{ session.intensity }}
+              </mat-chip>
+            </mat-chip-set>
 
-          <div class="gym-workout__exercise-list">
-            @for (exercise of session.exercises; track exercise) {
-              <mat-card class="gym-workout__exercise-card">
-                <span>{{ exercise }}</span>
-              </mat-card>
-            }
-          </div>
+            <mat-list class="gym-workout__exercise-list" aria-label="Session exercises">
+              @for (exercise of session.exercises; track exercise) {
+                <mat-list-item class="gym-workout__exercise-item">
+                  <span matListItemTitle>{{ exercise }}</span>
+                </mat-list-item>
+              }
+            </mat-list>
+          </mat-card-content>
         </mat-card>
       } @empty {
-        <mat-card class="gym-workout__empty-state">No gym sessions found.</mat-card>
+        <mat-card class="gym-workout__empty-state">
+          <mat-card-content>No gym sessions found.</mat-card-content>
+        </mat-card>
       }
     </div>
 
     <mat-card class="gym-workout__rules-card">
-      <h2 class="gym-workout__rules-title">Training rules</h2>
+      <mat-card-header>
+        <mat-card-title class="gym-workout__rules-title">Training rules</mat-card-title>
+      </mat-card-header>
 
-      <div class="gym-workout__rules-grid">
-        <mat-card class="gym-workout__rule-card">Warm up for 5-10 minutes before lifting.</mat-card>
+      <mat-card-content>
+        <mat-list class="gym-workout__rules-list" aria-label="Training rules">
+          <mat-list-item class="gym-workout__rule-item">
+            <span matListItemTitle>Warm up for 5-10 minutes before lifting.</span>
+          </mat-list-item>
 
-        <mat-card class="gym-workout__rule-card">Use controlled reps and avoid swinging the weight.</mat-card>
+          <mat-list-item class="gym-workout__rule-item">
+            <span matListItemTitle>Use controlled reps and avoid swinging the weight.</span>
+          </mat-list-item>
 
-        <mat-card class="gym-workout__rule-card">Increase weight only when all reps feel clean.</mat-card>
+          <mat-list-item class="gym-workout__rule-item">
+            <span matListItemTitle>Increase weight only when all reps feel clean.</span>
+          </mat-list-item>
 
-        <mat-card class="gym-workout__rule-card">Rest 60-90 seconds for most exercises.</mat-card>
-      </div>
+          <mat-list-item class="gym-workout__rule-item">
+            <span matListItemTitle>Rest 60-90 seconds for most exercises.</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
     </mat-card>
   </div>
 </section>

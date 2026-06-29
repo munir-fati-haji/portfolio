@@ -29,11 +29,20 @@
 }
 
 .gym-workout__hero-card {
-  @apply mb-8 rounded-3xl border border-cyan-100/80 bg-white/90 p-6 shadow-2xl shadow-cyan-100/60 transition-colors dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/30 sm:p-8;
+  @apply mb-8 rounded-3xl border border-cyan-100/80 bg-white/90 shadow-2xl shadow-cyan-100/60 transition-colors dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/30;
+}
+
+:host-context(.app-theme-dark) .gym-workout__hero-card,
+:host-context(.app-theme-dark) .gym-workout__session-card,
+:host-context(.app-theme-dark) .gym-workout__rules-card,
+:host-context(.app-theme-dark) .gym-workout__empty-state {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
 }
 
 .gym-workout__hero-layout {
-  @apply flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between;
+  @apply flex flex-col gap-6 p-6 lg:flex-row lg:items-end lg:justify-between sm:p-8;
 }
 
 .gym-workout__eyebrow-row {
@@ -41,11 +50,17 @@
 }
 
 .gym-workout__eyebrow {
-  @apply inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-700 shadow-sm shadow-cyan-100/70 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-200 dark:shadow-none;
+  @apply border border-cyan-200 bg-cyan-50 text-sm font-semibold text-cyan-700 shadow-sm shadow-cyan-100/70 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-200 dark:shadow-none;
+}
+
+:host-context(.app-theme-dark) .gym-workout__eyebrow {
+  --mat-chip-elevated-container-color: rgba(103, 232, 249, 0.1);
+  --mat-chip-label-text-color: #a5f3fc;
+  border-color: rgba(103, 232, 249, 0.22) !important;
 }
 
 .gym-workout__theme-toggle {
-  @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-950/15 bg-slate-950 text-cyan-200 shadow-sm shadow-slate-300/70 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:text-white dark:border-white/20 dark:bg-white dark:text-slate-950 dark:shadow-none dark:hover:bg-cyan-50 dark:hover:text-slate-950;
+  @apply border border-slate-950/15 bg-slate-950 text-cyan-200 shadow-sm shadow-slate-300/70 transition hover:-translate-y-0.5 hover:bg-slate-800 hover:text-white dark:border-white/20 dark:bg-white dark:text-slate-950 dark:shadow-none dark:hover:bg-cyan-50 dark:hover:text-slate-950;
 }
 
 :host-context(.app-theme-light) .gym-workout__theme-toggle {
@@ -65,7 +80,17 @@
 }
 
 .gym-workout__summary-card {
-  @apply rounded-3xl p-5 shadow-lg dark:border-white/10 dark:bg-none dark:bg-white/[0.06] dark:shadow-black/30;
+  @apply rounded-3xl shadow-lg dark:border-white/10 dark:bg-none dark:bg-white/[0.06] dark:shadow-black/30;
+}
+
+:host-context(.app-theme-dark) .gym-workout__summary-card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3) !important;
+}
+
+.gym-workout__summary-card .mat-mdc-card-content {
+  @apply p-5;
 }
 
 .gym-workout__summary-card--sessions {
@@ -84,16 +109,59 @@
   @apply text-cyan-700 dark:text-cyan-200;
 }
 
+:host-context(.app-theme-dark) .gym-workout__summary-label--sessions {
+  color: #a5f3fc !important;
+}
+
 .gym-workout__summary-label--exercises {
   @apply text-violet-700 dark:text-violet-200;
+}
+
+:host-context(.app-theme-dark) .gym-workout__summary-label--exercises {
+  color: #ddd6fe !important;
 }
 
 .gym-workout__summary-value {
   @apply mt-2 text-3xl font-bold text-slate-950 dark:text-white;
 }
 
+:host-context(.app-theme-dark) .gym-workout__summary-value {
+  color: #ffffff !important;
+}
+
 .gym-workout__filters {
   @apply mb-8 flex gap-3 overflow-x-auto pb-2;
+}
+
+.gym-workout__filter-chip {
+  @apply shrink-0;
+}
+
+:host-context(.app-theme-dark) .gym-workout__filter-chip {
+  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.04);
+  --mat-chip-elevated-selected-container-color: #cffafe;
+  --mat-chip-flat-disabled-selected-container-color: #cffafe;
+  --mat-chip-label-text-color: #cbd5e1;
+  --mat-chip-selected-label-text-color: #0f172a;
+  --mat-chip-selected-trailing-icon-color: #0f172a;
+  --mat-chip-with-icon-selected-icon-color: #0f172a;
+  --mdc-chip-elevated-container-color: rgba(255, 255, 255, 0.04);
+  --mdc-chip-label-text-color: #cbd5e1;
+  --mdc-chip-outline-color: rgba(255, 255, 255, 0.18);
+  --mdc-chip-selected-label-text-color: #0f172a;
+  --mdc-chip-with-icon-selected-icon-color: #0f172a;
+  --mdc-chip-selected-container-color: #cffafe;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #cbd5e1 !important;
+}
+
+:host-context(.app-theme-dark) .gym-workout__filter-chip.mat-mdc-chip-selected {
+  color: #0f172a !important;
+}
+
+:host-context(.app-theme-dark) .gym-workout__filter-chip ::ng-deep .mat-mdc-chip-action-label,
+:host-context(.app-theme-dark) .gym-workout__filter-chip ::ng-deep .mdc-evolution-chip__text-label {
+  color: currentColor !important;
 }
 
 .gym-workout__session-grid {
@@ -101,53 +169,164 @@
 }
 
 .gym-workout__session-card {
-  @apply rounded-3xl border border-cyan-100/80 bg-white/95 p-5 shadow-xl shadow-cyan-100/50 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/80 hover:bg-white hover:shadow-cyan-200/60 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20 dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.09];
+  @apply rounded-3xl border border-cyan-100/80 bg-white/95 shadow-xl shadow-cyan-100/50 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/80 hover:bg-white hover:shadow-cyan-200/60 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-black/20 dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.09];
 }
 
 .gym-workout__session-header {
-  @apply mb-5 flex items-start justify-between gap-4;
-}
-
-.gym-workout__session-day {
-  @apply text-sm font-semibold text-cyan-700 dark:text-cyan-300;
+  @apply relative block p-5 pb-0;
 }
 
 .gym-workout__session-title {
-  @apply mt-1 text-2xl font-bold text-slate-950 dark:text-white;
+  @apply max-w-[calc(100%-5.5rem)] text-2xl font-bold text-slate-950 dark:text-white;
+}
+
+.gym-workout__session-day {
+  @apply mt-1 text-sm font-semibold text-cyan-700 dark:text-cyan-300;
 }
 
 .gym-workout__duration {
-  @apply rounded-2xl border border-cyan-100 bg-white px-3 py-2 text-xs font-medium text-slate-600 shadow-sm shadow-cyan-50 dark:border-white/10 dark:bg-white/10 dark:text-slate-300 dark:shadow-none;
+  @apply absolute right-5 top-5 border border-cyan-100 bg-white text-xs font-medium text-slate-600 shadow-sm shadow-cyan-50 dark:border-white/10 dark:bg-white/10 dark:text-slate-300 dark:shadow-none;
+}
+
+:host-context(.app-theme-dark) .gym-workout__duration {
+  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
+  --mat-chip-label-text-color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #cbd5e1 !important;
+  box-shadow: none !important;
+}
+
+:host-context(.app-theme-dark) .gym-workout__duration ::ng-deep .mat-mdc-chip-action-label,
+:host-context(.app-theme-dark) .gym-workout__duration ::ng-deep .mdc-evolution-chip__text-label {
+  color: currentColor !important;
+}
+
+.gym-workout__session-card .mat-mdc-card-content {
+  @apply p-5 pt-0;
 }
 
 .gym-workout__session-tags {
   @apply mb-5 flex flex-wrap gap-2;
 }
 
-.gym-workout__exercise-list {
-  @apply space-y-3;
+.gym-workout__metadata-chip {
+  @apply border text-xs font-semibold;
 }
 
-.gym-workout__exercise-card {
-  @apply flex items-start gap-3 rounded-2xl border border-cyan-100/70 bg-white/80 px-4 py-3 text-sm leading-6 text-slate-700 shadow-sm shadow-cyan-50 transition hover:border-cyan-200 hover:bg-cyan-50/60 dark:border-white/5 dark:bg-white/[0.04] dark:text-slate-200 dark:shadow-none dark:hover:bg-white/[0.07];
+:host-context(.app-theme-dark) .gym-workout__metadata-chip {
+  --mat-chip-label-text-color: #cbd5e1;
+  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.06);
+  --mdc-chip-label-text-color: #cbd5e1;
+  --mdc-chip-elevated-container-color: rgba(255, 255, 255, 0.06);
+  --mdc-chip-outline-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #cbd5e1 !important;
+}
+
+:host-context(.app-theme-dark) .gym-workout__metadata-chip ::ng-deep .mat-mdc-chip-action-label,
+:host-context(.app-theme-dark) .gym-workout__metadata-chip ::ng-deep .mdc-evolution-chip__text-label {
+  color: currentColor !important;
+}
+
+.gym-workout__metadata-chip--focus {
+  @apply border-slate-300/70 bg-white text-slate-700 dark:border-white/12 dark:bg-white/[0.07] dark:text-slate-300;
+}
+
+:host-context(.app-theme-dark) .gym-workout__metadata-chip--focus {
+  --mat-chip-label-text-color: #cbd5e1;
+  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.07);
+  --mdc-chip-label-text-color: #cbd5e1;
+  --mdc-chip-elevated-container-color: rgba(255, 255, 255, 0.07);
+}
+
+.gym-workout__metadata-chip--hard {
+  @apply border-orange-300/75 bg-orange-50 text-orange-800 dark:border-orange-300/35 dark:bg-orange-300/12 dark:text-orange-200;
+}
+
+:host-context(.app-theme-dark) .gym-workout__metadata-chip--hard {
+  --mat-chip-label-text-color: #fed7aa;
+  --mat-chip-elevated-container-color: rgba(253, 186, 116, 0.12);
+  --mdc-chip-label-text-color: #fed7aa;
+  --mdc-chip-elevated-container-color: rgba(253, 186, 116, 0.12);
+  --mdc-chip-outline-color: rgba(253, 186, 116, 0.35);
+  border-color: rgba(253, 186, 116, 0.35) !important;
+  color: #fed7aa !important;
+}
+
+.gym-workout__metadata-chip--moderate {
+  @apply border-emerald-300/65 bg-emerald-50 text-emerald-800 dark:border-emerald-300/35 dark:bg-emerald-300/12 dark:text-emerald-100;
+}
+
+:host-context(.app-theme-dark) .gym-workout__metadata-chip--moderate {
+  --mat-chip-label-text-color: #d1fae5;
+  --mat-chip-elevated-container-color: rgba(110, 231, 183, 0.12);
+  --mdc-chip-label-text-color: #d1fae5;
+  --mdc-chip-elevated-container-color: rgba(110, 231, 183, 0.12);
+  --mdc-chip-outline-color: rgba(110, 231, 183, 0.35);
+  border-color: rgba(110, 231, 183, 0.35) !important;
+  color: #d1fae5 !important;
+}
+
+.gym-workout__exercise-list,
+.gym-workout__rules-list {
+  @apply flex flex-col gap-3 p-0;
+}
+
+.gym-workout__exercise-item,
+.gym-workout__rule-item {
+  @apply h-auto! rounded-2xl border border-cyan-100/70 bg-white/80 px-4! py-3! text-sm leading-6 text-slate-700 shadow-sm shadow-cyan-50 transition hover:border-cyan-200 hover:bg-cyan-50/60 dark:border-white/5 dark:bg-white/[0.04] dark:text-slate-200 dark:shadow-none dark:hover:bg-white/[0.07];
+}
+
+:host-context(.app-theme-dark) .gym-workout__exercise-item,
+:host-context(.app-theme-dark) .gym-workout__rule-item {
+  --mdc-list-list-item-label-text-color: #e2e8f0;
+  --mat-list-list-item-label-text-color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.045) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e8f0 !important;
+  box-shadow: none !important;
+}
+
+:host-context(.app-theme-dark) .gym-workout__exercise-item:hover,
+:host-context(.app-theme-dark) .gym-workout__rule-item:hover {
+  --mdc-list-list-item-label-text-color: #f8fafc;
+  --mat-list-list-item-label-text-color: #f8fafc;
+  background: rgba(255, 255, 255, 0.075) !important;
+  border-color: rgba(103, 232, 249, 0.22) !important;
+  color: #f8fafc !important;
+}
+
+.gym-workout__exercise-item ::ng-deep .mdc-list-item__primary-text,
+.gym-workout__rule-item ::ng-deep .mdc-list-item__primary-text {
+  @apply whitespace-normal text-sm leading-6 text-current;
+}
+
+:host-context(.app-theme-dark) .gym-workout__exercise-item:hover ::ng-deep .mdc-list-item__primary-text,
+:host-context(.app-theme-dark) .gym-workout__rule-item:hover ::ng-deep .mdc-list-item__primary-text {
+  color: #f8fafc !important;
 }
 
 .gym-workout__empty-state {
-  @apply rounded-3xl border border-cyan-100/80 bg-white/90 p-6 text-slate-600 shadow-xl shadow-cyan-100/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:shadow-black/20;
+  @apply rounded-3xl border border-cyan-100/80 bg-white/90 text-slate-600 shadow-xl shadow-cyan-100/50 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300 dark:shadow-black/20;
+}
+
+.gym-workout__empty-state .mat-mdc-card-content {
+  @apply p-6;
 }
 
 .gym-workout__rules-card {
-  @apply relative z-10 mt-8 rounded-3xl border border-cyan-100/80 bg-white p-6 shadow-xl shadow-cyan-100/50 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-2xl dark:shadow-black/30;
+  @apply relative z-10 mt-8 rounded-3xl border border-cyan-100/80 bg-white shadow-xl shadow-cyan-100/50 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-2xl dark:shadow-black/30;
+}
+
+.gym-workout__rules-card .mat-mdc-card-header {
+  @apply p-6 pb-0;
+}
+
+.gym-workout__rules-card .mat-mdc-card-content {
+  @apply p-6 pt-5;
 }
 
 .gym-workout__rules-title {
   @apply text-2xl font-bold text-slate-950 dark:text-white;
-}
-
-.gym-workout__rules-grid {
-  @apply mt-5 grid gap-3 md:grid-cols-2;
-}
-
-.gym-workout__rule-card {
-  @apply rounded-2xl border border-cyan-100/80 bg-gradient-to-br from-white to-cyan-50/70 p-4 text-sm leading-6 text-slate-600 shadow-sm shadow-cyan-50 dark:border-white/10 dark:bg-none dark:bg-black/20 dark:text-slate-300 dark:shadow-none;
 }
