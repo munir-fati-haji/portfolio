@@ -1,48 +1,50 @@
-<article class="group experience-card__card">
+<mat-card class="group experience-card__card" appearance="outlined">
   <div class="experience-card__timeline-marker"></div>
 
   <span class="experience-card__index"> 0{{ index() + 1 }} </span>
 
-  <div class="experience-card__content">
-    <div class="experience-card__header">
-      <div class="experience-card__icon-surface">
-        <div class="experience-card__icon">
-          <mat-icon>{{ experience().icon }}</mat-icon>
-        </div>
+  <mat-card-content class="experience-card__body">
+    <div class="experience-card__content">
+      <div class="experience-card__header">
+        <div class="experience-card__icon-surface">
+          <div class="experience-card__icon">
+            <mat-icon>{{ experience().icon }}</mat-icon>
+          </div>
 
-        <div class="experience-card__heading">
-          <h3 class="experience-card__role">
-            {{ experience().role }}
-          </h3>
+          <div class="experience-card__heading">
+            <h3 class="experience-card__role">
+              {{ experience().role }}
+            </h3>
 
-          <p class="experience-card__company">{{ experience().company }} - {{ experience().location }}</p>
+            <p class="experience-card__company">{{ experience().company }} - {{ experience().location }}</p>
+          </div>
         </div>
+      </div>
+
+      <div class="experience-card__period">
+        <app-shared-chip-button size="xs" variant="cyan" [label]="experience().type" />
+
+        <app-shared-chip-button size="xs" variant="slate" [label]="experience().period" />
       </div>
     </div>
 
-    <div class="experience-card__period">
-      <app-shared-chip-button size="xs" variant="cyan" [label]="experience().type" />
+    <p class="experience-card__description">
+      {{ experience().summary }}
+    </p>
 
-      <app-shared-chip-button size="xs" variant="slate" [label]="experience().period" />
+    <div class="experience-card__skill-list">
+      @for (skill of experience().skills; track skill.name) {
+        <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
+      }
     </div>
-  </div>
 
-  <p class="experience-card__description">
-    {{ experience().summary }}
-  </p>
-
-  <div class="experience-card__skill-list">
-    @for (skill of experience().skills; track skill.name) {
-      <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
-    }
-  </div>
-
-  <ul class="experience-card__highlight-list">
-    @for (highlight of experience().highlights; track highlight) {
-      <li class="experience-card__highlight-item">
-        <span class="experience-card__highlight-marker"></span>
-        <span>{{ highlight }}</span>
-      </li>
-    }
-  </ul>
-</article>
+    <ul class="experience-card__highlight-list">
+      @for (highlight of experience().highlights; track highlight) {
+        <li class="experience-card__highlight-item">
+          <span class="experience-card__highlight-marker"></span>
+          <span>{{ highlight }}</span>
+        </li>
+      }
+    </ul>
+  </mat-card-content>
+</mat-card>

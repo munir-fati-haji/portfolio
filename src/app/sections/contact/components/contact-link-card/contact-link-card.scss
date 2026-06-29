@@ -1,13 +1,17 @@
 @reference '../../../../../styles.css';
 
 .contact-link-card__card {
-  @apply flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:border-cyan-300/25 hover:bg-cyan-300/10;
+  @apply rounded-2xl border border-white/10 bg-white/5 p-0 transition hover:border-cyan-300/25 hover:bg-cyan-300/10;
 }
 
 :host-context(.app-theme-light) .contact-link-card__card {
   border-color: var(--portfolio-border) !important;
 
   background-color: var(--portfolio-bg-elevated) !important;
+}
+
+.contact-link-card__body {
+  @apply flex items-center gap-3 p-5!;
 }
 
 .contact-link-card__content {
@@ -31,7 +35,7 @@
 }
 
 .contact-link-card__action {
-  @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-cyan-100 shadow-lg shadow-cyan-950/20 transition hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
+  @apply h-11! w-11! shrink-0 border border-white/15 bg-white/10 text-cyan-100 shadow-lg shadow-cyan-950/20 transition hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
 }
 
 :host-context(.app-theme-light) .contact-link-card__action {

@@ -1,10 +1,12 @@
 import { Component, input, output } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ContactLink } from '../../models/contact-link.model';
 
 @Component({
   selector: 'app-contact-link-card',
-  imports: [MatIconModule],
+  imports: [MatButtonModule, MatCardModule, MatIconModule],
   host: { class: 'block' },
   templateUrl: './contact-link-card.html',
   styleUrl: './contact-link-card.scss',

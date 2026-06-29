@@ -1,48 +1,50 @@
-<article class="group education-card__card">
+<mat-card class="group education-card__card" appearance="outlined">
   <div class="education-card__timeline-marker"></div>
 
   <span class="education-card__index"> 0{{ index() + 1 }} </span>
 
-  <div class="education-card__content">
-    <div class="education-card__header">
-      <div class="education-card__icon-surface">
-        <div class="education-card__icon">
-          <mat-icon>{{ education().icon }}</mat-icon>
-        </div>
+  <mat-card-content class="education-card__body">
+    <div class="education-card__content">
+      <div class="education-card__header">
+        <div class="education-card__icon-surface">
+          <div class="education-card__icon">
+            <mat-icon>{{ education().icon }}</mat-icon>
+          </div>
 
-        <div class="education-card__heading">
-          <h3 class="education-card__school">
-            {{ education().degree }}
-          </h3>
+          <div class="education-card__heading">
+            <h3 class="education-card__school">
+              {{ education().degree }}
+            </h3>
 
-          <p class="education-card__period">{{ education().school }} - {{ education().location }}</p>
+            <p class="education-card__period">{{ education().school }} - {{ education().location }}</p>
+          </div>
         </div>
+      </div>
+
+      <div class="education-card__degree">
+        <app-shared-chip-button size="xs" variant="cyan" [label]="education().grade" />
+
+        <app-shared-chip-button size="xs" variant="slate" [label]="education().period" />
       </div>
     </div>
 
-    <div class="education-card__degree">
-      <app-shared-chip-button size="xs" variant="cyan" [label]="education().grade" />
+    <p class="education-card__description">
+      {{ education().description }}
+    </p>
 
-      <app-shared-chip-button size="xs" variant="slate" [label]="education().period" />
+    <div class="education-card__skill-list">
+      @for (skill of education().skills; track skill.name) {
+        <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
+      }
     </div>
-  </div>
 
-  <p class="education-card__description">
-    {{ education().description }}
-  </p>
-
-  <div class="education-card__skill-list">
-    @for (skill of education().skills; track skill.name) {
-      <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
-    }
-  </div>
-
-  <ul class="education-card__highlight-list">
-    @for (highlight of education().highlights; track highlight) {
-      <li class="education-card__highlight-item">
-        <span class="education-card__highlight-marker"></span>
-        <span>{{ highlight }}</span>
-      </li>
-    }
-  </ul>
-</article>
+    <ul class="education-card__highlight-list">
+      @for (highlight of education().highlights; track highlight) {
+        <li class="education-card__highlight-item">
+          <span class="education-card__highlight-marker"></span>
+          <span>{{ highlight }}</span>
+        </li>
+      }
+    </ul>
+  </mat-card-content>
+</mat-card>

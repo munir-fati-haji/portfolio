@@ -1,22 +1,25 @@
-<div class="group contact-link-card__card">
-  <a
-    class="contact-link-card__content"
-    [href]="link().href"
-    [attr.target]="link().external ? '_blank' : null"
-    [attr.rel]="link().external ? 'noreferrer' : null">
-    <p class="contact-link-card__label">{{ link().label }}</p>
-    <p class="contact-link-card__value">
-      {{ link().value }}
-    </p>
-  </a>
+<mat-card class="group contact-link-card__card" appearance="outlined">
+  <mat-card-content class="contact-link-card__body">
+    <a
+      class="contact-link-card__content"
+      [href]="link().href"
+      [attr.target]="link().external ? '_blank' : null"
+      [attr.rel]="link().external ? 'noreferrer' : null">
+      <p class="contact-link-card__label">{{ link().label }}</p>
+      <p class="contact-link-card__value">
+        {{ link().value }}
+      </p>
+    </a>
 
-  <button
-    type="button"
-    class="contact-link-card__action"
-    [attr.aria-label]="'Copy ' + link().label"
-    (click)="copyRequested.emit(link())">
-    <mat-icon class="contact-link-card__icon" aria-hidden="true">
-      {{ isCopied() ? 'check' : 'content_copy' }}
-    </mat-icon>
-  </button>
-</div>
+    <button
+      mat-icon-button
+      type="button"
+      class="contact-link-card__action"
+      [attr.aria-label]="'Copy ' + link().label"
+      (click)="copyRequested.emit(link())">
+      <mat-icon class="contact-link-card__icon" aria-hidden="true">
+        {{ isCopied() ? 'check' : 'content_copy' }}
+      </mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>

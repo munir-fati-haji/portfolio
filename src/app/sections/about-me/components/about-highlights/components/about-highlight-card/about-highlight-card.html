@@ -1,17 +1,17 @@
-<article class="group about-highlight-card__card">
-  <div class="about-highlight-card__shine">
+<mat-card class="group about-highlight-card__card" appearance="outlined">
+  <mat-card-content class="about-highlight-card__body">
     <div class="about-highlight-card__icon-surface">
       <mat-icon>{{ highlight().icon }}</mat-icon>
     </div>
 
-    <div class="about-highlight-card__icon">
-      <h3 class="about-highlight-card__content">
+    <div class="about-highlight-card__content">
+      <h3 class="about-highlight-card__title">
         {{ highlight().title }}
       </h3>
 
-      <p class="about-highlight-card__title">
+      <p class="about-highlight-card__description">
         {{ highlight().description }}
       </p>
     </div>
-  </div>
-</article>
+  </mat-card-content>
+</mat-card>

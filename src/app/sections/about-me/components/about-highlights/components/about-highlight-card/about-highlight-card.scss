@@ -1,7 +1,7 @@
 @reference '../../../../../../../styles.css';
 
 .about-highlight-card__card {
-  @apply rounded-2xl border border-white/10 bg-slate-900/70 p-5 text-white transition hover:border-cyan-300/40 hover:bg-slate-900/90;
+  @apply rounded-2xl border border-white/10 bg-slate-900/70 p-0 text-white transition hover:border-cyan-300/40 hover:bg-slate-900/90;
 }
 
 :host-context(.app-theme-light) .about-highlight-card__card {
@@ -12,8 +12,8 @@
   color: var(--portfolio-text) !important;
 }
 
-.about-highlight-card__shine {
-  @apply flex gap-4;
+.about-highlight-card__body {
+  @apply flex gap-4 p-5!;
 }
 
 .about-highlight-card__icon-surface {
@@ -30,22 +30,22 @@
   --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
 }
 
-.about-highlight-card__icon {
+.about-highlight-card__content {
   @apply min-w-0;
 }
 
-.about-highlight-card__content {
+.about-highlight-card__title {
   @apply font-semibold text-white;
 }
 
-:host-context(.app-theme-light) .about-highlight-card__content {
+:host-context(.app-theme-light) .about-highlight-card__title {
   color: var(--portfolio-text) !important;
 }
 
-.about-highlight-card__title {
+.about-highlight-card__description {
   @apply mt-2 text-sm leading-6 text-slate-400;
 }
 
-:host-context(.app-theme-light) .about-highlight-card__title {
+:host-context(.app-theme-light) .about-highlight-card__description {
   color: var(--portfolio-text-soft) !important;
 }

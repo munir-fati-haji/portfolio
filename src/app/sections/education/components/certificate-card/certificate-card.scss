@@ -1,7 +1,7 @@
 @reference '../../../../../styles.css';
 
 .certificate-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-5 shadow-xl shadow-black/20 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.055] sm:p-6;
+  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-0 shadow-xl shadow-black/20 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.055];
 }
 
 :host-context(.app-theme-light) .certificate-card__card {
@@ -14,6 +14,10 @@
 
 .certificate-card__shine {
   @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+}
+
+.certificate-card__body {
+  @apply p-5! sm:p-6!;
 }
 
 .certificate-card__icon-surface {
@@ -64,4 +68,32 @@
 
 .certificate-card__skill-list {
   @apply mt-4 flex flex-wrap gap-2;
+}
+
+.certificate-card__skill-chip {
+  @apply border border-white/12 bg-white/[0.07]! text-slate-300!;
+}
+
+:host-context(.app-theme-dark) .certificate-card__skill-chip {
+  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
+  --mat-chip-label-text-color: #e2e8f0;
+  --mdc-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
+  --mdc-chip-label-text-color: #e2e8f0;
+  --mdc-chip-outline-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #e2e8f0 !important;
+}
+
+:host-context(.app-theme-light) .certificate-card__skill-chip {
+  border-color: var(--portfolio-border) !important;
+
+  background-color: var(--portfolio-bg-elevated) !important;
+
+  color: var(--portfolio-text-muted) !important;
+}
+
+:host-context(.app-theme-dark) .certificate-card__skill-chip ::ng-deep .mat-mdc-chip-action-label,
+:host-context(.app-theme-dark) .certificate-card__skill-chip ::ng-deep .mdc-evolution-chip__text-label {
+  color: currentColor !important;
 }

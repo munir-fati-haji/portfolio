@@ -1,27 +1,29 @@
-<article class="group certificate-card__card">
+<mat-card class="group certificate-card__card" appearance="outlined">
   <div class="certificate-card__shine"></div>
 
-  <div class="certificate-card__icon-surface">
-    <div class="certificate-card__icon">
-      <mat-icon>{{ certificate().icon }}</mat-icon>
-    </div>
+  <mat-card-content class="certificate-card__body">
+    <div class="certificate-card__icon-surface">
+      <div class="certificate-card__icon">
+        <mat-icon>{{ certificate().icon }}</mat-icon>
+      </div>
 
-    <div class="certificate-card__content">
-      <h3 class="certificate-card__school">
-        {{ certificate().school }}
-      </h3>
+      <div class="certificate-card__content">
+        <h3 class="certificate-card__school">
+          {{ certificate().school }}
+        </h3>
 
-      <p class="certificate-card__certificate">
-        {{ certificate().title }}
-      </p>
+        <p class="certificate-card__certificate">
+          {{ certificate().title }}
+        </p>
 
-      <p class="certificate-card__period">{{ certificate().location }} - {{ certificate().period }}</p>
+        <p class="certificate-card__period">{{ certificate().location }} - {{ certificate().period }}</p>
 
-      <div class="certificate-card__skill-list">
-        @for (skill of certificate().skills; track skill) {
-          <app-shared-chip-button size="xs" variant="slate" [label]="skill" />
-        }
+        <mat-chip-set class="certificate-card__skill-list" aria-label="Certificate skills">
+          @for (skill of certificate().skills; track skill) {
+            <mat-chip class="certificate-card__skill-chip">{{ skill }}</mat-chip>
+          }
+        </mat-chip-set>
       </div>
     </div>
-  </div>
-</article>
+  </mat-card-content>
+</mat-card>

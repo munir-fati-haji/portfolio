@@ -1,7 +1,7 @@
 @reference '../../../../../styles.css';
 
 .skill-category-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065] sm:p-7;
+  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-0 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065];
 }
 
 :host-context(.app-theme-light) .skill-category-card__card {
@@ -14,6 +14,10 @@
 
 .skill-category-card__shine {
   @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+}
+
+.skill-category-card__body {
+  @apply p-5! sm:p-7!;
 }
 
 .skill-category-card__index {
