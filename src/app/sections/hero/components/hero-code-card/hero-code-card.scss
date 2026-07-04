@@ -1,10 +1,10 @@
 @reference '../../../../../styles.css';
 
-.hero-code-card__card {
-  @apply min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-[#10172a] shadow-xl;
+:host {
+  @apply block min-w-0 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#10172a] shadow-xl;
 }
 
-:host-context(.app-theme-light) .hero-code-card__card {
+:host-context(.app-theme-light) {
   border-color: var(--portfolio-border) !important;
 }
 

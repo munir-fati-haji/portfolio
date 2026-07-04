@@ -1,7 +1,7 @@
 @reference '../../../../../styles.css';
 
-.hero-intro__content {
-  @apply max-w-2xl;
+:host {
+  @apply block max-w-2xl;
 }
 
 .hero-intro__eyebrow {

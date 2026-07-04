@@ -1,5 +1,5 @@
 @reference '../../../../../styles.css';
 
-.about-skills__section {
+:host {
   @apply mt-8 flex flex-wrap gap-3;
 }
