@@ -9,7 +9,9 @@ export class SvgIconRegistry {
   private readonly sanitizer = inject(DomSanitizer);
 
   public register(): void {
-    SVG_ICON_NAMES.forEach((iconName) => this.addIcon(iconName));
+    SVG_ICON_NAMES.forEach((iconName) => {
+      this.addIcon(iconName);
+    });
   }
 
   private addIcon(name: SvgIconName): void {

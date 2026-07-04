@@ -7,9 +7,9 @@ import { ContactLink } from '../../models/contact-link.model';
 @Component({
   selector: 'app-contact-link-card',
   imports: [MatButtonModule, MatCardModule, MatIconModule],
-  host: { class: 'block' },
   templateUrl: './contact-link-card.html',
   styleUrl: './contact-link-card.scss',
+  host: { class: 'block' },
 })
 export class ContactLinkCard {
   public readonly link = input.required<ContactLink>();

@@ -25,8 +25,8 @@
     </div>
 
     <div class="experience__timeline">
-      @for (experience of experiences; track experience.company; let index = $index) {
-        <app-experience-card [experience]="experience" [index]="index" />
+      @for (experience of experiences; track experience.company) {
+        <app-experience-card [experience]="experience" [index]="$index" />
       }
     </div>
   </div>

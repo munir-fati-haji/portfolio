@@ -16,7 +16,7 @@ export class MobileNavbar {
   public readonly brand = input.required<string>();
   public readonly isOpen = input.required<boolean>();
   public readonly links = input.required<NavbarLink[]>();
-  public readonly closed = output<void>();
+  public readonly closed = output();
   protected readonly themeService = inject(ThemeService);
   protected readonly footerLinks = FOOTER_LINKS;
 

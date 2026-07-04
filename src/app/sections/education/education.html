@@ -30,8 +30,8 @@
     </div>
 
     <div class="education__timeline">
-      @for (education of educationItems; track education.degree; let index = $index) {
-        <app-education-card [education]="education" [index]="index" />
+      @for (education of educationItems; track education.degree) {
+        <app-education-card [education]="education" [index]="$index" />
       }
     </div>
 

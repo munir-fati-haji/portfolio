@@ -3,10 +3,10 @@ import { SharedChipButton } from '@shared/components/shared-chip-button/shared-c
 
 @Component({
   selector: 'app-about-skills',
-  host: { class: 'about-skills__section' },
   imports: [SharedChipButton],
   templateUrl: './about-skills.html',
   styleUrl: './about-skills.scss',
+  host: { class: 'about-skills__section' },
 })
 export class AboutSkills {
   public readonly skills = input.required<readonly string[]>();

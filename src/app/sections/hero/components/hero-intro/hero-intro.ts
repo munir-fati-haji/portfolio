@@ -7,10 +7,10 @@ import { HeroSkillGroup } from './models/hero-skill-group';
 
 @Component({
   selector: 'app-hero-intro',
-  host: { class: 'hero-intro__content' },
   imports: [RouterLink, MatButtonModule, MatIconModule, HeroSkills],
   templateUrl: './hero-intro.html',
   styleUrl: './hero-intro.scss',
+  host: { class: 'hero-intro__content' },
 })
 export class HeroIntro {
   public readonly name = input.required<string>();

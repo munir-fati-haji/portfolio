@@ -5,10 +5,10 @@ import { HeroSkillGroup } from '../../models/hero-skill-group';
 
 @Component({
   selector: 'app-hero-skills',
-  host: { class: 'hero-skills__section' },
   imports: [MatIconModule, MatTooltipModule],
   templateUrl: './hero-skills.html',
   styleUrl: './hero-skills.scss',
+  host: { class: 'hero-skills__section' },
 })
 export class HeroSkills {
   public readonly groups = input.required<HeroSkillGroup[]>();

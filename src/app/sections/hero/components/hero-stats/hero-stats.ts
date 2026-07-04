@@ -3,9 +3,9 @@ import { HeroStat } from '../../models/hero-stat.model';
 
 @Component({
   selector: 'app-hero-stats',
-  host: { class: 'hero-stats__grid' },
   templateUrl: './hero-stats.html',
   styleUrl: './hero-stats.scss',
+  host: { class: 'hero-stats__grid' },
 })
 export class HeroStats {
   public readonly stats = input.required<HeroStat[]>();

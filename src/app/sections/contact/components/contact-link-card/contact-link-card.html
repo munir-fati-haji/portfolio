@@ -15,7 +15,7 @@
       mat-icon-button
       type="button"
       class="contact-link-card__action"
-      [attr.aria-label]="'Copy ' + link().label"
+      [attr.aria-label]="`Copy ${link().label}`"
       (click)="copyRequested.emit(link())">
       <mat-icon class="contact-link-card__icon" aria-hidden="true">
         {{ isCopied() ? 'check' : 'content_copy' }}
