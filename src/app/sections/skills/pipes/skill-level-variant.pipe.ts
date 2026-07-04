@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SharedChipButtonVariant } from '../../../shared/components/shared-chip-button/models/shared-chip-button-variant.model';
+import { SharedChipButtonVariant } from '@shared/components/shared-chip-button/models/shared-chip-button-variant.model';
 import { SkillItem } from '../models/skill-item.model';
 
 const SKILL_LEVEL_VARIANT: Record<SkillItem['level'], SharedChipButtonVariant> = {

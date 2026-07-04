@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { SectionHeader } from '@shared/components/section-header/section-header';
 import { CertificateCard } from './components/certificate-card/certificate-card';
 import { EducationCard } from './components/education-card/education-card';
 import { EDUCATION_CERTIFICATES } from './data/education-certificates';

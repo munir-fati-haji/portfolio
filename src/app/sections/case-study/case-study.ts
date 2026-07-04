@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { SectionHeader } from '@shared/components/section-header/section-header';
 import { CASE_STUDY_DESCRIPTION, CASE_STUDY_EYEBROW, CASE_STUDY_TITLE } from './data/case-study-copy';
 import { CASE_STUDY_STEPS } from './data/case-study-steps';
 

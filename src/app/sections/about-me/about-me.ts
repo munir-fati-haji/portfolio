@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AboutIntro } from './components/about-intro/about-intro';
 import { AboutSkills } from './components/about-skills/about-skills';
 import { AboutHighlights } from './components/about-highlights/about-highlights';
-import { SectionContainer } from '../../shared/components/section-container/section-container';
+import { SectionContainer } from '@shared/components/section-container/section-container';
 import { ABOUT_DESCRIPTION, ABOUT_EYEBROW, ABOUT_SECOND_DESCRIPTION, ABOUT_TITLE } from './data/about-copy';
 import { ABOUT_HIGHLIGHTS } from './data/about-highlights';
 import { ABOUT_SKILLS } from './data/about-skills';

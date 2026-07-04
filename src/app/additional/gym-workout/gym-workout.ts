@@ -5,7 +5,7 @@ import { MatChipListboxChange, MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ThemeService } from '../../core/services/theme/theme.service';
+import { ThemeService } from '@core/services/theme/theme.service';
 import { TrainingDayId } from './models/training-day-id.model';
 import { GYM_SESSIONS } from './data/gym-sessions.data';
 import { TRAINING_FILTERS } from './data/training-filter.data';
