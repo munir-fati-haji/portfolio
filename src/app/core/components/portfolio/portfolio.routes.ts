@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { Portfolio } from './portfolio';
 
-const loadPortfolioComponent = (): Promise<typeof Portfolio> => import('./portfolio').then(({ Portfolio }) => Portfolio);
+const loadPortfolioComponent = (): Promise<typeof Portfolio> =>
+  import('./portfolio').then(({ Portfolio }) => Portfolio);
 
 export const portfolioSectionRoutes: Routes = [
   {
