@@ -96,6 +96,35 @@ module.exports = [
           ignorePattern: '^import\\s.+',
         },
       ],
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['./app/*'],
+              message: 'Import can be shortened. Use the @app/* alias instead.',
+            },
+            {
+              group: ['./core/*', '../core/*', '../../core/*', '../../../core/*', '../../../../core/*'],
+              message: 'Import can be shortened. Use the @core/* alias instead.',
+            },
+            {
+              group: [
+                './sections/*',
+                '../sections/*',
+                '../../sections/*',
+                '../../../sections/*',
+                '../../../../sections/*',
+              ],
+              message: 'Import can be shortened. Use the @sections/* alias instead.',
+            },
+            {
+              group: ['./shared/*', '../shared/*', '../../shared/*', '../../../shared/*', '../../../../shared/*'],
+              message: 'Import can be shortened. Use the @shared/* alias instead.',
+            },
+          ],
+        },
+      ],
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',

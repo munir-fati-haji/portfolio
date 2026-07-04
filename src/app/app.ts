@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SvgIconRegistry } from './core/services/svg-icon-registry/svg-icon-registry';
-import { ThemeService } from './core/services/theme/theme.service';
+import { SvgIconRegistry } from '@core/services/svg-icon-registry/svg-icon-registry';
+import { ThemeService } from '@core/services/theme/theme.service';
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { portfolioSectionRoutes } from './core/components/portfolio/portfolio.routes';
+import { portfolioSectionRoutes } from '@core/components/portfolio/portfolio.routes';
 
 export const routes: Routes = [
   ...portfolioSectionRoutes,
