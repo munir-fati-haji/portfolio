@@ -4,6 +4,7 @@ import { AboutHighlightCard } from './components/about-highlight-card/about-high
 
 @Component({
   selector: 'app-about-highlights',
+  host: { class: 'about-highlights__grid' },
   imports: [AboutHighlightCard],
   templateUrl: './about-highlights.html',
   styleUrl: './about-highlights.scss',
