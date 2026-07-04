@@ -1,4 +1,5 @@
 import { Component, inject, input, output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from '../../../../../../services/theme/theme.service';
@@ -7,7 +8,7 @@ import { FOOTER_LINKS } from '../../../footer/data/footer-links';
 
 @Component({
   selector: 'app-mobile-navbar',
-  imports: [MatButtonModule, MatIconModule],
+  imports: [RouterLink, MatButtonModule, MatIconModule],
   templateUrl: './mobile-navbar.html',
   styleUrl: './mobile-navbar.scss',
 })

@@ -1,11 +1,8 @@
 import { Routes } from '@angular/router';
+import { portfolioSectionRoutes } from './core/components/portfolio/portfolio.routes';
 
 export const routes: Routes = [
-  {
-    path: '',
-    title: 'Munir Fati Haji',
-    loadComponent: () => import('./core/components/portfolio/portfolio').then(({ Portfolio }) => Portfolio),
-  },
+  ...portfolioSectionRoutes,
   {
     path: 'gym',
     title: 'Gym Sessions | Munir Fati Haji',

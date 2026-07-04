@@ -8,7 +8,7 @@
   <div class="navbar__layout">
     <a
       class="app-brand navbar__brand"
-      href="#hero"
+      routerLink="/"
       [class.navbar__brand--dark]="themeService.isDark()"
       [class.navbar__brand--light]="!themeService.isDark()">
       {{ brand }}
@@ -25,7 +25,7 @@
           class="app-nav-link navbar__nav-link"
           [class.navbar__nav-link--dark]="themeService.isDark()"
           [class.navbar__nav-link--light]="!themeService.isDark()"
-          [href]="link.href">
+          [routerLink]="link.route">
           {{ link.label }}
         </a>
       }

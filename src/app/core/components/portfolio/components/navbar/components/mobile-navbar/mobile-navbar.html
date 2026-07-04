@@ -12,7 +12,7 @@
       <div class="mobile-navbar__drawer-header">
         <a
           class="app-brand mobile-navbar__close-button"
-          href="#hero"
+          routerLink="/"
           [class.mobile-navbar__close-button--dark]="themeService.isDark()"
           [class.mobile-navbar__close-button--light]="!themeService.isDark()"
           (click)="close()">
@@ -38,7 +38,7 @@
             class="app-mobile-nav-link mobile-navbar__nav-link"
             [class.mobile-navbar__nav-link--dark]="themeService.isDark()"
             [class.mobile-navbar__nav-link--light]="!themeService.isDark()"
-            [href]="link.href"
+            [routerLink]="link.route"
             (click)="close()">
             <mat-icon class="mobile-navbar__nav-icon" aria-hidden="true">{{ link.icon }}</mat-icon>
             {{ link.label }}

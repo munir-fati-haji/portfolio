@@ -3,47 +3,47 @@ import { NavbarLink } from '../models/navbar-link.model';
 export const NAVBAR_LINKS: NavbarLink[] = [
   {
     label: 'Home',
-    href: '#hero',
     icon: 'home',
+    route: '/',
   },
   {
     label: 'About',
-    href: '#about',
     icon: 'person',
+    route: '/about',
   },
   {
     label: 'Experience',
-    href: '#experience',
     icon: 'work',
+    route: '/experience',
   },
   {
     label: 'Education',
-    href: '#education',
     icon: 'school',
+    route: '/education',
   },
   {
     label: 'Skills',
-    href: '#skills',
     icon: 'code',
+    route: '/skills',
   },
   {
     label: 'Projects',
-    href: '#projects',
     icon: 'folder',
+    route: '/projects',
   },
   {
     label: 'Working On',
-    href: '#working-on',
     icon: 'build',
+    route: '/working-on',
   },
   {
     label: 'Case Study',
-    href: '#case-study',
     icon: 'analytics',
+    route: '/case-study',
   },
   {
     label: 'Contact',
-    href: '#contact',
     icon: 'mail',
+    route: '/contact',
   },
 ];
