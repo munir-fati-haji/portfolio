@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { SectionHeader } from '@shared/components/section-header/section-header';
 import { ContactLinkCard } from './components/contact-link-card/contact-link-card';
 import { CONTACT_DESCRIPTION, CONTACT_EYEBROW, CONTACT_TITLE } from './data/contact-copy';
 import { CONTACT_LINKS } from './data/contact-links';

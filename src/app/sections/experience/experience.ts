@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { SectionHeader } from '@shared/components/section-header/section-header';
 import { ExperienceCard } from './components/experience-card/experience-card';
 import { EXPERIENCE_DESCRIPTION, EXPERIENCE_EYEBROW, EXPERIENCE_TITLE } from './data/experience-copy';
 import { EXPERIENCE_ITEMS } from './data/experience-items';

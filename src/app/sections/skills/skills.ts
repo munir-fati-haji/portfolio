@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SharedChipButton } from '../../shared/components/shared-chip-button/shared-chip-button';
-import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { SectionHeader } from '@shared/components/section-header/section-header';
+import { SharedChipButton } from '@shared/components/shared-chip-button/shared-chip-button';
 import { SkillCategoryCard } from './components/skill-category-card/skill-category-card';
 import { SKILL_CATEGORIES } from './data/skill-categories';
 import { SKILL_STATS } from './data/skill-stats';

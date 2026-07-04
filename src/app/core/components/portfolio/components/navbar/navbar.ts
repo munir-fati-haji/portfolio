@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ThemeService } from '../../../../services/theme/theme.service';
+import { ThemeService } from '@core/services/theme/theme.service';
 import { MobileNavbar } from './components/mobile-navbar/mobile-navbar';
 import { NAVBAR_BRAND } from './data/navbar-brand';
 import { NAVBAR_LINKS } from './data/navbar-links';

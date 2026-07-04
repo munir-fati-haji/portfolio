@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionHeader } from '../../shared/components/section-header/section-header';
+import { SectionHeader } from '@shared/components/section-header/section-header';
 import { PROJECTS } from './data/projects';
 import { PROJECTS_DESCRIPTION, PROJECTS_EYEBROW, PROJECTS_TITLE } from './data/projects-copy';
 import { ProjectCard } from './components/project-card/project-card';
