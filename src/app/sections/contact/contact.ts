@@ -1,4 +1,6 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 import { SectionHeader } from '../../shared/components/section-header/section-header';
 import { ContactLinkCard } from './components/contact-link-card/contact-link-card';
 import { CONTACT_DESCRIPTION, CONTACT_EYEBROW, CONTACT_TITLE } from './data/contact-copy';
@@ -7,7 +9,7 @@ import { ContactLink } from './models/contact-link.model';
 
 @Component({
   selector: 'app-contact',
-  imports: [ContactLinkCard, SectionHeader],
+  imports: [ContactLinkCard, RouterLink, MatButtonModule, SectionHeader],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

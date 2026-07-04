@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 
+import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -11,7 +12,7 @@ import { NAVBAR_LINKS } from './data/navbar-links';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTooltipModule, MobileNavbar],
+  imports: [MatToolbarModule, RouterLink, MatButtonModule, MatIconModule, MatTooltipModule, MobileNavbar],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })

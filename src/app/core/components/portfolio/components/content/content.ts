@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, inject, viewChildren } from '@angular/core';
 import { AboutMe } from '../../../../../sections/about-me/about-me';
 import { CaseStudy } from '../../../../../sections/case-study/case-study';
 import { Contact } from '../../../../../sections/contact/contact';
@@ -15,4 +15,28 @@ import { WorkingOn } from '../../../../../sections/working-on/working-on';
   templateUrl: './content.html',
   styleUrl: './content.scss',
 })
-export class Content {}
+export class Content {
+  private readonly hostElement = inject<ElementRef<HTMLElement>>(ElementRef);
+  private readonly sectionElements = viewChildren<unknown, ElementRef<HTMLElement>>('portfolioSection', {
+    read: ElementRef,
+  });
+
+  public get scrollElement(): HTMLElement {
+    return this.hostElement.nativeElement;
+  }
+
+  public getActiveSectionId(): string {
+    const scrollPosition = this.scrollElement.scrollTop + this.scrollElement.clientHeight * 0.35;
+    const activeSection = this.sectionElements()
+      .filter((section) => section.nativeElement.offsetTop <= scrollPosition)
+      .at(-1);
+
+    return activeSection?.nativeElement.dataset['sectionId'] ?? 'hero';
+  }
+
+  public scrollToSection(sectionId: string): void {
+    this.sectionElements()
+      .find((section) => section.nativeElement.dataset['sectionId'] === sectionId)
+      ?.nativeElement.scrollIntoView({ block: 'start' });
+  }
+}

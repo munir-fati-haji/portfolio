@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 import { AboutIntro } from './components/about-intro/about-intro';
 import { AboutSkills } from './components/about-skills/about-skills';
 import { AboutHighlights } from './components/about-highlights/about-highlights';
@@ -9,7 +11,7 @@ import { ABOUT_SKILLS } from './data/about-skills';
 
 @Component({
   selector: 'app-about-me',
-  imports: [AboutIntro, AboutSkills, AboutHighlights, SectionContainer],
+  imports: [AboutIntro, AboutSkills, AboutHighlights, RouterLink, MatButtonModule, SectionContainer],
   templateUrl: './about-me.html',
   styleUrl: './about-me.scss',
 })
