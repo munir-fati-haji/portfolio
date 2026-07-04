@@ -27,8 +27,8 @@ module.exports = [
       prettier: prettierPlugin,
     },
     rules: {
-      ...tsPlugin.configs.recommended.rules,
-      ...collectRules(angularEslint.configs.tsRecommended),
+      ...tsPlugin.configs['strict-type-checked'].rules,
+      ...collectRules(angularEslint.configs.tsAll),
       ...prettierPlugin.configs?.rules,
       '@angular-eslint/directive-selector': [
         'error',
@@ -96,6 +96,35 @@ module.exports = [
           ignorePattern: '^import\\s.+',
         },
       ],
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['./app/*'],
+              message: 'Import can be shortened. Use the @app/* alias instead.',
+            },
+            {
+              group: ['./core/*', '../core/*', '../../core/*', '../../../core/*', '../../../../core/*'],
+              message: 'Import can be shortened. Use the @core/* alias instead.',
+            },
+            {
+              group: [
+                './sections/*',
+                '../sections/*',
+                '../../sections/*',
+                '../../../sections/*',
+                '../../../../sections/*',
+              ],
+              message: 'Import can be shortened. Use the @sections/* alias instead.',
+            },
+            {
+              group: ['./shared/*', '../shared/*', '../../shared/*', '../../../shared/*', '../../../../shared/*'],
+              message: 'Import can be shortened. Use the @shared/* alias instead.',
+            },
+          ],
+        },
+      ],
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -104,6 +133,8 @@ module.exports = [
       '@typescript-eslint/no-unused-expressions': 'error',
       '@typescript-eslint/prefer-readonly': ['error', { onlyInlineLambdas: false }],
       '@typescript-eslint/no-empty-function': ['error', { allow: [] }],
+      '@typescript-eslint/no-extraneous-class': ['error', { allowWithDecorator: true }],
+      '@angular-eslint/component-class-suffix': 'off',
       '@angular-eslint/prefer-on-push-component-change-detection': ['warn'],
       '@typescript-eslint/explicit-function-return-type': [
         'error',
@@ -129,8 +160,7 @@ module.exports = [
       prettier: prettierPlugin,
     },
     rules: {
-      ...collectRules(angularEslint.configs.templateRecommended),
-      ...collectRules(angularEslint.configs.templateAccessibility),
+      ...collectRules(angularEslint.configs.templateAll),
       'prettier/prettier': [
         'error',
         {
@@ -150,6 +180,8 @@ module.exports = [
       '@angular-eslint/template/no-negated-async': ['error'],
       '@angular-eslint/template/no-positive-tabindex': ['error'],
       '@angular-eslint/template/no-interpolation-in-attributes': ['error'],
+      '@angular-eslint/template/i18n': 'off',
+      '@angular-eslint/template/no-call-expression': 'off',
       '@angular-eslint/template/attributes-order': [
         'error',
         {

@@ -1,4 +1,5 @@
 import { Component, computed, input, output } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SHARED_CHIP_BUTTON_DEFAULT_SIZE } from './constants/shared-chip-button-default-size';
@@ -8,7 +9,7 @@ import { SharedChipButtonVariant } from './models/shared-chip-button-variant.mod
 
 @Component({
   selector: 'app-shared-chip-button',
-  imports: [MatButtonModule, MatIconModule],
+  imports: [MatButtonModule, MatIconModule, NgTemplateOutlet],
   templateUrl: './shared-chip-button.html',
   styleUrl: './shared-chip-button.scss',
 })
@@ -22,7 +23,7 @@ export class SharedChipButton {
   public readonly selectable = input(false);
   public readonly size = input<SharedChipButtonSize>(SHARED_CHIP_BUTTON_DEFAULT_SIZE);
   public readonly variant = input<SharedChipButtonVariant>(SHARED_CHIP_BUTTON_DEFAULT_VARIANT);
-  public readonly selected = output<void>();
+  public readonly selected = output();
 
   protected readonly chipClasses = computed(() => {
     const classes = ['chip-button', `chip-button--${this.size()}`, this.variantClasses()];

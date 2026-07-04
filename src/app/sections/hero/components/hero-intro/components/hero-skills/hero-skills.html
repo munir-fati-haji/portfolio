@@ -1,22 +1,20 @@
-<div class="hero-skills__section">
-  @for (group of groups(); track group.title) {
-    <div>
-      <p class="hero-skills__background">
-        {{ group.title }}
-      </p>
+@for (group of groups(); track group.title) {
+  <div>
+    <p class="hero-skills__background">
+      {{ group.title }}
+    </p>
 
-      <div class="hero-skills__glow-primary">
-        @for (skill of group.skills; track skill.label) {
-          <button
-            type="button"
-            class="group hero-skills__glow-secondary"
-            matTooltipPosition="above"
-            [matTooltip]="skill.label"
-            [attr.aria-label]="skill.label">
-            <mat-icon class="hero-skills__glow-tertiary" aria-hidden="true" [svgIcon]="skill.icon" />
-          </button>
-        }
-      </div>
+    <div class="hero-skills__glow-primary">
+      @for (skill of group.skills; track skill.label) {
+        <button
+          type="button"
+          class="group hero-skills__glow-secondary"
+          matTooltipPosition="above"
+          [matTooltip]="skill.label"
+          [attr.aria-label]="skill.label">
+          <mat-icon class="hero-skills__glow-tertiary" aria-hidden="true" [svgIcon]="skill.icon" />
+        </button>
+      }
     </div>
-  }
-</div>
+  </div>
+}

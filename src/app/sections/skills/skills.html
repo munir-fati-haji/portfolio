@@ -32,8 +32,8 @@
     </div>
 
     <div class="skills__category-grid">
-      @for (category of categories; track category.title; let index = $index) {
-        <app-skill-category-card [category]="category" [index]="index" />
+      @for (category of categories; track category.title) {
+        <app-skill-category-card [category]="category" [index]="$index" />
       }
     </div>
   </div>

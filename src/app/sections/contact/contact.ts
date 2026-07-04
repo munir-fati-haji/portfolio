@@ -21,10 +21,10 @@ export class Contact {
   protected readonly copiedLabel = signal<string | null>(null);
 
   protected async copyContactValue(link: ContactLink): Promise<void> {
-    if (navigator.clipboard) {
+    if ('clipboard' in navigator) {
       await navigator.clipboard.writeText(link.value);
     } else {
-      this.copyWithFallback(link.value);
+      await this.copyWithFallback(link.value);
     }
 
     this.copiedLabel.set(link.label);
@@ -36,14 +36,7 @@ export class Contact {
     }, 1600);
   }
 
-  private copyWithFallback(value: string): void {
-    const textArea = document.createElement('textarea');
-    textArea.value = value;
-    textArea.style.position = 'fixed';
-    textArea.style.opacity = '0';
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
+  private async copyWithFallback(value: string): Promise<void> {
+    await window.navigator.share({ text: value });
   }
 }

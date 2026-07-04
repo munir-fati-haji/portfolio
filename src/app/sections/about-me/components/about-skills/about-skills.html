@@ -1,5 +1,3 @@
-<div class="about-skills__section">
-  @for (skill of skills(); track skill) {
-    <app-shared-chip-button size="md" variant="cyan" [label]="skill" />
-  }
-</div>
+@for (skill of skills(); track skill) {
+  <app-shared-chip-button size="md" variant="cyan" [label]="skill" />
+}

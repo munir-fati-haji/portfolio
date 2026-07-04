@@ -7,9 +7,9 @@ import { EducationCertificate } from '../../models/education-certificate.model';
 @Component({
   selector: 'app-certificate-card',
   imports: [MatCardModule, MatChipsModule, MatIconModule],
-  host: { class: 'block' },
   templateUrl: './certificate-card.html',
   styleUrl: './certificate-card.scss',
+  host: { class: 'block' },
 })
 export class CertificateCard {
   public readonly certificate = input.required<EducationCertificate>();

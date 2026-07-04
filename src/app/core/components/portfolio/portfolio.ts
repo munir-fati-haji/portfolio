@@ -20,10 +20,10 @@ const sectionRouteById: Record<string, string> = {
 
 @Component({
   selector: 'app-portfolio',
-  host: { class: 'flex h-dvh flex-col overflow-hidden max-sm:h-svh' },
   imports: [Navbar, Footer, Content],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
+  host: { class: 'flex h-dvh flex-col overflow-hidden max-sm:h-svh' },
 })
 export class Portfolio implements AfterViewInit {
   private readonly content = viewChild(Content);
@@ -54,7 +54,7 @@ export class Portfolio implements AfterViewInit {
         distinctUntilChanged(),
         takeUntilDestroyed(this.destroyRef),
       )
-      .subscribe((route) => this.router.navigateByUrl(route, { replaceUrl: true }));
+      .subscribe((route) => void this.router.navigateByUrl(route, { replaceUrl: true }));
   }
 
   private watchRouteChanges(): void {
@@ -65,7 +65,9 @@ export class Portfolio implements AfterViewInit {
         filter((sectionId) => this.content()?.getActiveSectionId() !== sectionId),
         takeUntilDestroyed(this.destroyRef),
       )
-      .subscribe((sectionId) => this.scrollToSection(sectionId));
+      .subscribe((sectionId) => {
+        this.scrollToSection(sectionId);
+      });
   }
 
   private scrollToCurrentSection(): void {
@@ -83,6 +85,8 @@ export class Portfolio implements AfterViewInit {
       route = route.firstChild;
     }
 
-    return route.snapshot.data['sectionId'] ?? 'hero';
+    const sectionId = route.snapshot.data['sectionId'] as unknown;
+
+    return typeof sectionId === 'string' ? sectionId : 'hero';
   }
 }

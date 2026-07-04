@@ -8,9 +8,9 @@ import { SkillLevelVariantPipe } from '../../pipes/skill-level-variant.pipe';
 @Component({
   selector: 'app-skill-category-card',
   imports: [MatCardModule, MatIconModule, SharedChipButton, SkillLevelVariantPipe],
-  host: { class: 'block' },
   templateUrl: './skill-category-card.html',
   styleUrl: './skill-category-card.scss',
+  host: { class: 'block' },
 })
 export class SkillCategoryCard {
   public readonly category = input.required<SkillCategory>();

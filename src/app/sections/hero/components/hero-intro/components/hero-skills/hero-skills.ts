@@ -8,6 +8,7 @@ import { HeroSkillGroup } from '../../models/hero-skill-group';
   imports: [MatIconModule, MatTooltipModule],
   templateUrl: './hero-skills.html',
   styleUrl: './hero-skills.scss',
+  host: { class: 'hero-skills__section' },
 })
 export class HeroSkills {
   public readonly groups = input.required<HeroSkillGroup[]>();
