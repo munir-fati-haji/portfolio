@@ -1,22 +1,46 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { SectionHeader } from '@shared/components/section-header/section-header';
+import { CertificateCard } from './components/certificate-card/certificate-card';
+import { EducationCard } from './components/education-card/education-card';
+import { EDUCATION_CERTIFICATES } from './data/education-certificates';
+import { EDUCATION_DESCRIPTION, EDUCATION_EYEBROW, EDUCATION_TITLE } from './data/education-copy';
+import { EDUCATION_ITEMS } from './data/education-items';
+import { WUT_AMBASSADOR_PROFILE_URL } from './data/education-links';
 import { Education } from './education';
 
 describe('Education', () => {
-  let component: Education;
-  let fixture: ComponentFixture<Education>;
+  beforeEach(() => MockBuilder(Education).mock(SectionHeader).mock(EducationCard).mock(CertificateCard));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [Education],
-    }).compileComponents();
+  it('passes copy to the section header', () => {
+    MockRender(Education);
 
-    fixture = TestBed.createComponent(Education);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    const sectionHeader = ngMocks.find(SectionHeader);
+
+    expect(ngMocks.input(sectionHeader, 'eyebrow')).toBe(EDUCATION_EYEBROW);
+    expect(ngMocks.input(sectionHeader, 'title')).toBe(EDUCATION_TITLE);
+    expect(ngMocks.input(sectionHeader, 'description')).toBe(EDUCATION_DESCRIPTION);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('renders education and certificate cards from data', () => {
+    MockRender(Education);
+
+    const educationCards = ngMocks.findAll(EducationCard);
+    const certificateCards = ngMocks.findAll(CertificateCard);
+
+    expect(educationCards).toHaveLength(EDUCATION_ITEMS.length);
+    expect(ngMocks.input(educationCards[0], 'education')).toEqual(EDUCATION_ITEMS[0]);
+    expect(ngMocks.input(educationCards[0], 'index')).toBe(0);
+    expect(certificateCards).toHaveLength(EDUCATION_CERTIFICATES.length);
+    expect(ngMocks.input(certificateCards[0], 'certificate')).toEqual(EDUCATION_CERTIFICATES[0]);
+  });
+
+  it('links to the official ambassador profile', () => {
+    const fixture = MockRender(Education);
+    const link = fixture.nativeElement.querySelector('.education__ambassador-link') as HTMLAnchorElement;
+
+    expect(link.href).toBe(WUT_AMBASSADOR_PROFILE_URL);
+    expect(link.target).toBe('_blank');
+    expect(link.rel).toBe('noreferrer');
   });
 });

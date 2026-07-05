@@ -1,22 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender } from 'ng-mocks';
 
 import { AboutIntro } from './about-intro';
 
 describe('AboutIntro', () => {
-  let component: AboutIntro;
-  let fixture: ComponentFixture<AboutIntro>;
+  beforeEach(() => MockBuilder(AboutIntro));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AboutIntro],
-    }).compileComponents();
+  it('renders all supplied intro copy', () => {
+    const fixture = MockRender(AboutIntro, {
+      eyebrow: 'About',
+      title: 'Clean frontend systems',
+      description: 'First paragraph.',
+      secondDescription: 'Second paragraph.',
+    });
 
-    fixture = TestBed.createComponent(AboutIntro);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture.nativeElement.textContent).toContain('About');
+    expect(fixture.nativeElement.textContent).toContain('Clean frontend systems');
+    expect(fixture.nativeElement.textContent).toContain('First paragraph.');
+    expect(fixture.nativeElement.textContent).toContain('Second paragraph.');
   });
 });

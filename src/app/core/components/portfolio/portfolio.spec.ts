@@ -1,22 +1,54 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { EMPTY } from 'rxjs';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
+import { vi } from 'vitest';
 
+import { Content } from './components/content/content';
+import { Footer } from './components/footer/footer';
+import { Navbar } from './components/navbar/navbar';
 import { Portfolio } from './portfolio';
 
+@Component({
+  selector: 'app-content',
+  template: '',
+})
+class ContentStub {
+  public readonly scrollElement = document.createElement('div');
+
+  public getActiveSectionId(): string {
+    return 'hero';
+  }
+
+  public scrollToSection(): void {}
+}
+
 describe('Portfolio', () => {
-  let component: Portfolio;
-  let fixture: ComponentFixture<Portfolio>;
+  const router = {
+    events: EMPTY,
+    navigateByUrl: vi.fn(),
+    url: '/',
+  };
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [Portfolio],
-    }).compileComponents();
+  beforeEach(() => {
+    router.navigateByUrl.mockClear();
 
-    fixture = TestBed.createComponent(Portfolio);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    return MockBuilder(Portfolio)
+      .mock(Navbar)
+      .replace(Content, ContentStub)
+      .mock(Footer)
+      .provide({ provide: Router, useValue: router })
+      .provide({
+        provide: ActivatedRoute,
+        useValue: { snapshot: { data: { sectionId: 'hero' } } },
+      });
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('renders the portfolio shell components', () => {
+    MockRender(Portfolio);
+
+    expect(ngMocks.find(Navbar)).toBeTruthy();
+    expect(ngMocks.find(ContentStub)).toBeTruthy();
+    expect(ngMocks.find(Footer)).toBeTruthy();
   });
 });

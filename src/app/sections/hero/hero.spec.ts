@@ -1,22 +1,33 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { SectionContainer } from '@shared/components/section-container/section-container';
+import { HeroCodeCard } from './components/hero-code-card/hero-code-card';
+import { HeroIntro } from './components/hero-intro/hero-intro';
+import { SKILL_GROUPS } from './components/hero-intro/data/hero-skills-group';
+import { HeroStats } from './components/hero-stats/hero-stats';
+import { HERO_CODE_SNIPPET } from './data/hero-code-snippet';
+import { HERO_DESCRIPTION, HERO_NAME, HERO_ROLE } from './data/hero-profile';
+import { HERO_STATS } from './data/hero-stats';
 import { Hero } from './hero';
 
 describe('Hero', () => {
-  let component: Hero;
-  let fixture: ComponentFixture<Hero>;
+  beforeEach(() => MockBuilder(Hero).mock(SectionContainer).mock(HeroIntro).mock(HeroCodeCard).mock(HeroStats));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [Hero],
-    }).compileComponents();
+  it('passes profile details to the intro', () => {
+    MockRender(Hero);
 
-    fixture = TestBed.createComponent(Hero);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    const intro = ngMocks.find(HeroIntro);
+
+    expect(ngMocks.input(intro, 'name')).toBe(HERO_NAME);
+    expect(ngMocks.input(intro, 'role')).toBe(HERO_ROLE);
+    expect(ngMocks.input(intro, 'description')).toBe(HERO_DESCRIPTION);
+    expect(ngMocks.input(intro, 'skills')).toEqual(SKILL_GROUPS);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('passes code and stats to the feature panel', () => {
+    MockRender(Hero);
+
+    expect(ngMocks.input(ngMocks.find(HeroCodeCard), 'code')).toBe(HERO_CODE_SNIPPET);
+    expect(ngMocks.input(ngMocks.find(HeroStats), 'stats')).toEqual(HERO_STATS);
   });
 });

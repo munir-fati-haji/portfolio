@@ -1,22 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { SectionHeader } from '@shared/components/section-header/section-header';
+import { CASE_STUDY_DESCRIPTION, CASE_STUDY_EYEBROW, CASE_STUDY_TITLE } from './data/case-study-copy';
+import { CASE_STUDY_STEPS } from './data/case-study-steps';
 import { CaseStudy } from './case-study';
 
 describe('CaseStudy', () => {
-  let component: CaseStudy;
-  let fixture: ComponentFixture<CaseStudy>;
+  beforeEach(() => MockBuilder(CaseStudy).mock(SectionHeader));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [CaseStudy],
-    }).compileComponents();
+  it('passes copy to the section header', () => {
+    MockRender(CaseStudy);
 
-    fixture = TestBed.createComponent(CaseStudy);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    const sectionHeader = ngMocks.find(SectionHeader);
+
+    expect(ngMocks.input(sectionHeader, 'eyebrow')).toBe(CASE_STUDY_EYEBROW);
+    expect(ngMocks.input(sectionHeader, 'title')).toBe(CASE_STUDY_TITLE);
+    expect(ngMocks.input(sectionHeader, 'description')).toBe(CASE_STUDY_DESCRIPTION);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('renders each case study step in order', () => {
+    const fixture = MockRender(CaseStudy);
+    const text = fixture.nativeElement.textContent;
+
+    CASE_STUDY_STEPS.forEach((step, index) => {
+      expect(text).toContain(`Step 0${index + 1}`);
+      expect(text).toContain(step);
+    });
   });
 });

@@ -1,22 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { MockBuilder, MockRender } from 'ng-mocks';
 
 import { SectionContainer } from './section-container';
 
-describe('AppSectionContainer', () => {
-  let component: SectionContainer;
-  let fixture: ComponentFixture<SectionContainer>;
+@Component({
+  imports: [SectionContainer],
+  template: '<app-section-container><p class="projected-content">Projected content</p></app-section-container>',
+})
+class TestHost {}
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [SectionContainer],
-    }).compileComponents();
+describe('SectionContainer', () => {
+  beforeEach(() => MockBuilder(TestHost).keep(SectionContainer));
 
-    fixture = TestBed.createComponent(SectionContainer);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
+  it('projects content into the section container layout', () => {
+    const fixture = MockRender(TestHost);
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('.section-container__section')).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('.section-container__content')).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('.projected-content')?.textContent).toContain('Projected content');
   });
 });

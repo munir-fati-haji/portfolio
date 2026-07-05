@@ -1,22 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { SectionHeader } from '@shared/components/section-header/section-header';
+import { FOCUS_AREAS } from './data/focus-areas';
+import { WORKING_ON_DESCRIPTION, WORKING_ON_EYEBROW, WORKING_ON_TITLE } from './data/working-on-copy';
 import { WorkingOn } from './working-on';
 
 describe('WorkingOn', () => {
-  let component: WorkingOn;
-  let fixture: ComponentFixture<WorkingOn>;
+  beforeEach(() => MockBuilder(WorkingOn).mock(SectionHeader));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [WorkingOn],
-    }).compileComponents();
+  it('passes copy to the section header', () => {
+    MockRender(WorkingOn);
 
-    fixture = TestBed.createComponent(WorkingOn);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    const sectionHeader = ngMocks.find(SectionHeader);
+
+    expect(ngMocks.input(sectionHeader, 'eyebrow')).toBe(WORKING_ON_EYEBROW);
+    expect(ngMocks.input(sectionHeader, 'title')).toBe(WORKING_ON_TITLE);
+    expect(ngMocks.input(sectionHeader, 'description')).toBe(WORKING_ON_DESCRIPTION);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('renders each focus area with a display index', () => {
+    const fixture = MockRender(WorkingOn);
+    const text = fixture.nativeElement.textContent;
+
+    FOCUS_AREAS.forEach((area, index) => {
+      expect(text).toContain(`0${index + 1}`);
+      expect(text).toContain(area);
+    });
   });
 });

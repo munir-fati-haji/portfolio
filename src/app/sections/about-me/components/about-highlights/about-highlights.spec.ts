@@ -1,22 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { ABOUT_HIGHLIGHTS } from '../../data/about-highlights';
+import { AboutHighlightCard } from './components/about-highlight-card/about-highlight-card';
 import { AboutHighlights } from './about-highlights';
 
 describe('AboutHighlights', () => {
-  let component: AboutHighlights;
-  let fixture: ComponentFixture<AboutHighlights>;
+  beforeEach(() => MockBuilder(AboutHighlights).mock(AboutHighlightCard));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AboutHighlights],
-    }).compileComponents();
+  it('renders a highlight card for each highlight', () => {
+    MockRender(AboutHighlights, { highlights: ABOUT_HIGHLIGHTS });
 
-    fixture = TestBed.createComponent(AboutHighlights);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
+    const cards = ngMocks.findAll(AboutHighlightCard);
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(cards).toHaveLength(ABOUT_HIGHLIGHTS.length);
+    expect(ngMocks.input(cards[0], 'highlight')).toEqual(ABOUT_HIGHLIGHTS[0]);
   });
 });

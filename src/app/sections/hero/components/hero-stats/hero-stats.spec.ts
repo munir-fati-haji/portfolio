@@ -1,22 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender } from 'ng-mocks';
 
+import { HERO_STATS } from '../../data/hero-stats';
 import { HeroStats } from './hero-stats';
 
 describe('HeroStats', () => {
-  let component: HeroStats;
-  let fixture: ComponentFixture<HeroStats>;
+  beforeEach(() => MockBuilder(HeroStats));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HeroStats],
-    }).compileComponents();
+  it('renders each stat value and label', () => {
+    const fixture = MockRender(HeroStats, { stats: HERO_STATS });
+    const text = fixture.nativeElement.textContent;
 
-    fixture = TestBed.createComponent(HeroStats);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    HERO_STATS.forEach((stat) => {
+      expect(text).toContain(stat.value);
+      expect(text).toContain(stat.label);
+    });
   });
 });

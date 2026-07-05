@@ -1,22 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender } from 'ng-mocks';
 
 import { UnderConstruction } from './under-construction';
 
 describe('UnderConstruction', () => {
-  let component: UnderConstruction;
-  let fixture: ComponentFixture<UnderConstruction>;
+  beforeEach(() => MockBuilder(UnderConstruction));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [UnderConstruction],
-    }).compileComponents();
+  it('renders the supplied section name in the title and description', () => {
+    const fixture = MockRender(UnderConstruction, { sectionName: 'Projects' });
+    const text = fixture.nativeElement.textContent;
 
-    fixture = TestBed.createComponent(UnderConstruction);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(text).toContain('Projects is under construction');
+    expect(text).toContain('I am still working on the Projects section.');
   });
 });

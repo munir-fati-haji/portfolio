@@ -1,22 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender } from 'ng-mocks';
 
+import { SKILL_GROUPS } from '../../data/hero-skills-group';
 import { HeroSkills } from './hero-skills';
 
 describe('HeroSkills', () => {
-  let component: HeroSkills;
-  let fixture: ComponentFixture<HeroSkills>;
+  beforeEach(() => MockBuilder(HeroSkills));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HeroSkills],
-    }).compileComponents();
+  it('renders group titles and accessible skill buttons', () => {
+    const fixture = MockRender(HeroSkills, { groups: SKILL_GROUPS });
+    const text = fixture.nativeElement.textContent;
 
-    fixture = TestBed.createComponent(HeroSkills);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
+    SKILL_GROUPS.forEach((group) => expect(text).toContain(group.title));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    const firstSkill = SKILL_GROUPS[0].skills[0];
+    const firstSkillButton = fixture.nativeElement.querySelector(`button[aria-label="${firstSkill.label}"]`);
+
+    expect(firstSkillButton).toBeTruthy();
   });
 });

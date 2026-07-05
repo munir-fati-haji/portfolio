@@ -1,22 +1,33 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { HeroSkills } from './components/hero-skills/hero-skills';
+import { SKILL_GROUPS } from './data/hero-skills-group';
 import { HeroIntro } from './hero-intro';
 
 describe('HeroIntro', () => {
-  let component: HeroIntro;
-  let fixture: ComponentFixture<HeroIntro>;
+  beforeEach(() => MockBuilder(HeroIntro).mock(HeroSkills));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HeroIntro],
-    }).compileComponents();
+  it('renders supplied profile text', () => {
+    const fixture = MockRender(HeroIntro, {
+      name: 'Munir',
+      role: 'Frontend Developer',
+      description: 'Builds Angular applications.',
+      skills: SKILL_GROUPS,
+    });
 
-    fixture = TestBed.createComponent(HeroIntro);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    expect(fixture.nativeElement.textContent).toContain('Munir');
+    expect(fixture.nativeElement.textContent).toContain('Frontend Developer');
+    expect(fixture.nativeElement.textContent).toContain('Builds Angular applications.');
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('passes skill groups to the skills component', () => {
+    MockRender(HeroIntro, {
+      name: 'Munir',
+      role: 'Frontend Developer',
+      description: 'Builds Angular applications.',
+      skills: SKILL_GROUPS,
+    });
+
+    expect(ngMocks.input(ngMocks.find(HeroSkills), 'groups')).toEqual(SKILL_GROUPS);
   });
 });

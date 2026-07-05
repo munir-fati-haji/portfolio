@@ -1,22 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { SharedChipButton } from '@shared/components/shared-chip-button/shared-chip-button';
 import { AboutSkills } from './about-skills';
 
 describe('AboutSkills', () => {
-  let component: AboutSkills;
-  let fixture: ComponentFixture<AboutSkills>;
+  beforeEach(() => MockBuilder(AboutSkills).mock(SharedChipButton));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AboutSkills],
-    }).compileComponents();
+  it('renders one chip per skill with the configured chip styling', () => {
+    const skills = ['Angular', 'TypeScript', 'RxJS'];
 
-    fixture = TestBed.createComponent(AboutSkills);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
+    MockRender(AboutSkills, { skills });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    const chips = ngMocks.findAll(SharedChipButton);
+
+    expect(chips).toHaveLength(skills.length);
+    expect(ngMocks.input(chips[0], 'label')).toBe(skills[0]);
+    expect(ngMocks.input(chips[0], 'size')).toBe('md');
+    expect(ngMocks.input(chips[0], 'variant')).toBe('cyan');
   });
 });

@@ -1,22 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Highlight } from 'ngx-highlightjs';
+import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
+import { HERO_CODE_SNIPPET } from '../../data/hero-code-snippet';
+import { WINDOW_ACTIONS } from './data/window-actions';
 import { HeroCodeCard } from './hero-code-card';
 
 describe('HeroCodeCard', () => {
-  let component: HeroCodeCard;
-  let fixture: ComponentFixture<HeroCodeCard>;
+  beforeEach(() => MockBuilder(HeroCodeCard).mock(Highlight));
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HeroCodeCard],
-    }).compileComponents();
+  it('passes the code snippet to the highlighter', () => {
+    MockRender(HeroCodeCard, { code: HERO_CODE_SNIPPET });
 
-    fixture = TestBed.createComponent(HeroCodeCard);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    const codeElement = ngMocks.find('code');
+
+    expect(ngMocks.input(codeElement, 'highlight')).toBe(HERO_CODE_SNIPPET);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('renders the expected window action labels for assistive technology', () => {
+    const fixture = MockRender(HeroCodeCard, { code: HERO_CODE_SNIPPET });
+    const actionElements = fixture.nativeElement.querySelectorAll(
+      '.hero-code-card__window-action',
+    ) as NodeListOf<Element>;
+    const actionLabels = Array.from(actionElements).map((element) => element.getAttribute('aria-label'));
+
+    expect(actionLabels).toEqual(WINDOW_ACTIONS.map((action) => action.label));
   });
 });
