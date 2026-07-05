@@ -1,6 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { filter, timer } from 'rxjs';
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { ContactLinkCard } from './components/contact-link-card/contact-link-card';
 import { CONTACT_DESCRIPTION, CONTACT_EYEBROW, CONTACT_TITLE } from './data/contact-copy';
@@ -19,6 +21,7 @@ export class Contact {
   protected readonly description = CONTACT_DESCRIPTION;
   protected readonly contactLinks = CONTACT_LINKS;
   protected readonly copiedLabel = signal<string | null>(null);
+  private readonly destroyRef = inject(DestroyRef);
 
   protected async copyContactValue(link: ContactLink): Promise<void> {
     if ('clipboard' in navigator) {
@@ -29,11 +32,12 @@ export class Contact {
 
     this.copiedLabel.set(link.label);
 
-    window.setTimeout(() => {
-      if (this.copiedLabel() === link.label) {
-        this.copiedLabel.set(null);
-      }
-    }, 1600);
+    timer(1600)
+      .pipe(
+        filter(() => this.copiedLabel() === link.label),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe(() => this.copiedLabel.set(null));
   }
 
   private async copyWithFallback(value: string): Promise<void> {
