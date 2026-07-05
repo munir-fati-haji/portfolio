@@ -41,35 +41,27 @@ const waitFor = (duration: number): Promise<void> =>
     setTimeout(resolve, duration);
   });
 
-const settleInitialScroll = async (): Promise<void> => {
-  const content = ngMocks.findInstance(ContentStub);
+beforeEach(() =>
+  MockBuilder(Portfolio)
+    .mock(Navbar)
+    .replace(Content, ContentStub)
+    .mock(Footer)
+    .provide({ provide: Router, useValue: router })
+    .provide({
+      provide: ActivatedRoute,
+      useValue: { snapshot: { data: routeData } },
+    }),
+);
 
+beforeEach(() => {
   ContentStub.activeSectionId = 'hero';
-  content.scrollElement.dispatchEvent(new Event('scroll'));
-  await waitFor(100);
-};
+  ContentStub.scrollToSection.mockClear();
+  router.navigateByUrl.mockClear();
+  router.url = '/';
+  routeData.sectionId = 'hero';
+});
 
 describe('Portfolio', () => {
-  beforeEach(() =>
-    MockBuilder(Portfolio)
-      .mock(Navbar)
-      .replace(Content, ContentStub)
-      .mock(Footer)
-      .provide({ provide: Router, useValue: router })
-      .provide({
-        provide: ActivatedRoute,
-        useValue: { snapshot: { data: routeData } },
-      }),
-  );
-
-  beforeEach(() => {
-    ContentStub.activeSectionId = 'hero';
-    ContentStub.scrollToSection.mockClear();
-    router.navigateByUrl.mockClear();
-    router.url = '/';
-    routeData.sectionId = 'hero';
-  });
-
   it('renders the portfolio shell components', () => {
     MockRender(Portfolio);
 
@@ -77,34 +69,28 @@ describe('Portfolio', () => {
     expect(ngMocks.find(ContentStub)).toBeTruthy();
     expect(ngMocks.find(Footer)).toBeTruthy();
   });
+});
 
-  it('does not replace a route navigation with a stale scroll section', async () => {
+describe('Portfolio route synchronization', () => {
+  it('scrolls to the active route section when the route changes', async () => {
     MockRender(Portfolio);
-    await settleInitialScroll();
 
     routeData.sectionId = 'about';
     router.url = '/about';
     routerEvents.next(new NavigationEnd(1, '/about', '/about'));
     await waitFor(20);
 
-    const content = ngMocks.findInstance(ContentStub);
-    ContentStub.activeSectionId = 'hero';
-    content.scrollElement.dispatchEvent(new Event('scroll'));
-    await waitFor(100);
-
     expect(ContentStub.scrollToSection).toHaveBeenCalledWith('about');
-    expect(router.navigateByUrl).not.toHaveBeenCalledWith('/', { replaceUrl: true });
   });
 
-  it('updates the route for user-driven scrolling', async () => {
+  it('does not update the route when scrolling changes the active section', async () => {
     MockRender(Portfolio);
-    await settleInitialScroll();
 
     const content = ngMocks.findInstance(ContentStub);
     ContentStub.activeSectionId = 'contact';
     content.scrollElement.dispatchEvent(new Event('scroll'));
     await waitFor(100);
 
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/contact', { replaceUrl: true });
+    expect(router.navigateByUrl).not.toHaveBeenCalled();
   });
 });

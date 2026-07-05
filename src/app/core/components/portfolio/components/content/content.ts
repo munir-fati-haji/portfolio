@@ -35,8 +35,14 @@ export class Content {
   }
 
   public scrollToSection(sectionId: string): void {
-    this.sectionElements()
-      .find((section) => section.nativeElement.dataset['sectionId'] === sectionId)
-      ?.nativeElement.scrollIntoView({ block: 'start' });
+    const sectionElement = this.sectionElements().find(
+      (section) => section.nativeElement.dataset['sectionId'] === sectionId,
+    )?.nativeElement;
+
+    if (!sectionElement) {
+      return;
+    }
+
+    this.scrollElement.scrollTo({ top: sectionElement.offsetTop, behavior: 'auto' });
   }
 }
