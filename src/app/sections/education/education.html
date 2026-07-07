@@ -3,7 +3,7 @@
     <div class="education__header-row">
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-      <div>
+      <aside aria-label="Education summary">
         <div class="education__stats-grid">
           <mat-card appearance="outlined">
             <mat-card-content>
@@ -28,7 +28,7 @@
           Open Official WUT Ambassador Profile
           <mat-icon class="education__external-icon" aria-hidden="true">open_in_new</mat-icon>
         </button>
-      </div>
+      </aside>
     </div>
 
     <div class="education__timeline">
@@ -37,18 +37,18 @@
       }
     </div>
 
-    <div class="education__certificates-section">
-      <div class="education__certificates-heading">
+    <section class="education__certificates-section" aria-labelledby="education-certificates-title">
+      <header class="education__certificates-heading">
         <mat-divider class="education__heading-line" />
-        <p class="education__heading-title">Language Certificates</p>
+        <p id="education-certificates-title" class="education__heading-title">Language Certificates</p>
         <mat-divider class="education__heading-line" />
-      </div>
+      </header>
 
       <div class="education__certificate-grid">
         @for (certificate of certificates; track certificate.school) {
           <app-certificate-card [certificate]="certificate" />
         }
       </div>
-    </div>
+    </section>
   </div>
 </section>
