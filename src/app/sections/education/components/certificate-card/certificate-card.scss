@@ -1,19 +1,23 @@
 @reference '../../../../../styles.css';
 
 .certificate-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-0 shadow-xl shadow-black/20 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.055];
+  @apply relative overflow-hidden rounded-[2rem] border p-0 backdrop-blur transition;
+
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  box-shadow: 0 16px 34px var(--portfolio-card-shadow);
+  color: var(--portfolio-text);
 }
 
-:host-context(.app-theme-light) .certificate-card__card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+.certificate-card__card:hover {
+  background: var(--portfolio-bg-soft);
+  border-color: var(--portfolio-accent-border);
 }
 
 .certificate-card__shine {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
+
+  --tw-gradient-via: var(--portfolio-accent-border);
 }
 
 .certificate-card__body {
@@ -25,17 +29,12 @@
 }
 
 .certificate-card__icon {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
-}
+  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border shadow-lg backdrop-blur;
 
-:host-context(.app-theme-light) .certificate-card__icon {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+  background: var(--portfolio-accent-surface);
+  border-color: var(--portfolio-accent-border);
+  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
+  color: var(--portfolio-accent);
 }
 
 .certificate-card__content {
@@ -43,27 +42,21 @@
 }
 
 .certificate-card__school {
-  @apply text-lg font-bold text-white;
-}
+  @apply text-lg font-bold;
 
-:host-context(.app-theme-light) .certificate-card__school {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .certificate-card__certificate {
-  @apply mt-1 text-sm leading-6 text-slate-300;
-}
+  @apply mt-1 text-sm leading-6;
 
-:host-context(.app-theme-light) .certificate-card__certificate {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }
 
 .certificate-card__period {
-  @apply mt-1 text-sm text-slate-500;
-}
+  @apply mt-1 text-sm;
 
-:host-context(.app-theme-light) .certificate-card__period {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--portfolio-text-soft);
 }
 
 .certificate-card__skill-list {
@@ -71,29 +64,10 @@
 }
 
 .certificate-card__skill-chip {
-  @apply border border-white/12 bg-white/[0.07]! text-slate-300!;
-}
+  --mat-chip-elevated-container-color: var(--portfolio-bg-soft);
+  --mat-chip-label-text-color: var(--portfolio-text-muted);
+  --mat-chip-outline-color: var(--portfolio-border);
 
-:host-context(.app-theme-dark) .certificate-card__skill-chip {
-  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
-  --mat-chip-label-text-color: #e2e8f0;
-  --mdc-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
-  --mdc-chip-label-text-color: #e2e8f0;
-  --mdc-chip-outline-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: #e2e8f0 !important;
-}
-
-:host-context(.app-theme-light) .certificate-card__skill-chip {
   border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
   color: var(--portfolio-text-muted) !important;
-}
-
-:host-context(.app-theme-dark) .certificate-card__skill-chip ::ng-deep .mat-mdc-chip-action-label,
-:host-context(.app-theme-dark) .certificate-card__skill-chip ::ng-deep .mdc-evolution-chip__text-label {
-  color: currentColor !important;
 }

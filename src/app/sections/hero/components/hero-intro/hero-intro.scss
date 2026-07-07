@@ -5,7 +5,9 @@
 }
 
 .hero-intro__eyebrow {
-  @apply mb-5 text-sm font-bold uppercase tracking-[0.35em] text-cyan-400;
+  @apply mb-5 text-sm font-bold uppercase tracking-[0.35em];
+
+  color: var(--portfolio-accent);
 }
 
 .hero-intro__title {
@@ -13,23 +15,19 @@
 }
 
 .hero-intro__name {
-  @apply text-cyan-400;
+  color: var(--portfolio-accent);
 }
 
 .hero-intro__role {
-  @apply mt-5 text-2xl font-extrabold text-white sm:text-3xl;
-}
+  @apply mt-5 text-2xl font-extrabold sm:text-3xl;
 
-:host-context(.app-theme-light) .hero-intro__role {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .hero-intro__description {
-  @apply mt-8 max-w-xl text-lg leading-8 text-slate-100;
-}
+  @apply mt-8 max-w-xl text-lg leading-8;
 
-:host-context(.app-theme-light) .hero-intro__description {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }
 
 .hero-intro__actions {
@@ -37,15 +35,16 @@
 }
 
 .hero-intro__primary-action {
-  @apply h-12! rounded-full! bg-cyan-400! px-7! text-sm! font-bold! text-slate-950!;
+  @apply h-12! rounded-full! px-7! text-sm! font-bold!;
+
+  background: var(--mat-sys-primary) !important;
+  color: var(--mat-sys-on-primary) !important;
 }
 
 .hero-intro__secondary-action {
-  @apply h-12! rounded-full! border-white/20! px-7! text-sm! font-bold! text-white!;
-}
+  @apply h-12! rounded-full! px-7! text-sm! font-bold!;
 
-:host-context(.app-theme-light) .hero-intro__secondary-action {
-  border-color: var(--portfolio-border) !important;
-
+  background: var(--portfolio-secondary-button-bg) !important;
+  border-color: var(--portfolio-secondary-button-border) !important;
   color: var(--portfolio-text) !important;
 }

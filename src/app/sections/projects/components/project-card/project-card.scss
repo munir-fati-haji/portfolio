@@ -1,19 +1,23 @@
 @reference '../../../../../styles.css';
 
 .project-card__card {
-  @apply relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.045] p-0 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/25 hover:bg-white/[0.065];
+  @apply relative overflow-hidden rounded-3xl border p-0 backdrop-blur transition;
+
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
+  color: var(--portfolio-text);
 }
 
-:host-context(.app-theme-light) .project-card__card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+.project-card__card:hover {
+  background: var(--portfolio-bg-soft);
+  border-color: var(--portfolio-accent-border);
 }
 
 .project-card__shine {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
+
+  --tw-gradient-via: var(--portfolio-accent-border);
 }
 
 .project-card__content {
@@ -25,53 +29,30 @@
 }
 
 .project-card__featured-chip {
-  @apply border border-cyan-300/25 bg-cyan-300/12! text-cyan-100!;
-}
+  --mat-chip-elevated-container-color: var(--portfolio-accent-surface);
+  --mat-chip-label-text-color: var(--portfolio-accent);
+  --mat-chip-outline-color: var(--portfolio-accent-border);
 
-:host-context(.app-theme-dark) .project-card__featured-chip {
-  --mat-chip-elevated-container-color: rgba(103, 232, 249, 0.12);
-  --mat-chip-label-text-color: #a5f3fc;
-  --mdc-chip-elevated-container-color: rgba(103, 232, 249, 0.12);
-  --mdc-chip-label-text-color: #a5f3fc;
-  --mdc-chip-outline-color: rgba(103, 232, 249, 0.3);
-  background: rgba(103, 232, 249, 0.12) !important;
-  border-color: rgba(103, 232, 249, 0.3) !important;
-  color: #a5f3fc !important;
-}
-
-:host-context(.app-theme-light) .project-card__featured-chip {
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-}
-
-:host-context(.app-theme-dark) .project-card__featured-chip ::ng-deep .mat-mdc-chip-action-label,
-:host-context(.app-theme-dark) .project-card__featured-chip ::ng-deep .mdc-evolution-chip__text-label {
-  color: currentColor !important;
+  border-color: var(--portfolio-accent-border) !important;
+  color: var(--portfolio-accent) !important;
 }
 
 .project-card__type {
-  @apply text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300;
-}
+  @apply text-xs font-semibold uppercase tracking-[0.28em];
 
-:host-context(.app-theme-light) .project-card__type {
-  color: #0e7490 !important;
+  color: var(--portfolio-accent);
 }
 
 .project-card__title {
-  @apply mt-3 text-2xl font-bold text-white;
-}
+  @apply mt-3 text-2xl font-bold;
 
-:host-context(.app-theme-light) .project-card__title {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .project-card__description {
-  @apply mt-5 text-sm leading-7 text-slate-300 sm:text-base;
-}
+  @apply mt-5 text-sm leading-7 sm:text-base;
 
-:host-context(.app-theme-light) .project-card__description {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }
 
 .project-card__feature-list {
@@ -79,15 +60,16 @@
 }
 
 .project-card__feature-item {
-  @apply flex gap-3 text-sm leading-6 text-slate-300;
-}
+  @apply flex gap-3 text-sm leading-6;
 
-:host-context(.app-theme-light) .project-card__feature-item {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }
 
 .project-card__feature-marker {
-  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,0.65)];
+  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full;
+
+  background: var(--portfolio-accent);
+  box-shadow: 0 0 16px var(--portfolio-accent-border);
 }
 
 .project-card__tech-list {
@@ -95,29 +77,10 @@
 }
 
 .project-card__tech-chip {
-  @apply border border-white/12 bg-white/[0.07]! text-slate-300!;
-}
+  --mat-chip-elevated-container-color: var(--portfolio-bg-soft);
+  --mat-chip-label-text-color: var(--portfolio-text-muted);
+  --mat-chip-outline-color: var(--portfolio-border);
 
-:host-context(.app-theme-dark) .project-card__tech-chip {
-  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
-  --mat-chip-label-text-color: #e2e8f0;
-  --mdc-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
-  --mdc-chip-label-text-color: #e2e8f0;
-  --mdc-chip-outline-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: #e2e8f0 !important;
-}
-
-:host-context(.app-theme-light) .project-card__tech-chip {
   border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
   color: var(--portfolio-text-muted) !important;
-}
-
-:host-context(.app-theme-dark) .project-card__tech-chip ::ng-deep .mat-mdc-chip-action-label,
-:host-context(.app-theme-dark) .project-card__tech-chip ::ng-deep .mdc-evolution-chip__text-label {
-  color: currentColor !important;
 }

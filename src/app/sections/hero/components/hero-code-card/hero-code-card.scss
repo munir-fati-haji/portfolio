@@ -1,21 +1,18 @@
 @reference '../../../../../styles.css';
 
-:host {
-  @apply block min-w-0 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#10172a] shadow-xl;
-}
+.hero-code-card__card {
+  @apply min-w-0 overflow-hidden rounded-2xl border shadow-xl;
 
-:host-context(.app-theme-light) {
-  border-color: var(--portfolio-border) !important;
+  background: var(--portfolio-code-bg);
+  border-color: var(--portfolio-border);
+  color: var(--portfolio-text);
 }
 
 .hero-code-card__header {
-  @apply flex items-center gap-3 border-b border-white/10 bg-white/3 px-4 py-3 sm:px-6;
-}
+  @apply flex items-center gap-3 border-b px-4 py-3 sm:px-6;
 
-:host-context(.app-theme-light) .hero-code-card__header {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
+  background: var(--portfolio-code-header-bg);
+  border-color: var(--portfolio-border);
 }
 
 .hero-code-card__window-action {

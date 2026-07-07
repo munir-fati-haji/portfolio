@@ -5,16 +5,8 @@
   min-height: 100%;
 
   background:
-    radial-gradient(circle at 16% 12%, rgba(34, 211, 238, 0.18), transparent 28rem),
-    radial-gradient(circle at 82% 18%, rgba(99, 102, 241, 0.16), transparent 30rem),
-    radial-gradient(circle at 50% 110%, rgba(14, 165, 233, 0.1), transparent 26rem),
-    linear-gradient(180deg, #050816 0%, #08111f 48%, #050816 100%);
-}
-
-:host-context(.app-theme-light) {
-  background:
-    radial-gradient(circle at 16% 12%, rgba(8, 145, 178, 0.14), transparent 28rem),
-    radial-gradient(circle at 82% 18%, rgba(37, 99, 235, 0.11), transparent 30rem),
-    radial-gradient(circle at 50% 110%, rgba(14, 165, 233, 0.08), transparent 26rem),
-    linear-gradient(180deg, #f8fafc 0%, #eef6ff 48%, #f8fafc 100%);
+    radial-gradient(circle at 16% 12%, var(--portfolio-accent-surface), transparent 28rem),
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent), transparent 30rem),
+    radial-gradient(circle at 50% 110%, var(--portfolio-accent-surface), transparent 26rem),
+    linear-gradient(180deg, var(--mat-sys-surface) 0%, var(--mat-sys-surface-container-lowest) 48%, var(--mat-sys-surface) 100%);
 }

@@ -5,11 +5,9 @@
 }
 
 .hero__feature-panel {
-  @apply min-w-0 w-full rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur sm:rounded-4xl sm:p-5 xl:p-6;
-}
+  @apply min-w-0 w-full rounded-3xl border p-3 backdrop-blur sm:rounded-4xl sm:p-5 xl:p-6;
 
-:host-context(.app-theme-light) .hero__feature-panel {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
 }

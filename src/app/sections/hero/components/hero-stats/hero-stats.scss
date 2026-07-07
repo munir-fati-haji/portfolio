@@ -5,21 +5,19 @@
 }
 
 .hero-stats__stat-card {
-  @apply rounded-2xl bg-white/5 px-5 py-6 text-center;
-}
+  @apply rounded-2xl px-5 py-6 text-center;
 
-:host-context(.app-theme-light) .hero-stats__stat-card {
-  background-color: var(--portfolio-bg-elevated) !important;
+  background: var(--portfolio-bg-soft);
 }
 
 .hero-stats__value {
-  @apply text-3xl font-extrabold text-cyan-400;
+  @apply text-3xl font-extrabold;
+
+  color: var(--portfolio-accent);
 }
 
 .hero-stats__label {
-  @apply mt-2 text-xs font-medium text-slate-400;
-}
+  @apply mt-2 text-xs font-medium;
 
-:host-context(.app-theme-light) .hero-stats__label {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--portfolio-text-soft);
 }

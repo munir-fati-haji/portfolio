@@ -1,11 +1,9 @@
 @reference '../../../../styles.css';
 
 .section-container__section {
-  @apply flex min-h-[calc(100svh-64px)] overflow-x-hidden bg-transparent text-white;
-}
+  @apply flex min-h-[calc(100svh-64px)] overflow-x-hidden bg-transparent;
 
-:host-context(.app-theme-light) .section-container__section {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .section-container__content {

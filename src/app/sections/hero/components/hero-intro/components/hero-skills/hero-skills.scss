@@ -5,11 +5,9 @@
 }
 
 .hero-skills__background {
-  @apply mb-2 text-xs font-bold uppercase tracking-[0.25em] text-slate-500;
-}
+  @apply mb-2 text-xs font-bold uppercase tracking-[0.25em];
 
-:host-context(.app-theme-light) .hero-skills__background {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--portfolio-text-soft);
 }
 
 .hero-skills__glow-primary {
@@ -17,15 +15,18 @@
 }
 
 .hero-skills__glow-secondary {
-  @apply inline-flex size-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-md transition duration-200 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/15 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_16px_40px_rgba(34,211,238,0.16)] focus:outline-none focus:ring-2 focus:ring-cyan-400/50 sm:size-12;
+  @apply inline-flex size-11 items-center justify-center rounded-2xl border backdrop-blur-md transition duration-200 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 sm:size-12;
+
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  box-shadow: 0 10px 30px var(--portfolio-card-shadow);
 }
 
-:host-context(.app-theme-light) .hero-skills__glow-secondary {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
+.hero-skills__glow-secondary:hover {
+  background: var(--portfolio-accent-surface);
+  border-color: var(--portfolio-accent-border);
 }
 
 .hero-skills__glow-tertiary {
-  @apply size-6! drop-shadow-[0_2px_8px_rgba(255,255,255,0.18)] transition duration-200 group-hover:scale-110;
+  @apply size-6! transition duration-200 group-hover:scale-110;
 }

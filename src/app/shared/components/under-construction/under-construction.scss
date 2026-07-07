@@ -1,13 +1,10 @@
 @reference '../../../../styles.css';
 
 .under-construction__section {
-  @apply relative overflow-hidden bg-[#070b1a] px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
-}
+  @apply relative overflow-hidden px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
 
-:host-context(.app-theme-light) .under-construction__section {
-  background-color: var(--portfolio-bg) !important;
-
-  color: var(--portfolio-text) !important;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-text);
 }
 
 .under-construction__background {
@@ -15,11 +12,9 @@
 }
 
 .under-construction__glow-primary {
-  @apply absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl;
-}
+  @apply absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full blur-3xl;
 
-:host-context(.app-theme-light) .under-construction__glow-primary {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+  background: var(--portfolio-accent-surface);
 }
 
 .under-construction__glow-secondary {
@@ -31,41 +26,32 @@
 }
 
 .under-construction__card {
-  @apply relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-8 text-center shadow-2xl shadow-black/25 backdrop-blur sm:p-10 lg:p-12;
-}
+  @apply relative w-full overflow-hidden rounded-[2rem] border p-8 text-center backdrop-blur sm:p-10 lg:p-12;
 
-:host-context(.app-theme-light) .under-construction__card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
 }
 
 .under-construction__card-glow {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
+
+  --tw-gradient-via: var(--portfolio-accent-border);
 }
 
 .under-construction__status {
-  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block;
-}
+  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none sm:block;
 
-:host-context(.app-theme-light) .under-construction__status {
-  color: rgba(15, 23, 42, 0.08) !important;
+  color: color-mix(in srgb, var(--portfolio-text) 8%, transparent);
 }
 
 .under-construction__icon-surface {
-  @apply relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
-}
+  @apply relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border shadow-lg backdrop-blur;
 
-:host-context(.app-theme-light) .under-construction__icon-surface {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+  background: var(--portfolio-accent-surface);
+  border-color: var(--portfolio-accent-border);
+  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
+  color: var(--portfolio-accent);
 }
 
 .under-construction__icon {
@@ -75,25 +61,19 @@
 }
 
 .under-construction__eyebrow {
-  @apply relative z-10 mt-8 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300;
-}
+  @apply relative z-10 mt-8 text-sm font-semibold uppercase tracking-[0.35em];
 
-:host-context(.app-theme-light) .under-construction__eyebrow {
-  color: #0e7490 !important;
+  color: var(--portfolio-accent);
 }
 
 .under-construction__title {
-  @apply relative z-10 mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl;
-}
+  @apply relative z-10 mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl;
 
-:host-context(.app-theme-light) .under-construction__title {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .under-construction__description {
-  @apply relative z-10 mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg;
-}
+  @apply relative z-10 mx-auto mt-6 max-w-2xl text-base leading-8 sm:text-lg;
 
-:host-context(.app-theme-light) .under-construction__description {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }

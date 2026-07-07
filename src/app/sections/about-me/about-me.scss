@@ -9,5 +9,9 @@
 }
 
 .about-me__primary-action {
-  @apply inline-flex items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:bg-cyan-200;
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold shadow-lg transition;
+
+  background: var(--mat-sys-primary);
+  box-shadow: 0 10px 24px var(--portfolio-primary-button-shadow);
+  color: var(--mat-sys-on-primary);
 }

@@ -1,15 +1,16 @@
 @reference '../../../../../../../styles.css';
 
 .about-highlight-card__card {
-  @apply rounded-2xl border border-white/10 bg-slate-900/70 p-0 text-white transition hover:border-cyan-300/40 hover:bg-slate-900/90;
+  @apply rounded-2xl border p-0 transition;
+
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  color: var(--portfolio-text);
 }
 
-:host-context(.app-theme-light) .about-highlight-card__card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  color: var(--portfolio-text) !important;
+.about-highlight-card__card:hover {
+  background: var(--portfolio-bg-soft);
+  border-color: var(--portfolio-accent-border);
 }
 
 .about-highlight-card__body {
@@ -17,17 +18,12 @@
 }
 
 .about-highlight-card__icon-surface {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur transition group-hover:scale-105 group-hover:bg-cyan-300/15;
-}
+  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border shadow-lg backdrop-blur transition group-hover:scale-105;
 
-:host-context(.app-theme-light) .about-highlight-card__icon-surface {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+  background: var(--portfolio-accent-surface);
+  border-color: var(--portfolio-accent-border);
+  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
+  color: var(--portfolio-accent);
 }
 
 .about-highlight-card__content {
@@ -35,17 +31,13 @@
 }
 
 .about-highlight-card__title {
-  @apply font-semibold text-white;
-}
+  @apply font-semibold;
 
-:host-context(.app-theme-light) .about-highlight-card__title {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .about-highlight-card__description {
-  @apply mt-2 text-sm leading-6 text-slate-400;
-}
+  @apply mt-2 text-sm leading-6;
 
-:host-context(.app-theme-light) .about-highlight-card__description {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--portfolio-text-soft);
 }

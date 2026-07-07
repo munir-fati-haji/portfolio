@@ -1,11 +1,9 @@
 @reference '../../../styles.css';
 
 .skills__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
-}
+  @apply relative overflow-hidden bg-transparent px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
 
-:host-context(.app-theme-light) .skills__section {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .skills__background {
@@ -13,11 +11,9 @@
 }
 
 .skills__glow-primary {
-  @apply absolute left-[-10rem] top-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl;
-}
+  @apply absolute left-[-10rem] top-20 h-96 w-96 rounded-full blur-3xl;
 
-:host-context(.app-theme-light) .skills__glow-primary {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+  background: var(--portfolio-accent-surface);
 }
 
 .skills__glow-secondary {
@@ -41,27 +37,21 @@
 }
 
 .skills__stat {
-  @apply border-l border-cyan-300/30 pl-4;
-}
+  @apply border-l pl-4;
 
-:host-context(.app-theme-light) .skills__stat {
-  border-color: rgba(8, 145, 178, 0.25) !important;
+  border-color: var(--portfolio-accent-border);
 }
 
 .skills__stat-value {
-  @apply text-2xl font-black tracking-tight text-cyan-300 sm:text-3xl;
-}
+  @apply text-2xl font-black tracking-tight sm:text-3xl;
 
-:host-context(.app-theme-light) .skills__stat-value {
-  color: #0e7490 !important;
+  color: var(--portfolio-accent);
 }
 
 .skills__stat-label {
-  @apply mt-1 text-sm leading-6 text-slate-400;
-}
+  @apply mt-1 text-sm leading-6;
 
-:host-context(.app-theme-light) .skills__stat-label {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--portfolio-text-soft);
 }
 
 .skills__legend {

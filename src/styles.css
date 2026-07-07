@@ -10,6 +10,50 @@ body {
   background: var(--portfolio-bg);
 }
 
+.app-section {
+  background: transparent;
+  color: var(--portfolio-text);
+}
+
+.app-surface {
+  background: var(--portfolio-bg-elevated) !important;
+  border-color: var(--portfolio-border) !important;
+  box-shadow: 0 18px 46px var(--portfolio-card-shadow) !important;
+  color: var(--portfolio-text) !important;
+}
+
+.app-surface-soft {
+  background: var(--portfolio-bg-soft) !important;
+  border-color: var(--portfolio-border) !important;
+  color: var(--portfolio-text) !important;
+}
+
+.app-accent-surface {
+  background: var(--portfolio-accent-surface) !important;
+  border-color: var(--portfolio-accent-border) !important;
+  color: var(--portfolio-accent) !important;
+}
+
+.app-text {
+  color: var(--portfolio-text) !important;
+}
+
+.app-text-muted {
+  color: var(--portfolio-text-muted) !important;
+}
+
+.app-text-soft {
+  color: var(--portfolio-text-soft) !important;
+}
+
+.app-accent-text {
+  color: var(--portfolio-accent) !important;
+}
+
+.app-outline {
+  border-color: var(--portfolio-border) !important;
+}
+
 .app-theme-toggle {
   display: none !important;
 }
@@ -20,144 +64,47 @@ body {
   }
 }
 
-.app-theme-light [class~='bg-[#070b1a]'],
-.app-theme-light [class~='bg-[#070b1a]!'],
-.app-theme-light [class~='bg-[#070b1a]/80!'],
-.app-theme-light [class~='bg-[#070b1a]/90'] {
-  background-color: var(--portfolio-bg) !important;
+.app-secondary-action {
+  background: var(--portfolio-secondary-button-bg) !important;
+  border-color: var(--portfolio-secondary-button-border) !important;
+  color: var(--portfolio-secondary-button-text) !important;
 }
 
-.app-theme-light [class~='bg-[#030712]/70'] {
-  background-color: rgba(15, 23, 42, 0.28) !important;
+.app-code-card {
+  background: var(--portfolio-code-bg) !important;
+  border-color: var(--portfolio-border) !important;
+  color: var(--portfolio-text) !important;
+  box-shadow: 0 18px 46px var(--portfolio-card-shadow) !important;
 }
 
-.app-theme-light [class~='bg-white/[0.035]'],
-.app-theme-light [class~='bg-white/[0.045]'],
-.app-theme-light [class~='bg-white/[0.045]!'],
-.app-theme-light [class~='bg-white/[0.06]'],
-.app-theme-light [class~='bg-white/[0.08]'],
-.app-theme-light [class~='bg-white/3'],
-.app-theme-light [class~='bg-white/5'],
-.app-theme-light [class~='bg-white/10'],
-.app-theme-light [class~='bg-white/10!'] {
-  background-color: var(--portfolio-bg-elevated) !important;
-}
-
-.app-theme-light [class~='bg-slate-900/70'],
-.app-theme-light [class~='bg-slate-900/90'] {
-  background-color: var(--portfolio-bg-elevated) !important;
-}
-
-.app-theme-light [class~='border-white/10'],
-.app-theme-light [class~='border-white/10!'],
-.app-theme-light [class~='border-white/15'],
-.app-theme-light [class~='border-white/15!'],
-.app-theme-light [class~='border-white/20!'] {
+.app-code-card-header {
+  background: var(--portfolio-code-header-bg) !important;
   border-color: var(--portfolio-border) !important;
 }
 
-.app-theme-light [class~='text-white'],
-.app-theme-light [class~='text-white!'] {
+.app-code-block,
+.app-code-block .hljs {
+  background: var(--portfolio-code-bg) !important;
   color: var(--portfolio-text) !important;
 }
 
-.app-theme-light [class~='text-slate-100'],
-.app-theme-light [class~='text-slate-200'],
-.app-theme-light [class~='text-slate-300'],
-.app-theme-light [class~='text-slate-300!'] {
-  color: var(--portfolio-text-muted) !important;
+.app-code-block .hljs-keyword,
+.app-code-block .hljs-literal,
+.app-code-block .hljs-built_in,
+.app-code-block .hljs-type {
+  color: var(--portfolio-code-keyword) !important;
 }
 
-.app-theme-light [class~='text-slate-400'],
-.app-theme-light [class~='text-slate-500'] {
-  color: var(--portfolio-text-soft) !important;
+.app-code-block .hljs-string {
+  color: var(--portfolio-code-string) !important;
 }
 
-.app-theme-light [class~='shadow-black/10'],
-.app-theme-light [class~='shadow-black/20'],
-.app-theme-light [class~='shadow-black/25'],
-.app-theme-light [class~='shadow-black/40'] {
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+.app-code-block .hljs-title,
+.app-code-block .hljs-attr,
+.app-code-block .hljs-property {
+  color: var(--portfolio-accent) !important;
 }
 
-.app-theme-light [class~='text-white/[0.04]'],
-.app-theme-light [class~='text-white/50'] {
-  color: rgba(15, 23, 42, 0.08) !important;
-}
-
-.app-theme-light [class~='bg-cyan-300/10'],
-.app-theme-light [class~='bg-cyan-300/10!'],
-.app-theme-light [class~='bg-cyan-300/15'],
-.app-theme-light [class~='bg-cyan-300/15!'] {
-  background-color: rgba(8, 145, 178, 0.1) !important;
-}
-
-.app-theme-light [class~='border-cyan-300/20'],
-.app-theme-light [class~='border-cyan-300/20!'],
-.app-theme-light [class~='border-cyan-300/30'],
-.app-theme-light [class~='border-cyan-300/40'] {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-}
-
-.app-theme-light [class~='text-cyan-100'],
-.app-theme-light [class~='text-cyan-100!'],
-.app-theme-light [class~='text-cyan-200'],
-.app-theme-light [class~='text-cyan-200!'],
-.app-theme-light [class~='text-cyan-300'],
-.app-theme-light [class~='text-cyan-300!'] {
-  color: #0e7490 !important;
-}
-
-.app-theme-light [class~='shadow-cyan-950/20'],
-.app-theme-light [class~='shadow-cyan-950/25'],
-.app-theme-light [class~='shadow-cyan-950/30'] {
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
-}
-
-.app-theme-light .app-secondary-action {
-  border-color: rgba(8, 145, 178, 0.28) !important;
-  color: #0e7490 !important;
-  background: rgba(255, 255, 255, 0.5) !important;
-}
-
-.app-theme-light .app-secondary-action .mdc-button__label {
-  color: #0e7490 !important;
-}
-
-.app-theme-light .app-code-card {
-  background: rgba(255, 255, 255, 0.86) !important;
-  border-color: rgba(15, 23, 42, 0.14) !important;
-  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.14) !important;
-}
-
-.app-theme-light .app-code-card-header {
-  background: rgba(226, 232, 240, 0.9) !important;
-  border-color: rgba(15, 23, 42, 0.12) !important;
-}
-
-.app-theme-light .app-code-block,
-.app-theme-light .app-code-block .hljs {
-  background: #f8fafc !important;
-  color: #0f172a !important;
-}
-
-.app-theme-light .app-code-block .hljs-keyword,
-.app-theme-light .app-code-block .hljs-literal,
-.app-theme-light .app-code-block .hljs-built_in,
-.app-theme-light .app-code-block .hljs-type {
-  color: #7c3aed !important;
-}
-
-.app-theme-light .app-code-block .hljs-string {
-  color: #0369a1 !important;
-}
-
-.app-theme-light .app-code-block .hljs-title,
-.app-theme-light .app-code-block .hljs-attr,
-.app-theme-light .app-code-block .hljs-property {
-  color: #0e7490 !important;
-}
-
-.app-theme-light .app-code-block .hljs-comment {
-  color: #64748b !important;
+.app-code-block .hljs-comment {
+  color: var(--portfolio-code-comment) !important;
 }

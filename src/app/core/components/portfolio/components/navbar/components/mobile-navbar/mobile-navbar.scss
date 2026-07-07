@@ -112,7 +112,7 @@
 }
 
 .mobile-navbar__social-link {
-  @apply inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition hover:shadow-[0_0_22px_rgba(34,211,238,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
+  @apply inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--portfolio-bg)];
 
   background: var(--portfolio-secondary-button-bg);
   border-color: var(--portfolio-secondary-button-border);
@@ -123,16 +123,10 @@
 .mobile-navbar__social-link:hover {
   background: var(--portfolio-secondary-button-hover-bg);
   border-color: var(--portfolio-accent-border);
+  box-shadow: 0 0 22px var(--portfolio-secondary-button-shadow);
   color: var(--portfolio-shell-link-hover);
 }
 
 .mobile-navbar__social-icon {
   @apply size-[19px]! text-current! opacity-95 transition group-hover:opacity-100;
-}
-
-.mobile-navbar__social-icon svg,
-.mobile-navbar__social-icon ::ng-deep svg,
-.mobile-navbar__social-icon ::ng-deep svg * {
-  fill: currentColor !important;
-  color: currentColor !important;
 }

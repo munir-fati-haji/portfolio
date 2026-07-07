@@ -1,11 +1,9 @@
 @reference '../../../styles.css';
 
 .working-on__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
-}
+  @apply relative overflow-hidden bg-transparent px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
 
-:host-context(.app-theme-light) .working-on__section {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .working-on__background {
@@ -13,11 +11,9 @@
 }
 
 .working-on__glow-primary {
-  @apply absolute left-1/2 top-12 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl;
-}
+  @apply absolute left-1/2 top-12 h-96 w-96 -translate-x-1/2 rounded-full blur-3xl;
 
-:host-context(.app-theme-light) .working-on__glow-primary {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+  background: var(--portfolio-accent-surface);
 }
 
 .working-on__content {
@@ -33,15 +29,11 @@
 }
 
 .working-on__focus-card {
-  @apply rounded-3xl border border-white/10 bg-white/[0.045] p-5 shadow-xl shadow-black/20 backdrop-blur;
-}
+  @apply rounded-3xl border p-5 backdrop-blur;
 
-:host-context(.app-theme-light) .working-on__focus-card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  box-shadow: 0 16px 34px var(--portfolio-card-shadow);
 }
 
 .working-on__focus-content {
@@ -49,21 +41,15 @@
 }
 
 .working-on__focus-index {
-  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-300/10 text-sm font-bold text-cyan-200;
-}
+  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm font-bold;
 
-:host-context(.app-theme-light) .working-on__focus-index {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
+  background: var(--portfolio-accent-surface);
+  border-color: var(--portfolio-accent-border);
+  color: var(--portfolio-accent);
 }
 
 .working-on__focus-title {
-  @apply text-sm leading-7 text-slate-300 sm:text-base;
-}
+  @apply text-sm leading-7 sm:text-base;
 
-:host-context(.app-theme-light) .working-on__focus-title {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }

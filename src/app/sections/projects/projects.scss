@@ -1,11 +1,9 @@
 @reference '../../../styles.css';
 
 .projects__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
-}
+  @apply relative overflow-hidden bg-transparent px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
 
-:host-context(.app-theme-light) .projects__section {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .projects__background {
@@ -13,11 +11,9 @@
 }
 
 .projects__glow-primary {
-  @apply absolute left-[-10rem] top-20 h-[28rem] w-[28rem] rounded-full bg-cyan-300/10 blur-3xl;
-}
+  @apply absolute left-[-10rem] top-20 h-[28rem] w-[28rem] rounded-full blur-3xl;
 
-:host-context(.app-theme-light) .projects__glow-primary {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+  background: var(--portfolio-accent-surface);
 }
 
 .projects__glow-secondary {

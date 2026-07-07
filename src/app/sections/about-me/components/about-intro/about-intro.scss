@@ -1,25 +1,19 @@
 @reference '../../../../../styles.css';
 
 .about-intro__content {
-  @apply mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300;
-}
+  @apply mb-4 text-sm font-semibold uppercase tracking-[0.35em];
 
-:host-context(.app-theme-light) .about-intro__content {
-  color: #0e7490 !important;
+  color: var(--portfolio-accent);
 }
 
 .about-intro__eyebrow {
-  @apply max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl;
-}
+  @apply max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl;
 
-:host-context(.app-theme-light) .about-intro__eyebrow {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .about-intro__title {
-  @apply mt-6 max-w-2xl space-y-5 text-base leading-8 text-slate-300 sm:text-lg;
-}
+  @apply mt-6 max-w-2xl space-y-5 text-base leading-8 sm:text-lg;
 
-:host-context(.app-theme-light) .about-intro__title {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }

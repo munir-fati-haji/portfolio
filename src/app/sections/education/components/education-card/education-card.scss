@@ -1,31 +1,33 @@
 @reference '../../../../../styles.css';
 
 .education-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-0 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065];
+  @apply relative overflow-hidden rounded-[2rem] border p-0 backdrop-blur transition;
+
+  background: var(--portfolio-bg-elevated);
+  border-color: var(--portfolio-border);
+  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
+  color: var(--portfolio-text);
 }
 
-:host-context(.app-theme-light) .education-card__card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+.education-card__card:hover {
+  background: var(--portfolio-bg-soft);
+  border-color: var(--portfolio-accent-border);
 }
 
 .education-card__timeline-marker {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
+
+  --tw-gradient-via: var(--portfolio-accent-border);
 }
 
 .education-card__index {
-  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block lg:bottom-6 lg:right-8;
+  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none sm:block lg:bottom-6 lg:right-8;
+
+  color: color-mix(in srgb, var(--portfolio-text) 8%, transparent);
 }
 
 .education-card__body {
   @apply p-5! sm:p-7! lg:p-8!;
-}
-
-:host-context(.app-theme-light) .education-card__index {
-  color: rgba(15, 23, 42, 0.08) !important;
 }
 
 .education-card__content {
@@ -41,17 +43,12 @@
 }
 
 .education-card__icon {
-  @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
-}
+  @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border shadow-lg backdrop-blur;
 
-:host-context(.app-theme-light) .education-card__icon {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+  background: var(--portfolio-accent-surface);
+  border-color: var(--portfolio-accent-border);
+  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
+  color: var(--portfolio-accent);
 }
 
 .education-card__heading {
@@ -59,19 +56,15 @@
 }
 
 .education-card__school {
-  @apply text-2xl font-bold tracking-tight text-white sm:text-3xl;
-}
+  @apply text-2xl font-bold tracking-tight sm:text-3xl;
 
-:host-context(.app-theme-light) .education-card__school {
-  color: var(--portfolio-text) !important;
+  color: var(--portfolio-text);
 }
 
 .education-card__period {
-  @apply mt-2 text-sm font-medium text-slate-400;
-}
+  @apply mt-2 text-sm font-medium;
 
-:host-context(.app-theme-light) .education-card__period {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--portfolio-text-soft);
 }
 
 .education-card__degree {
@@ -79,11 +72,9 @@
 }
 
 .education-card__description {
-  @apply relative z-10 mt-7 max-w-5xl text-sm leading-7 text-slate-300 sm:text-base;
-}
+  @apply relative z-10 mt-7 max-w-5xl text-sm leading-7 sm:text-base;
 
-:host-context(.app-theme-light) .education-card__description {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--portfolio-text-muted);
 }
 
 .education-card__skill-list {
@@ -95,13 +86,14 @@
 }
 
 .education-card__highlight-item {
-  @apply flex gap-3 text-sm leading-6 text-slate-400;
-}
+  @apply flex gap-3 text-sm leading-6;
 
-:host-context(.app-theme-light) .education-card__highlight-item {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--portfolio-text-soft);
 }
 
 .education-card__highlight-marker {
-  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)];
+  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full;
+
+  background: var(--portfolio-accent);
+  box-shadow: 0 0 12px var(--portfolio-accent-border);
 }
