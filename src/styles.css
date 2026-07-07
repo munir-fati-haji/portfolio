@@ -45,6 +45,27 @@ body {
   color: var(--mat-sys-on-surface);
 }
 
+.mat-mdc-icon-button {
+  overflow: visible;
+}
+
+.mat-mdc-icon-button .mat-icon {
+  align-items: center;
+  display: inline-flex;
+  height: 1.5rem;
+  justify-content: center;
+  line-height: 1;
+  overflow: visible;
+  width: 1.5rem;
+}
+
+.mat-mdc-icon-button .mat-icon svg {
+  display: block;
+  height: 100%;
+  overflow: visible;
+  width: 100%;
+}
+
 .mat-mdc-card {
   background: var(--portfolio-glass-surface-strong);
   border-color: var(--portfolio-glass-outline);
