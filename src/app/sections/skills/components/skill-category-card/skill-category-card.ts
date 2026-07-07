@@ -14,5 +14,4 @@ import { SkillLevelVariantPipe } from '../../pipes/skill-level-variant.pipe';
 })
 export class SkillCategoryCard {
   public readonly category = input.required<SkillCategory>();
-  public readonly index = input.required<number>();
 }

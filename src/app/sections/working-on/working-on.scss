@@ -22,17 +22,6 @@
   background: var(--mat-sys-surface-container);
 }
 
-.working-on__focus-content {
-  @apply flex gap-4;
-}
-
-.working-on__focus-index {
-  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-medium;
-
-  background: var(--mat-sys-primary-container);
-  color: var(--mat-sys-on-primary-container);
-}
-
 .working-on__focus-title {
   @apply text-sm leading-7 sm:text-base;
 

@@ -13,5 +13,4 @@ import { EducationItem } from '../../models/education-item.model';
 })
 export class EducationCard {
   public readonly education = input.required<EducationItem>();
-  public readonly index = input.required<number>();
 }

@@ -33,6 +33,5 @@ describe('Experience', () => {
 
     expect(cards).toHaveLength(EXPERIENCE_ITEMS.length);
     expect(ngMocks.input(cards[0], 'experience')).toEqual(EXPERIENCE_ITEMS[0]);
-    expect(ngMocks.input(cards[0], 'index')).toBe(0);
   });
 });

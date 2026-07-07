@@ -23,8 +23,7 @@ describe('CaseStudy', () => {
     const nativeElement = fixture.nativeElement as HTMLElement;
     const text = nativeElement.textContent;
 
-    CASE_STUDY_STEPS.forEach((step, index) => {
-      expect(text).toContain(`Step 0${String(index + 1)}`);
+    CASE_STUDY_STEPS.forEach((step) => {
       expect(text).toContain(step);
     });
   });

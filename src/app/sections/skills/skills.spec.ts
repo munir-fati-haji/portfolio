@@ -39,6 +39,5 @@ describe('Skills', () => {
     expect(ngMocks.input(legendChips[3], 'label')).toBe('Basic');
     expect(categoryCards).toHaveLength(SKILL_CATEGORIES.length);
     expect(ngMocks.input(categoryCards[0], 'category')).toEqual(SKILL_CATEGORIES[0]);
-    expect(ngMocks.input(categoryCards[0], 'index')).toBe(0);
   });
 });

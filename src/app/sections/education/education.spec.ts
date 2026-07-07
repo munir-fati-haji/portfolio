@@ -30,7 +30,6 @@ describe('Education', () => {
 
     expect(educationCards).toHaveLength(EDUCATION_ITEMS.length);
     expect(ngMocks.input(educationCards[0], 'education')).toEqual(EDUCATION_ITEMS[0]);
-    expect(ngMocks.input(educationCards[0], 'index')).toBe(0);
     expect(certificateCards).toHaveLength(EDUCATION_CERTIFICATES.length);
     expect(ngMocks.input(certificateCards[0], 'certificate')).toEqual(EDUCATION_CERTIFICATES[0]);
   });

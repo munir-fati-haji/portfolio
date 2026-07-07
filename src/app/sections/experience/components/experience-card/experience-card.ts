@@ -13,5 +13,4 @@ import { ExperienceItem } from '../../models/experience-item.model';
 })
 export class ExperienceCard {
   public readonly experience = input.required<ExperienceItem>();
-  public readonly index = input.required<number>();
 }
