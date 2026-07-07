@@ -1,12 +1,5 @@
-@reference '../../../../../../styles.css';
-
 :host {
   display: block;
   min-height: 100%;
-
-  background:
-    radial-gradient(circle at 16% 12%, var(--portfolio-accent-surface), transparent 28rem),
-    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent), transparent 30rem),
-    radial-gradient(circle at 50% 110%, var(--portfolio-accent-surface), transparent 26rem),
-    linear-gradient(180deg, var(--mat-sys-surface) 0%, var(--mat-sys-surface-container-lowest) 48%, var(--mat-sys-surface) 100%);
+  background: var(--mat-sys-surface);
 }

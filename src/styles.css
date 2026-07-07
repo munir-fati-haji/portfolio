@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
 @import 'highlight.js/styles/github-dark.css';
 
@@ -7,51 +5,8 @@
 
 html,
 body {
-  background: var(--portfolio-bg);
-}
-
-.app-section {
-  background: transparent;
-  color: var(--portfolio-text);
-}
-
-.app-surface {
-  background: var(--portfolio-bg-elevated) !important;
-  border-color: var(--portfolio-border) !important;
-  box-shadow: 0 18px 46px var(--portfolio-card-shadow) !important;
-  color: var(--portfolio-text) !important;
-}
-
-.app-surface-soft {
-  background: var(--portfolio-bg-soft) !important;
-  border-color: var(--portfolio-border) !important;
-  color: var(--portfolio-text) !important;
-}
-
-.app-accent-surface {
-  background: var(--portfolio-accent-surface) !important;
-  border-color: var(--portfolio-accent-border) !important;
-  color: var(--portfolio-accent) !important;
-}
-
-.app-text {
-  color: var(--portfolio-text) !important;
-}
-
-.app-text-muted {
-  color: var(--portfolio-text-muted) !important;
-}
-
-.app-text-soft {
-  color: var(--portfolio-text-soft) !important;
-}
-
-.app-accent-text {
-  color: var(--portfolio-accent) !important;
-}
-
-.app-outline {
-  border-color: var(--portfolio-border) !important;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
 }
 
 .app-theme-toggle {
@@ -64,47 +19,33 @@ body {
   }
 }
 
-.app-secondary-action {
-  background: var(--portfolio-secondary-button-bg) !important;
-  border-color: var(--portfolio-secondary-button-border) !important;
-  color: var(--portfolio-secondary-button-text) !important;
-}
-
-.app-code-card {
-  background: var(--portfolio-code-bg) !important;
-  border-color: var(--portfolio-border) !important;
-  color: var(--portfolio-text) !important;
-  box-shadow: 0 18px 46px var(--portfolio-card-shadow) !important;
-}
-
-.app-code-card-header {
-  background: var(--portfolio-code-header-bg) !important;
-  border-color: var(--portfolio-border) !important;
-}
-
 .app-code-block,
 .app-code-block .hljs {
-  background: var(--portfolio-code-bg) !important;
-  color: var(--portfolio-text) !important;
+  background: var(--mat-sys-surface-container-lowest) !important;
+  color: var(--mat-sys-on-surface) !important;
 }
 
 .app-code-block .hljs-keyword,
 .app-code-block .hljs-literal,
 .app-code-block .hljs-built_in,
 .app-code-block .hljs-type {
-  color: var(--portfolio-code-keyword) !important;
+  color: var(--mat-sys-tertiary) !important;
 }
 
 .app-code-block .hljs-string {
-  color: var(--portfolio-code-string) !important;
+  color: var(--mat-sys-primary) !important;
 }
 
 .app-code-block .hljs-title,
 .app-code-block .hljs-attr,
-.app-code-block .hljs-property {
-  color: var(--portfolio-accent) !important;
+.app-code-block .hljs-property,
+.app-code-block .hljs-variable,
+.app-code-block .hljs-params {
+  color: var(--mat-sys-primary) !important;
 }
 
-.app-code-block .hljs-comment {
-  color: var(--portfolio-code-comment) !important;
+.app-code-block .hljs-comment,
+.app-code-block .hljs-punctuation,
+.app-code-block .hljs-operator {
+  color: var(--mat-sys-on-surface-variant) !important;
 }

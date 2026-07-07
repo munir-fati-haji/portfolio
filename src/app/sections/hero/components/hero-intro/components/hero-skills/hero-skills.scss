@@ -1,32 +1,26 @@
 @reference '../../../../../../../styles.css';
 
-:host {
-  @apply block mt-8 space-y-4;
+.hero-skills__section {
+  @apply mt-8 block space-y-4;
 }
 
 .hero-skills__background {
-  @apply mb-2 text-xs font-bold uppercase tracking-[0.25em];
+  @apply mb-2 text-xs font-medium uppercase tracking-wide;
 
-  color: var(--portfolio-text-soft);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .hero-skills__glow-primary {
-  @apply flex flex-wrap gap-2.5;
+  @apply flex flex-wrap gap-2;
 }
 
 .hero-skills__glow-secondary {
-  @apply inline-flex size-11 items-center justify-center rounded-2xl border backdrop-blur-md transition duration-200 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 sm:size-12;
+  @apply inline-flex size-11 items-center justify-center rounded-full sm:size-12;
 
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 10px 30px var(--portfolio-card-shadow);
-}
-
-.hero-skills__glow-secondary:hover {
-  background: var(--portfolio-accent-surface);
-  border-color: var(--portfolio-accent-border);
+  background: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-on-secondary-container);
 }
 
 .hero-skills__glow-tertiary {
-  @apply size-6! transition duration-200 group-hover:scale-110;
+  @apply size-6!;
 }

@@ -1,8 +1,3 @@
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
 html {
@@ -20,61 +15,7 @@ html {
     )
   );
 
-  --portfolio-bg: var(--mat-sys-surface);
-  --portfolio-bg-elevated: color-mix(in srgb, var(--mat-sys-surface-container-high) 72%, transparent);
-  --portfolio-bg-soft: color-mix(in srgb, var(--mat-sys-surface-container) 64%, transparent);
-  --portfolio-border: color-mix(in srgb, var(--mat-sys-outline-variant) 56%, transparent);
-  --portfolio-border-strong: color-mix(in srgb, var(--mat-sys-outline) 62%, transparent);
-  --portfolio-text: var(--mat-sys-on-surface);
-  --portfolio-text-muted: var(--mat-sys-on-surface-variant);
-  --portfolio-text-soft: color-mix(in srgb, var(--mat-sys-on-surface-variant) 72%, transparent);
-  --portfolio-card-shadow: color-mix(in srgb, var(--mat-sys-shadow) 24%, transparent);
-  --portfolio-accent: var(--mat-sys-primary);
-  --portfolio-accent-strong: var(--mat-sys-primary);
-  --portfolio-accent-muted: var(--mat-sys-primary);
-  --portfolio-accent-surface: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
-  --portfolio-accent-border: color-mix(in srgb, var(--mat-sys-primary) 28%, transparent);
-  --portfolio-shell-bg: color-mix(in srgb, var(--mat-sys-surface) 86%, transparent);
-  --portfolio-shell-footer-bg: color-mix(in srgb, var(--mat-sys-surface) 94%, transparent);
-  --portfolio-shell-border: var(--portfolio-border);
-  --portfolio-shell-text: var(--mat-sys-on-surface);
-  --portfolio-shell-muted: var(--portfolio-text-soft);
-  --portfolio-shell-shadow: color-mix(in srgb, var(--mat-sys-shadow) 24%, transparent);
-  --portfolio-shell-footer-shadow: color-mix(in srgb, var(--mat-sys-shadow) 22%, transparent);
-  --portfolio-shell-surface-bg: color-mix(in srgb, var(--mat-sys-surface-container-high) 72%, transparent);
-  --portfolio-shell-surface-border: var(--portfolio-border);
-  --portfolio-shell-surface-shadow: color-mix(in srgb, var(--mat-sys-shadow) 18%, transparent);
-  --portfolio-shell-link: var(--mat-sys-on-surface-variant);
-  --portfolio-shell-link-hover: var(--mat-sys-primary);
-  --portfolio-shell-link-hover-bg: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
-  --portfolio-brand: var(--mat-sys-on-surface);
-  --portfolio-brand-hover: var(--mat-sys-primary);
-  --portfolio-primary-button-bg: var(--mat-sys-primary);
-  --portfolio-primary-button-border: color-mix(in srgb, var(--mat-sys-primary) 30%, transparent);
-  --portfolio-primary-button-text: var(--mat-sys-on-primary);
-  --portfolio-primary-button-hover-bg: color-mix(in srgb, var(--mat-sys-primary) 88%, var(--mat-sys-on-primary));
-  --portfolio-primary-button-shadow: color-mix(in srgb, var(--mat-sys-primary) 28%, transparent);
-  --portfolio-secondary-button-bg: var(--portfolio-accent-surface);
-  --portfolio-secondary-button-border: var(--portfolio-accent-border);
-  --portfolio-secondary-button-text: var(--mat-sys-primary);
-  --portfolio-secondary-button-hover-bg: color-mix(in srgb, var(--mat-sys-primary) 18%, transparent);
-  --portfolio-secondary-button-shadow: color-mix(in srgb, var(--mat-sys-primary) 18%, transparent);
-  --portfolio-drawer-bg: color-mix(in srgb, var(--mat-sys-surface) 94%, transparent);
-  --portfolio-drawer-border: var(--portfolio-border);
-  --portfolio-drawer-text: var(--mat-sys-on-surface);
-  --portfolio-drawer-shadow: color-mix(in srgb, var(--mat-sys-shadow) 32%, transparent);
-  --portfolio-code-bg: var(--mat-sys-surface-container-lowest);
-  --portfolio-code-header-bg: var(--mat-sys-surface-container);
-  --portfolio-code-keyword: var(--mat-sys-tertiary);
-  --portfolio-code-string: var(--mat-sys-primary);
-  --portfolio-code-comment: var(--mat-sys-on-surface-variant);
-  --portfolio-warn: var(--mat-sys-error);
-  --portfolio-warn-surface: color-mix(in srgb, var(--mat-sys-error) 12%, transparent);
-  --portfolio-info: var(--mat-sys-primary);
-  --portfolio-info-surface: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
-  --portfolio-success: var(--mat-sys-tertiary);
-  --portfolio-success-surface: color-mix(in srgb, var(--mat-sys-tertiary) 12%, transparent);
-  --portfolio-neutral-surface: color-mix(in srgb, var(--mat-sys-surface-container-high) 78%, transparent);
+  color-scheme: dark;
 }
 
 html.app-theme-dark {
@@ -106,14 +47,9 @@ html.app-theme-light {
 }
 
 body {
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
+  background: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
-  margin: 0;
   height: 100%;
+  margin: 0;
 }

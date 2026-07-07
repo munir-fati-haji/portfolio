@@ -15,12 +15,17 @@ describe('Footer', () => {
 
   it('renders copyright and footer links from data', () => {
     const fixture = MockRender(Footer);
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
     expect(text).toContain(FOOTER_COPYRIGHT);
 
     FOOTER_LINKS.forEach((link) => {
-      const anchor = fixture.nativeElement.querySelector(`a[aria-label="${link.label}"]`) as HTMLAnchorElement;
+      const anchor = nativeElement.querySelector<HTMLAnchorElement>(`a[aria-label="${link.label}"]`);
+
+      if (anchor === null) {
+        throw new Error(`Footer link "${link.label}" was not found.`);
+      }
 
       expect(anchor.href).toBe(link.href);
       expect(anchor.target).toBe(link.external ? '_blank' : '');

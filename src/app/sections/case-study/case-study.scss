@@ -1,79 +1,44 @@
 @reference '../../../styles.css';
 
 .case-study__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
-
-  color: var(--portfolio-text);
-}
-
-.case-study__background {
-  @apply hidden;
-}
-
-.case-study__glow-primary {
-  @apply absolute right-[-8rem] top-20 h-[28rem] w-[28rem] rounded-full blur-3xl;
-
-  background: var(--portfolio-accent-surface);
-}
-
-.case-study__glow-secondary {
-  @apply absolute bottom-0 left-[-8rem] h-[28rem] w-[28rem] rounded-full bg-blue-600/10 blur-3xl;
+  @apply px-4 py-16 sm:px-6 lg:px-10 xl:px-12;
 }
 
 .case-study__content {
-  @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-7xl items-center;
+  @apply mx-auto flex max-w-7xl items-center;
 }
 
 .case-study__layout {
-  @apply grid w-full gap-8 lg:grid-cols-[1fr_1fr] lg:items-center;
+  @apply grid w-full gap-8 lg:grid-cols-2 lg:items-center;
 }
 
 .case-study__panel {
-  @apply rounded-3xl border p-6 backdrop-blur sm:p-8;
+  @apply rounded-xl p-6 sm:p-8;
 
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
+  background: var(--mat-sys-surface-container);
 }
 
 .case-study__step-list {
-  @apply space-y-5;
+  @apply space-y-4;
 }
 
-.case-study__step-card {
-  @apply rounded-2xl border p-5;
-
-  background: var(--portfolio-bg-soft);
-  border-color: var(--portfolio-border);
-}
-
-.case-study__step-number {
-  @apply text-xs font-semibold uppercase tracking-[0.25em];
-
-  color: var(--portfolio-accent);
-}
-
-.case-study__step-text {
-  @apply mt-3 text-sm leading-7 sm:text-base;
-
-  color: var(--portfolio-text-muted);
-}
-
+.case-study__step-card,
 .case-study__result-card {
-  @apply mt-6 rounded-2xl border p-5;
+  @apply rounded-xl p-5;
 
-  background: var(--portfolio-accent-surface);
-  border-color: var(--portfolio-accent-border);
+  background: var(--mat-sys-surface-container);
 }
 
+.case-study__step-number,
 .case-study__result-label {
-  @apply text-sm font-semibold;
+  @apply text-sm font-medium;
 
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-primary);
 }
 
+.case-study__step-text,
 .case-study__result-text {
   @apply mt-2 text-sm leading-6;
 
-  color: var(--portfolio-text-muted);
+  color: var(--mat-sys-on-surface-variant);
 }

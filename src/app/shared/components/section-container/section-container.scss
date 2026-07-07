@@ -1,9 +1,9 @@
 @reference '../../../../styles.css';
 
 .section-container__section {
-  @apply flex min-h-[calc(100svh-64px)] overflow-x-hidden bg-transparent;
+  @apply flex min-h-[calc(100svh-64px)] overflow-x-hidden;
 
-  color: var(--portfolio-text);
+  color: var(--mat-sys-on-surface);
 }
 
 .section-container__content {

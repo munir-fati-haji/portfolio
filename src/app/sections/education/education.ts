@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { CertificateCard } from './components/certificate-card/certificate-card';
 import { EducationCard } from './components/education-card/education-card';
@@ -9,7 +11,7 @@ import { WUT_AMBASSADOR_PROFILE_URL } from './data/education-links';
 
 @Component({
   selector: 'app-education',
-  imports: [CertificateCard, EducationCard, SectionHeader],
+  imports: [CertificateCard, EducationCard, MatButtonModule, MatIconModule, SectionHeader],
   templateUrl: './education.html',
   styleUrl: './education.scss',
 })

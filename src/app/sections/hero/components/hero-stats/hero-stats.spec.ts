@@ -8,7 +8,8 @@ describe('HeroStats', () => {
 
   it('renders each stat value and label', () => {
     const fixture = MockRender(HeroStats, { stats: HERO_STATS });
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
     HERO_STATS.forEach((stat) => {
       expect(text).toContain(stat.value);

@@ -18,9 +18,8 @@ describe('HeroCodeCard', () => {
 
   it('renders the expected window action labels for assistive technology', () => {
     const fixture = MockRender(HeroCodeCard, { code: HERO_CODE_SNIPPET });
-    const actionElements = fixture.nativeElement.querySelectorAll(
-      '.hero-code-card__window-action',
-    ) as NodeListOf<Element>;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const actionElements = nativeElement.querySelectorAll('.hero-code-card__window-action');
     const actionLabels = Array.from(actionElements).map((element) => element.getAttribute('aria-label'));
 
     expect(actionLabels).toEqual(WINDOW_ACTIONS.map((action) => action.label));

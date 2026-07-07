@@ -1,23 +1,23 @@
 @reference '../../../../../styles.css';
 
-:host {
+.hero-stats__grid {
   @apply mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3;
 }
 
 .hero-stats__stat-card {
-  @apply rounded-2xl px-5 py-6 text-center;
+  @apply rounded-xl p-5 text-center;
 
-  background: var(--portfolio-bg-soft);
+  background: var(--mat-sys-surface-container);
 }
 
 .hero-stats__value {
-  @apply text-3xl font-extrabold;
+  @apply text-3xl font-medium;
 
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-primary);
 }
 
 .hero-stats__label {
-  @apply mt-2 text-xs font-medium;
+  @apply mt-2 text-xs;
 
-  color: var(--portfolio-text-soft);
+  color: var(--mat-sys-on-surface-variant);
 }

@@ -23,7 +23,8 @@ describe('Skills', () => {
 
   it('renders stats, legend chips, and category cards from data', () => {
     const fixture = MockRender(Skills);
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
     const legendChips = ngMocks.findAll(SharedChipButton);
     const categoryCards = ngMocks.findAll(SkillCategoryCard);
 
@@ -32,12 +33,10 @@ describe('Skills', () => {
       expect(text).toContain(stat.label);
     });
 
-    expect(legendChips.map((chip) => ngMocks.input(chip, 'label'))).toEqual([
-      'Advanced',
-      'Strong',
-      'Practical',
-      'Basic',
-    ]);
+    expect(ngMocks.input(legendChips[0], 'label')).toBe('Advanced');
+    expect(ngMocks.input(legendChips[1], 'label')).toBe('Strong');
+    expect(ngMocks.input(legendChips[2], 'label')).toBe('Practical');
+    expect(ngMocks.input(legendChips[3], 'label')).toBe('Basic');
     expect(categoryCards).toHaveLength(SKILL_CATEGORIES.length);
     expect(ngMocks.input(categoryCards[0], 'category')).toEqual(SKILL_CATEGORIES[0]);
     expect(ngMocks.input(categoryCards[0], 'index')).toBe(0);

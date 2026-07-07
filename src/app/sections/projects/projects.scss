@@ -1,27 +1,11 @@
 @reference '../../../styles.css';
 
 .projects__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
-
-  color: var(--portfolio-text);
-}
-
-.projects__background {
-  @apply hidden;
-}
-
-.projects__glow-primary {
-  @apply absolute left-[-10rem] top-20 h-[28rem] w-[28rem] rounded-full blur-3xl;
-
-  background: var(--portfolio-accent-surface);
-}
-
-.projects__glow-secondary {
-  @apply absolute bottom-0 right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl;
+  @apply px-4 py-16 sm:px-6 lg:px-10 xl:px-12;
 }
 
 .projects__content {
-  @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-7xl flex-col justify-center;
+  @apply mx-auto flex max-w-7xl flex-col justify-center;
 }
 
 .projects__header {
@@ -29,5 +13,5 @@
 }
 
 .projects__grid {
-  @apply mt-12 grid gap-6 lg:grid-cols-2;
+  @apply mt-10 grid gap-6 lg:grid-cols-2;
 }

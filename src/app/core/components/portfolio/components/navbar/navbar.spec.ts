@@ -19,17 +19,18 @@ describe('Navbar', () => {
   beforeEach(() => {
     themeService.toggleTheme.mockClear();
 
-    return MockBuilder(Navbar)
-      .mock(MobileNavbar)
-      .provide({ provide: ThemeService, useValue: themeService });
+    return MockBuilder(Navbar).mock(MobileNavbar).provide({ provide: ThemeService, useValue: themeService });
   });
 
   it('renders brand and navigation links from data', () => {
     const fixture = MockRender(Navbar);
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
     expect(text).toContain(NAVBAR_BRAND);
-    NAVBAR_LINKS.forEach((link) => expect(text).toContain(link.label));
+    NAVBAR_LINKS.forEach((link) => {
+      expect(text).toContain(link.label);
+    });
   });
 
   it('passes mobile menu data to the mobile navbar', () => {
@@ -44,7 +45,12 @@ describe('Navbar', () => {
 
   it('toggles the theme when the theme button is clicked', () => {
     const fixture = MockRender(Navbar);
-    const themeButton = fixture.nativeElement.querySelector('.navbar__theme-toggle') as HTMLButtonElement;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const themeButton = nativeElement.querySelector<HTMLButtonElement>('.navbar__theme-toggle');
+
+    if (themeButton === null) {
+      throw new Error('Navbar theme button was not found.');
+    }
 
     themeButton.click();
 

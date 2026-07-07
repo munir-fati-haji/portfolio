@@ -20,10 +20,11 @@ describe('CaseStudy', () => {
 
   it('renders each case study step in order', () => {
     const fixture = MockRender(CaseStudy);
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
     CASE_STUDY_STEPS.forEach((step, index) => {
-      expect(text).toContain(`Step 0${index + 1}`);
+      expect(text).toContain(`Step 0${String(index + 1)}`);
       expect(text).toContain(step);
     });
   });

@@ -1,7 +1,11 @@
 @reference '../../../../styles.css';
 
+.chip-button-set {
+  @apply inline-flex max-w-full;
+}
+
 .chip-button {
-  @apply inline-flex max-w-full items-center justify-center gap-2 rounded-full border shadow-sm backdrop-blur transition;
+  @apply inline-flex max-w-full items-center justify-center gap-2;
 }
 
 .chip-button--xs {
@@ -17,7 +21,7 @@
 }
 
 .chip-button--selectable {
-  @apply shrink-0 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+  @apply shrink-0 cursor-pointer;
 }
 
 .chip-button--disabled {
@@ -25,54 +29,32 @@
 }
 
 .chip-button--active {
-  background: var(--mat-sys-primary);
-  border-color: var(--mat-sys-primary);
-  box-shadow: 0 10px 24px var(--portfolio-primary-button-shadow);
+  background: var(--mat-sys-primary) !important;
   color: var(--mat-sys-on-primary);
 }
 
 .chip-button--amber {
-  background: var(--portfolio-warn-surface);
-  border-color: color-mix(in srgb, var(--portfolio-warn) 34%, transparent);
-  color: var(--portfolio-warn);
+  color: var(--mat-sys-error);
 }
 
 .chip-button--cyan {
-  background: var(--portfolio-info-surface);
-  border-color: var(--portfolio-accent-border);
-  color: var(--portfolio-info);
+  color: var(--mat-sys-primary);
 }
 
 .chip-button--emerald {
-  background: var(--portfolio-success-surface);
-  border-color: color-mix(in srgb, var(--portfolio-success) 34%, transparent);
-  color: var(--portfolio-success);
+  color: var(--mat-sys-tertiary);
 }
 
 .chip-button--orange {
-  background: var(--portfolio-warn-surface);
-  border-color: color-mix(in srgb, var(--portfolio-warn) 34%, transparent);
-  color: var(--portfolio-warn);
+  color: var(--mat-sys-error);
 }
 
 .chip-button--slate {
-  background: var(--portfolio-neutral-surface);
-  border-color: var(--portfolio-border);
-  color: var(--portfolio-text-muted);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .chip-button--selectable-cyan {
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  color: var(--portfolio-text-muted);
-}
-
-.chip-button--selectable-cyan:hover,
-.chip-button--cyan:hover,
-.chip-button--active:hover {
-  background: var(--portfolio-secondary-button-hover-bg);
-  border-color: var(--portfolio-accent-border);
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .chip-button__icon {
@@ -86,36 +68,31 @@
 }
 
 .chip-button__badge {
-  @apply ml-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em];
+  @apply ml-1 text-[10px] font-medium uppercase;
 }
 
 .chip-button__badge--amber {
-  background: var(--portfolio-warn-surface);
-  color: var(--portfolio-warn);
+  color: var(--mat-sys-error);
 }
 
 .chip-button__badge--cyan {
-  background: var(--portfolio-info-surface);
-  color: var(--portfolio-info);
+  color: var(--mat-sys-primary);
 }
 
 .chip-button__badge--emerald {
-  background: var(--portfolio-success-surface);
-  color: var(--portfolio-success);
+  color: var(--mat-sys-tertiary);
 }
 
 .chip-button__badge--orange {
-  background: var(--portfolio-warn-surface);
-  color: var(--portfolio-warn);
+  color: var(--mat-sys-error);
 }
 
 .chip-button__badge--slate {
-  background: var(--portfolio-neutral-surface);
-  color: var(--portfolio-text-muted);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .chip-button__meta {
   @apply text-[10px] font-semibold;
 
-  color: var(--portfolio-text-soft);
+  color: var(--mat-sys-on-surface-variant);
 }

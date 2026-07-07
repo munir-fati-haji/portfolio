@@ -1,11 +1,7 @@
 @reference '../../../../../styles.css';
 
 .about-highlights__grid {
-  @apply min-w-0 w-full rounded-3xl border p-3 backdrop-blur sm:rounded-4xl sm:p-5 xl:p-6;
-
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
+  @apply w-full min-w-0;
 }
 
 .about-highlights__inner-grid {

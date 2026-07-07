@@ -1,64 +1,28 @@
 @reference '../../../../../styles.css';
 
-.skill-category-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border p-0 backdrop-blur transition;
-
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
-  color: var(--portfolio-text);
-}
-
-.skill-category-card__card:hover {
-  background: var(--portfolio-bg-soft);
-  border-color: var(--portfolio-accent-border);
-}
-
-.skill-category-card__shine {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
-
-  --tw-gradient-via: var(--portfolio-accent-border);
-}
-
 .skill-category-card__body {
-  @apply p-5! sm:p-7!;
-}
-
-.skill-category-card__index {
-  @apply pointer-events-none absolute bottom-4 right-6 hidden text-7xl font-black leading-none sm:block;
-
-  color: color-mix(in srgb, var(--portfolio-text) 8%, transparent);
+  @apply p-6!;
 }
 
 .skill-category-card__header {
-  @apply relative z-10 flex items-start gap-4;
+  @apply flex items-start gap-4;
 }
 
 .skill-category-card__icon-surface {
-  @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border shadow-lg backdrop-blur;
+  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full;
 
-  background: var(--portfolio-accent-surface);
-  border-color: var(--portfolio-accent-border);
-  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
-  color: var(--portfolio-accent);
-}
-
-.skill-category-card__content {
-  @apply min-w-0;
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
 }
 
 .skill-category-card__title {
-  @apply text-2xl font-bold tracking-tight;
-
-  color: var(--portfolio-text);
+  @apply text-2xl font-medium;
 }
 
 .skill-category-card__description {
-  @apply mt-2 text-sm leading-6;
-
-  color: var(--portfolio-text-soft);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .skill-category-card__skill-list {
-  @apply relative z-10 mt-7 flex flex-wrap gap-2;
+  @apply mt-6 flex flex-wrap gap-2;
 }

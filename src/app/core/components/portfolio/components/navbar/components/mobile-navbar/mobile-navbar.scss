@@ -1,110 +1,67 @@
 @reference '../../../../../../../../styles.css';
 
 .mobile-navbar__overlay {
-  @apply fixed inset-0 z-50 overflow-hidden xl:hidden;
+  @apply fixed inset-0 z-50 xl:hidden;
 }
 
 .mobile-navbar__scrim {
-  @apply absolute inset-0 backdrop-blur-md;
+  @apply absolute inset-0;
 
-  background: color-mix(in srgb, var(--portfolio-bg) 72%, transparent);
+  background: var(--mat-sys-scrim);
+  opacity: 0.4;
 }
 
 .mobile-navbar__drawer {
-  @apply absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col overflow-hidden rounded-l-3xl border-l p-4 shadow-2xl backdrop-blur-2xl;
+  @apply absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col p-4;
 
-  background: var(--portfolio-drawer-bg);
-  border-color: var(--portfolio-drawer-border);
-  box-shadow: -18px 0 48px var(--portfolio-drawer-shadow);
-  color: var(--portfolio-drawer-text);
+  background: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
 }
 
-.mobile-navbar__drawer-glow {
-  @apply pointer-events-none absolute -right-14 top-10 h-36 w-36 rounded-full blur-3xl;
-
-  background: var(--portfolio-accent-surface);
-}
-
+.mobile-navbar__drawer-glow,
 .mobile-navbar__drawer-content {
-  @apply pointer-events-none absolute -bottom-10 left-8 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl;
+  @apply hidden;
 }
 
 .mobile-navbar__drawer-header {
-  @apply relative flex items-center justify-between gap-3;
+  @apply flex items-center justify-between gap-3;
 }
 
 .mobile-navbar__close-button {
-  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300;
+  @apply text-xl font-medium no-underline;
 
-  color: var(--portfolio-brand);
-}
-
-.mobile-navbar__close-button:hover {
-  color: var(--portfolio-brand-hover);
-}
-
-.mobile-navbar__close-icon {
-  @apply h-10! w-10! rounded-full! border transition;
-
-  background: var(--portfolio-secondary-button-bg) !important;
-  border-color: var(--portfolio-secondary-button-border) !important;
-  color: var(--portfolio-secondary-button-text) !important;
-}
-
-.mobile-navbar__close-icon:hover {
-  background: var(--portfolio-secondary-button-hover-bg) !important;
+  color: var(--mat-sys-on-surface);
 }
 
 .mobile-navbar__nav-list {
-  @apply relative mt-8 flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pb-4;
+  @apply mt-8 flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pb-4;
 }
 
 .mobile-navbar__nav-link {
-  @apply h-12! justify-start! rounded-2xl! border px-4! text-sm! font-semibold! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
-
-  background: var(--portfolio-shell-surface-bg) !important;
-  border-color: var(--portfolio-shell-surface-border) !important;
-  color: var(--portfolio-shell-link) !important;
-}
-
-.mobile-navbar__nav-link:hover {
-  background: var(--portfolio-shell-link-hover-bg) !important;
-  border-color: var(--portfolio-accent-border) !important;
-  color: var(--portfolio-shell-link-hover) !important;
+  @apply justify-start!;
 }
 
 .mobile-navbar__nav-icon {
-  @apply mr-3! text-[1.25rem]!;
-
-  color: var(--portfolio-accent) !important;
+  @apply mr-3!;
 }
 
 .mobile-navbar__nav-footer {
-  @apply relative mt-auto border-t pt-4;
+  @apply mt-auto border-t pt-4;
 
-  border-color: var(--portfolio-border);
+  border-color: var(--mat-sys-outline-variant);
 }
 
 .mobile-navbar__theme-button {
-  @apply mb-4 flex h-12 w-full items-center justify-between rounded-2xl border px-4 text-left text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+  @apply mb-4 flex h-12 w-full items-center justify-between rounded-full px-4 text-left text-sm font-medium;
 
-  background: var(--portfolio-primary-button-bg);
-  border-color: var(--portfolio-primary-button-border);
-  color: var(--portfolio-primary-button-text);
-}
-
-.mobile-navbar__theme-button:hover {
-  background: var(--portfolio-primary-button-hover-bg);
-}
-
-.mobile-navbar__theme-icon {
-  color: var(--portfolio-accent) !important;
+  background: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-on-secondary-container);
 }
 
 .mobile-navbar__connect-label {
-  @apply px-1 text-xs font-semibold uppercase tracking-[0.28em];
+  @apply px-1 text-xs font-medium uppercase tracking-wide;
 
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .mobile-navbar__social-list {
@@ -112,21 +69,12 @@
 }
 
 .mobile-navbar__social-link {
-  @apply inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--portfolio-bg)];
+  @apply inline-flex h-11 w-11 items-center justify-center rounded-full;
 
-  background: var(--portfolio-secondary-button-bg);
-  border-color: var(--portfolio-secondary-button-border);
-  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
-  color: var(--portfolio-secondary-button-text);
-}
-
-.mobile-navbar__social-link:hover {
-  background: var(--portfolio-secondary-button-hover-bg);
-  border-color: var(--portfolio-accent-border);
-  box-shadow: 0 0 22px var(--portfolio-secondary-button-shadow);
-  color: var(--portfolio-shell-link-hover);
+  background: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-on-secondary-container);
 }
 
 .mobile-navbar__social-icon {
-  @apply size-[19px]! text-current! opacity-95 transition group-hover:opacity-100;
+  @apply size-[19px]!;
 }

@@ -1,53 +1,31 @@
 @reference '../../../../../../styles.css';
 
 .footer__root {
-  @apply relative hidden! h-auto! min-h-0! overflow-hidden border-t px-4! py-3! backdrop-blur-xl xl:flex!;
-
-  background: var(--portfolio-shell-footer-bg) !important;
-  border-color: var(--portfolio-shell-border) !important;
-  box-shadow: 0 -12px 36px var(--portfolio-shell-footer-shadow);
-  color: var(--portfolio-shell-muted) !important;
+  @apply hidden! h-auto! px-4! py-3! xl:flex!;
 }
 
 .footer__backdrop {
-  @apply pointer-events-none absolute left-1/2 top-0 h-16 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl;
-
-  background: var(--portfolio-accent-surface);
+  @apply hidden;
 }
 
 .footer__content {
-  @apply relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 text-center text-xs leading-normal sm:flex-row sm:text-left;
+  @apply mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 text-center text-xs sm:flex-row sm:text-left;
 }
 
 .footer__copyright {
-  @apply font-medium;
-
-  color: var(--portfolio-text-soft);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .footer__links {
-  @apply flex items-center justify-center gap-1.5 rounded-full border p-1 backdrop-blur-xl;
-
-  background: var(--portfolio-shell-surface-bg);
-  border-color: var(--portfolio-shell-surface-border);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--mat-sys-on-surface) 10%, transparent),
-    0 10px 24px var(--portfolio-shell-surface-shadow);
+  @apply flex items-center justify-center gap-1;
 }
 
 .footer__link {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full border shadow-sm transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--portfolio-bg)];
+  @apply inline-flex h-9 w-9 items-center justify-center rounded-full;
 
-  background: var(--portfolio-secondary-button-bg);
-  border-color: var(--portfolio-secondary-button-border);
-  color: var(--portfolio-secondary-button-text);
-}
-
-.footer__link:hover {
-  background: var(--portfolio-secondary-button-hover-bg);
-  color: var(--portfolio-shell-link-hover);
+  color: var(--mat-sys-primary);
 }
 
 .footer__icon {
-  @apply size-[18px]! text-current! opacity-95 transition group-hover:opacity-100;
+  @apply size-[18px]!;
 }

@@ -1,17 +1,5 @@
 @reference '../../../../../styles.css';
 
-.contact-link-card__card {
-  @apply rounded-2xl border p-0 transition;
-
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-}
-
-.contact-link-card__card:hover {
-  background: var(--portfolio-accent-surface);
-  border-color: var(--portfolio-accent-border);
-}
-
 .contact-link-card__body {
   @apply flex items-center gap-3 p-5!;
 }
@@ -21,30 +9,17 @@
 }
 
 .contact-link-card__label {
-  @apply text-xs font-semibold uppercase tracking-[0.25em];
+  @apply text-xs font-medium uppercase tracking-wide;
 
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-primary);
 }
 
 .contact-link-card__value {
-  @apply mt-2 break-words text-base font-semibold transition;
+  @apply mt-2 break-words text-base;
 
-  color: var(--portfolio-text-muted);
-}
-
-.contact-link-card__card:hover .contact-link-card__value {
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .contact-link-card__action {
-  @apply h-11! w-11! shrink-0 border shadow-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--portfolio-bg)];
-
-  background: var(--portfolio-secondary-button-bg) !important;
-  border-color: var(--portfolio-secondary-button-border) !important;
-  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
-  color: var(--portfolio-secondary-button-text) !important;
-}
-
-.contact-link-card__icon {
-  @apply text-[20px]!;
+  @apply h-11! w-11! shrink-0;
 }

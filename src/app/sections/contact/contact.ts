@@ -37,7 +37,9 @@ export class Contact {
         filter(() => this.copiedLabel() === link.label),
         takeUntilDestroyed(this.destroyRef),
       )
-      .subscribe(() => this.copiedLabel.set(null));
+      .subscribe(() => {
+        this.copiedLabel.set(null);
+      });
   }
 
   private async copyWithFallback(value: string): Promise<void> {

@@ -1,81 +1,36 @@
 @reference '../../../../../../styles.css';
 
 .navbar__root {
-  @apply relative z-40 h-16! min-h-16! overflow-hidden border-b px-3! py-0! backdrop-blur-xl sm:px-5!;
-
-  background: var(--portfolio-shell-bg) !important;
-  border-color: var(--portfolio-shell-border) !important;
-  box-shadow: 0 12px 36px var(--portfolio-shell-shadow);
-  color: var(--portfolio-shell-text) !important;
+  @apply px-3! sm:px-5!;
 }
 
-.navbar__backdrop {
-  @apply pointer-events-none absolute -left-16 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full blur-3xl;
-
-  background: var(--portfolio-accent-surface);
-}
-
+.navbar__backdrop,
 .navbar__border {
-  @apply pointer-events-none absolute right-20 top-0 h-20 w-20 rounded-full bg-blue-500/10 blur-3xl;
+  @apply hidden;
 }
 
 .navbar__layout {
-  @apply relative mx-auto flex w-full max-w-7xl items-center justify-between gap-4;
+  @apply mx-auto flex w-full max-w-7xl items-center justify-between gap-4;
 }
 
 .navbar__brand {
-  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:text-3xl;
+  @apply text-xl font-medium no-underline;
 
-  color: var(--portfolio-brand);
-}
-
-.navbar__brand:hover {
-  color: var(--portfolio-brand-hover);
+  color: var(--mat-sys-on-surface);
 }
 
 .navbar__nav {
-  @apply hidden items-center gap-0.5 rounded-full border p-1 backdrop-blur xl:flex;
-
-  background: var(--portfolio-shell-surface-bg);
-  border-color: var(--portfolio-shell-surface-border);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--mat-sys-on-surface) 10%, transparent),
-    0 10px 24px var(--portfolio-shell-surface-shadow);
+  @apply hidden items-center gap-1 xl:flex;
 }
 
 .navbar__nav-link {
-  @apply h-9! min-w-0! rounded-full! px-3! text-xs! font-semibold! leading-none! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
-
-  color: var(--portfolio-shell-link) !important;
-}
-
-.navbar__nav-link:hover {
-  background: var(--portfolio-shell-link-hover-bg) !important;
-  color: var(--portfolio-shell-link-hover) !important;
+  @apply text-sm!;
 }
 
 .navbar__theme-toggle {
-  @apply hidden! h-10! w-10! rounded-full! border shadow-lg transition xl:inline-flex!;
-
-  background: var(--portfolio-primary-button-bg) !important;
-  border-color: var(--portfolio-primary-button-border) !important;
-  box-shadow: 0 10px 24px var(--portfolio-primary-button-shadow);
-  color: var(--portfolio-primary-button-text) !important;
-}
-
-.navbar__theme-toggle:hover {
-  background: var(--portfolio-primary-button-hover-bg) !important;
+  @apply hidden! xl:inline-flex!;
 }
 
 .navbar__menu-toggle {
-  @apply h-10! w-10! rounded-full! border shadow-lg transition xl:hidden!;
-
-  background: var(--portfolio-secondary-button-bg) !important;
-  border-color: var(--portfolio-secondary-button-border) !important;
-  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
-  color: var(--portfolio-secondary-button-text) !important;
-}
-
-.navbar__menu-toggle:hover {
-  background: var(--portfolio-secondary-button-hover-bg) !important;
+  @apply xl:hidden!;
 }

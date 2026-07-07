@@ -1,86 +1,46 @@
 @reference '../../../../../styles.css';
 
-.project-card__card {
-  @apply relative overflow-hidden rounded-3xl border p-0 backdrop-blur transition;
-
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
-  color: var(--portfolio-text);
-}
-
-.project-card__card:hover {
-  background: var(--portfolio-bg-soft);
-  border-color: var(--portfolio-accent-border);
-}
-
-.project-card__shine {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
-
-  --tw-gradient-via: var(--portfolio-accent-border);
-}
-
 .project-card__content {
-  @apply relative z-10 p-6! sm:p-8!;
+  @apply p-6!;
 }
 
 .project-card__header {
   @apply flex flex-wrap items-start justify-between gap-4;
 }
 
+.project-card__type,
 .project-card__featured-chip {
-  --mat-chip-elevated-container-color: var(--portfolio-accent-surface);
-  --mat-chip-label-text-color: var(--portfolio-accent);
-  --mat-chip-outline-color: var(--portfolio-accent-border);
-
-  border-color: var(--portfolio-accent-border) !important;
-  color: var(--portfolio-accent) !important;
-}
-
-.project-card__type {
-  @apply text-xs font-semibold uppercase tracking-[0.28em];
-
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-primary);
 }
 
 .project-card__title {
-  @apply mt-3 text-2xl font-bold;
-
-  color: var(--portfolio-text);
+  @apply mt-3 text-2xl font-medium;
 }
 
-.project-card__description {
-  @apply mt-5 text-sm leading-7 sm:text-base;
+.project-card__description,
+.project-card__feature-item {
+  color: var(--mat-sys-on-surface-variant);
+}
 
-  color: var(--portfolio-text-muted);
+.project-card__feature-list,
+.project-card__tech-list {
+  @apply mt-6;
 }
 
 .project-card__feature-list {
-  @apply mt-6 space-y-3;
+  @apply space-y-3;
 }
 
 .project-card__feature-item {
   @apply flex gap-3 text-sm leading-6;
-
-  color: var(--portfolio-text-muted);
 }
 
 .project-card__feature-marker {
   @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full;
 
-  background: var(--portfolio-accent);
-  box-shadow: 0 0 16px var(--portfolio-accent-border);
+  background: var(--mat-sys-primary);
 }
 
 .project-card__tech-list {
-  @apply mt-7 flex flex-wrap gap-2;
-}
-
-.project-card__tech-chip {
-  --mat-chip-elevated-container-color: var(--portfolio-bg-soft);
-  --mat-chip-label-text-color: var(--portfolio-text-muted);
-  --mat-chip-outline-color: var(--portfolio-border);
-
-  border-color: var(--portfolio-border) !important;
-  color: var(--portfolio-text-muted) !important;
+  @apply flex flex-wrap gap-2;
 }

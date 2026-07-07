@@ -1,50 +1,32 @@
 @reference '../../../../../styles.css';
 
-:host {
-  @apply block max-w-2xl;
+.hero-intro__content {
+  @apply max-w-2xl;
+}
+
+.hero-intro__eyebrow,
+.hero-intro__name {
+  color: var(--mat-sys-primary);
 }
 
 .hero-intro__eyebrow {
-  @apply mb-5 text-sm font-bold uppercase tracking-[0.35em];
-
-  color: var(--portfolio-accent);
+  @apply mb-4 text-sm font-medium uppercase tracking-wide;
 }
 
 .hero-intro__title {
-  @apply text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl;
-}
-
-.hero-intro__name {
-  color: var(--portfolio-accent);
+  @apply text-5xl font-medium leading-tight tracking-tight sm:text-6xl lg:text-7xl;
 }
 
 .hero-intro__role {
-  @apply mt-5 text-2xl font-extrabold sm:text-3xl;
-
-  color: var(--portfolio-text);
+  @apply mt-5 text-2xl font-medium sm:text-3xl;
 }
 
 .hero-intro__description {
-  @apply mt-8 max-w-xl text-lg leading-8;
+  @apply mt-6 max-w-xl text-lg leading-8;
 
-  color: var(--portfolio-text-muted);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .hero-intro__actions {
-  @apply mt-10 flex flex-wrap gap-4;
-}
-
-.hero-intro__primary-action {
-  @apply h-12! rounded-full! px-7! text-sm! font-bold!;
-
-  background: var(--mat-sys-primary) !important;
-  color: var(--mat-sys-on-primary) !important;
-}
-
-.hero-intro__secondary-action {
-  @apply h-12! rounded-full! px-7! text-sm! font-bold!;
-
-  background: var(--portfolio-secondary-button-bg) !important;
-  border-color: var(--portfolio-secondary-button-border) !important;
-  color: var(--portfolio-text) !important;
+  @apply mt-8 flex flex-wrap gap-4;
 }

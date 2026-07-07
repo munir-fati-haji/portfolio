@@ -1,23 +1,11 @@
 @reference '../../../styles.css';
 
 .working-on__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
-
-  color: var(--portfolio-text);
-}
-
-.working-on__background {
-  @apply hidden;
-}
-
-.working-on__glow-primary {
-  @apply absolute left-1/2 top-12 h-96 w-96 -translate-x-1/2 rounded-full blur-3xl;
-
-  background: var(--portfolio-accent-surface);
+  @apply px-4 py-16 sm:px-6 lg:px-10 xl:px-12;
 }
 
 .working-on__content {
-  @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-6xl items-center;
+  @apply mx-auto flex max-w-6xl items-center;
 }
 
 .working-on__header {
@@ -29,11 +17,9 @@
 }
 
 .working-on__focus-card {
-  @apply rounded-3xl border p-5 backdrop-blur;
+  @apply rounded-xl p-5;
 
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 16px 34px var(--portfolio-card-shadow);
+  background: var(--mat-sys-surface-container);
 }
 
 .working-on__focus-content {
@@ -41,15 +27,14 @@
 }
 
 .working-on__focus-index {
-  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm font-bold;
+  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-medium;
 
-  background: var(--portfolio-accent-surface);
-  border-color: var(--portfolio-accent-border);
-  color: var(--portfolio-accent);
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
 }
 
 .working-on__focus-title {
   @apply text-sm leading-7 sm:text-base;
 
-  color: var(--portfolio-text-muted);
+  color: var(--mat-sys-on-surface-variant);
 }

@@ -5,13 +5,5 @@
 }
 
 .about-me__actions {
-  @apply mt-10;
-}
-
-.about-me__primary-action {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold shadow-lg transition;
-
-  background: var(--mat-sys-primary);
-  box-shadow: 0 10px 24px var(--portfolio-primary-button-shadow);
-  color: var(--mat-sys-on-primary);
+  @apply mt-8;
 }

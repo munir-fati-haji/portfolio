@@ -1,73 +1,29 @@
 @reference '../../../../../styles.css';
 
-.certificate-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border p-0 backdrop-blur transition;
-
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 16px 34px var(--portfolio-card-shadow);
-  color: var(--portfolio-text);
-}
-
-.certificate-card__card:hover {
-  background: var(--portfolio-bg-soft);
-  border-color: var(--portfolio-accent-border);
-}
-
-.certificate-card__shine {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
-
-  --tw-gradient-via: var(--portfolio-accent-border);
-}
-
 .certificate-card__body {
-  @apply p-5! sm:p-6!;
+  @apply p-6!;
 }
 
 .certificate-card__icon-surface {
-  @apply relative z-10 flex items-start gap-4;
+  @apply flex items-start gap-4;
 }
 
 .certificate-card__icon {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border shadow-lg backdrop-blur;
+  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full;
 
-  background: var(--portfolio-accent-surface);
-  border-color: var(--portfolio-accent-border);
-  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
-  color: var(--portfolio-accent);
-}
-
-.certificate-card__content {
-  @apply min-w-0;
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
 }
 
 .certificate-card__school {
-  @apply text-lg font-bold;
-
-  color: var(--portfolio-text);
+  @apply text-lg font-medium;
 }
 
-.certificate-card__certificate {
-  @apply mt-1 text-sm leading-6;
-
-  color: var(--portfolio-text-muted);
-}
-
+.certificate-card__certificate,
 .certificate-card__period {
-  @apply mt-1 text-sm;
-
-  color: var(--portfolio-text-soft);
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .certificate-card__skill-list {
   @apply mt-4 flex flex-wrap gap-2;
-}
-
-.certificate-card__skill-chip {
-  --mat-chip-elevated-container-color: var(--portfolio-bg-soft);
-  --mat-chip-label-text-color: var(--portfolio-text-muted);
-  --mat-chip-outline-color: var(--portfolio-border);
-
-  border-color: var(--portfolio-border) !important;
-  color: var(--portfolio-text-muted) !important;
 }

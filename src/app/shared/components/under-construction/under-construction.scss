@@ -1,79 +1,37 @@
 @reference '../../../../styles.css';
 
 .under-construction__section {
-  @apply relative overflow-hidden px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
+  @apply px-4 py-24 sm:px-6 lg:px-10 xl:px-12;
 
-  background: var(--portfolio-bg);
-  color: var(--portfolio-text);
-}
-
-.under-construction__background {
-  @apply pointer-events-none absolute inset-0;
-}
-
-.under-construction__glow-primary {
-  @apply absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full blur-3xl;
-
-  background: var(--portfolio-accent-surface);
-}
-
-.under-construction__glow-secondary {
-  @apply absolute bottom-0 right-[-10rem] h-[30rem] w-[30rem] rounded-full bg-blue-600/10 blur-3xl;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
 }
 
 .under-construction__content {
-  @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-5xl items-center justify-center;
+  @apply mx-auto flex min-h-[calc(100svh-64px)] max-w-3xl items-center justify-center;
 }
 
 .under-construction__card {
-  @apply relative w-full overflow-hidden rounded-[2rem] border p-8 text-center backdrop-blur sm:p-10 lg:p-12;
-
-  background: var(--portfolio-bg-elevated);
-  border-color: var(--portfolio-border);
-  box-shadow: 0 18px 46px var(--portfolio-card-shadow);
-}
-
-.under-construction__card-glow {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent to-transparent;
-
-  --tw-gradient-via: var(--portfolio-accent-border);
-}
-
-.under-construction__status {
-  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none sm:block;
-
-  color: color-mix(in srgb, var(--portfolio-text) 8%, transparent);
-}
-
-.under-construction__icon-surface {
-  @apply relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border shadow-lg backdrop-blur;
-
-  background: var(--portfolio-accent-surface);
-  border-color: var(--portfolio-accent-border);
-  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
-  color: var(--portfolio-accent);
+  @apply w-full text-center;
 }
 
 .under-construction__icon {
+  @apply mt-8;
+
   width: 2.5rem !important;
   height: 2.5rem !important;
   font-size: 40px !important;
-}
-
-.under-construction__eyebrow {
-  @apply relative z-10 mt-8 text-sm font-semibold uppercase tracking-[0.35em];
-
-  color: var(--portfolio-accent);
+  color: var(--mat-sys-primary);
 }
 
 .under-construction__title {
-  @apply relative z-10 mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl;
+  @apply mt-4 text-3xl font-medium sm:text-4xl;
 
-  color: var(--portfolio-text);
+  color: var(--mat-sys-on-surface);
 }
 
 .under-construction__description {
-  @apply relative z-10 mx-auto mt-6 max-w-2xl text-base leading-8 sm:text-lg;
+  @apply mx-auto mt-4 max-w-2xl text-base leading-7;
 
-  color: var(--portfolio-text-muted);
+  color: var(--mat-sys-on-surface-variant);
 }

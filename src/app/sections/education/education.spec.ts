@@ -37,7 +37,12 @@ describe('Education', () => {
 
   it('links to the official ambassador profile', () => {
     const fixture = MockRender(Education);
-    const link = fixture.nativeElement.querySelector('.education__ambassador-link') as HTMLAnchorElement;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const link = nativeElement.querySelector<HTMLAnchorElement>('.education__ambassador-link');
+
+    if (link === null) {
+      throw new Error('Education ambassador link was not found.');
+    }
 
     expect(link.href).toBe(WUT_AMBASSADOR_PROFILE_URL);
     expect(link.target).toBe('_blank');

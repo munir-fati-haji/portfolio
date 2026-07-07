@@ -1,10 +1,4 @@
 <section id="education" class="education__section">
-  <div class="education__background">
-    <div class="education__glow-primary"></div>
-    <div class="education__glow-secondary"></div>
-    <div class="education__glow-tertiary"></div>
-  </div>
-
   <div class="education__content">
     <div class="education__header-row">
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
@@ -22,9 +16,14 @@
           </div>
         </div>
 
-        <a class="education__ambassador-link" target="_blank" rel="noreferrer" [href]="ambassadorProfileUrl">
+        <a
+          mat-stroked-button
+          class="education__ambassador-link"
+          target="_blank"
+          rel="noreferrer"
+          [href]="ambassadorProfileUrl">
           Open Official WUT Ambassador Profile
-          <span class="education__external-icon" aria-hidden="true">↗</span>
+          <mat-icon class="education__external-icon" aria-hidden="true">open_in_new</mat-icon>
         </a>
       </div>
     </div>

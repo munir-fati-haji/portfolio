@@ -1,10 +1,4 @@
 <section class="gym-workout">
-  <div class="gym-workout__background">
-    <div class="gym-workout__glow gym-workout__glow--cyan"></div>
-    <div class="gym-workout__glow gym-workout__glow--violet"></div>
-    <div class="gym-workout__glow gym-workout__glow--blue"></div>
-  </div>
-
   <div class="gym-workout__content">
     <mat-card class="gym-workout__hero-card">
       <mat-card-content class="gym-workout__hero-layout">
@@ -60,10 +54,9 @@
       class="gym-workout__filters"
       aria-label="Training day filter"
       [multiple]="false"
-      [value]="selectedDay()"
-      (change)="selectDay($event)">
+      [value]="selectedDay()">
       @for (filter of filters; track filter.id) {
-        <mat-chip-option class="gym-workout__filter-chip" [value]="filter.id">
+        <mat-chip-option class="gym-workout__filter-chip" [value]="filter.id" (click)="selectDay(filter.id)">
           {{ filter.label }}
         </mat-chip-option>
       }

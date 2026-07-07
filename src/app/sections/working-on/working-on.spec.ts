@@ -20,10 +20,11 @@ describe('WorkingOn', () => {
 
   it('renders each focus area with a display index', () => {
     const fixture = MockRender(WorkingOn);
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
     FOCUS_AREAS.forEach((area, index) => {
-      expect(text).toContain(`0${index + 1}`);
+      expect(text).toContain(`0${String(index + 1)}`);
       expect(text).toContain(area);
     });
   });
