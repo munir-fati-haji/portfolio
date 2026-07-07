@@ -1,9 +1,15 @@
 @reference '../../../styles.css';
 
-.about-me__content {
-  @apply min-w-0;
+.about-me__intro,
+.about-me__skills,
+.about-me__actions {
+  @apply min-w-0 lg:col-start-1;
 }
 
 .about-me__actions {
-  @apply mt-8;
+  @apply justify-self-start;
+}
+
+.about-me__highlights {
+  @apply min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-3;
 }
