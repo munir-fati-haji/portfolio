@@ -1,9 +1,9 @@
 <app-section-container>
   <app-hero-intro class="hero__intro" [name]="name" [role]="role" [description]="description" [skills]="skills" />
 
-  <div class="hero__feature-panel">
+  <aside class="hero__feature-panel" aria-label="Portfolio code preview and summary stats">
     <app-hero-code-card [code]="codeSnippet" />
 
     <app-hero-stats [stats]="stats" />
-  </div>
+  </aside>
 </app-section-container>
