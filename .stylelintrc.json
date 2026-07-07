@@ -1,0 +1,16 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "ignoreFiles": ["dist/**", "coverage/**", "node_modules/**"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "color-named": "never",
+    "color-no-hex": true,
+    "declaration-no-important": true,
+    "function-disallowed-list": ["rgb", "rgba", "hsl", "hsla", "linear-gradient"],
+    "max-nesting-depth": [2, { "ignore": ["pseudo-classes"] }],
+    "property-disallowed-list": ["background-image", "box-shadow", "text-shadow"],
+    "scss/at-rule-no-unknown": [true, { "ignoreAtRules": ["apply", "reference", "tailwind"] }],
+    "selector-max-id": 0,
+    "selector-max-specificity": "0,3,0"
+  }
+}
