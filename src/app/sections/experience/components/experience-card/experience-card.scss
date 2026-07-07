@@ -4,44 +4,12 @@
   @apply p-6!;
 }
 
-.experience-card__content {
-  @apply flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between;
-}
+.experience-card__description {
+  @apply mt-6 text-sm leading-6;
 
-.experience-card__icon-surface {
-  @apply flex items-start gap-4;
-}
-
-.experience-card__icon {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full;
-
-  color: var(--mat-sys-primary);
-}
-
-.experience-card__role {
-  @apply text-2xl font-medium;
-}
-
-.experience-card__company,
-.experience-card__description,
-.experience-card__highlight-item {
   color: var(--mat-sys-on-surface-variant);
 }
 
-.experience-card__description,
-.experience-card__highlight-list {
-  @apply mt-6;
-}
-
-.experience-card__skill-list,
-.experience-card__period {
-  @apply flex flex-wrap gap-2;
-}
-
-.experience-card__highlight-list {
-  @apply list-disc space-y-3 pl-5;
-}
-
-.experience-card__highlight-item {
-  @apply text-sm leading-6;
+.experience-card__skill-list {
+  @apply mt-6 flex flex-wrap gap-2;
 }
