@@ -4,19 +4,12 @@
   @apply px-3! sm:px-5!;
 }
 
-.navbar__backdrop,
-.navbar__border {
-  @apply hidden;
-}
-
 .navbar__layout {
   @apply mx-auto flex w-full max-w-7xl items-center justify-between gap-4;
 }
 
 .navbar__brand {
-  @apply text-xl font-medium no-underline;
-
-  color: var(--mat-sys-on-surface);
+  @apply text-xl! font-medium!;
 }
 
 .navbar__nav {

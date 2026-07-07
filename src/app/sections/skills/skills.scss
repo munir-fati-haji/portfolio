@@ -16,12 +16,6 @@
   @apply grid gap-4 sm:grid-cols-2;
 }
 
-.skills__stat {
-  @apply border-l pl-4;
-
-  border-color: var(--mat-sys-outline-variant);
-}
-
 .skills__stat-value {
   @apply text-2xl font-medium sm:text-3xl;
 

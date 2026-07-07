@@ -5,25 +5,27 @@
 
       <div class="skills__stats-grid">
         @for (stat of stats; track stat.label) {
-          <div class="skills__stat">
-            <p class="skills__stat-value">
-              {{ stat.value }}
-            </p>
+          <mat-card appearance="outlined">
+            <mat-card-content>
+              <p class="skills__stat-value">
+                {{ stat.value }}
+              </p>
 
-            <p class="skills__stat-label">
-              {{ stat.label }}
-            </p>
-          </div>
+              <p class="skills__stat-label">
+                {{ stat.label }}
+              </p>
+            </mat-card-content>
+          </mat-card>
         }
       </div>
     </div>
 
-    <div class="skills__legend">
-      <app-shared-chip-button size="sm" variant="cyan" label="Advanced" />
-      <app-shared-chip-button size="sm" variant="emerald" label="Strong" />
-      <app-shared-chip-button size="sm" variant="amber" label="Practical" />
-      <app-shared-chip-button size="sm" variant="slate" label="Basic" />
-    </div>
+    <mat-chip-set class="skills__legend" aria-label="Skill levels">
+      <mat-chip>Advanced</mat-chip>
+      <mat-chip>Strong</mat-chip>
+      <mat-chip>Practical</mat-chip>
+      <mat-chip>Basic</mat-chip>
+    </mat-chip-set>
 
     <div class="skills__category-grid">
       @for (category of categories; track category.title) {

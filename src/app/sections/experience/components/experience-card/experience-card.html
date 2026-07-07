@@ -1,47 +1,35 @@
-<mat-card class="group experience-card__card" appearance="outlined">
-  <div class="experience-card__timeline-marker"></div>
+<mat-card class="experience-card__card" appearance="outlined">
+  <mat-card-header>
+    <mat-icon mat-card-avatar aria-hidden="true">{{ experience().icon }}</mat-icon>
+    <mat-card-title>{{ experience().role }}</mat-card-title>
+    <mat-card-subtitle>{{ experience().company }} - {{ experience().location }}</mat-card-subtitle>
+  </mat-card-header>
 
   <mat-card-content class="experience-card__body">
-    <div class="experience-card__content">
-      <div class="experience-card__header">
-        <div class="experience-card__icon-surface">
-          <div class="experience-card__icon">
-            <mat-icon>{{ experience().icon }}</mat-icon>
-          </div>
-
-          <div class="experience-card__heading">
-            <h3 class="experience-card__role">
-              {{ experience().role }}
-            </h3>
-
-            <p class="experience-card__company">{{ experience().company }} - {{ experience().location }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="experience-card__period">
-        <app-shared-chip-button size="xs" variant="cyan" [label]="experience().type" />
-
-        <app-shared-chip-button size="xs" variant="slate" [label]="experience().period" />
-      </div>
-    </div>
+    <mat-chip-set aria-label="Experience details">
+      <mat-chip>{{ experience().type }}</mat-chip>
+      <mat-chip>{{ experience().period }}</mat-chip>
+    </mat-chip-set>
 
     <p class="experience-card__description">
       {{ experience().summary }}
     </p>
 
-    <div class="experience-card__skill-list">
+    <mat-chip-set class="experience-card__skill-list" aria-label="Experience skills">
       @for (skill of experience().skills; track skill.name) {
-        <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
+        <mat-chip>
+          <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
+          {{ skill.name }}
+        </mat-chip>
       }
-    </div>
+    </mat-chip-set>
 
-    <ul class="experience-card__highlight-list">
+    <mat-list aria-label="Experience highlights">
       @for (highlight of experience().highlights; track highlight) {
-        <li class="experience-card__highlight-item">
-          {{ highlight }}
-        </li>
+        <mat-list-item>
+          <span matListItemTitle>{{ highlight }}</span>
+        </mat-list-item>
       }
-    </ul>
+    </mat-list>
   </mat-card-content>
 </mat-card>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { ExperienceCard } from './components/experience-card/experience-card';
 import { EXPERIENCE_DESCRIPTION, EXPERIENCE_EYEBROW, EXPERIENCE_TITLE } from './data/experience-copy';
@@ -7,7 +8,7 @@ import { EXPERIENCE_METRICS } from './data/experience-metrics';
 
 @Component({
   selector: 'app-experience',
-  imports: [ExperienceCard, SectionHeader],
+  imports: [ExperienceCard, MatCardModule, SectionHeader],
   templateUrl: './experience.html',
   styleUrl: './experience.scss',
 })

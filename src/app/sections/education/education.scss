@@ -16,22 +16,13 @@
   @apply grid gap-4 sm:grid-cols-2;
 }
 
-.education__degree-stat,
-.education__certificate-stat {
-  @apply border-l pl-4;
-
-  border-color: var(--mat-sys-outline-variant);
-}
-
-.education__degree-value,
-.education__certificate-value {
+.education__stat-value {
   @apply text-3xl font-medium;
 
   color: var(--mat-sys-primary);
 }
 
-.education__degree-label,
-.education__certificate-label {
+.education__stat-label {
   @apply mt-1 text-sm leading-6;
 
   color: var(--mat-sys-on-surface-variant);
@@ -54,11 +45,8 @@
   @apply mb-6 flex items-center gap-4;
 }
 
-.education__heading-line-start,
-.education__heading-line-end {
-  @apply h-px flex-1;
-
-  background: var(--mat-sys-outline-variant);
+.education__heading-line {
+  @apply flex-1;
 }
 
 .education__heading-title {

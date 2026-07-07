@@ -1,61 +1,31 @@
 @reference '../../../../../../../../styles.css';
 
-.mobile-navbar__overlay {
+.mobile-navbar__container {
   @apply fixed inset-0 z-50 xl:hidden;
 }
 
-.mobile-navbar__scrim {
-  @apply absolute inset-0;
-
-  background: var(--mat-sys-scrim);
-  opacity: 0.4;
-}
-
 .mobile-navbar__drawer {
-  @apply absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col p-4;
-
-  background: var(--mat-sys-surface-container);
-  color: var(--mat-sys-on-surface);
-}
-
-.mobile-navbar__drawer-glow,
-.mobile-navbar__drawer-content {
-  @apply hidden;
+  @apply w-[calc(100vw-1.5rem)] max-w-sm p-4;
 }
 
 .mobile-navbar__drawer-header {
   @apply flex items-center justify-between gap-3;
 }
 
-.mobile-navbar__close-button {
-  @apply text-xl font-medium no-underline;
-
-  color: var(--mat-sys-on-surface);
+.mobile-navbar__brand {
+  @apply text-xl! font-medium!;
 }
 
 .mobile-navbar__nav-list {
-  @apply mt-8 flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pb-4;
-}
-
-.mobile-navbar__nav-link {
-  @apply justify-start!;
-}
-
-.mobile-navbar__nav-icon {
-  @apply mr-3!;
+  @apply mt-6 min-h-0 flex-1 overflow-y-auto;
 }
 
 .mobile-navbar__nav-footer {
-  @apply mt-auto border-t pt-4;
-
-  border-color: var(--mat-sys-outline-variant);
+  @apply mt-4 grid gap-4 pt-4;
 }
 
 .mobile-navbar__theme-button {
-  @apply mb-4 flex h-12 w-full items-center justify-between rounded-full px-4 text-left text-sm font-medium;
-
-  background: var(--mat-sys-secondary-container);
-  color: var(--mat-sys-on-secondary-container);
+  @apply w-full justify-start!;
 }
 
 .mobile-navbar__connect-label {
@@ -65,16 +35,5 @@
 }
 
 .mobile-navbar__social-list {
-  @apply mt-3 flex flex-wrap items-center gap-2;
-}
-
-.mobile-navbar__social-link {
-  @apply inline-flex h-11 w-11 items-center justify-center rounded-full;
-
-  background: var(--mat-sys-secondary-container);
-  color: var(--mat-sys-on-secondary-container);
-}
-
-.mobile-navbar__social-icon {
-  @apply size-[19px]!;
+  @apply flex flex-wrap items-center gap-2;
 }

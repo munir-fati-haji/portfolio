@@ -4,44 +4,12 @@
   @apply p-6!;
 }
 
-.education-card__content {
-  @apply flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between;
-}
+.education-card__description {
+  @apply mt-6 text-sm leading-6;
 
-.education-card__icon-surface {
-  @apply flex items-start gap-4;
-}
-
-.education-card__icon {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full;
-
-  color: var(--mat-sys-primary);
-}
-
-.education-card__school {
-  @apply text-2xl font-medium;
-}
-
-.education-card__period,
-.education-card__description,
-.education-card__highlight-item {
   color: var(--mat-sys-on-surface-variant);
 }
 
-.education-card__description,
-.education-card__highlight-list {
-  @apply mt-6;
-}
-
-.education-card__skill-list,
-.education-card__degree {
-  @apply flex flex-wrap gap-2;
-}
-
-.education-card__highlight-list {
-  @apply list-disc space-y-3 pl-5;
-}
-
-.education-card__highlight-item {
-  @apply text-sm leading-6;
+.education-card__skill-list {
+  @apply mt-6 flex flex-wrap gap-2;
 }

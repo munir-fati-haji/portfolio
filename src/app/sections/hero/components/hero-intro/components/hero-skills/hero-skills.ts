@@ -1,11 +1,12 @@
 import { Component, input } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { HeroSkillGroup } from '../../models/hero-skill-group';
 
 @Component({
   selector: 'app-hero-skills',
-  imports: [MatIconModule, MatTooltipModule],
+  imports: [MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './hero-skills.html',
   styleUrl: './hero-skills.scss',
   host: { class: 'hero-skills__section' },

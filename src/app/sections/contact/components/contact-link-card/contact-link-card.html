@@ -1,15 +1,11 @@
-<mat-card class="group contact-link-card__card" appearance="outlined">
+<mat-card class="contact-link-card__card" appearance="outlined">
   <mat-card-content class="contact-link-card__body">
-    <a
-      class="contact-link-card__content"
-      [href]="link().href"
-      [attr.target]="link().external ? '_blank' : null"
-      [attr.rel]="link().external ? 'noreferrer' : null">
-      <p class="contact-link-card__label">{{ link().label }}</p>
-      <p class="contact-link-card__value">
+    <button mat-button type="button" class="contact-link-card__content" (click)="openExternalUrl(link().href)">
+      <span class="contact-link-card__label">{{ link().label }}</span>
+      <span class="contact-link-card__value">
         {{ link().value }}
-      </p>
-    </a>
+      </span>
+    </button>
 
     <button
       mat-icon-button

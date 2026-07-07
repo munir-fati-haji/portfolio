@@ -1,3 +1,5 @@
-@for (skill of skills(); track skill) {
-  <app-shared-chip-button size="md" variant="cyan" [label]="skill" />
-}
+<mat-chip-set aria-label="Skills">
+  @for (skill of skills(); track skill) {
+    <mat-chip>{{ skill }}</mat-chip>
+  }
+</mat-chip-set>

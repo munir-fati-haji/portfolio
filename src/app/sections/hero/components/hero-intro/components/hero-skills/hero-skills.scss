@@ -4,23 +4,12 @@
   @apply mt-8 block space-y-4;
 }
 
-.hero-skills__background {
+.hero-skills__label {
   @apply mb-2 text-xs font-medium uppercase tracking-wide;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
-.hero-skills__glow-primary {
+.hero-skills__list {
   @apply flex flex-wrap gap-2;
-}
-
-.hero-skills__glow-secondary {
-  @apply inline-flex size-11 items-center justify-center rounded-full sm:size-12;
-
-  background: var(--mat-sys-secondary-container);
-  color: var(--mat-sys-on-secondary-container);
-}
-
-.hero-skills__glow-tertiary {
-  @apply size-6!;
 }

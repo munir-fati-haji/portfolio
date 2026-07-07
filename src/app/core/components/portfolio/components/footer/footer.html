@@ -1,23 +1,21 @@
-<mat-toolbar class="app-footer footer__root">
-  <div class="footer__backdrop"></div>
-
+<mat-toolbar class="footer__root">
   <div class="footer__content">
     <span class="footer__copyright">
       {{ copyright }}
     </span>
 
-    <nav aria-label="Footer links" class="app-footer-links footer__links">
+    <div aria-label="Footer links" class="footer__links">
       @for (link of links; track link.label) {
-        <a
-          class="app-footer-icon group footer__link"
-          [href]="link.href"
+        <button
+          mat-icon-button
+          type="button"
+          class="footer__link"
           [matTooltip]="link.label"
           [attr.aria-label]="link.label"
-          [attr.target]="link.external ? '_blank' : null"
-          [attr.rel]="link.external ? 'noreferrer' : null">
+          (click)="openExternalUrl(link.href)">
           <mat-icon class="footer__icon" aria-hidden="true" [svgIcon]="link.icon" />
-        </a>
+        </button>
       }
-    </nav>
+    </div>
   </div>
 </mat-toolbar>

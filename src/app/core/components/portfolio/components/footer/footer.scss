@@ -4,10 +4,6 @@
   @apply hidden! h-auto! px-4! py-3! xl:flex!;
 }
 
-.footer__backdrop {
-  @apply hidden;
-}
-
 .footer__content {
   @apply mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 text-center text-xs sm:flex-row sm:text-left;
 }
@@ -18,12 +14,6 @@
 
 .footer__links {
   @apply flex items-center justify-center gap-1;
-}
-
-.footer__link {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full;
-
-  color: var(--mat-sys-primary);
 }
 
 .footer__icon {

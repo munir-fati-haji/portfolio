@@ -5,26 +5,29 @@
 
       <div>
         <div class="education__stats-grid">
-          <div class="education__degree-stat">
-            <p class="education__degree-value">2</p>
-            <p class="education__degree-label">Academic degrees completed</p>
-          </div>
+          <mat-card appearance="outlined">
+            <mat-card-content>
+              <p class="education__stat-value">2</p>
+              <p class="education__stat-label">Academic degrees completed</p>
+            </mat-card-content>
+          </mat-card>
 
-          <div class="education__certificate-stat">
-            <p class="education__certificate-value">2</p>
-            <p class="education__certificate-label">Language preparation certificates</p>
-          </div>
+          <mat-card appearance="outlined">
+            <mat-card-content>
+              <p class="education__stat-value">2</p>
+              <p class="education__stat-label">Language preparation certificates</p>
+            </mat-card-content>
+          </mat-card>
         </div>
 
-        <a
+        <button
           mat-stroked-button
+          type="button"
           class="education__ambassador-link"
-          target="_blank"
-          rel="noreferrer"
-          [href]="ambassadorProfileUrl">
+          (click)="openExternalUrl(ambassadorProfileUrl)">
           Open Official WUT Ambassador Profile
           <mat-icon class="education__external-icon" aria-hidden="true">open_in_new</mat-icon>
-        </a>
+        </button>
       </div>
     </div>
 
@@ -36,9 +39,9 @@
 
     <div class="education__certificates-section">
       <div class="education__certificates-heading">
-        <div class="education__heading-line-start"></div>
+        <mat-divider class="education__heading-line" />
         <p class="education__heading-title">Language Certificates</p>
-        <div class="education__heading-line-end"></div>
+        <mat-divider class="education__heading-line" />
       </div>
 
       <div class="education__certificate-grid">

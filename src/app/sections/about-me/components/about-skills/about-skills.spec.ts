@@ -1,21 +1,21 @@
-import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
+import { MockBuilder, MockRender } from 'ng-mocks';
 
-import { SharedChipButton } from '@shared/components/shared-chip-button/shared-chip-button';
 import { AboutSkills } from './about-skills';
 
 describe('AboutSkills', () => {
-  beforeEach(() => MockBuilder(AboutSkills).mock(SharedChipButton));
+  beforeEach(() => MockBuilder(AboutSkills));
 
-  it('renders one chip per skill with the configured chip styling', () => {
+  it('renders one Material chip per skill', () => {
     const skills = ['Angular', 'TypeScript', 'RxJS'];
-
-    MockRender(AboutSkills, { skills });
-
-    const chips = ngMocks.findAll(SharedChipButton);
+    const fixture = MockRender(AboutSkills, { skills });
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
+    const chips = nativeElement.querySelectorAll('mat-chip');
 
     expect(chips).toHaveLength(skills.length);
-    expect(ngMocks.input(chips[0], 'label')).toBe(skills[0]);
-    expect(ngMocks.input(chips[0], 'size')).toBe('md');
-    expect(ngMocks.input(chips[0], 'variant')).toBe('cyan');
+
+    skills.forEach((skill) => {
+      expect(text).toContain(skill);
+    });
   });
 });
