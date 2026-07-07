@@ -14,8 +14,8 @@
       { "ignoreAtRules": ["apply", "reference", "tailwind", "custom-variant", "theme", "source", "utility", "variant"] }
     ],
     "selector-class-pattern": [
-      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:(?:__|--)[a-z0-9]+(?:-[a-z0-9]+)*)*$",
-      { "message": "Use kebab-case with optional BEM element and modifier names." }
+      "^(?:[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:(?:__|--)[a-z0-9]+(?:-[a-z0-9]+)*)*|hljs(?:[-_][a-z0-9]+)*)$",
+      { "message": "Use kebab-case or BEM names. Third-party hljs token classes are allowed." }
     ],
     "selector-max-id": 0,
     "selector-max-specificity": "0,3,0"
