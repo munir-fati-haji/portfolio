@@ -1,15 +1,33 @@
 @reference '../../../styles.css';
 
 :host {
-  display: grid;
-  max-width: 80rem;
-  margin-inline: auto;
-  gap: 1rem;
-  padding: 4rem 1rem;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,0.78fr)_minmax(24rem,1fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
+}
+
+:host > * {
+  min-width: 0;
+}
+
+.contact__header {
+  @apply lg:col-start-1 lg:row-span-2 lg:row-start-1;
 }
 
 .contact__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  @apply flex flex-wrap gap-3 lg:col-start-1 lg:row-start-3 lg:self-start;
+}
+
+.contact__link-card {
+  @apply block w-full;
+}
+
+.contact__link-card--first {
+  @apply lg:col-start-2 lg:row-start-1;
+}
+
+.contact__link-card--second {
+  @apply lg:col-start-2 lg:row-start-2;
+}
+
+.contact__link-card--third {
+  @apply lg:col-start-2 lg:row-start-3;
 }
