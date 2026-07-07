@@ -1,23 +1,20 @@
-<mat-toolbar class="app-navbar navbar__root">
-  <div class="navbar__backdrop"></div>
-  <div class="navbar__border"></div>
-
+<mat-toolbar class="navbar__root">
   <div class="navbar__layout">
-    <a class="app-brand navbar__brand" routerLink="/">
+    <button mat-button class="navbar__brand" type="button" routerLink="/" aria-label="Go to home">
       {{ brand }}
-    </a>
+    </button>
 
-    <nav aria-label="Primary navigation" class="app-nav-surface navbar__nav">
+    <nav aria-label="Primary navigation" class="navbar__nav">
       @for (link of links; track link.label) {
-        <a mat-button class="app-nav-link navbar__nav-link" [routerLink]="link.route">
+        <button mat-button class="navbar__nav-link" type="button" [routerLink]="link.route">
           {{ link.label }}
-        </a>
+        </button>
       }
     </nav>
 
     <button
       mat-icon-button
-      class="app-theme-toggle navbar__theme-toggle"
+      class="navbar__theme-toggle"
       type="button"
       [attr.aria-label]="themeService.toggleLabel()"
       [matTooltip]="themeService.toggleLabel()"
@@ -27,7 +24,7 @@
 
     <button
       mat-icon-button
-      class="app-menu-toggle navbar__menu-toggle"
+      class="navbar__menu-toggle"
       type="button"
       aria-label="Open navigation menu"
       [attr.aria-expanded]="isMobileMenuOpen()"
