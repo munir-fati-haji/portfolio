@@ -4,21 +4,6 @@
   @apply p-6!;
 }
 
-.certificate-card__icon-surface {
-  @apply flex items-start gap-4;
-}
-
-.certificate-card__icon {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full;
-
-  color: var(--mat-sys-primary);
-}
-
-.certificate-card__school {
-  @apply text-lg font-medium;
-}
-
-.certificate-card__certificate,
 .certificate-card__period {
   color: var(--mat-sys-on-surface-variant);
 }
