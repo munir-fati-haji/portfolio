@@ -2,6 +2,7 @@ import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { filter, timer } from 'rxjs';
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { ContactLinkCard } from './components/contact-link-card/contact-link-card';
@@ -11,7 +12,7 @@ import { ContactLink } from './models/contact-link.model';
 
 @Component({
   selector: 'app-contact',
-  imports: [ContactLinkCard, RouterLink, MatButtonModule, SectionHeader],
+  imports: [ContactLinkCard, RouterLink, MatButtonModule, MatCardModule, SectionHeader],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

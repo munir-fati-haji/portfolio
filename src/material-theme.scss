@@ -1,19 +1,9 @@
-@use '@angular/material' as mat;
+@use './styles/theme' as app-theme;
 
 html {
   height: 100%;
 
-  @include mat.theme(
-    (
-      color: (
-        theme-type: dark,
-        primary: mat.$cyan-palette,
-        tertiary: mat.$azure-palette,
-      ),
-      typography: Roboto,
-      density: 0,
-    )
-  );
+  @include app-theme.app-theme(dark);
 
   color-scheme: dark;
 }
@@ -21,29 +11,13 @@ html {
 html.app-theme-dark {
   color-scheme: dark;
 
-  @include mat.theme(
-    (
-      color: (
-        theme-type: dark,
-        primary: mat.$cyan-palette,
-        tertiary: mat.$azure-palette,
-      ),
-    )
-  );
+  @include app-theme.app-theme(dark);
 }
 
 html.app-theme-light {
   color-scheme: light;
 
-  @include mat.theme(
-    (
-      color: (
-        theme-type: light,
-        primary: mat.$cyan-palette,
-        tertiary: mat.$azure-palette,
-      ),
-    )
-  );
+  @include app-theme.app-theme(light);
 }
 
 body {

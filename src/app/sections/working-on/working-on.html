@@ -7,11 +7,11 @@
 
       <div class="working-on__focus-grid">
         @for (area of focusAreas; track area) {
-          <div class="working-on__focus-card">
-            <div class="working-on__focus-content">
+          <mat-card class="working-on__focus-card" appearance="outlined">
+            <mat-card-content>
               <p class="working-on__focus-title">{{ area }}</p>
-            </div>
-          </div>
+            </mat-card-content>
+          </mat-card>
         }
       </div>
     </div>

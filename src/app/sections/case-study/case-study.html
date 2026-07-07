@@ -8,19 +8,23 @@
       <div class="case-study__panel">
         <div class="case-study__step-list">
           @for (step of steps; track step) {
-            <div class="case-study__step-card">
-              <p class="case-study__step-text">{{ step }}</p>
-            </div>
+            <mat-card class="case-study__step-card" appearance="outlined">
+              <mat-card-content>
+                <p class="case-study__step-text">{{ step }}</p>
+              </mat-card-content>
+            </mat-card>
           }
         </div>
 
-        <div class="case-study__result-card">
-          <p class="case-study__result-label">Result</p>
-          <p class="case-study__result-text">
-            The goal is always the same: a maintainable solution that is easier to understand, operate, and improve than
-            the process it replaces.
-          </p>
-        </div>
+        <mat-card class="case-study__result-card" appearance="outlined">
+          <mat-card-content>
+            <p class="case-study__result-label">Result</p>
+            <p class="case-study__result-text">
+              The goal is always the same: a maintainable solution that is easier to understand, operate, and improve
+              than the process it replaces.
+            </p>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
   </div>

@@ -16,12 +16,6 @@
   @apply space-y-4;
 }
 
-.working-on__focus-card {
-  @apply rounded-xl p-5;
-
-  background: var(--mat-sys-surface-container);
-}
-
 .working-on__focus-title {
   @apply text-sm leading-7 sm:text-base;
 

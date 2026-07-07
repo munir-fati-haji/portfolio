@@ -15,8 +15,7 @@
 .experience-card__icon {
   @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full;
 
-  background: var(--mat-sys-primary-container);
-  color: var(--mat-sys-on-primary-container);
+  color: var(--mat-sys-primary);
 }
 
 .experience-card__role {
@@ -40,15 +39,9 @@
 }
 
 .experience-card__highlight-list {
-  @apply space-y-3;
+  @apply list-disc space-y-3 pl-5;
 }
 
 .experience-card__highlight-item {
-  @apply flex gap-3 text-sm leading-6;
-}
-
-.experience-card__highlight-marker {
-  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full;
-
-  background: var(--mat-sys-primary);
+  @apply text-sm leading-6;
 }

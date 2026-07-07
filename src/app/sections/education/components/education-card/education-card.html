@@ -39,8 +39,7 @@
     <ul class="education-card__highlight-list">
       @for (highlight of education().highlights; track highlight) {
         <li class="education-card__highlight-item">
-          <span class="education-card__highlight-marker"></span>
-          <span>{{ highlight }}</span>
+          {{ highlight }}
         </li>
       }
     </ul>

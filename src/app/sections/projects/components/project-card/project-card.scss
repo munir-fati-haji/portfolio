@@ -28,17 +28,11 @@
 }
 
 .project-card__feature-list {
-  @apply space-y-3;
+  @apply list-disc space-y-3 pl-5;
 }
 
 .project-card__feature-item {
-  @apply flex gap-3 text-sm leading-6;
-}
-
-.project-card__feature-marker {
-  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full;
-
-  background: var(--mat-sys-primary);
+  @apply text-sm leading-6;
 }
 
 .project-card__tech-list {

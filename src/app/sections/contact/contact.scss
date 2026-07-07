@@ -20,12 +20,6 @@
   @apply grid gap-4;
 }
 
-.contact__note-card {
-  @apply rounded-xl p-5;
-
-  background: var(--mat-sys-surface-container);
-}
-
 .contact__note-title {
   @apply text-sm font-medium;
 }

@@ -5,9 +5,7 @@
 }
 
 .hero-stats__stat-card {
-  @apply rounded-xl p-5 text-center;
-
-  background: var(--mat-sys-surface-container);
+  @apply text-center;
 }
 
 .hero-stats__value {

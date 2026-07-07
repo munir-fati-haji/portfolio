@@ -16,8 +16,7 @@
     <ul class="project-card__feature-list">
       @for (item of project().impact; track item) {
         <li class="project-card__feature-item">
-          <span class="project-card__feature-marker"></span>
-          <span>{{ item }}</span>
+          {{ item }}
         </li>
       }
     </ul>

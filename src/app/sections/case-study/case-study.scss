@@ -13,20 +13,7 @@
 }
 
 .case-study__panel {
-  @apply rounded-xl p-6 sm:p-8;
-
-  background: var(--mat-sys-surface-container);
-}
-
-.case-study__step-list {
-  @apply space-y-4;
-}
-
-.case-study__step-card,
-.case-study__result-card {
-  @apply rounded-xl p-5;
-
-  background: var(--mat-sys-surface-container);
+  @apply grid gap-4;
 }
 
 .case-study__result-label {
