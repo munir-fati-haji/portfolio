@@ -1,61 +1,48 @@
 @if (isOpen()) {
-  <div class="mobile-navbar__overlay">
-    <button class="mobile-navbar__scrim" type="button" aria-label="Close navigation menu" (click)="close()"></button>
-
-    <aside class="app-mobile-drawer mobile-navbar__drawer">
-      <div class="mobile-navbar__drawer-glow"></div>
-      <div class="mobile-navbar__drawer-content"></div>
-
+  <mat-drawer-container class="mobile-navbar__container" hasBackdrop="true">
+    <mat-drawer class="mobile-navbar__drawer" mode="over" position="end" [opened]="isOpen()" (closedStart)="close()">
       <div class="mobile-navbar__drawer-header">
-        <a class="app-brand mobile-navbar__close-button" routerLink="/" (click)="close()">
+        <button mat-button class="mobile-navbar__brand" type="button" routerLink="/" (click)="close()">
           {{ brand() }}
-        </a>
+        </button>
 
-        <button
-          mat-icon-button
-          class="mobile-navbar__close-icon"
-          type="button"
-          aria-label="Close navigation menu"
-          (click)="close()">
+        <button mat-icon-button type="button" aria-label="Close navigation menu" (click)="close()">
           <mat-icon>close</mat-icon>
         </button>
       </div>
 
-      <nav aria-label="Mobile navigation" class="mobile-navbar__nav-list">
+      <mat-nav-list aria-label="Mobile navigation" class="mobile-navbar__nav-list">
         @for (link of links(); track link.label) {
-          <a mat-button class="app-mobile-nav-link mobile-navbar__nav-link" [routerLink]="link.route" (click)="close()">
-            <mat-icon class="mobile-navbar__nav-icon" aria-hidden="true">{{ link.icon }}</mat-icon>
-            {{ link.label }}
-          </a>
+          <button mat-list-item type="button" [routerLink]="link.route" (click)="close()">
+            <mat-icon matListItemIcon aria-hidden="true">{{ link.icon }}</mat-icon>
+            <span matListItemTitle>{{ link.label }}</span>
+          </button>
         }
-      </nav>
+      </mat-nav-list>
+
+      <mat-divider />
 
       <div class="mobile-navbar__nav-footer">
         <button
+          mat-stroked-button
           type="button"
-          class="app-mobile-theme-toggle mobile-navbar__theme-button"
+          class="mobile-navbar__theme-button"
           [attr.aria-label]="themeService.toggleLabel()"
           (click)="toggleTheme()">
-          <span>{{ themeService.toggleLabel() }}</span>
-          <mat-icon class="mobile-navbar__theme-icon" aria-hidden="true">{{ themeService.toggleIcon() }}</mat-icon>
+          <mat-icon aria-hidden="true">{{ themeService.toggleIcon() }}</mat-icon>
+          {{ themeService.toggleLabel() }}
         </button>
 
         <p class="mobile-navbar__connect-label">Connect</p>
 
-        <nav aria-label="Mobile footer links" class="mobile-navbar__social-list">
+        <div aria-label="Mobile footer links" class="mobile-navbar__social-list">
           @for (link of footerLinks; track link.label) {
-            <a
-              class="app-footer-icon group mobile-navbar__social-link"
-              [href]="link.href"
-              [attr.aria-label]="link.label"
-              [attr.target]="link.external ? '_blank' : null"
-              [attr.rel]="link.external ? 'noreferrer' : null"
-              (click)="close()">
-              <mat-icon class="mobile-navbar__social-icon" aria-hidden="true" [svgIcon]="link.icon" />
-            </a>
+            <button mat-icon-button type="button" [attr.aria-label]="link.label" (click)="openExternalUrl(link.href)">
+              <mat-icon aria-hidden="true" [svgIcon]="link.icon" />
+            </button>
           }
-        </nav>
+        </div>
       </div>
-    </aside>
-  </div>
+    </mat-drawer>
+  </mat-drawer-container>
 }
