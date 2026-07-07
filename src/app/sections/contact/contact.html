@@ -7,8 +7,12 @@
   <button mat-stroked-button type="button" routerLink="/projects">View Projects</button>
 </nav>
 
-@for (link of contactLinks; track link.label) {
+@for (link of contactLinks; track link.label; let index = $index) {
   <app-contact-link-card
+    class="contact__link-card"
+    [class.contact__link-card--first]="index === 0"
+    [class.contact__link-card--second]="index === 1"
+    [class.contact__link-card--third]="index === 2"
     [link]="link"
     [isCopied]="copiedLabel() === link.label"
     (copyRequested)="copyContactValue($event)" />
