@@ -1,7 +1,12 @@
 <app-section-header class="working-on__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-@for (area of focusAreas; track area) {
-  <mat-card class="working-on__focus-card" appearance="outlined">
+@for (area of focusAreas; track area; let index = $index) {
+  <mat-card
+    class="working-on__focus-card"
+    appearance="outlined"
+    [class.working-on__focus-card--first]="index === 0"
+    [class.working-on__focus-card--second]="index === 1"
+    [class.working-on__focus-card--third]="index === 2">
     <mat-card-content>
       <p class="working-on__focus-title">{{ area }}</p>
     </mat-card-content>
