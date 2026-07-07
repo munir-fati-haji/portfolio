@@ -1,10 +1,6 @@
 <section class="projects__section">
   <div class="projects__content">
-    <app-section-header
-      class="projects__header"
-      [eyebrow]="eyebrow"
-      [title]="title"
-      [description]="description" />
+    <app-section-header class="projects__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
     <div class="projects__grid">
       @for (project of projects; track project.title) {
