@@ -6,15 +6,15 @@ export const SKILL_STATS: SkillStat[] = [
     label: 'Primary frontend framework',
   },
   {
-    value: 'React',
-    label: 'Practical experience, 3-4 months',
+    value: 'Angular Material',
+    label: 'Theming, tokens, buttons, cards, icons',
   },
   {
     value: 'AG Grid',
     label: 'Enterprise data-heavy UI',
   },
   {
-    value: 'Java',
-    label: 'Backend contribution',
+    value: 'React',
+    label: 'Practical experience, 3-4 months',
   },
 ];

@@ -9,6 +9,10 @@
 
 @for (link of contactLinks; track link.label) {
   <app-contact-link-card
+    class="contact__link-card"
+    [class.contact__link-card--first]="$first"
+    [class.contact__link-card--second]="$index === 1"
+    [class.contact__link-card--third]="$index === 2"
     [link]="link"
     [isCopied]="copiedLabel() === link.label"
     (copyRequested)="copyContactValue($event)" />

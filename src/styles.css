@@ -14,26 +14,23 @@ body {
   border-color: var(--portfolio-glass-outline);
   color: var(--mat-sys-on-surface);
   backdrop-filter: blur(20px) saturate(135%);
-  box-shadow: var(--mat-sys-level2);
+  filter: drop-shadow(0 0.75rem 1.5rem var(--portfolio-depth-shadow));
 }
 
 .mat-toolbar.navbar__root {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  @apply border-b border-solid;
 }
 
 .mat-toolbar.footer__root {
-  border-top-style: solid;
-  border-top-width: 1px;
+  @apply border-t border-solid;
 }
 
-.navbar__nav-link.mat-mdc-outlined-button {
-  --mdc-outlined-button-container-height: 36px;
-  --mdc-outlined-button-outline-color: var(--portfolio-glass-outline);
-  --mdc-outlined-button-label-text-color: var(--mat-sys-on-surface);
-  --mat-outlined-button-hover-state-layer-color: var(--mat-sys-primary);
-  --mat-outlined-button-focus-state-layer-color: var(--mat-sys-primary);
-  --mat-outlined-button-pressed-state-layer-color: var(--mat-sys-primary);
+.navbar__nav-link.mat-mdc-unelevated-button {
+  --mdc-filled-button-container-color: var(--portfolio-icon-surface);
+  --mdc-filled-button-label-text-color: var(--mat-sys-on-surface);
+  --mat-filled-button-hover-state-layer-color: var(--mat-sys-primary);
+  --mat-filled-button-focus-state-layer-color: var(--mat-sys-primary);
+  --mat-filled-button-pressed-state-layer-color: var(--mat-sys-primary);
 }
 
 .navbar__brand.mat-mdc-button,
@@ -42,22 +39,37 @@ body {
 .footer__link.mat-mdc-icon-button {
   --mat-text-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-icon-button-hover-state-layer-color: var(--mat-sys-primary);
+
+  background: var(--portfolio-icon-surface);
+  color: var(--mat-sys-on-surface);
+}
+
+.mat-mdc-icon-button {
+  @apply overflow-visible;
+}
+
+.mat-mdc-icon-button .mat-icon {
+  @apply inline-flex h-6 w-6 items-center justify-center overflow-visible leading-none;
+}
+
+.mat-mdc-icon-button .mat-icon svg {
+  @apply block h-full w-full overflow-visible;
 }
 
 .mat-mdc-card {
   background: var(--portfolio-glass-surface-strong);
   border-color: var(--portfolio-glass-outline);
-  box-shadow: var(--mat-sys-level1);
+  filter: drop-shadow(0 0.5rem 1rem var(--portfolio-depth-shadow));
   backdrop-filter: blur(18px) saturate(130%);
 }
 
 .app-theme-toggle {
-  display: none !important;
+  @apply hidden!;
 }
 
 @media (width >= 80rem) {
   .app-theme-toggle {
-    display: inline-flex !important;
+    @apply inline-flex!;
   }
 }
 

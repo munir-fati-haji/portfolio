@@ -1,13 +1,54 @@
 @reference '../../../styles.css';
 
 :host {
-  display: grid;
-  max-width: 80rem;
-  margin-inline: auto;
-  gap: 1.5rem;
-  padding: 4rem 1rem;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.72fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
+}
+
+:host > * {
+  min-width: 0;
+}
+
+.education__header {
+  @apply lg:col-start-1 lg:row-span-3 lg:row-start-1;
+}
+
+.education__stat-card--degrees {
+  @apply lg:col-start-2 lg:row-start-1;
+}
+
+.education__stat-card--certificates {
+  @apply lg:col-start-2 lg:row-start-2;
+}
+
+.education__ambassador-link {
+  @apply max-w-full justify-self-start whitespace-normal text-left! leading-5! lg:col-start-2 lg:row-start-3;
+}
+
+.education__item,
+.education__heading-title {
+  @apply lg:col-span-2;
+}
+
+.education__stat-card,
+.education__item,
+.education__certificate {
+  @apply block w-full;
 }
 
 .education__stat-value {
-  font-weight: 500;
+  @apply text-3xl font-medium;
+
+  color: var(--mat-sys-primary);
+}
+
+.education__stat-label {
+  @apply mt-1 text-sm leading-6;
+
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.education__heading-title {
+  @apply mt-4 text-sm font-medium uppercase tracking-wide;
+
+  color: var(--mat-sys-primary);
 }

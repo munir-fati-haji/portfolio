@@ -1,9 +1,35 @@
 @reference '../../../styles.css';
 
 :host {
-  display: grid;
-  max-width: 72rem;
-  margin-inline: auto;
-  gap: 1rem;
-  padding: 4rem 1rem;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.72fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
+}
+
+:host > * {
+  min-width: 0;
+}
+
+.working-on__header {
+  @apply lg:col-start-1 lg:row-span-3 lg:row-start-1;
+}
+
+.working-on__focus-card {
+  @apply block w-full;
+}
+
+.working-on__focus-card--first {
+  @apply lg:col-start-2 lg:row-start-1;
+}
+
+.working-on__focus-card--second {
+  @apply lg:col-start-2 lg:row-start-2;
+}
+
+.working-on__focus-card--third {
+  @apply lg:col-start-2 lg:row-start-3;
+}
+
+.working-on__focus-title {
+  @apply text-sm leading-6;
+
+  color: var(--mat-sys-on-surface-variant);
 }

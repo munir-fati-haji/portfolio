@@ -1,7 +1,13 @@
 <app-section-header class="skills__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
 @for (stat of stats; track stat.label) {
-  <mat-card class="skills__stat-card" appearance="outlined">
+  <mat-card
+    class="skills__stat-card"
+    appearance="outlined"
+    [class.skills__stat-card--first]="$first"
+    [class.skills__stat-card--second]="$index === 1"
+    [class.skills__stat-card--third]="$index === 2"
+    [class.skills__stat-card--fourth]="$index === 3">
     <mat-card-content>
       <p class="skills__stat-value">{{ stat.value }}</p>
       <p class="skills__stat-label">{{ stat.label }}</p>
@@ -17,5 +23,5 @@
 </mat-chip-set>
 
 @for (category of categories; track category.title) {
-  <app-skill-category-card [category]="category" />
+  <app-skill-category-card class="skills__category-card" [category]="category" />
 }

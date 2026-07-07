@@ -15,13 +15,15 @@ describe('HeroCodeCard', () => {
     expect(ngMocks.input(codeElement, 'highlight')).toBe(HERO_CODE_SNIPPET);
   });
 
-  it('renders only the code preview content without a card title or subtitle', () => {
+  it('renders the code preview without a card title or subtitle', () => {
     const fixture = MockRender(HeroCodeCard, { code: HERO_CODE_SNIPPET });
     const nativeElement = fixture.nativeElement as HTMLElement;
     const text = nativeElement.textContent;
 
-    expect(text).toContain('Angular Frontend Developer');
-    expect(text).not.toContain('TypeScript');
+    expect(nativeElement.querySelector('mat-card-header')).toBeNull();
+    expect(nativeElement.querySelector('mat-card-title')).toBeNull();
+    expect(nativeElement.querySelector('mat-card-subtitle')).toBeNull();
+    expect(nativeElement.querySelector('code')).not.toBeNull();
     expect(text).not.toContain('Portfolio component preview');
   });
 });

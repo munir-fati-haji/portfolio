@@ -17,7 +17,12 @@
 }
 
 .navbar__nav-link {
-  @apply text-sm!;
+  @apply min-h-9! px-3! text-sm!;
+}
+
+.navbar__theme-toggle,
+.navbar__menu-toggle {
+  @apply size-11! items-center! justify-center!;
 }
 
 .navbar__theme-toggle {
