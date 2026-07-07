@@ -1,25 +1,25 @@
 <section class="contact__section">
   <div class="contact__content">
-    <div>
+    <header>
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-      <div class="contact__actions">
+      <nav class="contact__actions" aria-label="Contact actions">
         <button mat-flat-button type="button" (click)="openExternalUrl('mailto:munir.fati.haji@gmail.com')">
           Send Email
         </button>
         <button mat-stroked-button type="button" routerLink="/projects">View Projects</button>
-      </div>
-    </div>
+      </nav>
+    </header>
 
-    <div class="contact__panel">
-      <div class="contact__link-list">
+    <aside class="contact__panel" aria-label="Contact links and availability">
+      <section class="contact__link-list" aria-label="Contact links">
         @for (link of contactLinks; track link.label) {
           <app-contact-link-card
             [link]="link"
             [isCopied]="copiedLabel() === link.label"
             (copyRequested)="copyContactValue($event)" />
         }
-      </div>
+      </section>
 
       <mat-card class="contact__note-card" appearance="outlined">
         <mat-card-content>
@@ -30,6 +30,6 @@
           </p>
         </mat-card-content>
       </mat-card>
-    </div>
+    </aside>
   </div>
 </section>
