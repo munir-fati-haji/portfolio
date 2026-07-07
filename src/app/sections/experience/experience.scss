@@ -1,19 +1,11 @@
 @reference '../../../styles.css';
 
-.experience__section {
-  @apply px-4 py-16 sm:px-6 lg:px-10 xl:px-12;
+:host {
+  @apply mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-10 xl:px-12;
 }
 
-.experience__content {
-  @apply mx-auto max-w-7xl;
-}
-
-.experience__header-row {
-  @apply grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end;
-}
-
-.experience__metrics-grid {
-  @apply grid gap-4 sm:grid-cols-2;
+.experience__header {
+  @apply lg:col-span-2;
 }
 
 .experience__metric-value {
@@ -28,6 +20,6 @@
   color: var(--mat-sys-on-surface-variant);
 }
 
-.experience__timeline {
-  @apply mt-12 space-y-6;
+.experience__card {
+  @apply lg:col-span-2;
 }

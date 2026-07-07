@@ -1,60 +1,13 @@
 @reference '../../../styles.css';
 
-.education__section {
-  @apply px-4 py-16 sm:px-6 lg:px-10 xl:px-12;
-}
-
-.education__content {
-  @apply mx-auto max-w-7xl;
-}
-
-.education__header-row {
-  @apply grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end;
-}
-
-.education__stats-grid {
-  @apply grid gap-4 sm:grid-cols-2;
+:host {
+  display: grid;
+  max-width: 80rem;
+  margin-inline: auto;
+  gap: 1.5rem;
+  padding: 4rem 1rem;
 }
 
 .education__stat-value {
-  @apply text-3xl font-medium;
-
-  color: var(--mat-sys-primary);
-}
-
-.education__stat-label {
-  @apply mt-1 text-sm leading-6;
-
-  color: var(--mat-sys-on-surface-variant);
-}
-
-.education__ambassador-link {
-  @apply mt-6;
-}
-
-.education__external-icon {
-  @apply text-base;
-}
-
-.education__timeline,
-.education__certificates-section {
-  @apply mt-12;
-}
-
-.education__certificates-heading {
-  @apply mb-6 flex items-center gap-4;
-}
-
-.education__heading-line {
-  @apply flex-1;
-}
-
-.education__heading-title {
-  @apply shrink-0 text-sm font-medium uppercase tracking-wide;
-
-  color: var(--mat-sys-primary);
-}
-
-.education__certificate-grid {
-  @apply grid gap-4 lg:grid-cols-2;
+  font-weight: 500;
 }

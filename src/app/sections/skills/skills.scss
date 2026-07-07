@@ -1,19 +1,16 @@
 @reference '../../../styles.css';
 
-.skills__section {
-  @apply px-4 py-16 sm:px-6 lg:px-10 xl:px-12;
+:host {
+  @apply mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-10 xl:px-12;
 }
 
-.skills__content {
-  @apply mx-auto max-w-7xl;
+.skills__header,
+.skills__legend {
+  @apply lg:col-span-2;
 }
 
-.skills__header-row {
-  @apply grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end;
-}
-
-.skills__stats-grid {
-  @apply grid gap-4 sm:grid-cols-2;
+.skills__stat-card {
+  @apply min-w-0;
 }
 
 .skills__stat-value {
@@ -29,9 +26,5 @@
 }
 
 .skills__legend {
-  @apply mt-8 flex flex-wrap gap-3;
-}
-
-.skills__category-grid {
-  @apply mt-8 grid gap-6 lg:grid-cols-2;
+  @apply flex flex-wrap gap-3;
 }

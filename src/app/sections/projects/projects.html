@@ -1,13 +1,5 @@
-<section class="projects__section">
-  <div class="projects__content">
-    <div class="projects__header">
-      <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
-    </div>
+<app-section-header class="projects__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-    <div class="projects__grid">
-      @for (project of projects; track project.title) {
-        <app-project-card [project]="project" />
-      }
-    </div>
-  </div>
-</section>
+@for (project of projects; track project.title) {
+  <app-project-card [project]="project" />
+}

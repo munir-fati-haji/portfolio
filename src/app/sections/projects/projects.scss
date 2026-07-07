@@ -1,17 +1,9 @@
 @reference '../../../styles.css';
 
-.projects__section {
-  @apply px-4 py-16 sm:px-6 lg:px-10 xl:px-12;
-}
-
-.projects__content {
-  @apply mx-auto flex max-w-7xl flex-col justify-center;
+:host {
+  @apply mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-10 xl:px-12;
 }
 
 .projects__header {
-  @apply max-w-3xl;
-}
-
-.projects__grid {
-  @apply mt-10 grid gap-6 lg:grid-cols-2;
+  @apply max-w-3xl lg:col-span-2;
 }

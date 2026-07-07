@@ -1,9 +1,7 @@
 <app-section-container>
   <app-hero-intro class="hero__intro" [name]="name" [role]="role" [description]="description" [skills]="skills" />
 
-  <div class="hero__feature-panel">
-    <app-hero-code-card [code]="codeSnippet" />
+  <app-hero-code-card class="hero__code-card" [code]="codeSnippet" />
 
-    <app-hero-stats [stats]="stats" />
-  </div>
+  <app-hero-stats class="hero__stats" [stats]="stats" />
 </app-section-container>
