@@ -4,37 +4,12 @@
   @apply p-6!;
 }
 
-.project-card__header {
-  @apply flex flex-wrap items-start justify-between gap-4;
-}
+.project-card__description {
+  @apply text-sm leading-6;
 
-.project-card__type,
-.project-card__featured-chip {
-  color: var(--mat-sys-primary);
-}
-
-.project-card__title {
-  @apply mt-3 text-2xl font-medium;
-}
-
-.project-card__description,
-.project-card__feature-item {
   color: var(--mat-sys-on-surface-variant);
 }
 
-.project-card__feature-list,
 .project-card__tech-list {
-  @apply mt-6;
-}
-
-.project-card__feature-list {
-  @apply list-disc space-y-3 pl-5;
-}
-
-.project-card__feature-item {
-  @apply text-sm leading-6;
-}
-
-.project-card__tech-list {
-  @apply flex flex-wrap gap-2;
+  @apply mt-6 flex flex-wrap gap-2;
 }
