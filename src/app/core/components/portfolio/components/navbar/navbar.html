@@ -6,7 +6,7 @@
 
     <nav aria-label="Primary navigation" class="navbar__nav">
       @for (link of links; track link.label) {
-        <button mat-stroked-button class="navbar__nav-link" type="button" [routerLink]="link.route">
+        <button mat-flat-button class="navbar__nav-link" type="button" [routerLink]="link.route">
           {{ link.label }}
         </button>
       }
