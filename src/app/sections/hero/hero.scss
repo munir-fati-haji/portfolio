@@ -8,3 +8,11 @@
 .hero__stats {
   @apply w-full min-w-0;
 }
+
+.hero__code-card {
+  @apply self-end;
+}
+
+.hero__stats {
+  @apply self-start;
+}
