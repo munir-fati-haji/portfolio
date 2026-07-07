@@ -1,47 +1,35 @@
-<mat-card class="group education-card__card" appearance="outlined">
-  <div class="education-card__timeline-marker"></div>
+<mat-card class="education-card__card" appearance="outlined">
+  <mat-card-header>
+    <mat-icon mat-card-avatar aria-hidden="true">{{ education().icon }}</mat-icon>
+    <mat-card-title>{{ education().degree }}</mat-card-title>
+    <mat-card-subtitle>{{ education().school }} - {{ education().location }}</mat-card-subtitle>
+  </mat-card-header>
 
   <mat-card-content class="education-card__body">
-    <div class="education-card__content">
-      <div class="education-card__header">
-        <div class="education-card__icon-surface">
-          <div class="education-card__icon">
-            <mat-icon>{{ education().icon }}</mat-icon>
-          </div>
-
-          <div class="education-card__heading">
-            <h3 class="education-card__school">
-              {{ education().degree }}
-            </h3>
-
-            <p class="education-card__period">{{ education().school }} - {{ education().location }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="education-card__degree">
-        <app-shared-chip-button size="xs" variant="cyan" [label]="education().grade" />
-
-        <app-shared-chip-button size="xs" variant="slate" [label]="education().period" />
-      </div>
-    </div>
+    <mat-chip-set aria-label="Education details">
+      <mat-chip>{{ education().grade }}</mat-chip>
+      <mat-chip>{{ education().period }}</mat-chip>
+    </mat-chip-set>
 
     <p class="education-card__description">
       {{ education().description }}
     </p>
 
-    <div class="education-card__skill-list">
+    <mat-chip-set class="education-card__skill-list" aria-label="Education skills">
       @for (skill of education().skills; track skill.name) {
-        <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
+        <mat-chip>
+          <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
+          {{ skill.name }}
+        </mat-chip>
       }
-    </div>
+    </mat-chip-set>
 
-    <ul class="education-card__highlight-list">
+    <mat-list aria-label="Education highlights">
       @for (highlight of education().highlights; track highlight) {
-        <li class="education-card__highlight-item">
-          {{ highlight }}
-        </li>
+        <mat-list-item>
+          <span matListItemTitle>{{ highlight }}</span>
+        </mat-list-item>
       }
-    </ul>
+    </mat-list>
   </mat-card-content>
 </mat-card>
