@@ -1,6 +1,7 @@
 import { Component, inject, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -10,7 +11,7 @@ import { FOOTER_LINKS } from '../../../footer/data/footer-links';
 
 @Component({
   selector: 'app-mobile-navbar',
-  imports: [RouterLink, MatButtonModule, MatIconModule, MatListModule, MatSidenavModule],
+  imports: [RouterLink, MatButtonModule, MatDividerModule, MatIconModule, MatListModule, MatSidenavModule],
   templateUrl: './mobile-navbar.html',
   styleUrl: './mobile-navbar.scss',
 })
