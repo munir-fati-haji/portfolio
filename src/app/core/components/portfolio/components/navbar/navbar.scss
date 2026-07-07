@@ -1,14 +1,10 @@
 @reference '../../../../../../styles.css';
 
 .navbar__root {
-  @apply relative z-40 h-16! min-h-16! overflow-hidden border-b px-3! py-0! shadow-[0_12px_36px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:px-5!;
+  @apply relative z-40 h-16! min-h-16! overflow-hidden border-b border-white/10 bg-[#070b1a]/80! px-3! py-0! text-white! shadow-[0_12px_36px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:px-5!;
 }
 
-.navbar__root--dark {
-  @apply border-white/10 bg-[#070b1a]/80! text-white!;
-}
-
-.navbar__root--light {
+:host-context(.app-theme-light) .navbar__root {
   @apply border-slate-200/80 bg-slate-50/90! text-slate-950!;
 }
 
@@ -29,65 +25,43 @@
 }
 
 .navbar__brand {
-  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:text-3xl;
+  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal text-white no-underline transition hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:text-3xl;
 }
 
-.navbar__brand--dark {
-  @apply text-white hover:text-cyan-200;
-}
-
-.navbar__brand--light {
+:host-context(.app-theme-light) .navbar__brand {
   @apply text-slate-950 hover:text-cyan-700;
 }
 
 .navbar__nav {
-  @apply hidden items-center gap-0.5 rounded-full border p-1 shadow-lg shadow-black/10 backdrop-blur xl:flex;
-}
-
-.navbar__nav--dark {
-  @apply border-white/10 bg-white/[0.045];
-}
-
-.navbar__nav--light {
-  @apply border-slate-200 bg-white/80;
+  @apply hidden items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.045] p-1 shadow-lg shadow-black/10 backdrop-blur xl:flex;
 }
 
 :host-context(.app-theme-light) .navbar__nav {
+  @apply border-slate-200 bg-white/80;
+
   --tw-shadow-color: var(--portfolio-card-shadow) !important;
 }
 
 .navbar__nav-link {
-  @apply h-9! min-w-0! rounded-full! px-3! text-xs! font-semibold! leading-none! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+  @apply h-9! min-w-0! rounded-full! px-3! text-xs! font-semibold! leading-none! text-slate-300! transition hover:bg-cyan-300/10! hover:text-cyan-200! focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
 }
 
-.navbar__nav-link--dark {
-  @apply text-slate-300! hover:bg-cyan-300/10! hover:text-cyan-200!;
-}
-
-.navbar__nav-link--light {
+:host-context(.app-theme-light) .navbar__nav-link {
   @apply text-slate-700! hover:bg-cyan-100! hover:text-cyan-700!;
 }
 
 .navbar__theme-toggle {
-  @apply hidden! h-10! w-10! rounded-full! border shadow-lg transition xl:inline-flex!;
+  @apply hidden! h-10! w-10! rounded-full! border border-white/20! bg-white/90! text-slate-950! shadow-lg shadow-black/30 transition hover:bg-white! xl:inline-flex!;
 }
 
-.navbar__theme-toggle--dark {
-  @apply border-white/20! bg-white/90! text-slate-950! shadow-black/30 hover:bg-white!;
-}
-
-.navbar__theme-toggle--light {
+:host-context(.app-theme-light) .navbar__theme-toggle {
   @apply border-slate-950/15! bg-slate-950! text-white! shadow-slate-300/40 hover:bg-slate-800!;
 }
 
 .navbar__menu-toggle {
-  @apply h-10! w-10! rounded-full! border shadow-lg transition xl:hidden!;
+  @apply h-10! w-10! rounded-full! border border-cyan-300/20! bg-cyan-300/10! text-cyan-200! shadow-lg shadow-cyan-950/30 transition hover:bg-cyan-300/15! xl:hidden!;
 }
 
-.navbar__menu-toggle--dark {
-  @apply border-cyan-300/20! bg-cyan-300/10! text-cyan-200! shadow-cyan-950/30 hover:bg-cyan-300/15!;
-}
-
-.navbar__menu-toggle--light {
+:host-context(.app-theme-light) .navbar__menu-toggle {
   @apply border-cyan-600/20! bg-cyan-50! text-cyan-700! shadow-slate-300/40 hover:bg-cyan-100!;
 }

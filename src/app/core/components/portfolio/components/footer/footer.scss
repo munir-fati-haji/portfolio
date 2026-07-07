@@ -1,14 +1,10 @@
 @reference '../../../../../../styles.css';
 
 .footer__root {
-  @apply relative hidden! h-auto! min-h-0! overflow-hidden border-t px-4! py-3! shadow-[0_-12px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl xl:flex!;
+  @apply relative hidden! h-auto! min-h-0! overflow-hidden border-t border-white/10 bg-[#070b1a]! px-4! py-3! text-slate-400! shadow-[0_-12px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl xl:flex!;
 }
 
-.footer__root--dark {
-  @apply border-white/10 bg-[#070b1a]! text-slate-400!;
-}
-
-.footer__root--light {
+:host-context(.app-theme-light) .footer__root {
   @apply border-slate-200/80 bg-slate-50/95! text-slate-600!;
 }
 
@@ -33,26 +29,18 @@
 }
 
 .footer__links {
-  @apply flex items-center justify-center gap-1.5 rounded-full border p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_10px_24px_rgba(0,0,0,0.22)] backdrop-blur-xl;
+  @apply flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_10px_24px_rgba(0,0,0,0.22)] backdrop-blur-xl;
 }
 
-.footer__links--dark {
-  @apply border-white/10 bg-white/[0.06];
-}
-
-.footer__links--light {
+:host-context(.app-theme-light) .footer__links {
   @apply border-slate-200 bg-white/80;
 }
 
 .footer__link {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full border shadow-sm transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
+  @apply inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-cyan-100 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-cyan-300/50 hover:bg-cyan-300/20 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
 }
 
-.footer__link--dark {
-  @apply border-white/10 bg-white/[0.08] text-cyan-100 hover:border-cyan-300/50 hover:bg-cyan-300/20 hover:text-white;
-}
-
-.footer__link--light {
+:host-context(.app-theme-light) .footer__link {
   @apply border-slate-200 bg-white text-cyan-700 hover:border-cyan-500/40 hover:bg-cyan-50 hover:text-cyan-800;
 }
 

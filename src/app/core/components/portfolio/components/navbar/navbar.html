@@ -1,31 +1,15 @@
-<mat-toolbar
-  class="app-navbar navbar__root"
-  [class.navbar__root--dark]="themeService.isDark()"
-  [class.navbar__root--light]="!themeService.isDark()">
+<mat-toolbar class="app-navbar navbar__root">
   <div class="navbar__backdrop"></div>
   <div class="navbar__border"></div>
 
   <div class="navbar__layout">
-    <a
-      class="app-brand navbar__brand"
-      routerLink="/"
-      [class.navbar__brand--dark]="themeService.isDark()"
-      [class.navbar__brand--light]="!themeService.isDark()">
+    <a class="app-brand navbar__brand" routerLink="/">
       {{ brand }}
     </a>
 
-    <nav
-      aria-label="Primary navigation"
-      class="app-nav-surface navbar__nav"
-      [class.navbar__nav--dark]="themeService.isDark()"
-      [class.navbar__nav--light]="!themeService.isDark()">
+    <nav aria-label="Primary navigation" class="app-nav-surface navbar__nav">
       @for (link of links; track link.label) {
-        <a
-          mat-button
-          class="app-nav-link navbar__nav-link"
-          [class.navbar__nav-link--dark]="themeService.isDark()"
-          [class.navbar__nav-link--light]="!themeService.isDark()"
-          [routerLink]="link.route">
+        <a mat-button class="app-nav-link navbar__nav-link" [routerLink]="link.route">
           {{ link.label }}
         </a>
       }
@@ -35,8 +19,6 @@
       mat-icon-button
       class="app-theme-toggle navbar__theme-toggle"
       type="button"
-      [class.navbar__theme-toggle--dark]="themeService.isDark()"
-      [class.navbar__theme-toggle--light]="!themeService.isDark()"
       [attr.aria-label]="themeService.toggleLabel()"
       [matTooltip]="themeService.toggleLabel()"
       (click)="toggleTheme()">
@@ -48,8 +30,6 @@
       class="app-menu-toggle navbar__menu-toggle"
       type="button"
       aria-label="Open navigation menu"
-      [class.navbar__menu-toggle--dark]="themeService.isDark()"
-      [class.navbar__menu-toggle--light]="!themeService.isDark()"
       [attr.aria-expanded]="isMobileMenuOpen()"
       (click)="openMobileMenu()">
       <mat-icon>menu</mat-icon>

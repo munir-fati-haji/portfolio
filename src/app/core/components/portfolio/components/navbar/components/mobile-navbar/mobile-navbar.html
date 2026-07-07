@@ -2,20 +2,12 @@
   <div class="mobile-navbar__overlay">
     <button class="mobile-navbar__scrim" type="button" aria-label="Close navigation menu" (click)="close()"></button>
 
-    <aside
-      class="app-mobile-drawer mobile-navbar__drawer"
-      [class.mobile-navbar__drawer--dark]="themeService.isDark()"
-      [class.mobile-navbar__drawer--light]="!themeService.isDark()">
+    <aside class="app-mobile-drawer mobile-navbar__drawer">
       <div class="mobile-navbar__drawer-glow"></div>
       <div class="mobile-navbar__drawer-content"></div>
 
       <div class="mobile-navbar__drawer-header">
-        <a
-          class="app-brand mobile-navbar__close-button"
-          routerLink="/"
-          [class.mobile-navbar__close-button--dark]="themeService.isDark()"
-          [class.mobile-navbar__close-button--light]="!themeService.isDark()"
-          (click)="close()">
+        <a class="app-brand mobile-navbar__close-button" routerLink="/" (click)="close()">
           {{ brand() }}
         </a>
 
@@ -24,8 +16,6 @@
           class="mobile-navbar__close-icon"
           type="button"
           aria-label="Close navigation menu"
-          [class.mobile-navbar__close-icon--dark]="themeService.isDark()"
-          [class.mobile-navbar__close-icon--light]="!themeService.isDark()"
           (click)="close()">
           <mat-icon>close</mat-icon>
         </button>
@@ -33,13 +23,7 @@
 
       <nav aria-label="Mobile navigation" class="mobile-navbar__nav-list">
         @for (link of links(); track link.label) {
-          <a
-            mat-button
-            class="app-mobile-nav-link mobile-navbar__nav-link"
-            [class.mobile-navbar__nav-link--dark]="themeService.isDark()"
-            [class.mobile-navbar__nav-link--light]="!themeService.isDark()"
-            [routerLink]="link.route"
-            (click)="close()">
+          <a mat-button class="app-mobile-nav-link mobile-navbar__nav-link" [routerLink]="link.route" (click)="close()">
             <mat-icon class="mobile-navbar__nav-icon" aria-hidden="true">{{ link.icon }}</mat-icon>
             {{ link.label }}
           </a>
@@ -50,8 +34,6 @@
         <button
           type="button"
           class="app-mobile-theme-toggle mobile-navbar__theme-button"
-          [class.mobile-navbar__theme-button--dark]="themeService.isDark()"
-          [class.mobile-navbar__theme-button--light]="!themeService.isDark()"
           [attr.aria-label]="themeService.toggleLabel()"
           (click)="toggleTheme()">
           <span>{{ themeService.toggleLabel() }}</span>
@@ -64,8 +46,6 @@
           @for (link of footerLinks; track link.label) {
             <a
               class="app-footer-icon group mobile-navbar__social-link"
-              [class.mobile-navbar__social-link--dark]="themeService.isDark()"
-              [class.mobile-navbar__social-link--light]="!themeService.isDark()"
               [href]="link.href"
               [attr.aria-label]="link.label"
               [attr.target]="link.external ? '_blank' : null"

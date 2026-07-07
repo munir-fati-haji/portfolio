@@ -1,7 +1,4 @@
-<mat-toolbar
-  class="app-footer footer__root"
-  [class.footer__root--dark]="themeService.isDark()"
-  [class.footer__root--light]="!themeService.isDark()">
+<mat-toolbar class="app-footer footer__root">
   <div class="footer__backdrop"></div>
 
   <div class="footer__content">
@@ -9,16 +6,10 @@
       {{ copyright }}
     </span>
 
-    <nav
-      aria-label="Footer links"
-      class="app-footer-links footer__links"
-      [class.footer__links--dark]="themeService.isDark()"
-      [class.footer__links--light]="!themeService.isDark()">
+    <nav aria-label="Footer links" class="app-footer-links footer__links">
       @for (link of links; track link.label) {
         <a
           class="app-footer-icon group footer__link"
-          [class.footer__link--dark]="themeService.isDark()"
-          [class.footer__link--light]="!themeService.isDark()"
           [href]="link.href"
           [matTooltip]="link.label"
           [attr.aria-label]="link.label"
