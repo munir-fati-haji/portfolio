@@ -1,15 +1,25 @@
 @reference '../../../../../../../styles.css';
 
 .hero-skills__section {
-  @apply mt-8 block space-y-4;
+  @apply mt-8 block space-y-5;
 }
 
 .hero-skills__label {
-  @apply mb-2 text-xs font-medium uppercase tracking-wide;
+  @apply mb-3 text-xs font-medium uppercase tracking-wide;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .hero-skills__list {
-  @apply flex flex-wrap gap-2;
+  @apply flex flex-wrap items-center gap-2.5;
+}
+
+.hero-skills__list .mat-mdc-icon-button {
+  @apply flex! size-11! items-center! justify-center!;
+}
+
+.hero-skills__list mat-icon {
+  @apply block! size-5.5!;
+
+  color: var(--mat-sys-on-surface);
 }
