@@ -1,12 +1,13 @@
 import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-import { SharedChipButton } from '@shared/components/shared-chip-button/shared-chip-button';
+import { MatListModule } from '@angular/material/list';
 import { ExperienceItem } from '../../models/experience-item.model';
 
 @Component({
   selector: 'app-experience-card',
-  imports: [MatCardModule, MatIconModule, SharedChipButton],
+  imports: [MatCardModule, MatChipsModule, MatIconModule, MatListModule],
   templateUrl: './experience-card.html',
   styleUrl: './experience-card.scss',
   host: { class: 'block' },
