@@ -1,9 +1,10 @@
 @reference '../../../styles.css';
 
 .hero__intro {
-  @apply min-w-0;
+  @apply min-w-0 lg:row-span-2;
 }
 
-.hero__feature-panel {
+.hero__code-card,
+.hero__stats {
   @apply w-full min-w-0;
 }
