@@ -1,7 +1,7 @@
 @reference '../../../../../../styles.css';
 
 .footer__root {
-  @apply hidden! h-auto! px-4! py-3! xl:flex!;
+  @apply hidden! min-h-16! overflow-visible px-4! py-3! xl:flex!;
 }
 
 .footer__content {
@@ -13,9 +13,13 @@
 }
 
 .footer__links {
-  @apply flex items-center justify-center gap-1;
+  @apply flex items-center justify-center gap-2 overflow-visible;
+}
+
+.footer__link {
+  @apply flex! size-11! items-center! justify-center! overflow-visible! p-0! leading-none!;
 }
 
 .footer__icon {
-  @apply size-4.5!;
+  @apply block! size-5! leading-none!;
 }
