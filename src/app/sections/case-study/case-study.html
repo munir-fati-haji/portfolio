@@ -7,9 +7,9 @@
 
       <div class="case-study__panel">
         <mat-stepper orientation="vertical" class="case-study__stepper">
-          @for (step of steps; track step; let index = $index) {
+          @for (step of steps; track step) {
             <mat-step>
-              <ng-template matStepLabel>Step {{ index + 1 }}</ng-template>
+              <ng-template matStepLabel>Step {{ $index + 1 }}</ng-template>
               <p class="case-study__step-text">{{ step }}</p>
             </mat-step>
           }

@@ -13,7 +13,15 @@ import { WUT_AMBASSADOR_PROFILE_URL } from './data/education-links';
 
 @Component({
   selector: 'app-education',
-  imports: [CertificateCard, EducationCard, MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, SectionHeader],
+  imports: [
+    CertificateCard,
+    EducationCard,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    SectionHeader,
+  ],
   templateUrl: './education.html',
   styleUrl: './education.scss',
 })
