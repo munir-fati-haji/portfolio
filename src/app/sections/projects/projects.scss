@@ -12,6 +12,6 @@
   @apply max-w-3xl lg:col-span-2;
 }
 
-:host > app-project-card {
+.projects__card {
   @apply block w-full;
 }
