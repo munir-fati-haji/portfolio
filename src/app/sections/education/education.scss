@@ -1,15 +1,29 @@
 @reference '../../../styles.css';
 
 :host {
-  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-2 lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.72fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
 }
 
 :host > * {
   min-width: 0;
 }
 
-.education__header,
-.education__ambassador-link,
+.education__header {
+  @apply lg:col-start-1 lg:row-span-3 lg:row-start-1;
+}
+
+.education__stat-card--degrees {
+  @apply lg:col-start-2 lg:row-start-1;
+}
+
+.education__stat-card--certificates {
+  @apply lg:col-start-2 lg:row-start-2;
+}
+
+.education__ambassador-link {
+  @apply max-w-full justify-self-start whitespace-normal text-left! leading-5! lg:col-start-2 lg:row-start-3;
+}
+
 .education__item,
 .education__heading-title {
   @apply lg:col-span-2;
@@ -31,10 +45,6 @@
   @apply mt-1 text-sm leading-6;
 
   color: var(--mat-sys-on-surface-variant);
-}
-
-.education__ambassador-link {
-  @apply max-w-full justify-self-start whitespace-normal text-left! leading-5!;
 }
 
 .education__heading-title {
