@@ -6,15 +6,14 @@
       </div>
 
       <div class="case-study__panel">
-        <div class="case-study__step-list">
-          @for (step of steps; track step) {
-            <mat-card class="case-study__step-card" appearance="outlined">
-              <mat-card-content>
-                <p class="case-study__step-text">{{ step }}</p>
-              </mat-card-content>
-            </mat-card>
+        <mat-stepper orientation="vertical" class="case-study__stepper">
+          @for (step of steps; track step; let index = $index) {
+            <mat-step>
+              <ng-template matStepLabel>Step {{ index + 1 }}</ng-template>
+              <p class="case-study__step-text">{{ step }}</p>
+            </mat-step>
           }
-        </div>
+        </mat-stepper>
 
         <mat-card class="case-study__result-card" appearance="outlined">
           <mat-card-content>
