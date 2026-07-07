@@ -24,6 +24,15 @@ export class Contact {
   protected readonly copiedLabel = signal<string | null>(null);
   private readonly destroyRef = inject(DestroyRef);
 
+  protected openExternalUrl(url: string): void {
+    if (url.startsWith('mailto:')) {
+      window.location.href = url;
+      return;
+    }
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
   protected async copyContactValue(link: ContactLink): Promise<void> {
     if ('clipboard' in navigator) {
       await navigator.clipboard.writeText(link.value);
