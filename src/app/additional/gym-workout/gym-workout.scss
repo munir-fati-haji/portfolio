@@ -1,8 +1,9 @@
 @reference '../../../styles.css';
 
 :host {
-  @apply mx-auto grid min-h-screen w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-10 sm:px-6 md:grid-cols-2 lg:px-8 xl:grid-cols-3;
+  @apply grid min-h-screen w-full grid-cols-1 justify-center gap-5 overflow-x-hidden px-4 py-10 sm:px-6 md:grid-cols-[repeat(2,minmax(0,39.375rem))] lg:px-8 xl:grid-cols-[repeat(3,minmax(0,25.833rem))];
 
+  background: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
 }
 
