@@ -1,5 +1,9 @@
 @reference '../../../styles.css';
 
 :host {
-  display: block;
+  display: grid;
+  max-width: 80rem;
+  margin-inline: auto;
+  gap: 1.5rem;
+  padding: 4rem 1rem;
 }
