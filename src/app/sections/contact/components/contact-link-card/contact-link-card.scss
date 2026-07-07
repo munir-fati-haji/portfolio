@@ -5,7 +5,12 @@
 }
 
 .contact-link-card__content {
-  @apply min-w-0 flex-1 no-underline;
+  @apply min-w-0 flex-1 justify-start! text-left!;
+}
+
+.contact-link-card__label,
+.contact-link-card__value {
+  @apply block;
 }
 
 .contact-link-card__label {
