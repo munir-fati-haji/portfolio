@@ -1,16 +1,35 @@
 @reference '../../../styles.css';
 
 :host {
-  @apply mx-auto grid max-w-7xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-10 xl:px-12;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(14rem,0.42fr)_minmax(14rem,0.42fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
 }
 
-.skills__header,
-.skills__legend {
-  @apply lg:col-span-2;
+:host > * {
+  min-width: 0;
+}
+
+.skills__header {
+  @apply lg:col-start-1 lg:row-span-2 lg:row-start-1;
 }
 
 .skills__stat-card {
-  @apply min-w-0;
+  @apply block w-full;
+}
+
+.skills__stat-card--first {
+  @apply lg:col-start-2 lg:row-start-1;
+}
+
+.skills__stat-card--second {
+  @apply lg:col-start-3 lg:row-start-1;
+}
+
+.skills__stat-card--third {
+  @apply lg:col-start-2 lg:row-start-2;
+}
+
+.skills__stat-card--fourth {
+  @apply lg:col-start-3 lg:row-start-2;
 }
 
 .skills__stat-value {
@@ -26,5 +45,9 @@
 }
 
 .skills__legend {
-  @apply flex flex-wrap gap-3;
+  @apply flex flex-wrap gap-3 lg:col-span-3;
+}
+
+.skills__category-card {
+  @apply block w-full lg:col-span-3;
 }
