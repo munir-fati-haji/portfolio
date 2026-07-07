@@ -1,19 +1,18 @@
 @reference '../../../../../../styles.css';
 
 .navbar__root {
-  @apply relative z-40 h-16! min-h-16! overflow-hidden border-b border-white/10 bg-[#070b1a]/80! px-3! py-0! text-white! shadow-[0_12px_36px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:px-5!;
-}
+  @apply relative z-40 h-16! min-h-16! overflow-hidden border-b px-3! py-0! backdrop-blur-xl sm:px-5!;
 
-:host-context(.app-theme-light) .navbar__root {
-  @apply border-slate-200/80 bg-slate-50/90! text-slate-950!;
+  background: var(--portfolio-shell-bg) !important;
+  border-color: var(--portfolio-shell-border) !important;
+  box-shadow: 0 12px 36px var(--portfolio-shell-shadow);
+  color: var(--portfolio-shell-text) !important;
 }
 
 .navbar__backdrop {
-  @apply pointer-events-none absolute -left-16 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-3xl;
-}
+  @apply pointer-events-none absolute -left-16 top-1/2 h-28 w-28 -translate-y-1/2 rounded-full blur-3xl;
 
-:host-context(.app-theme-light) .navbar__backdrop {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+  background: var(--portfolio-accent-surface);
 }
 
 .navbar__border {
@@ -25,43 +24,58 @@
 }
 
 .navbar__brand {
-  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal text-white no-underline transition hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:text-3xl;
+  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal tracking-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:text-3xl;
+
+  color: var(--portfolio-brand);
 }
 
-:host-context(.app-theme-light) .navbar__brand {
-  @apply text-slate-950 hover:text-cyan-700;
+.navbar__brand:hover {
+  color: var(--portfolio-brand-hover);
 }
 
 .navbar__nav {
-  @apply hidden items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.045] p-1 shadow-lg shadow-black/10 backdrop-blur xl:flex;
-}
+  @apply hidden items-center gap-0.5 rounded-full border p-1 backdrop-blur xl:flex;
 
-:host-context(.app-theme-light) .navbar__nav {
-  @apply border-slate-200 bg-white/80;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+  background: var(--portfolio-shell-surface-bg);
+  border-color: var(--portfolio-shell-surface-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 10px 24px var(--portfolio-shell-surface-shadow);
 }
 
 .navbar__nav-link {
-  @apply h-9! min-w-0! rounded-full! px-3! text-xs! font-semibold! leading-none! text-slate-300! transition hover:bg-cyan-300/10! hover:text-cyan-200! focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+  @apply h-9! min-w-0! rounded-full! px-3! text-xs! font-semibold! leading-none! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+
+  color: var(--portfolio-shell-link) !important;
 }
 
-:host-context(.app-theme-light) .navbar__nav-link {
-  @apply text-slate-700! hover:bg-cyan-100! hover:text-cyan-700!;
+.navbar__nav-link:hover {
+  background: var(--portfolio-shell-link-hover-bg) !important;
+  color: var(--portfolio-shell-link-hover) !important;
 }
 
 .navbar__theme-toggle {
-  @apply hidden! h-10! w-10! rounded-full! border border-white/20! bg-white/90! text-slate-950! shadow-lg shadow-black/30 transition hover:bg-white! xl:inline-flex!;
+  @apply hidden! h-10! w-10! rounded-full! border shadow-lg transition xl:inline-flex!;
+
+  background: var(--portfolio-primary-button-bg) !important;
+  border-color: var(--portfolio-primary-button-border) !important;
+  box-shadow: 0 10px 24px var(--portfolio-primary-button-shadow);
+  color: var(--portfolio-primary-button-text) !important;
 }
 
-:host-context(.app-theme-light) .navbar__theme-toggle {
-  @apply border-slate-950/15! bg-slate-950! text-white! shadow-slate-300/40 hover:bg-slate-800!;
+.navbar__theme-toggle:hover {
+  background: var(--portfolio-primary-button-hover-bg) !important;
 }
 
 .navbar__menu-toggle {
-  @apply h-10! w-10! rounded-full! border border-cyan-300/20! bg-cyan-300/10! text-cyan-200! shadow-lg shadow-cyan-950/30 transition hover:bg-cyan-300/15! xl:hidden!;
+  @apply h-10! w-10! rounded-full! border shadow-lg transition xl:hidden!;
+
+  background: var(--portfolio-secondary-button-bg) !important;
+  border-color: var(--portfolio-secondary-button-border) !important;
+  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
+  color: var(--portfolio-secondary-button-text) !important;
 }
 
-:host-context(.app-theme-light) .navbar__menu-toggle {
-  @apply border-cyan-600/20! bg-cyan-50! text-cyan-700! shadow-slate-300/40 hover:bg-cyan-100!;
+.navbar__menu-toggle:hover {
+  background: var(--portfolio-secondary-button-hover-bg) !important;
 }

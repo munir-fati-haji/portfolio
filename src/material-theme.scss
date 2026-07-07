@@ -7,6 +7,51 @@
 
 html {
   height: 100%;
+
+  --portfolio-bg: #070b1a;
+  --portfolio-bg-elevated: rgba(255, 255, 255, 0.045);
+  --portfolio-bg-soft: rgba(255, 255, 255, 0.06);
+  --portfolio-border: rgba(255, 255, 255, 0.1);
+  --portfolio-border-strong: rgba(255, 255, 255, 0.15);
+  --portfolio-text: #ffffff;
+  --portfolio-text-muted: #cbd5e1;
+  --portfolio-text-soft: #94a3b8;
+  --portfolio-card-shadow: rgba(0, 0, 0, 0.25);
+  --portfolio-accent: #22d3ee;
+  --portfolio-accent-strong: #67e8f9;
+  --portfolio-accent-muted: #a5f3fc;
+  --portfolio-accent-surface: rgba(103, 232, 249, 0.1);
+  --portfolio-accent-border: rgba(103, 232, 249, 0.2);
+  --portfolio-shell-bg: rgba(7, 11, 26, 0.86);
+  --portfolio-shell-footer-bg: #070b1a;
+  --portfolio-shell-border: rgba(255, 255, 255, 0.1);
+  --portfolio-shell-text: #ffffff;
+  --portfolio-shell-muted: #94a3b8;
+  --portfolio-shell-shadow: rgba(0, 0, 0, 0.24);
+  --portfolio-shell-footer-shadow: rgba(0, 0, 0, 0.22);
+  --portfolio-shell-surface-bg: rgba(255, 255, 255, 0.06);
+  --portfolio-shell-surface-border: rgba(255, 255, 255, 0.1);
+  --portfolio-shell-surface-shadow: rgba(0, 0, 0, 0.22);
+  --portfolio-shell-link: #cbd5e1;
+  --portfolio-shell-link-hover: #a5f3fc;
+  --portfolio-shell-link-hover-bg: rgba(103, 232, 249, 0.1);
+  --portfolio-brand: #ffffff;
+  --portfolio-brand-hover: #a5f3fc;
+  --portfolio-primary-button-bg: rgba(255, 255, 255, 0.9);
+  --portfolio-primary-button-border: rgba(255, 255, 255, 0.2);
+  --portfolio-primary-button-text: #0f172a;
+  --portfolio-primary-button-hover-bg: #ffffff;
+  --portfolio-primary-button-shadow: rgba(0, 0, 0, 0.3);
+  --portfolio-secondary-button-bg: rgba(103, 232, 249, 0.1);
+  --portfolio-secondary-button-border: rgba(103, 232, 249, 0.2);
+  --portfolio-secondary-button-text: #a5f3fc;
+  --portfolio-secondary-button-hover-bg: rgba(103, 232, 249, 0.15);
+  --portfolio-secondary-button-shadow: rgba(8, 47, 73, 0.3);
+  --portfolio-drawer-bg: rgba(7, 11, 26, 0.9);
+  --portfolio-drawer-border: rgba(255, 255, 255, 0.1);
+  --portfolio-drawer-text: #ffffff;
+  --portfolio-drawer-shadow: rgba(0, 0, 0, 0.4);
+
   @include mat.theme(
     (
       color: (
@@ -36,6 +81,50 @@ html.app-theme-dark {
 
 html.app-theme-light {
   color-scheme: light;
+
+  --portfolio-bg: #f8fafc;
+  --portfolio-bg-elevated: rgba(255, 255, 255, 0.78);
+  --portfolio-bg-soft: rgba(255, 255, 255, 0.64);
+  --portfolio-border: rgba(15, 23, 42, 0.12);
+  --portfolio-border-strong: rgba(15, 23, 42, 0.18);
+  --portfolio-text: #0f172a;
+  --portfolio-text-muted: #334155;
+  --portfolio-text-soft: #64748b;
+  --portfolio-card-shadow: rgba(15, 23, 42, 0.12);
+  --portfolio-accent: #0891b2;
+  --portfolio-accent-strong: #0e7490;
+  --portfolio-accent-muted: #0e7490;
+  --portfolio-accent-surface: rgba(8, 145, 178, 0.1);
+  --portfolio-accent-border: rgba(8, 145, 178, 0.25);
+  --portfolio-shell-bg: rgba(248, 250, 252, 0.86);
+  --portfolio-shell-footer-bg: rgba(248, 250, 252, 0.95);
+  --portfolio-shell-border: rgba(15, 23, 42, 0.12);
+  --portfolio-shell-text: #0f172a;
+  --portfolio-shell-muted: #64748b;
+  --portfolio-shell-shadow: rgba(15, 23, 42, 0.1);
+  --portfolio-shell-footer-shadow: rgba(15, 23, 42, 0.08);
+  --portfolio-shell-surface-bg: rgba(255, 255, 255, 0.72);
+  --portfolio-shell-surface-border: rgba(15, 23, 42, 0.12);
+  --portfolio-shell-surface-shadow: rgba(15, 23, 42, 0.12);
+  --portfolio-shell-link: #334155;
+  --portfolio-shell-link-hover: #0e7490;
+  --portfolio-shell-link-hover-bg: rgba(8, 145, 178, 0.1);
+  --portfolio-brand: #0f172a;
+  --portfolio-brand-hover: #0e7490;
+  --portfolio-primary-button-bg: #0f172a;
+  --portfolio-primary-button-border: rgba(15, 23, 42, 0.15);
+  --portfolio-primary-button-text: #ffffff;
+  --portfolio-primary-button-hover-bg: #1e293b;
+  --portfolio-primary-button-shadow: rgba(203, 213, 225, 0.4);
+  --portfolio-secondary-button-bg: #ecfeff;
+  --portfolio-secondary-button-border: rgba(8, 145, 178, 0.22);
+  --portfolio-secondary-button-text: #0e7490;
+  --portfolio-secondary-button-hover-bg: #cffafe;
+  --portfolio-secondary-button-shadow: rgba(203, 213, 225, 0.4);
+  --portfolio-drawer-bg: rgba(248, 250, 252, 0.94);
+  --portfolio-drawer-border: rgba(15, 23, 42, 0.12);
+  --portfolio-drawer-text: #0f172a;
+  --portfolio-drawer-shadow: rgba(15, 23, 42, 0.16);
 
   @include mat.theme(
     (

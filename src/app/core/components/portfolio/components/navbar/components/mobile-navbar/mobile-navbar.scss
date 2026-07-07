@@ -5,27 +5,24 @@
 }
 
 .mobile-navbar__scrim {
-  @apply absolute inset-0 bg-[#030712]/70 backdrop-blur-md;
-}
+  @apply absolute inset-0 backdrop-blur-md;
 
-:host-context(.app-theme-light) .mobile-navbar__scrim {
-  background-color: rgba(15, 23, 42, 0.28) !important;
+  background: color-mix(in srgb, var(--portfolio-bg) 72%, transparent);
 }
 
 .mobile-navbar__drawer {
-  @apply absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col overflow-hidden rounded-l-3xl border-l border-white/10 bg-[#070b1a]/90 p-4 text-white shadow-2xl shadow-black/40 backdrop-blur-2xl;
-}
+  @apply absolute inset-y-0 right-0 flex w-[calc(100vw-1.5rem)] max-w-sm flex-col overflow-hidden rounded-l-3xl border-l p-4 shadow-2xl backdrop-blur-2xl;
 
-:host-context(.app-theme-light) .mobile-navbar__drawer {
-  @apply border-slate-200 bg-slate-50/95 text-slate-950 shadow-slate-400/30;
+  background: var(--portfolio-drawer-bg);
+  border-color: var(--portfolio-drawer-border);
+  box-shadow: -18px 0 48px var(--portfolio-drawer-shadow);
+  color: var(--portfolio-drawer-text);
 }
 
 .mobile-navbar__drawer-glow {
-  @apply pointer-events-none absolute -right-14 top-10 h-36 w-36 rounded-full bg-cyan-300/15 blur-3xl;
-}
+  @apply pointer-events-none absolute -right-14 top-10 h-36 w-36 rounded-full blur-3xl;
 
-:host-context(.app-theme-light) .mobile-navbar__drawer-glow {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+  background: var(--portfolio-accent-surface);
 }
 
 .mobile-navbar__drawer-content {
@@ -37,19 +34,25 @@
 }
 
 .mobile-navbar__close-button {
-  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal text-white no-underline transition hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300;
+  @apply rounded-full px-2 font-['Brush_Script_MT','Segoe_Script',cursive] text-2xl font-normal no-underline transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300;
+
+  color: var(--portfolio-brand);
 }
 
-:host-context(.app-theme-light) .mobile-navbar__close-button {
-  @apply text-slate-950 hover:text-cyan-700;
+.mobile-navbar__close-button:hover {
+  color: var(--portfolio-brand-hover);
 }
 
 .mobile-navbar__close-icon {
-  @apply h-10! w-10! rounded-full! border border-cyan-300/20! bg-cyan-300/10! text-cyan-200! transition hover:bg-cyan-300/15!;
+  @apply h-10! w-10! rounded-full! border transition;
+
+  background: var(--portfolio-secondary-button-bg) !important;
+  border-color: var(--portfolio-secondary-button-border) !important;
+  color: var(--portfolio-secondary-button-text) !important;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__close-icon {
-  @apply border-cyan-600/20! bg-cyan-50! text-cyan-700! hover:bg-cyan-100!;
+.mobile-navbar__close-icon:hover {
+  background: var(--portfolio-secondary-button-hover-bg) !important;
 }
 
 .mobile-navbar__nav-list {
@@ -57,51 +60,51 @@
 }
 
 .mobile-navbar__nav-link {
-  @apply h-12! justify-start! rounded-2xl! border border-white/10! bg-white/[0.045]! px-4! text-sm! font-semibold! text-slate-200! transition hover:border-cyan-300/20! hover:bg-cyan-300/10! hover:text-cyan-100! focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+  @apply h-12! justify-start! rounded-2xl! border px-4! text-sm! font-semibold! transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+
+  background: var(--portfolio-shell-surface-bg) !important;
+  border-color: var(--portfolio-shell-surface-border) !important;
+  color: var(--portfolio-shell-link) !important;
 }
 
-:host-context(.app-theme-light) .mobile-navbar__nav-link {
-  @apply border-slate-200! bg-white/80! text-slate-700! hover:border-cyan-500/30! hover:bg-cyan-50! hover:text-cyan-700!;
+.mobile-navbar__nav-link:hover {
+  background: var(--portfolio-shell-link-hover-bg) !important;
+  border-color: var(--portfolio-accent-border) !important;
+  color: var(--portfolio-shell-link-hover) !important;
 }
 
 .mobile-navbar__nav-icon {
-  @apply mr-3! text-[1.25rem]! text-cyan-300!;
-}
+  @apply mr-3! text-[1.25rem]!;
 
-:host-context(.app-theme-light) .mobile-navbar__nav-icon {
-  color: #0e7490 !important;
+  color: var(--portfolio-accent) !important;
 }
 
 .mobile-navbar__nav-footer {
-  @apply relative mt-auto border-t border-white/10 pt-4;
-}
+  @apply relative mt-auto border-t pt-4;
 
-:host-context(.app-theme-light) .mobile-navbar__nav-footer {
-  border-color: var(--portfolio-border) !important;
+  border-color: var(--portfolio-border);
 }
 
 .mobile-navbar__theme-button {
-  @apply mb-4 flex h-12 w-full items-center justify-between rounded-2xl border border-white/20 bg-white/90 px-4 text-left text-sm font-semibold text-slate-950 transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+  @apply mb-4 flex h-12 w-full items-center justify-between rounded-2xl border px-4 text-left text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300;
+
+  background: var(--portfolio-primary-button-bg);
+  border-color: var(--portfolio-primary-button-border);
+  color: var(--portfolio-primary-button-text);
 }
 
-:host-context(.app-theme-light) .mobile-navbar__theme-button {
-  @apply border-slate-950/15 bg-slate-950 text-white hover:bg-slate-800;
+.mobile-navbar__theme-button:hover {
+  background: var(--portfolio-primary-button-hover-bg);
 }
 
 .mobile-navbar__theme-icon {
-  @apply text-cyan-300!;
-}
-
-:host-context(.app-theme-light) .mobile-navbar__theme-icon {
-  color: #0e7490 !important;
+  color: var(--portfolio-accent) !important;
 }
 
 .mobile-navbar__connect-label {
-  @apply px-1 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300;
-}
+  @apply px-1 text-xs font-semibold uppercase tracking-[0.28em];
 
-:host-context(.app-theme-light) .mobile-navbar__connect-label {
-  color: #0e7490 !important;
+  color: var(--portfolio-accent);
 }
 
 .mobile-navbar__social-list {
@@ -109,11 +112,18 @@
 }
 
 .mobile-navbar__social-link {
-  @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-cyan-100 shadow-lg shadow-cyan-950/25 transition hover:border-cyan-300/35 hover:bg-cyan-300/15 hover:text-white hover:shadow-[0_0_22px_rgba(34,211,238,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
+  @apply inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-lg transition hover:shadow-[0_0_22px_rgba(34,211,238,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
+
+  background: var(--portfolio-secondary-button-bg);
+  border-color: var(--portfolio-secondary-button-border);
+  box-shadow: 0 10px 24px var(--portfolio-secondary-button-shadow);
+  color: var(--portfolio-secondary-button-text);
 }
 
-:host-context(.app-theme-light) .mobile-navbar__social-link {
-  @apply border-slate-200 bg-white text-cyan-700 shadow-slate-300/40 hover:border-cyan-500/30 hover:bg-cyan-50 hover:text-cyan-800;
+.mobile-navbar__social-link:hover {
+  background: var(--portfolio-secondary-button-hover-bg);
+  border-color: var(--portfolio-accent-border);
+  color: var(--portfolio-shell-link-hover);
 }
 
 .mobile-navbar__social-icon {
