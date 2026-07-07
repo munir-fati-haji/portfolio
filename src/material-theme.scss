@@ -12,16 +12,30 @@ html.app-theme-dark {
   color-scheme: dark;
 
   @include app-theme.app-theme(dark);
+
+  --portfolio-app-background: radial-gradient(circle at top left, rgba(91, 220, 245, 0.12), transparent 34%),
+    radial-gradient(circle at top right, rgba(83, 107, 189, 0.14), transparent 32%), var(--mat-sys-surface);
+  --portfolio-glass-surface: color-mix(in srgb, var(--mat-sys-surface-container) 82%, transparent);
+  --portfolio-glass-surface-strong: color-mix(in srgb, var(--mat-sys-surface-container-high) 88%, transparent);
+  --portfolio-glass-outline: color-mix(in srgb, var(--mat-sys-outline-variant) 58%, transparent);
+  --portfolio-focus-ring: color-mix(in srgb, var(--mat-sys-primary) 70%, transparent);
 }
 
 html.app-theme-light {
   color-scheme: light;
 
   @include app-theme.app-theme(light);
+
+  --portfolio-app-background: radial-gradient(circle at top left, rgba(0, 135, 157, 0.12), transparent 34%),
+    radial-gradient(circle at top right, rgba(105, 87, 123, 0.1), transparent 32%), var(--mat-sys-surface);
+  --portfolio-glass-surface: color-mix(in srgb, var(--mat-sys-surface-container-low) 88%, transparent);
+  --portfolio-glass-surface-strong: color-mix(in srgb, var(--mat-sys-surface-container) 92%, transparent);
+  --portfolio-glass-outline: color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent);
+  --portfolio-focus-ring: color-mix(in srgb, var(--mat-sys-primary) 62%, transparent);
 }
 
 body {
-  background: var(--mat-sys-surface);
+  background: var(--portfolio-app-background);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
   height: 100%;
