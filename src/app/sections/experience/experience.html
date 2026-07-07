@@ -5,15 +5,17 @@
 
       <div class="experience__metrics-grid">
         @for (metric of metrics; track metric.label) {
-          <div class="experience__metric">
-            <p class="experience__metric-value">
-              {{ metric.value }}
-            </p>
+          <mat-card appearance="outlined">
+            <mat-card-content>
+              <p class="experience__metric-value">
+                {{ metric.value }}
+              </p>
 
-            <p class="experience__metric-label">
-              {{ metric.label }}
-            </p>
-          </div>
+              <p class="experience__metric-label">
+                {{ metric.label }}
+              </p>
+            </mat-card-content>
+          </mat-card>
         }
       </div>
     </div>
