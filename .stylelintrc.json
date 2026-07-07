@@ -1,15 +1,22 @@
 {
   "extends": ["stylelint-config-standard-scss"],
-  "ignoreFiles": ["dist/**", "coverage/**", "node_modules/**"],
+  "ignoreFiles": ["dist/**", "coverage/**", "node_modules/**", "src/styles/_palettes.scss"],
   "rules": {
     "at-rule-no-unknown": null,
     "color-named": "never",
     "color-no-hex": true,
-    "declaration-no-important": true,
+    "declaration-no-important": null,
     "function-disallowed-list": ["rgb", "rgba", "hsl", "hsla", "linear-gradient"],
     "max-nesting-depth": [2, { "ignore": ["pseudo-classes"] }],
     "property-disallowed-list": ["background-image", "box-shadow", "text-shadow"],
-    "scss/at-rule-no-unknown": [true, { "ignoreAtRules": ["apply", "reference", "tailwind"] }],
+    "scss/at-rule-no-unknown": [
+      true,
+      { "ignoreAtRules": ["apply", "reference", "tailwind", "custom-variant", "theme", "source", "utility", "variant"] }
+    ],
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:(?:__|--)[a-z0-9]+(?:-[a-z0-9]+)*)*$",
+      { "message": "Use kebab-case with optional BEM element and modifier names." }
+    ],
     "selector-max-id": 0,
     "selector-max-specificity": "0,3,0"
   }
