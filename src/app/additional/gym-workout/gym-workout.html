@@ -36,7 +36,11 @@
   </mat-card-content>
 </mat-card>
 
-<mat-chip-listbox class="gym-workout__filters" aria-label="Training day filter" [multiple]="false" [value]="selectedDay()">
+<mat-chip-listbox
+  class="gym-workout__filters"
+  aria-label="Training day filter"
+  [multiple]="false"
+  [value]="selectedDay()">
   @for (filter of filters; track filter.id) {
     <mat-chip-option class="gym-workout__filter-chip" [value]="filter.id" (click)="selectDay(filter.id)">
       {{ filter.label }}

@@ -39,6 +39,7 @@ body {
 .footer__link.mat-mdc-icon-button {
   --mat-text-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-icon-button-hover-state-layer-color: var(--mat-sys-primary);
+
   background: var(--portfolio-icon-surface);
   color: var(--mat-sys-on-surface);
 }

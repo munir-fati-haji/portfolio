@@ -12,11 +12,23 @@
       }
     </nav>
 
-    <button mat-icon-button class="navbar__theme-toggle" type="button" [attr.aria-label]="themeService.toggleLabel()" [matTooltip]="themeService.toggleLabel()" (click)="toggleTheme()">
+    <button
+      mat-icon-button
+      class="navbar__theme-toggle"
+      type="button"
+      [attr.aria-label]="themeService.toggleLabel()"
+      [matTooltip]="themeService.toggleLabel()"
+      (click)="toggleTheme()">
       <mat-icon>{{ themeService.toggleIcon() }}</mat-icon>
     </button>
 
-    <button mat-icon-button class="navbar__menu-toggle" type="button" aria-label="Open navigation menu" [attr.aria-expanded]="isMobileMenuOpen()" (click)="openMobileMenu()">
+    <button
+      mat-icon-button
+      class="navbar__menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      [attr.aria-expanded]="isMobileMenuOpen()"
+      (click)="openMobileMenu()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>

@@ -7,7 +7,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: 'Core technologies I use to build responsive, maintainable, and scalable user interfaces.',
     skills: [
       { name: 'Angular', icon: 'code', level: 'Advanced', experience: '3+ years' },
-      { name: 'Angular Material', icon: 'widgets', level: 'Advanced', experience: 'Theming, tokens, buttons, cards, icons' },
+      {
+        name: 'Angular Material',
+        icon: 'widgets',
+        level: 'Advanced',
+        experience: 'Theming, tokens, buttons, cards, icons',
+      },
       { name: 'TypeScript', icon: 'data_object', level: 'Advanced', experience: '3+ years' },
       { name: 'JavaScript', icon: 'javascript', level: 'Strong' },
       { name: 'RxJS', icon: 'sync_alt', level: 'Strong' },
