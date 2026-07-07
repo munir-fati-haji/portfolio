@@ -18,13 +18,11 @@ body {
 }
 
 .mat-toolbar.navbar__root {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  @apply border-b border-solid;
 }
 
 .mat-toolbar.footer__root {
-  border-top-style: solid;
-  border-top-width: 1px;
+  @apply border-t border-solid;
 }
 
 .navbar__nav-link.mat-mdc-unelevated-button {
@@ -46,24 +44,15 @@ body {
 }
 
 .mat-mdc-icon-button {
-  overflow: visible;
+  @apply overflow-visible;
 }
 
 .mat-mdc-icon-button .mat-icon {
-  align-items: center;
-  display: inline-flex;
-  height: 1.5rem;
-  justify-content: center;
-  line-height: 1;
-  overflow: visible;
-  width: 1.5rem;
+  @apply inline-flex h-6 w-6 items-center justify-center overflow-visible leading-none;
 }
 
 .mat-mdc-icon-button .mat-icon svg {
-  display: block;
-  height: 100%;
-  overflow: visible;
-  width: 100%;
+  @apply block h-full w-full overflow-visible;
 }
 
 .mat-mdc-card {
@@ -74,12 +63,12 @@ body {
 }
 
 .app-theme-toggle {
-  display: none !important;
+  @apply hidden!;
 }
 
 @media (width >= 80rem) {
   .app-theme-toggle {
-    display: inline-flex !important;
+    @apply inline-flex!;
   }
 }
 
