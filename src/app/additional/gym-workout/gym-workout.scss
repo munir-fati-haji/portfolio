@@ -1,57 +1,50 @@
 @reference '../../../styles.css';
 
-.gym-workout {
-  @apply min-h-screen px-4 py-10 sm:px-6 lg:px-8;
+:host {
+  @apply mx-auto grid min-h-screen w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-10 sm:px-6 md:grid-cols-2 lg:px-8 xl:grid-cols-3;
 
-  background: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
 }
 
-.gym-workout__content {
-  @apply mx-auto max-w-7xl;
+:host > * {
+  min-width: 0;
 }
 
-.gym-workout__hero-card {
-  @apply mb-8;
+.gym-workout__hero-card,
+.gym-workout__filters,
+.gym-workout__empty-state,
+.gym-workout__rules-card {
+  @apply md:col-span-2 xl:col-span-3;
 }
 
 .gym-workout__hero-layout {
-  @apply flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between;
-}
-
-.gym-workout__eyebrow-row {
-  @apply mb-4 flex flex-wrap items-center gap-3;
-}
-
-.gym-workout__eyebrow,
-.gym-workout__duration,
-.gym-workout__metadata-chip,
-.gym-workout__filter-chip {
-  --mat-chip-label-text-color: var(--mat-sys-on-surface-variant);
+  @apply grid items-start gap-5 p-6! lg:grid-cols-[minmax(0,1fr)_10rem_10rem] lg:items-end;
 }
 
 .gym-workout__eyebrow {
-  @apply text-sm font-semibold;
+  @apply justify-self-start text-sm font-medium lg:col-start-1 lg:row-start-1;
+
+  --mat-chip-label-text-color: var(--mat-sys-primary);
+}
+
+.gym-workout__theme-toggle {
+  @apply justify-self-end lg:col-start-3 lg:row-start-1;
 }
 
 .gym-workout__title {
-  @apply text-4xl font-medium sm:text-5xl;
+  @apply text-3xl font-medium sm:text-4xl lg:col-start-1 lg:row-start-2;
 
   color: var(--mat-sys-on-surface);
 }
 
 .gym-workout__description {
-  @apply mt-4 max-w-2xl text-base leading-8;
+  @apply max-w-2xl text-base leading-8 lg:col-start-1 lg:row-start-3;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
-.gym-workout__summary-grid {
-  @apply grid grid-cols-2 gap-3 sm:min-w-80;
-}
-
 .gym-workout__summary-card {
-  background: var(--mat-sys-surface-container-low);
+  @apply w-full lg:row-span-2 lg:row-start-2;
 }
 
 .gym-workout__summary-label {
@@ -60,67 +53,61 @@
   color: var(--mat-sys-on-surface-variant);
 }
 
-.gym-workout__summary-label--sessions,
-.gym-workout__summary-label--exercises {
-  color: var(--mat-sys-primary);
-}
-
 .gym-workout__summary-value {
   @apply mt-2 text-3xl font-medium;
 
-  color: var(--mat-sys-on-surface);
+  color: var(--mat-sys-primary);
 }
 
 .gym-workout__filters {
-  @apply mb-8 flex gap-3 overflow-x-auto pb-2;
+  @apply flex gap-3 overflow-x-auto pb-2;
 }
 
 .gym-workout__filter-chip {
   @apply shrink-0;
-}
 
-.gym-workout__session-grid {
-  @apply grid gap-5 md:grid-cols-2 xl:grid-cols-3;
+  --mat-chip-label-text-color: var(--mat-sys-on-surface-variant);
 }
 
 .gym-workout__session-card {
-  background: var(--mat-sys-surface-container-low);
+  @apply block w-full;
 }
 
 .gym-workout__session-header {
-  @apply relative;
+  @apply grid grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-1;
+}
+
+.gym-workout__session-title,
+.gym-workout__session-day {
+  @apply col-start-1 min-w-0;
 }
 
 .gym-workout__session-title {
-  @apply max-w-[calc(100%-5.5rem)] text-2xl font-medium;
+  @apply text-2xl font-medium;
 
   color: var(--mat-sys-on-surface);
 }
 
 .gym-workout__session-day {
-  @apply mt-1 text-sm font-semibold;
+  @apply text-sm font-medium;
 
   color: var(--mat-sys-primary);
 }
 
 .gym-workout__duration {
-  @apply absolute right-4 top-4 text-xs font-medium;
+  @apply col-start-2 row-span-2 row-start-1 self-start text-xs font-medium;
+
+  --mat-chip-label-text-color: var(--mat-sys-on-surface-variant);
 }
 
 .gym-workout__session-tags {
-  @apply mb-5 flex flex-wrap gap-2;
+  @apply mb-5 mt-5 flex flex-wrap gap-2;
 }
 
 .gym-workout__metadata-chip {
-  @apply text-xs font-semibold;
-}
+  @apply text-xs font-medium;
 
-.gym-workout__metadata-chip--hard {
-  --mat-chip-label-text-color: var(--mat-sys-error);
-}
-
-.gym-workout__metadata-chip--moderate {
-  --mat-chip-label-text-color: var(--mat-sys-primary);
+  --mat-chip-label-text-color: var(--mat-sys-on-surface-variant);
 }
 
 .gym-workout__exercise-list,
@@ -131,10 +118,6 @@
 .gym-workout__exercise-item,
 .gym-workout__rule-item {
   --mat-list-list-item-label-text-color: var(--mat-sys-on-surface-variant);
-}
-
-.gym-workout__rules-card {
-  @apply mt-8;
 }
 
 .gym-workout__rules-title {
