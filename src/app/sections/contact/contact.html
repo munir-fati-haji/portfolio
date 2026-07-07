@@ -4,8 +4,8 @@
       <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
       <div class="contact__actions">
-        <a mat-flat-button href="mailto:munir.fati.haji@gmail.com" class="contact__email-action"> Send Email </a>
-        <a mat-stroked-button routerLink="/projects" class="contact__projects-action"> View Projects </a>
+        <button mat-flat-button type="button" (click)="openExternalUrl('mailto:munir.fati.haji@gmail.com')">Send Email</button>
+        <button mat-stroked-button type="button" routerLink="/projects">View Projects</button>
       </div>
     </div>
 
