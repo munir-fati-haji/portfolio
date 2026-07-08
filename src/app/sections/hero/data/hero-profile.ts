@@ -1,6 +1,15 @@
-export const HERO_NAME = 'Munir';
+export const HERO_NAME = 'Munir Fati Haji';
 
-export const HERO_ROLE = 'Frontend Software Developer';
+export const HERO_ROLE = 'Angular Frontend Developer for enterprise web apps';
 
 export const HERO_DESCRIPTION =
-  'Specializing in Angular, TypeScript, and enterprise web applications. I build scalable, maintainable, and high-performance frontend systems using Angular, RxJS, AG Grid, WebSockets, and modern UI architecture.';
+  'I build maintainable Angular interfaces for data-heavy enterprise products, with hands-on experience in Angular migrations, Nx monorepos, bug fixing, UI improvements, reusable components, and API-driven workflows.';
+
+export const HERO_RECRUITER_SIGNALS = [
+  'Angular + TypeScript',
+  'Enterprise UI delivery',
+  'Nx monorepo experience',
+  'Angular migrations',
+  'Bug fixing and cleanup',
+  'Reusable Material UI',
+];
