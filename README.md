@@ -1,59 +1,109 @@
-# Portfolio
+# Munir Fati Haji Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.3.
+Personal portfolio website for Munir Fati Haji, built with Angular and deployed with Cloudflare Workers.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+This project presents my frontend development experience, education, skills, projects, current work, case study content, contact details, and a separate gym sessions page.
 
-```bash
-ng serve
-```
+Live site: <https://www.munirfatihaji.com/>
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tech stack
 
-## Code scaffolding
+- Angular 22
+- Angular Material
+- Tailwind CSS 4
+- RxJS
+- TypeScript 6
+- Vitest
+- ESLint and Prettier
+- Cloudflare Workers with Wrangler
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Main routes
 
-```bash
-ng generate component component-name
-```
+| Route | Purpose |
+| --- | --- |
+| `/` | Hero section |
+| `/about` | About section |
+| `/experience` | Professional experience |
+| `/education` | Education background |
+| `/skills` | Technical skills |
+| `/projects` | Project highlights |
+| `/working-on` | Current focus areas |
+| `/case-study` | Featured case study |
+| `/contact` | Contact section |
+| `/gym` | Gym sessions page |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Requirements
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Use the Node.js version defined in `package.json`:
 
 ```bash
-ng test
+node >=24.15.0 <25
+npm 11.17.0
 ```
 
-## Running end-to-end tests
+## Getting started
 
-For end-to-end (e2e) testing, run:
+Install dependencies:
 
 ```bash
-ng e2e
+npm install
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Start the local development server:
 
-## Additional Resources
+```bash
+npm start
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The app opens at `http://localhost:4200/`.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm start` | Runs the Angular development server and opens the app |
+| `npm run build` | Builds the production application |
+| `npm run watch` | Builds in watch mode with the development configuration |
+| `npm test` | Runs unit tests with Vitest |
+| `npm run lint` | Runs ESLint with auto-fix and zero warnings allowed |
+| `npm run lint:check` | Runs ESLint check only with zero warnings allowed |
+| `npm run deploy` | Builds the app and deploys with Wrangler |
+| `npm run preview` | Builds the app and previews it locally with Wrangler |
+
+## Development notes
+
+- Keep the UI aligned with the Angular Material theme and shared design tokens.
+- Prefer Angular Material components where they fit the interaction.
+- Keep styling consistent with the existing Tailwind and Material setup.
+- Avoid unnecessary wrapper elements that exist only for styling.
+- Keep route and section updates reflected in this README.
+
+## Validation
+
+Before opening or merging UI-related changes, run the checks that match the update:
+
+```bash
+npm run build
+npm run lint:check
+npm test
+```
+
+For visual changes, also run:
+
+```bash
+npm start
+```
+
+Then review the app at `http://localhost:4200/`.
+
+## Deployment
+
+Production deployment is handled through Wrangler:
+
+```bash
+npm run deploy
+```
+
+The deploy script builds the Angular app first, then publishes it using Cloudflare Workers.
