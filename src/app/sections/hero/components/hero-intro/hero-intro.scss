@@ -1,32 +1,40 @@
 @reference '../../../../../styles.css';
 
 .hero-intro__content {
-  @apply max-w-2xl;
+  @apply max-w-3xl;
 }
 
 .hero-intro__eyebrow,
-.hero-intro__name {
+.hero-intro__role {
   color: var(--mat-sys-primary);
 }
 
 .hero-intro__eyebrow {
-  @apply mb-4 text-sm font-medium uppercase tracking-wide;
+  @apply mb-4 text-sm font-semibold uppercase tracking-[0.18em];
 }
 
 .hero-intro__title {
-  @apply text-5xl font-medium leading-tight tracking-tight sm:text-6xl lg:text-7xl;
+  @apply max-w-3xl text-5xl font-semibold leading-none tracking-tight sm:text-6xl lg:text-7xl;
 }
 
 .hero-intro__role {
-  @apply mt-5 text-2xl font-medium sm:text-3xl;
+  @apply mt-5 max-w-2xl text-2xl font-medium leading-tight sm:text-3xl;
 }
 
 .hero-intro__description {
-  @apply mt-6 max-w-xl text-lg leading-8;
+  @apply mt-6 max-w-2xl text-base leading-8 sm:text-lg;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
+.hero-intro__signal-list {
+  @apply mt-6 flex flex-wrap gap-2;
+}
+
 .hero-intro__actions {
-  @apply mt-8 flex flex-wrap gap-4;
+  @apply mt-8 flex flex-wrap gap-3;
+}
+
+.hero-intro__actions button {
+  @apply min-h-11! px-5!;
 }
