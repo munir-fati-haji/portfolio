@@ -10,6 +10,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     icon: 'work',
     summary:
       'Working on Angular applications in a large Nx monorepo, focusing on bug fixes, enhancements, code cleanup, and Angular output migration.',
+    recruiterFocus: ['Current Angular role', 'Nx monorepo', 'Bug fixing', 'Output migration'],
     highlights: [
       'Resolved reported bugs across Angular application features to improve stability and reliability.',
       'Implemented proposed frontend enhancements.',
@@ -34,6 +35,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     icon: 'web',
     summary:
       'Worked on frontend features using React and Java while contributing to state management, backend data processing, and API-driven application flows.',
+    recruiterFocus: ['React delivery', 'Redux', 'REST integration', 'Java backend collaboration'],
     highlights: [
       'Developed frontend features using React and Java.',
       'Used Redux for state management in existing applications.',
@@ -59,6 +61,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     icon: 'rocket_launch',
     summary:
       'Led Angular modernization work on a large enterprise application, improving architecture, performance, real-time communication, and developer experience.',
+    recruiterFocus: ['Angular v13 to v21', 'Standalone migration', 'Signals', 'Enterprise modernization'],
     highlights: [
       'Led a solo migration of a large Angular application from v13 to v21.',
       'Migrated the application to standalone components, Signals, signal-based inputs/outputs, modern control flow, and inject().',
@@ -91,6 +94,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     icon: 'dashboard',
     summary:
       'Built enterprise Angular features for risk assessment workflows, dashboards, reporting, forms, and data-heavy business applications.',
+    recruiterFocus: ['Angular Material', 'Reactive forms', 'AG Grid', 'Dashboard UX'],
     highlights: [
       'Developed and maintained Angular frontend solutions for enterprise risk assessment platforms.',
       'Built user-friendly form workflows that were later used for reports and Excel exports.',
@@ -122,6 +126,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     icon: 'code',
     summary:
       'Built and maintained a request management web application with scalable UI features, API integrations, authentication, and workflow automation.',
+    recruiterFocus: ['Angular foundations', '50+ REST APIs', 'Excel workflows', 'JWT and RBAC'],
     highlights: [
       'Built scalable and maintainable Angular UI features.',
       'Integrated 50+ REST APIs.',
