@@ -1,15 +1,46 @@
 @reference '../../../../../styles.css';
 
+.experience-card__card {
+  @apply overflow-hidden;
+}
+
 .experience-card__body {
   @apply p-6!;
 }
 
 .experience-card__description {
-  @apply mt-6 text-sm leading-6;
+  @apply mt-6 text-sm leading-6 sm:text-base sm:leading-7;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
+.experience-card__scan-label {
+  @apply mt-5 text-xs font-semibold uppercase tracking-[0.18em];
+
+  color: var(--mat-sys-primary);
+}
+
+.experience-card__focus-list,
 .experience-card__skill-list {
-  @apply mt-6 flex flex-wrap gap-2;
+  @apply mt-3 flex flex-wrap gap-2;
+}
+
+.experience-card__skill-list {
+  @apply mb-4;
+}
+
+.experience-card__body mat-divider {
+  @apply my-5;
+}
+
+.experience-card__body mat-list {
+  @apply mt-2;
+}
+
+.experience-card__body mat-list-item {
+  @apply h-auto! py-2!;
+}
+
+.experience-card__body [matListItemTitle] {
+  @apply whitespace-normal! text-sm! leading-6!;
 }
