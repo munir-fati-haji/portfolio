@@ -25,6 +25,46 @@ body {
   @apply border-t border-solid;
 }
 
+.mat-mdc-card {
+  background: var(--portfolio-glass-surface-strong);
+  border-color: var(--portfolio-glass-outline);
+  filter: drop-shadow(0 0.5rem 1rem var(--portfolio-depth-shadow));
+  backdrop-filter: blur(18px) saturate(130%);
+}
+
+.mat-mdc-card:hover {
+  border-color: color-mix(in srgb, var(--mat-sys-primary) 38%, var(--portfolio-glass-outline));
+}
+
+.mat-mdc-unelevated-button,
+.mat-mdc-outlined-button,
+.mat-mdc-button,
+.mat-mdc-icon-button {
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.mat-mdc-unelevated-button:hover,
+.mat-mdc-outlined-button:hover,
+.navbar__brand.mat-mdc-button:hover,
+.navbar__theme-toggle.mat-mdc-icon-button:hover,
+.navbar__menu-toggle.mat-mdc-icon-button:hover,
+.footer__link.mat-mdc-icon-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.75rem 1.5rem var(--portfolio-depth-shadow);
+}
+
+.mat-mdc-unelevated-button:focus-visible,
+.mat-mdc-outlined-button:focus-visible,
+.mat-mdc-button:focus-visible,
+.mat-mdc-icon-button:focus-visible {
+  outline: 0.1875rem solid var(--portfolio-focus-ring);
+  outline-offset: 0.1875rem;
+}
+
 .navbar__nav-link.mat-mdc-unelevated-button {
   --mdc-filled-button-container-color: var(--portfolio-icon-surface);
   --mdc-filled-button-label-text-color: var(--mat-sys-on-surface);
@@ -44,6 +84,10 @@ body {
   color: var(--mat-sys-on-surface);
 }
 
+.mat-mdc-standard-chip {
+  max-width: 100%;
+}
+
 .mat-mdc-icon-button {
   @apply overflow-visible;
 }
@@ -54,13 +98,6 @@ body {
 
 .mat-mdc-icon-button .mat-icon svg {
   @apply block h-full w-full overflow-visible;
-}
-
-.mat-mdc-card {
-  background: var(--portfolio-glass-surface-strong);
-  border-color: var(--portfolio-glass-outline);
-  filter: drop-shadow(0 0.5rem 1rem var(--portfolio-depth-shadow));
-  backdrop-filter: blur(18px) saturate(130%);
 }
 
 .app-theme-toggle {
