@@ -8,6 +8,7 @@ export interface ExperienceItem {
   type: string;
   icon: string;
   summary: string;
+  recruiterFocus: string[];
   highlights: string[];
   skills: ExperienceSkill[];
 }
