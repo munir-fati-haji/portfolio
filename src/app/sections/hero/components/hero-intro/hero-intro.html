@@ -1,10 +1,7 @@
-<p class="hero-intro__eyebrow">Portfolio</p>
+<p class="hero-intro__eyebrow">Recruiter-ready Angular portfolio</p>
 
 <h1 class="hero-intro__title">
-  Hi, I'm
-  <span class="hero-intro__name">
-    {{ name() }}
-  </span>
+  {{ name() }}
 </h1>
 
 <h2 class="hero-intro__role">
@@ -15,10 +12,30 @@
   {{ description() }}
 </p>
 
+<mat-chip-set class="hero-intro__signal-list" aria-label="Recruiter quick scan strengths">
+  @for (signal of recruiterSignals(); track signal) {
+    <mat-chip highlighted>
+      <mat-icon matChipAvatar aria-hidden="true">verified</mat-icon>
+      {{ signal }}
+    </mat-chip>
+  }
+</mat-chip-set>
+
 <app-hero-skills [groups]="skills()" />
 
-<div class="hero-intro__actions">
-  <button mat-flat-button type="button" routerLink="/projects">View Projects</button>
+<div class="hero-intro__actions" aria-label="Primary portfolio actions">
+  <button mat-flat-button type="button" routerLink="/experience" aria-label="View professional experience">
+    <mat-icon aria-hidden="true">work</mat-icon>
+    View Experience
+  </button>
 
-  <button mat-stroked-button type="button" routerLink="/contact">Contact Me</button>
+  <button mat-stroked-button type="button" routerLink="/projects" aria-label="View selected projects">
+    <mat-icon aria-hidden="true">folder_open</mat-icon>
+    See Projects
+  </button>
+
+  <button mat-stroked-button type="button" routerLink="/contact" aria-label="Contact Munir">
+    <mat-icon aria-hidden="true">mail</mat-icon>
+    Contact
+  </button>
 </div>
