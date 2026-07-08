@@ -2,18 +2,27 @@
   <mat-card-header>
     <mat-icon mat-card-avatar aria-hidden="true">{{ experience().icon }}</mat-icon>
     <mat-card-title>{{ experience().role }}</mat-card-title>
-    <mat-card-subtitle>{{ experience().company }} - {{ experience().location }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ experience().company }} · {{ experience().location }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content class="experience-card__body">
     <mat-chip-set aria-label="Experience details">
-      <mat-chip>{{ experience().type }}</mat-chip>
+      <mat-chip highlighted>{{ experience().type }}</mat-chip>
       <mat-chip>{{ experience().period }}</mat-chip>
     </mat-chip-set>
 
     <p class="experience-card__description">
       {{ experience().summary }}
     </p>
+
+    <p class="experience-card__scan-label">Recruiter scan</p>
+    <mat-chip-set class="experience-card__focus-list" aria-label="Recruiter focus areas">
+      @for (focus of experience().recruiterFocus; track focus) {
+        <mat-chip>{{ focus }}</mat-chip>
+      }
+    </mat-chip-set>
+
+    <mat-divider />
 
     <mat-chip-set class="experience-card__skill-list" aria-label="Experience skills">
       @for (skill of experience().skills; track skill.name) {
@@ -27,6 +36,7 @@
     <mat-list aria-label="Experience highlights">
       @for (highlight of experience().highlights; track highlight) {
         <mat-list-item>
+          <mat-icon matListItemIcon aria-hidden="true">check_circle</mat-icon>
           <span matListItemTitle>{{ highlight }}</span>
         </mat-list-item>
       }
