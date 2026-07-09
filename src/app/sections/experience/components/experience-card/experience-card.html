@@ -2,34 +2,28 @@
   <mat-card-header>
     <mat-icon mat-card-avatar aria-hidden="true">{{ experience().icon }}</mat-icon>
     <mat-card-title>{{ experience().role }}</mat-card-title>
-    <mat-card-subtitle>{{ experience().company }} - {{ experience().location }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ experience().company }} · {{ experience().period }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content class="experience-card__body">
-    <mat-chip-set aria-label="Experience details">
-      <mat-chip>{{ experience().type }}</mat-chip>
-      <mat-chip>{{ experience().period }}</mat-chip>
-    </mat-chip-set>
-
     <p class="experience-card__description">
       {{ experience().summary }}
     </p>
 
-    <mat-chip-set class="experience-card__skill-list" aria-label="Experience skills">
-      @for (skill of experience().skills; track skill.name) {
+    <mat-chip-set class="experience-card__skill-list" aria-label="Preview skills">
+      @for (skill of experience().skills.slice(0, 4); track skill.name) {
         <mat-chip>
           <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
           {{ skill.name }}
         </mat-chip>
       }
     </mat-chip-set>
-
-    <mat-list aria-label="Experience highlights">
-      @for (highlight of experience().highlights; track highlight) {
-        <mat-list-item>
-          <span matListItemTitle>{{ highlight }}</span>
-        </mat-list-item>
-      }
-    </mat-list>
   </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-button type="button" (click)="openDetails()">
+      Open details
+      <mat-icon aria-hidden="true">arrow_outward</mat-icon>
+    </button>
+  </mat-card-actions>
 </mat-card>
