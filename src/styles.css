@@ -15,11 +15,8 @@ body::before {
   @apply pointer-events-none fixed inset-0 -z-10 opacity-40;
 
   content: '';
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--mat-sys-primary) 10%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--mat-sys-primary) 10%, transparent) 1px, transparent 1px);
-  background-size: 4rem 4rem;
-  mask-image: linear-gradient(to bottom, black, transparent 75%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--mat-sys-primary) 12%, transparent) 0 1px, transparent 1.25px) 0 0 / 4rem 4rem;
+  mask-image: radial-gradient(ellipse at top, var(--mat-sys-scrim), transparent 75%);
 }
 
 .mat-toolbar.navbar__root,
@@ -71,14 +68,46 @@ body::before {
 }
 
 .mat-mdc-card {
-  background: linear-gradient(145deg, var(--portfolio-glass-surface-strong), color-mix(in srgb, var(--mat-sys-primary) 7%, var(--portfolio-glass-surface)));
+  --mat-card-elevated-container-color: var(--portfolio-card-surface);
+  --mat-card-filled-container-color: var(--portfolio-card-surface);
+  --mat-card-outlined-container-color: var(--portfolio-card-surface);
+  --mat-card-outlined-outline-color: var(--portfolio-glass-outline);
+
+  background: color-mix(in srgb, var(--mat-sys-primary) 7%, var(--portfolio-card-surface));
   border-color: var(--portfolio-glass-outline);
   filter: drop-shadow(0 0.5rem 1rem var(--portfolio-depth-shadow));
   backdrop-filter: blur(18px) saturate(130%);
 }
 
+.mat-mdc-standard-chip {
+  --mat-chip-elevated-container-color: var(--portfolio-chip-surface);
+  --mat-chip-elevated-disabled-container-color: var(--portfolio-chip-surface);
+  --mat-chip-elevated-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 76%, transparent);
+  --mat-chip-flat-disabled-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 46%, transparent);
+  --mat-chip-outline-color: var(--portfolio-glass-outline);
+  --mat-chip-outline-width: 1px;
+
+  backdrop-filter: blur(14px) saturate(125%);
+}
+
+.mat-stepper-horizontal,
+.mat-stepper-vertical {
+  --mat-stepper-container-color: transparent;
+  --mat-stepper-header-focus-state-layer-color: transparent;
+  --mat-stepper-header-hover-state-layer-color: transparent;
+
+  background: transparent;
+}
+
+.mat-horizontal-stepper-wrapper,
+.mat-horizontal-content-container,
+.mat-vertical-content-container,
+.mat-vertical-content {
+  background: transparent;
+}
+
 .portfolio-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
-  background: linear-gradient(145deg, var(--portfolio-glass-surface-strong), var(--portfolio-glass-surface));
+  background: var(--portfolio-dialog-surface);
   border: 1px solid var(--portfolio-glass-outline);
   border-radius: 1.5rem;
   color: var(--mat-sys-on-surface);
