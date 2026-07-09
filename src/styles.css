@@ -9,7 +9,6 @@ body {
     radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent) 0 16rem, transparent 26rem),
     var(--portfolio-app-background);
   color: var(--mat-sys-on-surface);
-  overflow-x: hidden;
 }
 
 body::before {
