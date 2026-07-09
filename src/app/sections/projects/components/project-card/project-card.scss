@@ -1,15 +1,48 @@
 @reference '../../../../../styles.css';
 
+.project-card__card {
+  @apply h-full overflow-hidden transition duration-200;
+
+  border-color: color-mix(in srgb, var(--mat-sys-tertiary) 18%, var(--portfolio-glass-outline));
+}
+
+.project-card__card:hover {
+  transform: translateY(-0.2rem);
+}
+
 .project-card__content {
   @apply p-6!;
 }
 
 .project-card__description {
-  @apply text-sm leading-6;
+  @apply line-clamp-2 text-sm leading-6;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .project-card__tech-list {
-  @apply mt-6 flex flex-wrap gap-2;
+  @apply mt-5 flex flex-wrap gap-2;
+}
+
+.project-card__details {
+  @apply mt-5 rounded-2xl px-4 py-3;
+
+  background: var(--portfolio-icon-surface);
+  color: var(--mat-sys-on-surface);
+}
+
+.project-card__details summary {
+  @apply flex cursor-pointer list-none items-center justify-between text-sm font-medium;
+}
+
+.project-card__details summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-card__details[open] summary mat-icon {
+  transform: rotate(180deg);
+}
+
+.project-card__details mat-list {
+  @apply mt-3;
 }
