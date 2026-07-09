@@ -1,15 +1,29 @@
 @reference '../../../../../styles.css';
 
+.experience-card__card {
+  @apply h-full overflow-hidden transition duration-200;
+
+  border-color: color-mix(in srgb, var(--mat-sys-primary) 22%, var(--portfolio-glass-outline));
+}
+
+.experience-card__card:hover {
+  transform: translateY(-0.2rem);
+}
+
 .experience-card__body {
   @apply p-6!;
 }
 
 .experience-card__description {
-  @apply mt-6 text-sm leading-6;
+  @apply mt-1 line-clamp-2 text-sm leading-6;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .experience-card__skill-list {
-  @apply mt-6 flex flex-wrap gap-2;
+  @apply mt-5 flex flex-wrap gap-2;
+}
+
+mat-card-actions {
+  @apply px-6 pb-5!;
 }
