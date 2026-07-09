@@ -4,8 +4,22 @@
 
 html,
 body {
-  background: var(--portfolio-app-background);
+  background:
+    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--mat-sys-primary) 16%, transparent) 0 18rem, transparent 28rem),
+    radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent) 0 16rem, transparent 26rem),
+    var(--portfolio-app-background);
   color: var(--mat-sys-on-surface);
+}
+
+body::before {
+  @apply pointer-events-none fixed inset-0 -z-10 opacity-40;
+
+  content: '';
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--mat-sys-primary) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--mat-sys-primary) 10%, transparent) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
 }
 
 .mat-toolbar.navbar__root,
@@ -57,10 +71,18 @@ body {
 }
 
 .mat-mdc-card {
-  background: var(--portfolio-glass-surface-strong);
+  background: linear-gradient(145deg, var(--portfolio-glass-surface-strong), color-mix(in srgb, var(--mat-sys-primary) 7%, var(--portfolio-glass-surface)));
   border-color: var(--portfolio-glass-outline);
   filter: drop-shadow(0 0.5rem 1rem var(--portfolio-depth-shadow));
   backdrop-filter: blur(18px) saturate(130%);
+}
+
+.portfolio-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  background: linear-gradient(145deg, var(--portfolio-glass-surface-strong), var(--portfolio-glass-surface));
+  border: 1px solid var(--portfolio-glass-outline);
+  border-radius: 1.5rem;
+  color: var(--mat-sys-on-surface);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .app-theme-toggle {
