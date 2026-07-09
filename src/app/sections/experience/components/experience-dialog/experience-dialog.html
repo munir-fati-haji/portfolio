@@ -25,7 +25,7 @@
   <p class="experience-dialog__summary">{{ experience.summary }}</p>
 
   <mat-chip-set aria-label="Experience skills">
-    @for (skill of experience.skills; track skill.name) {
+    @for (skill of skills; track skill.name) {
       <mat-chip>
         <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
         {{ skill.name }}
@@ -34,7 +34,7 @@
   </mat-chip-set>
 
   <mat-list aria-label="Experience highlights">
-    @for (highlight of experience.highlights; track highlight) {
+    @for (highlight of highlights; track highlight) {
       <mat-list-item>
         <mat-icon matListItemIcon aria-hidden="true">task_alt</mat-icon>
         <span matListItemTitle>{{ highlight }}</span>

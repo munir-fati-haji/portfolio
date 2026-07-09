@@ -15,4 +15,6 @@ import { ExperienceItem } from '../../models/experience-item.model';
 })
 export class ExperienceDialog {
   public readonly experience = inject<ExperienceItem>(MAT_DIALOG_DATA);
+  public readonly skills = this.experience.skills;
+  public readonly highlights = this.experience.highlights;
 }

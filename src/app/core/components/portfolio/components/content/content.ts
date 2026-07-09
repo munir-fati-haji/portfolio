@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, viewChildren } from '@angular/core';
+import { Component, ElementRef, viewChildren } from '@angular/core';
 import { AboutMe } from '@sections/about-me/about-me';
 import { CaseStudy } from '@sections/case-study/case-study';
 import { Contact } from '@sections/contact/contact';
@@ -16,7 +16,6 @@ import { WorkingOn } from '@sections/working-on/working-on';
   styleUrl: './content.scss',
 })
 export class Content {
-  private readonly hostElement = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly sectionElements = viewChildren<unknown, ElementRef<HTMLElement>>('portfolioSection', {
     read: ElementRef,
   });
