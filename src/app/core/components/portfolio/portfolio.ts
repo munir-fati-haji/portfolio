@@ -18,6 +18,7 @@ export class Portfolio implements AfterViewInit {
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
   private readonly router = inject(Router);
+  private scrollSyncedSectionId: string | null = null;
 
   public ngAfterViewInit(): void {
     this.scrollToCurrentSection();
@@ -30,6 +31,7 @@ export class Portfolio implements AfterViewInit {
       .pipe(
         filter((event): event is NavigationEnd => event instanceof NavigationEnd),
         map(() => this.getCurrentSectionId()),
+        filter((sectionId) => !this.consumeScrollSyncedSection(sectionId)),
         filter((sectionId) => this.content()?.getActiveSectionId() !== sectionId),
         takeUntilDestroyed(this.destroyRef),
       )
@@ -56,6 +58,7 @@ export class Portfolio implements AfterViewInit {
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe((sectionId) => {
+        this.scrollSyncedSectionId = sectionId;
         void this.router.navigateByUrl(this.getRouteForSection(sectionId), { replaceUrl: true });
       });
   }
@@ -74,5 +77,15 @@ export class Portfolio implements AfterViewInit {
 
   private getRouteForSection(sectionId: string): string {
     return sectionId === 'hero' ? '/' : `/${sectionId}`;
+  }
+
+  private consumeScrollSyncedSection(sectionId: string): boolean {
+    if (this.scrollSyncedSectionId !== sectionId) {
+      return false;
+    }
+
+    this.scrollSyncedSectionId = null;
+
+    return true;
   }
 }

@@ -92,4 +92,20 @@ describe('Portfolio route synchronization', () => {
 
     expect(router.navigateByUrl).toHaveBeenCalledWith('/contact', { replaceUrl: true });
   });
+
+  it('does not scroll again for a route update caused by scrolling', async () => {
+    MockRender(Portfolio);
+
+    ContentStub.activeSectionId = 'contact';
+    window.dispatchEvent(new Event('scroll'));
+    await waitFor(150);
+    ContentStub.scrollToSection.mockClear();
+
+    routeData.sectionId = 'contact';
+    router.url = '/contact';
+    routerEvents.next(new NavigationEnd(2, '/contact', '/contact'));
+    await waitFor(20);
+
+    expect(ContentStub.scrollToSection).not.toHaveBeenCalled();
+  });
 });
