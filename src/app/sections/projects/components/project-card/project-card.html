@@ -7,18 +7,26 @@
   <mat-card-content class="project-card__content">
     <p class="project-card__description">{{ project().description }}</p>
 
-    <mat-list aria-label="Project impact">
-      @for (item of project().impact; track item) {
-        <mat-list-item>
-          <span matListItemTitle>{{ item }}</span>
-        </mat-list-item>
-      }
-    </mat-list>
-
-    <mat-chip-set class="project-card__tech-list" aria-label="Project stack">
-      @for (item of project().stack; track item) {
+    <mat-chip-set class="project-card__tech-list" aria-label="Project stack preview">
+      @for (item of project().stack.slice(0, 4); track item) {
         <mat-chip>{{ item }}</mat-chip>
       }
     </mat-chip-set>
+
+    <details class="project-card__details">
+      <summary>
+        View impact
+        <mat-icon aria-hidden="true">expand_more</mat-icon>
+      </summary>
+
+      <mat-list aria-label="Project impact">
+        @for (item of project().impact; track item) {
+          <mat-list-item>
+            <mat-icon matListItemIcon aria-hidden="true">north_east</mat-icon>
+            <span matListItemTitle>{{ item }}</span>
+          </mat-list-item>
+        }
+      </mat-list>
+    </details>
   </mat-card-content>
 </mat-card>
