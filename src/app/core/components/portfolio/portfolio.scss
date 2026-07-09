@@ -1,18 +1,48 @@
 @reference '../../../../styles.css';
 
 :host {
+  display: flow-root;
+  overflow: visible;
   width: 100%;
   max-width: 100vw;
 }
 
 .portfolio__navbar {
-  @apply block shrink-0;
+  @apply block;
+
+  float: inline-start;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 30;
+  width: 100%;
 }
 
 .portfolio__content {
-  @apply min-h-0 flex-1 overflow-x-hidden overflow-y-auto;
+  @apply block overflow-x-hidden overflow-y-auto;
+
+  float: inline-start;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  height: 100dvh;
+  min-height: 0;
+  width: 100%;
 }
 
 .portfolio__footer {
-  @apply block shrink-0;
+  @apply block;
+
+  float: inline-start;
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: 30;
+  width: 100%;
+}
+
+@media (width < 80rem) {
+  .portfolio__content {
+    height: 100svh;
+  }
 }

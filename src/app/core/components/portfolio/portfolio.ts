@@ -11,7 +11,7 @@ import { Content } from './components/content/content';
   imports: [Navbar, Footer, Content],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
-  host: { class: 'flex h-dvh flex-col overflow-hidden max-sm:h-svh' },
+  host: { class: 'block h-dvh max-sm:h-svh' },
 })
 export class Portfolio implements AfterViewInit {
   private readonly content = viewChild<Content>('content');
