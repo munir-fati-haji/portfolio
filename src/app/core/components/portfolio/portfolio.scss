@@ -19,13 +19,9 @@
 }
 
 .portfolio__content {
-  @apply block overflow-x-hidden overflow-y-auto;
+  @apply block overflow-x-hidden;
 
   float: inline-start;
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  height: 100dvh;
   min-height: 0;
   width: 100%;
 }
@@ -39,10 +35,4 @@
   inset-inline: 0;
   z-index: 30;
   width: 100%;
-}
-
-@media (width < 80rem) {
-  .portfolio__content {
-    height: 100svh;
-  }
 }
