@@ -33,14 +33,12 @@ describe('Navbar', () => {
     });
   });
 
-  it('passes mobile menu data to the mobile navbar', () => {
+  it('passes navigation data to the mobile island', () => {
     MockRender(Navbar);
 
     const mobileNavbar = ngMocks.find(MobileNavbar);
 
-    expect(ngMocks.input(mobileNavbar, 'brand')).toBe(NAVBAR_BRAND);
     expect(ngMocks.input(mobileNavbar, 'links')).toEqual(NAVBAR_LINKS);
-    expect(ngMocks.input(mobileNavbar, 'isOpen')).toBe(false);
   });
 
   it('toggles the theme when the theme button is clicked', () => {

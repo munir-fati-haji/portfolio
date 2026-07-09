@@ -1,14 +1,18 @@
 <app-section-header class="experience__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-@for (metric of metrics; track metric.label) {
-  <mat-card appearance="outlined">
-    <mat-card-content>
-      <p class="experience__metric-value">{{ metric.value }}</p>
-      <p class="experience__metric-label">{{ metric.label }}</p>
-    </mat-card-content>
-  </mat-card>
-}
+<div class="experience__metrics" aria-label="Career metrics">
+  @for (metric of metrics; track metric.label) {
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <p class="experience__metric-value">{{ metric.value }}</p>
+        <p class="experience__metric-label">{{ metric.label }}</p>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>
 
-@for (item of experiences; track item.role) {
-  <app-experience-card class="experience__card" [experience]="item" />
-}
+<div class="experience__grid">
+  @for (item of experiences; track item.role) {
+    <app-experience-card class="experience__card" [experience]="item" />
+  }
+</div>

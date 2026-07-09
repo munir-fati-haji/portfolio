@@ -1,7 +1,7 @@
 @use './styles/theme' as app-theme;
 
 html {
-  height: 100%;
+  min-height: 100%;
 
   @include app-theme.app-theme(dark);
 
@@ -20,11 +20,16 @@ html.app-theme-dark {
     ),
     radial-gradient(circle at top right, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent), transparent 32%),
     var(--mat-sys-surface);
-  --portfolio-glass-surface: color-mix(in srgb, var(--mat-sys-surface-container) 84%, transparent);
-  --portfolio-glass-surface-strong: color-mix(in srgb, var(--mat-sys-surface-container-high) 90%, transparent);
-  --portfolio-glass-outline: color-mix(in srgb, var(--mat-sys-outline-variant) 64%, transparent);
+  --portfolio-glass-surface: color-mix(in srgb, var(--mat-sys-surface-container) 66%, transparent);
+  --portfolio-glass-surface-strong: color-mix(in srgb, var(--mat-sys-surface-container-high) 76%, transparent);
+  --portfolio-glass-outline: color-mix(in srgb, var(--mat-sys-outline-variant) 52%, transparent);
   --portfolio-focus-ring: color-mix(in srgb, var(--mat-sys-primary) 70%, transparent);
-  --portfolio-icon-surface: color-mix(in srgb, var(--mat-sys-primary-container) 38%, var(--mat-sys-surface-container));
+  --portfolio-icon-surface: color-mix(in srgb, var(--mat-sys-primary-container) 30%, var(--portfolio-glass-surface));
+  --portfolio-island-surface: color-mix(in srgb, var(--mat-sys-surface-container-high) 58%, transparent);
+  --portfolio-island-surface-hover: color-mix(in srgb, var(--mat-sys-primary) 22%, transparent);
+  --portfolio-card-surface: color-mix(in srgb, var(--mat-sys-surface-container-high) 36%, transparent);
+  --portfolio-chip-surface: color-mix(in srgb, var(--mat-sys-on-surface) 10%, transparent);
+  --portfolio-dialog-surface: color-mix(in srgb, var(--mat-sys-surface-container-high) 72%, transparent);
   --portfolio-depth-shadow: color-mix(in srgb, var(--mat-sys-scrim) 28%, transparent);
 }
 
@@ -40,11 +45,16 @@ html.app-theme-light {
     ),
     radial-gradient(circle at top right, color-mix(in srgb, var(--mat-sys-tertiary) 10%, transparent), transparent 32%),
     var(--mat-sys-surface);
-  --portfolio-glass-surface: color-mix(in srgb, var(--mat-sys-surface-container-low) 90%, transparent);
-  --portfolio-glass-surface-strong: color-mix(in srgb, var(--mat-sys-surface-container) 94%, transparent);
-  --portfolio-glass-outline: color-mix(in srgb, var(--mat-sys-outline-variant) 72%, transparent);
+  --portfolio-glass-surface: color-mix(in srgb, var(--mat-sys-surface-container-low) 72%, transparent);
+  --portfolio-glass-surface-strong: color-mix(in srgb, var(--mat-sys-surface-container) 82%, transparent);
+  --portfolio-glass-outline: color-mix(in srgb, var(--mat-sys-outline-variant) 56%, transparent);
   --portfolio-focus-ring: color-mix(in srgb, var(--mat-sys-primary) 62%, transparent);
-  --portfolio-icon-surface: color-mix(in srgb, var(--mat-sys-primary-container) 42%, var(--mat-sys-surface-container));
+  --portfolio-icon-surface: color-mix(in srgb, var(--mat-sys-primary-container) 34%, var(--portfolio-glass-surface));
+  --portfolio-island-surface: color-mix(in srgb, var(--mat-sys-surface-container) 66%, transparent);
+  --portfolio-island-surface-hover: color-mix(in srgb, var(--mat-sys-primary) 18%, transparent);
+  --portfolio-card-surface: color-mix(in srgb, var(--mat-sys-surface-container) 42%, transparent);
+  --portfolio-chip-surface: color-mix(in srgb, var(--mat-sys-on-surface) 9%, transparent);
+  --portfolio-dialog-surface: color-mix(in srgb, var(--mat-sys-surface-container) 78%, transparent);
   --portfolio-depth-shadow: color-mix(in srgb, var(--mat-sys-scrim) 16%, transparent);
 }
 
@@ -52,6 +62,6 @@ body {
   background: var(--portfolio-app-background);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-  height: 100%;
   margin: 0;
+  min-height: 100%;
 }

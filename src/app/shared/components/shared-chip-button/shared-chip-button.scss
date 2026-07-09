@@ -29,7 +29,7 @@
 }
 
 .chip-button--active {
-  background: var(--mat-sys-primary) !important;
+  background: color-mix(in srgb, var(--mat-sys-primary) 74%, transparent) !important;
   color: var(--mat-sys-on-primary);
 }
 

@@ -22,13 +22,13 @@ export class Content {
   });
 
   public get scrollElement(): HTMLElement {
-    return this.hostElement.nativeElement;
+    return document.documentElement;
   }
 
   public getActiveSectionId(): string {
-    const scrollPosition = this.scrollElement.scrollTop + this.scrollElement.clientHeight * 0.35;
+    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
     const activeSection = this.sectionElements()
-      .filter((section) => section.nativeElement.offsetTop <= scrollPosition)
+      .filter((section) => this.getSectionTop(section.nativeElement) <= scrollPosition)
       .at(-1);
 
     return activeSection?.nativeElement.dataset['sectionId'] ?? 'hero';
@@ -43,6 +43,10 @@ export class Content {
       return;
     }
 
-    this.scrollElement.scrollTo({ top: sectionElement.offsetTop, behavior: 'auto' });
+    window.scrollTo({ top: this.getSectionTop(sectionElement), behavior: 'auto' });
+  }
+
+  private getSectionTop(sectionElement: HTMLElement): number {
+    return sectionElement.getBoundingClientRect().top + window.scrollY;
   }
 }

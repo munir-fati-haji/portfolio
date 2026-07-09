@@ -1,39 +1,19 @@
 @reference '../../../../../../../../styles.css';
 
-.mobile-navbar__container {
-  @apply fixed inset-0 z-50 xl:hidden;
+.mobile-navbar__island {
+  @apply fixed inset-x-3 bottom-3 z-40 flex items-center gap-1 overflow-x-auto overflow-y-hidden rounded-full border border-solid px-2 py-2 xl:hidden;
+
+  background: var(--portfolio-island-surface);
+  border-color: var(--portfolio-glass-outline);
+  backdrop-filter: blur(24px) saturate(150%);
+  filter: drop-shadow(0 1rem 1.75rem var(--portfolio-depth-shadow));
+  scrollbar-width: none;
 }
 
-.mobile-navbar__drawer {
-  @apply w-[calc(100vw-1.5rem)] max-w-sm p-4;
+.mobile-navbar__island::-webkit-scrollbar {
+  display: none;
 }
 
-.mobile-navbar__drawer-header {
-  @apply flex items-center justify-between gap-3;
-}
-
-.mobile-navbar__brand {
-  @apply text-xl! font-medium!;
-}
-
-.mobile-navbar__nav-list {
-  @apply mt-6 min-h-0 flex-1 overflow-y-auto;
-}
-
-.mobile-navbar__nav-footer {
-  @apply mt-4 grid gap-4 pt-4;
-}
-
-.mobile-navbar__theme-button {
-  @apply w-full justify-start!;
-}
-
-.mobile-navbar__connect-label {
-  @apply px-1 text-xs font-medium uppercase tracking-wide;
-
-  color: var(--mat-sys-on-surface-variant);
-}
-
-.mobile-navbar__social-list {
-  @apply flex flex-wrap items-center gap-2;
+.mobile-navbar__link {
+  @apply size-11! shrink-0 rounded-full!;
 }

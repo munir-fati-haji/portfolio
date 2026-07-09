@@ -4,17 +4,28 @@
 
 html,
 body {
-  background: var(--portfolio-app-background);
+  background:
+    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--mat-sys-primary) 16%, transparent) 0 18rem, transparent 28rem),
+    radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent) 0 16rem, transparent 26rem),
+    var(--portfolio-app-background);
   color: var(--mat-sys-on-surface);
+}
+
+body::before {
+  @apply pointer-events-none fixed inset-0 -z-10 opacity-40;
+
+  content: '';
+  background: radial-gradient(circle, color-mix(in srgb, var(--mat-sys-primary) 12%, transparent) 0 1px, transparent 1.25px) 0 0 / 4rem 4rem;
+  mask-image: radial-gradient(ellipse at top, var(--mat-sys-scrim), transparent 75%);
 }
 
 .mat-toolbar.navbar__root,
 .mat-toolbar.footer__root {
-  background: var(--portfolio-glass-surface);
+  background: var(--portfolio-island-surface);
   border-color: var(--portfolio-glass-outline);
   color: var(--mat-sys-on-surface);
-  backdrop-filter: blur(20px) saturate(135%);
-  filter: drop-shadow(0 0.75rem 1.5rem var(--portfolio-depth-shadow));
+  backdrop-filter: blur(24px) saturate(150%);
+  filter: drop-shadow(0 1rem 1.75rem var(--portfolio-depth-shadow));
 }
 
 .mat-toolbar.navbar__root {
@@ -26,22 +37,32 @@ body {
 }
 
 .navbar__nav-link.mat-mdc-unelevated-button {
-  --mdc-filled-button-container-color: var(--portfolio-icon-surface);
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--portfolio-icon-surface) 72%, transparent);
   --mdc-filled-button-label-text-color: var(--mat-sys-on-surface);
   --mat-filled-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-filled-button-focus-state-layer-color: var(--mat-sys-primary);
   --mat-filled-button-pressed-state-layer-color: var(--mat-sys-primary);
 }
 
+.navbar__nav-link.mat-mdc-unelevated-button.navbar__nav-link--active {
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--mat-sys-primary) 72%, transparent);
+  --mdc-filled-button-label-text-color: var(--mat-sys-on-primary);
+}
+
 .navbar__brand.mat-mdc-button,
 .navbar__theme-toggle.mat-mdc-icon-button,
-.navbar__menu-toggle.mat-mdc-icon-button,
+.mobile-navbar__link.mat-mdc-icon-button,
 .footer__link.mat-mdc-icon-button {
   --mat-text-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-icon-button-hover-state-layer-color: var(--mat-sys-primary);
 
-  background: var(--portfolio-icon-surface);
+  background: color-mix(in srgb, var(--portfolio-icon-surface) 76%, transparent);
   color: var(--mat-sys-on-surface);
+}
+
+.mobile-navbar__link.mat-mdc-icon-button.mobile-navbar__link--active {
+  background: color-mix(in srgb, var(--mat-sys-primary) 74%, transparent);
+  color: var(--mat-sys-on-primary);
 }
 
 .mat-mdc-icon-button {
@@ -57,10 +78,50 @@ body {
 }
 
 .mat-mdc-card {
-  background: var(--portfolio-glass-surface-strong);
+  --mat-card-elevated-container-color: var(--portfolio-card-surface);
+  --mat-card-filled-container-color: var(--portfolio-card-surface);
+  --mat-card-outlined-container-color: var(--portfolio-card-surface);
+  --mat-card-outlined-outline-color: var(--portfolio-glass-outline);
+
+  background: color-mix(in srgb, var(--mat-sys-primary) 7%, var(--portfolio-card-surface));
   border-color: var(--portfolio-glass-outline);
   filter: drop-shadow(0 0.5rem 1rem var(--portfolio-depth-shadow));
   backdrop-filter: blur(18px) saturate(130%);
+}
+
+.mat-mdc-standard-chip {
+  --mat-chip-elevated-container-color: var(--portfolio-chip-surface);
+  --mat-chip-elevated-disabled-container-color: var(--portfolio-chip-surface);
+  --mat-chip-elevated-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 76%, transparent);
+  --mat-chip-flat-disabled-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 46%, transparent);
+  --mat-chip-outline-color: var(--portfolio-glass-outline);
+  --mat-chip-outline-width: 1px;
+
+  backdrop-filter: blur(14px) saturate(125%);
+}
+
+.mat-stepper-horizontal,
+.mat-stepper-vertical {
+  --mat-stepper-container-color: transparent;
+  --mat-stepper-header-focus-state-layer-color: transparent;
+  --mat-stepper-header-hover-state-layer-color: transparent;
+
+  background: transparent;
+}
+
+.mat-horizontal-stepper-wrapper,
+.mat-horizontal-content-container,
+.mat-vertical-content-container,
+.mat-vertical-content {
+  background: transparent;
+}
+
+.portfolio-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  background: var(--portfolio-dialog-surface);
+  border: 1px solid var(--portfolio-glass-outline);
+  border-radius: 1.5rem;
+  color: var(--mat-sys-on-surface);
+  backdrop-filter: blur(22px) saturate(140%);
 }
 
 .app-theme-toggle {

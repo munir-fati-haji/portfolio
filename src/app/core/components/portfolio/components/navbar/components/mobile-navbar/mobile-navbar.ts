@@ -1,38 +1,16 @@
-import { Component, inject, input, output } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { ThemeService } from '@core/services/theme/theme.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { NavbarLink } from '../../models/navbar-link.model';
-import { FOOTER_LINKS } from '../../../footer/data/footer-links';
 
 @Component({
   selector: 'app-mobile-navbar',
-  imports: [RouterLink, MatButtonModule, MatDividerModule, MatIconModule, MatListModule, MatSidenavModule],
+  imports: [RouterLink, RouterLinkActive, MatButtonModule, MatIconModule, MatTooltipModule],
   templateUrl: './mobile-navbar.html',
   styleUrl: './mobile-navbar.scss',
 })
 export class MobileNavbar {
-  public readonly brand = input.required<string>();
-  public readonly isOpen = input.required<boolean>();
   public readonly links = input.required<NavbarLink[]>();
-  public readonly closed = output();
-  protected readonly themeService = inject(ThemeService);
-  protected readonly footerLinks = FOOTER_LINKS;
-
-  protected close(): void {
-    this.closed.emit();
-  }
-
-  protected openExternalUrl(url: string): void {
-    window.open(url, '_blank', 'noopener,noreferrer');
-    this.close();
-  }
-
-  protected toggleTheme(): void {
-    this.themeService.toggleTheme();
-  }
 }

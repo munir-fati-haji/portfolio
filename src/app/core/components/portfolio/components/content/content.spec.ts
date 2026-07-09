@@ -43,10 +43,9 @@ describe('Content', () => {
     ]);
   });
 
-  it('exposes the host element as the scroll element', () => {
+  it('exposes the document root as the scroll element', () => {
     const fixture = MockRender(Content);
-    const nativeElement = fixture.point.nativeElement as HTMLElement;
 
-    expect(fixture.point.componentInstance.scrollElement).toBe(nativeElement);
+    expect(fixture.point.componentInstance.scrollElement).toBe(document.documentElement);
   });
 });
