@@ -1,0 +1,30 @@
+<header class="project-dialog__header">
+  <mat-icon aria-hidden="true">{{ project.icon }}</mat-icon>
+
+  <p class="project-dialog__company">{{ project.type }}</p>
+
+  <h2 mat-dialog-title>{{ project.title }}</h2>
+</header>
+
+<mat-dialog-content>
+  <p class="project-dialog__summary">{{ project.description }}</p>
+
+  <mat-chip-set aria-label="Project stack">
+    @for (item of project.stack; track item) {
+      <mat-chip>{{ item }}</mat-chip>
+    }
+  </mat-chip-set>
+
+  <mat-list aria-label="Project impact">
+    @for (item of project.impact; track item) {
+      <mat-list-item>
+        <mat-icon matListItemIcon aria-hidden="true">task_alt</mat-icon>
+        <span matListItemTitle>{{ item }}</span>
+      </mat-list-item>
+    }
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close type="button">Close</button>
+</mat-dialog-actions>

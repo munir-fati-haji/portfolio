@@ -1,12 +1,5 @@
 <app-section-header class="contact__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-<nav class="contact__actions" aria-label="Contact actions">
-  <button mat-flat-button type="button" (click)="openExternalUrl('mailto:munir.fati.haji@gmail.com')">
-    Send Email
-  </button>
-  <button mat-stroked-button type="button" routerLink="/projects">View Projects</button>
-</nav>
-
 @for (link of contactLinks; track link.label) {
   <app-contact-link-card
     class="contact__link-card"

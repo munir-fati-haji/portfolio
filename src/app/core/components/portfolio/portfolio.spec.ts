@@ -83,14 +83,13 @@ describe('Portfolio route synchronization', () => {
     expect(ContentStub.scrollToSection).toHaveBeenCalledWith('about');
   });
 
-  it('does not update the route when scrolling changes the active section', async () => {
+  it('updates the route when scrolling changes the active section', async () => {
     MockRender(Portfolio);
 
-    const content = ngMocks.findInstance(ContentStub);
     ContentStub.activeSectionId = 'contact';
-    content.scrollElement.dispatchEvent(new Event('scroll'));
-    await waitFor(100);
+    window.dispatchEvent(new Event('scroll'));
+    await waitFor(150);
 
-    expect(router.navigateByUrl).not.toHaveBeenCalled();
+    expect(router.navigateByUrl).toHaveBeenCalledWith('/contact', { replaceUrl: true });
   });
 });

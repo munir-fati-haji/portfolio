@@ -20,7 +20,7 @@ describe('Skills', () => {
     expect(ngMocks.input(sectionHeader, 'description')).toBe(SKILLS_DESCRIPTION);
   });
 
-  it('renders stats, legend chips, and category cards from data', () => {
+  it('renders stats and category cards from data', () => {
     const fixture = MockRender(Skills);
     const nativeElement = fixture.nativeElement as HTMLElement;
     const text = nativeElement.textContent;
@@ -29,10 +29,6 @@ describe('Skills', () => {
     SKILL_STATS.forEach((stat) => {
       expect(text).toContain(stat.value);
       expect(text).toContain(stat.label);
-    });
-
-    ['Advanced', 'Strong', 'Practical', 'Basic'].forEach((legend) => {
-      expect(text).toContain(legend);
     });
 
     expect(categoryCards).toHaveLength(SKILL_CATEGORIES.length);

@@ -1,6 +1,6 @@
 <mat-card class="experience-card__card" appearance="outlined">
   @if (experience().logoSrc) {
-    <img class="experience-card__logo" alt="" [src]="experience().logoSrc" />
+    <img class="experience-card__logo" alt="" width="56" height="56" [ngSrc]="experience().logoSrc ?? ''" />
   } @else {
     <mat-icon class="experience-card__icon" aria-hidden="true">{{ experience().icon }}</mat-icon>
   }

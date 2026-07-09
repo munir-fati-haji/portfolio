@@ -38,7 +38,5 @@ mat-card-subtitle {
 }
 
 .education-card__details {
-  @apply h-8! w-8! justify-self-end rounded-full!;
-
-  color: var(--mat-sys-primary);
+  @apply justify-self-end;
 }

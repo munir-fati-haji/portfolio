@@ -1,6 +1,6 @@
 <header class="experience-dialog__header">
   @if (experience.logoSrc) {
-    <img class="experience-dialog__logo" alt="" [src]="experience.logoSrc" />
+    <img class="experience-dialog__logo" alt="" width="48" height="48" [ngSrc]="experience.logoSrc ?? ''" />
   } @else {
     <mat-icon aria-hidden="true">{{ experience.icon }}</mat-icon>
   }

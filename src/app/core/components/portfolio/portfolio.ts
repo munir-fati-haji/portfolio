@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, DestroyRef, inject, viewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map } from 'rxjs';
+import { auditTime, distinctUntilChanged, filter, fromEvent, map } from 'rxjs';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 import { Content } from './components/content/content';
@@ -22,6 +22,7 @@ export class Portfolio implements AfterViewInit {
   public ngAfterViewInit(): void {
     this.scrollToCurrentSection();
     this.watchRouteChanges();
+    this.watchScrollChanges();
   }
 
   private watchRouteChanges(): void {
@@ -45,6 +46,20 @@ export class Portfolio implements AfterViewInit {
     requestAnimationFrame(() => this.content()?.scrollToSection(sectionId));
   }
 
+  private watchScrollChanges(): void {
+    fromEvent(window, 'scroll', { passive: true })
+      .pipe(
+        auditTime(100),
+        map(() => this.content()?.getActiveSectionId() ?? 'hero'),
+        distinctUntilChanged(),
+        filter((sectionId) => this.getCurrentSectionId() !== sectionId),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe((sectionId) => {
+        void this.router.navigateByUrl(this.getRouteForSection(sectionId), { replaceUrl: true });
+      });
+  }
+
   private getCurrentSectionId(): string {
     let route = this.activatedRoute;
 
@@ -55,5 +70,9 @@ export class Portfolio implements AfterViewInit {
     const sectionId = route.snapshot.data['sectionId'] as unknown;
 
     return typeof sectionId === 'string' ? sectionId : 'hero';
+  }
+
+  private getRouteForSection(sectionId: string): string {
+    return sectionId === 'hero' ? '/' : `/${sectionId}`;
   }
 }

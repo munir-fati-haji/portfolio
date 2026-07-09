@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -8,7 +9,7 @@ import { ExperienceDialog } from '../experience-dialog/experience-dialog';
 
 @Component({
   selector: 'app-experience-card',
-  imports: [MatButtonModule, MatCardModule, MatDialogModule, MatIconModule],
+  imports: [MatButtonModule, MatCardModule, MatDialogModule, MatIconModule, NgOptimizedImage],
   templateUrl: './experience-card.html',
   styleUrl: './experience-card.scss',
   host: { class: 'block' },

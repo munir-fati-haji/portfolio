@@ -15,13 +15,6 @@
   </mat-card>
 }
 
-<mat-chip-set class="skills__legend" aria-label="Skill levels">
-  <mat-chip>Advanced</mat-chip>
-  <mat-chip>Strong</mat-chip>
-  <mat-chip>Practical</mat-chip>
-  <mat-chip>Basic</mat-chip>
-</mat-chip-set>
-
 @for (category of categories; track category.title) {
   <app-skill-category-card class="skills__category-card" [category]="category" />
 }

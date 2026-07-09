@@ -1,9 +1,32 @@
 @reference '../../../../../styles.css';
 
-.skill-category-card__body {
-  @apply p-4!;
+mat-card {
+  @apply flex h-full flex-col;
 }
 
-.skill-category-card__skill-list {
-  @apply flex flex-wrap gap-2;
+mat-card-header {
+  @apply items-start p-3! pb-1!;
+}
+
+mat-card-header mat-icon {
+  @apply mr-0! flex h-9 w-9 items-center justify-center rounded-lg text-xl!;
+
+  background: var(--portfolio-icon-surface);
+  color: var(--mat-sys-primary);
+}
+
+mat-card-title {
+  @apply text-sm! font-medium! leading-5!;
+}
+
+mat-card-subtitle {
+  @apply line-clamp-2 text-xs! leading-4!;
+}
+
+mat-card-actions {
+  @apply mt-auto px-3! pb-3! pt-0!;
+}
+
+.skill-category-card__action {
+  @apply justify-self-end;
 }

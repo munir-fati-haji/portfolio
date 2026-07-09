@@ -7,6 +7,8 @@
   border-color: var(--portfolio-glass-outline);
   backdrop-filter: blur(14px) saturate(128%);
   filter: drop-shadow(0 0.65rem 1rem var(--portfolio-depth-shadow));
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
 }
 

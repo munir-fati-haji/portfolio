@@ -10,6 +10,12 @@
   border-bottom: 1px solid var(--portfolio-glass-outline);
 }
 
+mat-list mat-icon {
+  @apply text-lg!;
+
+  color: var(--mat-sys-primary);
+}
+
 .education-dialog__header > mat-icon {
   @apply mt-1 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-3xl;
 
@@ -58,12 +64,6 @@ mat-dialog-content {
 
 mat-list {
   @apply mt-5;
-}
-
-mat-list mat-icon {
-  @apply text-lg!;
-
-  color: var(--mat-sys-primary);
 }
 
 mat-list span[matListItemTitle] {
