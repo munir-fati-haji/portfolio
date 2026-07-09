@@ -4,3 +4,9 @@
   padding-bottom: 2.5rem;
   background: transparent;
 }
+
+@media (width < 80rem) {
+  :host {
+    padding-bottom: 6.5rem;
+  }
+}

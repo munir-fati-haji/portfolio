@@ -1,13 +1,18 @@
 @reference '../../../../styles.css';
 
+:host {
+  width: 100%;
+  max-width: 100vw;
+}
+
 .portfolio__navbar {
-  @apply shrink-0;
+  @apply block shrink-0;
 }
 
 .portfolio__content {
-  @apply min-h-0 flex-1 overflow-y-auto;
+  @apply min-h-0 flex-1 overflow-x-hidden overflow-y-auto;
 }
 
 .portfolio__footer {
-  @apply shrink-0;
+  @apply block shrink-0;
 }

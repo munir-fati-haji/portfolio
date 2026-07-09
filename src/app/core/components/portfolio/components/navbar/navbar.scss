@@ -1,34 +1,33 @@
 @reference '../../../../../../styles.css';
 
 .navbar__root {
-  @apply px-3! sm:px-5!;
+  @apply mx-auto mt-3 min-h-14! max-w-7xl rounded-full border border-solid px-3! sm:mt-4 sm:px-5!;
+
+  width: calc(100% - 1rem);
+}
+
+@media (width >= 40rem) {
+  .navbar__root {
+    width: calc(100% - 2rem);
+  }
 }
 
 .navbar__layout {
-  @apply mx-auto flex w-full max-w-7xl items-center justify-between gap-4;
+  @apply mx-auto grid w-full grid-cols-[auto_auto] items-center justify-between gap-4 xl:grid-cols-[auto_1fr_auto];
 }
 
 .navbar__brand {
-  @apply text-xl! font-medium!;
+  @apply min-h-10! rounded-full! px-4! text-xl! font-medium!;
 }
 
 .navbar__nav {
-  @apply hidden items-center gap-2 xl:flex;
+  @apply hidden items-center justify-center gap-2 xl:flex;
 }
 
 .navbar__nav-link {
-  @apply min-h-9! px-3! text-sm!;
-}
-
-.navbar__theme-toggle,
-.navbar__menu-toggle {
-  @apply size-11! items-center! justify-center!;
+  @apply min-h-9! rounded-full! px-4! text-sm!;
 }
 
 .navbar__theme-toggle {
-  @apply hidden! xl:inline-flex!;
-}
-
-.navbar__menu-toggle {
-  @apply xl:hidden!;
+  @apply inline-flex! size-10! items-center! justify-center! rounded-full!;
 }

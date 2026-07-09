@@ -15,9 +15,8 @@ import { ExperienceDialog } from '../experience-dialog/experience-dialog';
   host: { class: 'block' },
 })
 export class ExperienceCard {
-  private readonly dialog = inject(MatDialog);
-
   public readonly experience = input.required<ExperienceItem>();
+  private readonly dialog = inject(MatDialog);
 
   public openDetails(): void {
     this.dialog.open(ExperienceDialog, {

@@ -1,7 +1,7 @@
 @reference '../../../../../styles.css';
 
 .hero-intro__content {
-  @apply max-w-2xl;
+  @apply max-w-2xl min-w-0;
 }
 
 .hero-intro__eyebrow,
@@ -22,7 +22,7 @@
 }
 
 .hero-intro__description {
-  @apply mt-6 max-w-xl text-lg leading-8;
+  @apply mt-6 max-w-full text-lg leading-8 sm:max-w-xl;
 
   color: var(--mat-sys-on-surface-variant);
 }

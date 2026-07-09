@@ -9,6 +9,7 @@ body {
     radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent) 0 16rem, transparent 26rem),
     var(--portfolio-app-background);
   color: var(--mat-sys-on-surface);
+  overflow-x: hidden;
 }
 
 body::before {
@@ -21,11 +22,11 @@ body::before {
 
 .mat-toolbar.navbar__root,
 .mat-toolbar.footer__root {
-  background: var(--portfolio-glass-surface);
+  background: var(--portfolio-island-surface);
   border-color: var(--portfolio-glass-outline);
   color: var(--mat-sys-on-surface);
-  backdrop-filter: blur(20px) saturate(135%);
-  filter: drop-shadow(0 0.75rem 1.5rem var(--portfolio-depth-shadow));
+  backdrop-filter: blur(24px) saturate(150%);
+  filter: drop-shadow(0 1rem 1.75rem var(--portfolio-depth-shadow));
 }
 
 .mat-toolbar.navbar__root {
@@ -37,22 +38,32 @@ body::before {
 }
 
 .navbar__nav-link.mat-mdc-unelevated-button {
-  --mdc-filled-button-container-color: var(--portfolio-icon-surface);
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--portfolio-icon-surface) 72%, transparent);
   --mdc-filled-button-label-text-color: var(--mat-sys-on-surface);
   --mat-filled-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-filled-button-focus-state-layer-color: var(--mat-sys-primary);
   --mat-filled-button-pressed-state-layer-color: var(--mat-sys-primary);
 }
 
+.navbar__nav-link.mat-mdc-unelevated-button.navbar__nav-link--active {
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--mat-sys-primary) 72%, transparent);
+  --mdc-filled-button-label-text-color: var(--mat-sys-on-primary);
+}
+
 .navbar__brand.mat-mdc-button,
 .navbar__theme-toggle.mat-mdc-icon-button,
-.navbar__menu-toggle.mat-mdc-icon-button,
+.mobile-navbar__link.mat-mdc-icon-button,
 .footer__link.mat-mdc-icon-button {
   --mat-text-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-icon-button-hover-state-layer-color: var(--mat-sys-primary);
 
-  background: var(--portfolio-icon-surface);
+  background: color-mix(in srgb, var(--portfolio-icon-surface) 76%, transparent);
   color: var(--mat-sys-on-surface);
+}
+
+.mobile-navbar__link.mat-mdc-icon-button.mobile-navbar__link--active {
+  background: color-mix(in srgb, var(--mat-sys-primary) 74%, transparent);
+  color: var(--mat-sys-on-primary);
 }
 
 .mat-mdc-icon-button {

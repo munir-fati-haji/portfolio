@@ -6,7 +6,13 @@
 
     <nav aria-label="Primary navigation" class="navbar__nav">
       @for (link of links; track link.label) {
-        <button mat-flat-button class="navbar__nav-link" type="button" [routerLink]="link.route">
+        <button
+          mat-flat-button
+          class="navbar__nav-link"
+          routerLinkActive="navbar__nav-link--active"
+          type="button"
+          [routerLinkActiveOptions]="{ exact: link.route === '/' }"
+          [routerLink]="link.route">
           {{ link.label }}
         </button>
       }
@@ -21,17 +27,7 @@
       (click)="toggleTheme()">
       <mat-icon>{{ themeService.toggleIcon() }}</mat-icon>
     </button>
-
-    <button
-      mat-icon-button
-      class="navbar__menu-toggle"
-      type="button"
-      aria-label="Open navigation menu"
-      [attr.aria-expanded]="isMobileMenuOpen()"
-      (click)="openMobileMenu()">
-      <mat-icon>menu</mat-icon>
-    </button>
   </div>
 </mat-toolbar>
 
-<app-mobile-navbar [brand]="brand" [links]="links" [isOpen]="isMobileMenuOpen()" (closed)="closeMobileMenu()" />
+<app-mobile-navbar [links]="links" />
