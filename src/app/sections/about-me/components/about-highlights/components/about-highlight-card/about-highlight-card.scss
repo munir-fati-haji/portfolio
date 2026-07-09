@@ -1,11 +1,11 @@
 @reference '../../../../../../../styles.css';
 
 .about-highlight-card__body {
-  @apply flex gap-4 p-5!;
+  @apply flex gap-3 p-4!;
 }
 
 .about-highlight-card__icon-surface {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full;
+  @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg;
 
   color: var(--mat-sys-primary);
 }
@@ -15,7 +15,7 @@
 }
 
 .about-highlight-card__description {
-  @apply mt-2 text-sm leading-6;
+  @apply mt-1 text-sm leading-5;
 
   color: var(--mat-sys-on-surface-variant);
 }

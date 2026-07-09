@@ -2,21 +2,28 @@
 @import 'highlight.js/styles/github-dark.css';
 @custom-variant dark (&:where(.app-theme-dark, .app-theme-dark *));
 
-html,
-body {
-  background:
-    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--mat-sys-primary) 16%, transparent) 0 18rem, transparent 28rem),
-    radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--mat-sys-tertiary) 14%, transparent) 0 16rem, transparent 26rem),
-    var(--portfolio-app-background);
+html {
+  background: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
 }
 
+body {
+  background: transparent;
+  color: var(--mat-sys-on-surface);
+  position: relative;
+  z-index: 0;
+}
+
 body::before {
-  @apply pointer-events-none fixed inset-0 -z-10 opacity-40;
+  @apply pointer-events-none fixed inset-x-0 top-0 -z-10 h-screen opacity-100;
 
   content: '';
-  background: radial-gradient(circle, color-mix(in srgb, var(--mat-sys-primary) 12%, transparent) 0 1px, transparent 1.25px) 0 0 / 4rem 4rem;
-  mask-image: radial-gradient(ellipse at top, var(--mat-sys-scrim), transparent 75%);
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--mat-sys-primary) 28%, transparent) 0 1px, transparent 1.5px) 0 0 / 2.75rem 2.75rem,
+    radial-gradient(circle, color-mix(in srgb, var(--mat-sys-tertiary) 24%, transparent) 0 1px, transparent 1.5px) 1.375rem 1.375rem / 2.75rem 2.75rem,
+    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--mat-sys-primary) 22%, transparent) 0 18rem, transparent 28rem),
+    radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--mat-sys-tertiary) 20%, transparent) 0 16rem, transparent 26rem),
+    var(--portfolio-app-background);
 }
 
 .mat-toolbar.navbar__root,
@@ -24,8 +31,8 @@ body::before {
   background: var(--portfolio-island-surface);
   border-color: var(--portfolio-glass-outline);
   color: var(--mat-sys-on-surface);
-  backdrop-filter: blur(24px) saturate(150%);
-  filter: drop-shadow(0 1rem 1.75rem var(--portfolio-depth-shadow));
+  backdrop-filter: blur(14px) saturate(128%);
+  filter: drop-shadow(0 0.65rem 1rem var(--portfolio-depth-shadow));
 }
 
 .mat-toolbar.navbar__root {
@@ -38,7 +45,7 @@ body::before {
 
 .navbar__nav-link.mat-mdc-unelevated-button,
 .navbar__nav-link.mat-mdc-outlined-button {
-  --mdc-filled-button-container-color: color-mix(in srgb, var(--portfolio-icon-surface) 72%, transparent);
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--portfolio-icon-surface) 38%, transparent);
   --mdc-filled-button-label-text-color: var(--mat-sys-on-surface);
   --mat-filled-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-filled-button-focus-state-layer-color: var(--mat-sys-primary);
@@ -48,12 +55,12 @@ body::before {
 
 .navbar__nav-link.mat-mdc-unelevated-button.navbar__nav-link--active,
 .navbar__nav-link.mat-mdc-outlined-button.navbar__nav-link--active {
-  --mdc-filled-button-container-color: color-mix(in srgb, var(--mat-sys-primary) 72%, transparent);
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--mat-sys-primary) 50%, transparent);
   --mdc-filled-button-label-text-color: var(--mat-sys-on-primary);
   --mat-outlined-button-label-text-color: var(--mat-sys-on-primary);
   --mat-outlined-button-outline-color: color-mix(in srgb, var(--mat-sys-primary) 72%, transparent);
 
-  background: color-mix(in srgb, var(--mat-sys-primary) 72%, transparent);
+  background: color-mix(in srgb, var(--mat-sys-primary) 50%, transparent);
   color: var(--mat-sys-on-primary);
 }
 
@@ -64,12 +71,12 @@ body::before {
   --mat-text-button-hover-state-layer-color: var(--mat-sys-primary);
   --mat-icon-button-hover-state-layer-color: var(--mat-sys-primary);
 
-  background: color-mix(in srgb, var(--portfolio-icon-surface) 76%, transparent);
+  background: color-mix(in srgb, var(--portfolio-icon-surface) 34%, transparent);
   color: var(--mat-sys-on-surface);
 }
 
 .mobile-navbar__link.mat-mdc-icon-button.mobile-navbar__link--active {
-  background: color-mix(in srgb, var(--mat-sys-primary) 74%, transparent);
+  background: color-mix(in srgb, var(--mat-sys-primary) 48%, transparent);
   color: var(--mat-sys-on-primary);
 }
 
@@ -122,21 +129,21 @@ body::before {
   --mat-card-outlined-container-color: var(--portfolio-card-surface);
   --mat-card-outlined-outline-color: var(--portfolio-glass-outline);
 
-  background: color-mix(in srgb, var(--mat-sys-primary) 7%, var(--portfolio-card-surface));
+  background: color-mix(in srgb, var(--mat-sys-primary) 4%, var(--portfolio-card-surface));
   border-color: var(--portfolio-glass-outline);
-  filter: drop-shadow(0 0.5rem 1rem var(--portfolio-depth-shadow));
-  backdrop-filter: blur(18px) saturate(130%);
+  filter: drop-shadow(0 0.35rem 0.75rem var(--portfolio-depth-shadow));
+  backdrop-filter: blur(10px) saturate(118%);
 }
 
 .mat-mdc-standard-chip {
   --mat-chip-elevated-container-color: var(--portfolio-chip-surface);
   --mat-chip-elevated-disabled-container-color: var(--portfolio-chip-surface);
-  --mat-chip-elevated-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 76%, transparent);
-  --mat-chip-flat-disabled-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 46%, transparent);
+  --mat-chip-elevated-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 48%, transparent);
+  --mat-chip-flat-disabled-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 30%, transparent);
   --mat-chip-outline-color: var(--portfolio-glass-outline);
   --mat-chip-outline-width: 1px;
 
-  backdrop-filter: blur(14px) saturate(125%);
+  backdrop-filter: blur(8px) saturate(112%);
 }
 
 .mat-stepper-horizontal,
@@ -160,7 +167,7 @@ body::before {
   border: 1px solid var(--portfolio-glass-outline);
   border-radius: 1.5rem;
   color: var(--mat-sys-on-surface);
-  backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(122%);
 }
 
 .app-theme-toggle {

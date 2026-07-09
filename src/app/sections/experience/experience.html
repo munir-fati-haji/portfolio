@@ -3,7 +3,7 @@
 <div class="experience__metrics" aria-label="Career metrics">
   @for (metric of metrics; track metric.label) {
     <mat-card appearance="outlined">
-      <mat-card-content>
+      <mat-card-content class="experience__metric-content">
         <p class="experience__metric-value">{{ metric.value }}</p>
         <p class="experience__metric-label">{{ metric.label }}</p>
       </mat-card-content>

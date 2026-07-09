@@ -1,29 +1,32 @@
 <mat-card class="experience-card__card" appearance="outlined">
-  <mat-card-header>
-    <mat-icon mat-card-avatar aria-hidden="true">{{ experience().icon }}</mat-icon>
-    <mat-card-title>{{ experience().role }}</mat-card-title>
-    <mat-card-subtitle>{{ experience().company }} · {{ experience().period }}</mat-card-subtitle>
-  </mat-card-header>
+  @if (experience().logoSrc) {
+    <img class="experience-card__logo" alt="" [src]="experience().logoSrc" />
+  } @else {
+    <mat-icon class="experience-card__icon" aria-hidden="true">{{ experience().icon }}</mat-icon>
+  }
 
-  <mat-card-content class="experience-card__body">
-    <p class="experience-card__description">
-      {{ experience().summary }}
-    </p>
+  <header class="experience-card__top-row">
+    <h3 class="experience-card__title">{{ experience().role }}</h3>
+    <p class="experience-card__company">{{ experience().company }}</p>
 
-    <mat-chip-set class="experience-card__skill-list" aria-label="Preview skills">
-      @for (skill of experience().skills.slice(0, 4); track skill.name) {
-        <mat-chip>
-          <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
-          {{ skill.name }}
-        </mat-chip>
-      }
-    </mat-chip-set>
-  </mat-card-content>
-
-  <mat-card-actions align="end">
-    <button mat-button type="button" (click)="openDetails()">
-      Open details
-      <mat-icon aria-hidden="true">arrow_outward</mat-icon>
+    <button
+      mat-icon-button
+      type="button"
+      class="experience-card__details"
+      aria-label="Open experience details"
+      (click)="openDetails()">
+      <mat-icon aria-hidden="true">arrow_forward</mat-icon>
     </button>
-  </mat-card-actions>
+  </header>
+
+  <p class="experience-card__meta-row">
+    <span class="experience-card__meta">
+      <mat-icon aria-hidden="true">calendar_month</mat-icon>
+      <span>{{ experience().period }}</span>
+    </span>
+    <span class="experience-card__meta">
+      <mat-icon aria-hidden="true">location_on</mat-icon>
+      <span>{{ experience().location }}</span>
+    </span>
+  </p>
 </mat-card>

@@ -8,6 +8,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     period: 'May 2026 - Current',
     type: 'Current Role',
     icon: 'work',
+    logoSrc: '/hyland.png',
     summary:
       'Working on Angular applications in a large Nx monorepo, focusing on bug fixes, enhancements, code cleanup, and Angular output migration.',
     highlights: [
@@ -29,9 +30,10 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     company: 'BNY',
     location: 'Wroclaw, Poland',
     role: 'Specialist Frontend Engineer II, React',
-    period: 'February 2026 - May 2026',
+    period: 'Feb 2026 - May 2026',
     type: 'React Platform',
     icon: 'web',
+    logoSrc: '/bny.png',
     summary:
       'Worked on frontend features using React and Java while contributing to state management, backend data processing, and API-driven application flows.',
     highlights: [
@@ -54,9 +56,10 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     company: 'BNY',
     location: 'Wroclaw, Poland',
     role: 'Associate Frontend Engineer II, Angular',
-    period: 'March 2025 - February 2026',
+    period: 'Mar 2025 - Feb 2026',
     type: 'Angular Modernization',
     icon: 'rocket_launch',
+    logoSrc: '/bny.png',
     summary:
       'Led Angular modernization work on a large enterprise application, improving architecture, performance, real-time communication, and developer experience.',
     highlights: [
@@ -86,9 +89,10 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     company: 'BNY',
     location: 'Wroclaw, Poland',
     role: 'Graduate Frontend Developer, Angular',
-    period: 'August 2023 - March 2025',
+    period: 'Aug 2023 - Mar 2025',
     type: 'Enterprise UI',
     icon: 'dashboard',
+    logoSrc: '/bny.png',
     summary:
       'Built enterprise Angular features for risk assessment workflows, dashboards, reporting, forms, and data-heavy business applications.',
     highlights: [
@@ -117,9 +121,10 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     company: 'Freelance',
     location: 'Wroclaw, Poland',
     role: 'Angular Developer',
-    period: 'January 2023 - August 2023',
+    period: 'Jan 2023 - Aug 2023',
     type: 'Foundation',
     icon: 'code',
+    logoSrc: '/use-me.png',
     summary:
       'Built and maintained a request management web application with scalable UI features, API integrations, authentication, and workflow automation.',
     highlights: [

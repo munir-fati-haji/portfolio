@@ -11,28 +11,28 @@
 }
 
 .project-card__content {
-  @apply p-6!;
+  @apply p-4!;
 }
 
 .project-card__description {
-  @apply line-clamp-2 text-sm leading-6;
+  @apply line-clamp-2 text-sm leading-5;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .project-card__tech-list {
-  @apply mt-5 flex flex-wrap gap-2;
+  @apply mt-4 flex flex-wrap gap-2;
 }
 
 .project-card__details {
-  @apply mt-5 rounded-2xl px-4 py-3;
+  @apply mt-4 rounded-lg px-3 py-2;
 
   background: var(--portfolio-icon-surface);
   color: var(--mat-sys-on-surface);
 }
 
 .project-card__details summary {
-  @apply flex cursor-pointer list-none items-center justify-between text-sm font-medium;
+  @apply flex cursor-pointer list-none items-center justify-between text-xs font-medium;
 }
 
 .project-card__details summary::-webkit-details-marker {

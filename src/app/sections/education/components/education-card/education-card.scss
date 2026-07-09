@@ -1,15 +1,44 @@
 @reference '../../../../../styles.css';
 
-.education-card__body {
-  @apply p-6!;
+mat-card-header {
+  @apply items-start p-4! pb-2!;
 }
 
-.education-card__description {
-  @apply mt-6 text-sm leading-6;
+mat-card-header mat-icon {
+  @apply mr-3! flex h-10 w-10 items-center justify-center rounded-lg text-2xl!;
+
+  background: var(--portfolio-icon-surface);
+  color: var(--mat-sys-primary);
+}
+
+mat-card-title {
+  @apply text-base! font-medium! leading-6!;
+}
+
+mat-card-subtitle {
+  @apply text-sm! leading-5!;
+}
+
+.education-card__meta-row {
+  @apply grid grid-cols-[max-content_minmax(0,1fr)_2rem] items-center gap-2 px-4! pb-4! pt-2!;
+}
+
+.education-card__meta {
+  @apply flex min-w-0 items-center gap-1.5 text-[0.6875rem] leading-5 sm:text-xs;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
-.education-card__skill-list {
-  @apply mt-6 flex flex-wrap gap-2;
+.education-card__meta span {
+  @apply min-w-0 truncate;
+}
+
+.education-card__meta mat-icon {
+  @apply text-base;
+}
+
+.education-card__details {
+  @apply h-8! w-8! justify-self-end rounded-full!;
+
+  color: var(--mat-sys-primary);
 }

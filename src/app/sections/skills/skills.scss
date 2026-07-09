@@ -1,7 +1,7 @@
 @reference '../../../styles.css';
 
 :host {
-  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(14rem,0.42fr)_minmax(14rem,0.42fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-2 gap-4 overflow-x-hidden px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(14rem,0.42fr)_minmax(14rem,0.42fr)] lg:gap-5 lg:px-10 lg:py-12 xl:px-12;
 }
 
 :host > * {
@@ -9,7 +9,7 @@
 }
 
 .skills__header {
-  @apply lg:col-start-1 lg:row-span-2 lg:row-start-1;
+  @apply col-span-2 lg:col-span-1 lg:col-start-1 lg:row-span-2 lg:row-start-1;
 }
 
 .skills__stat-card {
@@ -32,22 +32,26 @@
   @apply lg:col-start-3 lg:row-start-2;
 }
 
+.skills__stat-content {
+  @apply p-4!;
+}
+
 .skills__stat-value {
-  @apply text-2xl font-medium sm:text-3xl;
+  @apply text-2xl font-medium;
 
   color: var(--mat-sys-primary);
 }
 
 .skills__stat-label {
-  @apply mt-1 text-sm leading-6;
+  @apply mt-1 text-sm leading-5;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .skills__legend {
-  @apply flex flex-wrap gap-3 lg:col-span-3;
+  @apply col-span-2 flex flex-wrap gap-2 lg:col-span-3;
 }
 
 .skills__category-card {
-  @apply block w-full lg:col-span-3;
+  @apply col-span-2 block w-full lg:col-span-3;
 }

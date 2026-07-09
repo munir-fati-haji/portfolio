@@ -1,7 +1,7 @@
 @reference '../../../styles.css';
 
 :host {
-  @apply mx-auto grid w-full max-w-7xl gap-6 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16 xl:px-12;
+  @apply mx-auto grid w-full max-w-7xl gap-4 overflow-x-hidden px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-8 lg:px-10 lg:py-12 xl:px-12;
 }
 
 :host > * {
@@ -9,34 +9,42 @@
 }
 
 .experience__header {
-  @apply max-w-3xl;
+  @apply max-w-3xl lg:col-start-1 lg:row-start-1;
 }
 
 .experience__metrics,
 .experience__grid {
-  @apply grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4;
+  @apply grid content-start gap-3;
+}
+
+.experience__metrics {
+  @apply grid-cols-2 self-start lg:col-start-1 lg:row-start-2;
 }
 
 .experience__grid {
-  @apply xl:grid-cols-5;
+  @apply grid-cols-1 md:grid-cols-1 lg:col-start-2 lg:row-span-2 lg:row-start-1 xl:grid-cols-1;
 }
 
 .experience__metrics > mat-card {
   @apply overflow-hidden;
 }
 
+.experience__metric-content {
+  @apply p-4! lg:p-5!;
+}
+
 .experience__metric-value {
-  @apply text-3xl font-medium;
+  @apply text-2xl font-medium leading-7 lg:text-3xl lg:leading-9;
 
   color: var(--mat-sys-primary);
 }
 
 .experience__metric-label {
-  @apply mt-1 text-sm leading-6;
+  @apply mt-1 text-sm leading-5 lg:text-base lg:leading-6;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .experience__card {
-  @apply h-full;
+  @apply block;
 }

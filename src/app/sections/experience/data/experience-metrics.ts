@@ -3,11 +3,11 @@ import { ExperienceMetric } from '../models/experience-metric.model';
 export const EXPERIENCE_METRICS: ExperienceMetric[] = [
   {
     value: '3+',
-    label: 'Years frontend experience',
+    label: 'Years experience',
   },
   {
     value: 'v13 -> v21',
-    label: 'Angular migration ownership',
+    label: 'Angular migration',
   },
   {
     value: '50+',

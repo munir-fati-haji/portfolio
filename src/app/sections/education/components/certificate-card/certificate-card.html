@@ -5,13 +5,18 @@
     <mat-card-subtitle>{{ certificate().title }}</mat-card-subtitle>
   </mat-card-header>
 
-  <mat-card-content class="certificate-card__body">
-    <p class="certificate-card__period">{{ certificate().location }} - {{ certificate().period }}</p>
-
-    <mat-chip-set class="certificate-card__skill-list" aria-label="Certificate items">
-      @for (skill of certificate().skills; track skill) {
-        <mat-chip>{{ skill }}</mat-chip>
-      }
-    </mat-chip-set>
+  <mat-card-content class="certificate-card__meta-row">
+    <span class="certificate-card__meta">
+      <mat-icon aria-hidden="true">workspace_premium</mat-icon>
+      <span>{{ certificate().skills[0] }}</span>
+    </span>
+    <span class="certificate-card__meta">
+      <mat-icon aria-hidden="true">calendar_month</mat-icon>
+      <span>{{ certificate().period }}</span>
+    </span>
+    <span class="certificate-card__meta">
+      <mat-icon aria-hidden="true">location_on</mat-icon>
+      <span>{{ certificate().location }}</span>
+    </span>
   </mat-card-content>
 </mat-card>
