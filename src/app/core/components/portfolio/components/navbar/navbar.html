@@ -11,6 +11,7 @@
           class="navbar__nav-link"
           routerLinkActive="navbar__nav-link--active"
           type="button"
+          [class.navbar__nav-link--active]="isActive(link.route)"
           [routerLinkActiveOptions]="{ exact: link.route === '/' }"
           [routerLink]="link.route">
           {{ link.label }}

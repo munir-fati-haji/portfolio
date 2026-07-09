@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
@@ -30,6 +31,9 @@ class ContentStub {
 
 const routerEvents = new Subject<NavigationEnd>();
 const routeData = { sectionId: 'hero' };
+const location = {
+  replaceState: vi.fn(),
+};
 const router = {
   events: routerEvents,
   navigateByUrl: vi.fn(),
@@ -46,6 +50,7 @@ beforeEach(() =>
     .mock(Navbar)
     .replace(Content, ContentStub)
     .mock(Footer)
+    .provide({ provide: Location, useValue: location })
     .provide({ provide: Router, useValue: router })
     .provide({
       provide: ActivatedRoute,
@@ -56,6 +61,7 @@ beforeEach(() =>
 beforeEach(() => {
   ContentStub.activeSectionId = 'hero';
   ContentStub.scrollToSection.mockClear();
+  location.replaceState.mockClear();
   router.navigateByUrl.mockClear();
   router.url = '/';
   routeData.sectionId = 'hero';
@@ -90,22 +96,17 @@ describe('Portfolio route synchronization', () => {
     window.dispatchEvent(new Event('scroll'));
     await waitFor(150);
 
-    expect(router.navigateByUrl).toHaveBeenCalledWith('/contact', { replaceUrl: true });
+    expect(location.replaceState).toHaveBeenCalledWith('/contact');
+    expect(router.navigateByUrl).not.toHaveBeenCalled();
   });
 
-  it('does not scroll again for a route update caused by scrolling', async () => {
+  it('does not emit router navigation when scrolling changes the active section', async () => {
     MockRender(Portfolio);
 
     ContentStub.activeSectionId = 'contact';
     window.dispatchEvent(new Event('scroll'));
     await waitFor(150);
-    ContentStub.scrollToSection.mockClear();
 
-    routeData.sectionId = 'contact';
-    router.url = '/contact';
-    routerEvents.next(new NavigationEnd(2, '/contact', '/contact'));
-    await waitFor(20);
-
-    expect(ContentStub.scrollToSection).not.toHaveBeenCalled();
+    expect(router.navigateByUrl).not.toHaveBeenCalled();
   });
 });

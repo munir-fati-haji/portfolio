@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, DestroyRef, inject, viewChild } from '@angular/core';
+import { Location } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { auditTime, distinctUntilChanged, filter, fromEvent, map } from 'rxjs';
+import { ActiveSectionService } from '@core/services/active-section/active-section.service';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 import { Content } from './components/content/content';
@@ -16,9 +18,10 @@ import { Content } from './components/content/content';
 export class Portfolio implements AfterViewInit {
   private readonly content = viewChild<Content>('content');
   private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly activeSectionService = inject(ActiveSectionService);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly location = inject(Location);
   private readonly router = inject(Router);
-  private scrollSyncedSectionId: string | null = null;
 
   public ngAfterViewInit(): void {
     this.scrollToCurrentSection();
@@ -31,17 +34,20 @@ export class Portfolio implements AfterViewInit {
       .pipe(
         filter((event): event is NavigationEnd => event instanceof NavigationEnd),
         map(() => this.getCurrentSectionId()),
-        filter((sectionId) => !this.consumeScrollSyncedSection(sectionId)),
         filter((sectionId) => this.content()?.getActiveSectionId() !== sectionId),
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe((sectionId) => {
+        this.activeSectionService.setSectionId(sectionId);
         this.scrollToSection(sectionId);
       });
   }
 
   private scrollToCurrentSection(): void {
-    this.scrollToSection(this.getCurrentSectionId());
+    const sectionId = this.getCurrentSectionId();
+
+    this.activeSectionService.setSectionId(sectionId);
+    this.scrollToSection(sectionId);
   }
 
   private scrollToSection(sectionId: string): void {
@@ -54,12 +60,12 @@ export class Portfolio implements AfterViewInit {
         auditTime(100),
         map(() => this.content()?.getActiveSectionId() ?? 'hero'),
         distinctUntilChanged(),
-        filter((sectionId) => this.getCurrentSectionId() !== sectionId),
+        filter((sectionId) => this.activeSectionService.sectionId() !== sectionId),
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe((sectionId) => {
-        this.scrollSyncedSectionId = sectionId;
-        void this.router.navigateByUrl(this.getRouteForSection(sectionId), { replaceUrl: true });
+        this.activeSectionService.setSectionId(sectionId);
+        this.location.replaceState(this.getRouteForSection(sectionId));
       });
   }
 
@@ -77,15 +83,5 @@ export class Portfolio implements AfterViewInit {
 
   private getRouteForSection(sectionId: string): string {
     return sectionId === 'hero' ? '/' : `/${sectionId}`;
-  }
-
-  private consumeScrollSyncedSection(sectionId: string): boolean {
-    if (this.scrollSyncedSectionId !== sectionId) {
-      return false;
-    }
-
-    this.scrollSyncedSectionId = null;
-
-    return true;
   }
 }
