@@ -23,11 +23,11 @@
 }
 
 .navbar__nav {
-  @apply hidden items-center justify-center gap-2 xl:flex;
+  @apply hidden items-center justify-center gap-1 xl:flex;
 }
 
 .navbar__nav-link {
-  @apply min-h-9! rounded-full! px-4! text-sm!;
+  @apply min-h-7! rounded-full! px-2! text-xs! leading-none!;
 }
 
 .navbar__theme-toggle {
