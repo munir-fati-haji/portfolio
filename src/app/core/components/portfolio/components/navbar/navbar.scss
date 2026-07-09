@@ -18,6 +18,8 @@
 
 .navbar__brand {
   @apply min-h-10! rounded-full! px-4! text-xl! font-medium!;
+
+  font-family: 'Brush Script MT', 'Segoe Script', cursive;
 }
 
 .navbar__nav {
