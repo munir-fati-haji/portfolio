@@ -170,6 +170,19 @@ body::before {
   backdrop-filter: blur(12px) saturate(122%);
 }
 
+@media (width < 40rem) {
+  .portfolio-dialog .mat-mdc-dialog-content::after {
+    content: '';
+    position: sticky;
+    bottom: -1rem;
+    display: block;
+    height: 0.75rem;
+    margin: 0 -1rem -0.75rem;
+    pointer-events: none;
+    border-bottom: 0.1875rem solid color-mix(in srgb, var(--mat-sys-primary) 34%, transparent);
+  }
+}
+
 .app-theme-toggle {
   @apply hidden!;
 }

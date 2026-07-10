@@ -1,6 +1,7 @@
 <nav class="mobile-navbar__island" aria-label="Mobile navigation">
   @for (link of links(); track link.label) {
     <button
+      #navLink
       mat-icon-button
       class="mobile-navbar__link"
       routerLinkActive="mobile-navbar__link--active"

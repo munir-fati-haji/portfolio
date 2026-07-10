@@ -22,6 +22,8 @@ export class Portfolio implements AfterViewInit {
   private readonly destroyRef = inject(DestroyRef);
   private readonly location = inject(Location);
   private readonly router = inject(Router);
+  private programmaticScrollTimeout: ReturnType<typeof setTimeout> | undefined;
+  private isProgrammaticScroll = false;
 
   public ngAfterViewInit(): void {
     this.scrollToCurrentSection();
@@ -33,7 +35,7 @@ export class Portfolio implements AfterViewInit {
     this.router.events
       .pipe(
         filter((event): event is NavigationEnd => event instanceof NavigationEnd),
-        map(() => this.getCurrentSectionId()),
+        map((event) => this.getSectionIdFromUrl(event.urlAfterRedirects)),
         filter((sectionId) => this.content()?.getActiveSectionId() !== sectionId),
         takeUntilDestroyed(this.destroyRef),
       )
@@ -47,11 +49,26 @@ export class Portfolio implements AfterViewInit {
     const sectionId = this.getCurrentSectionId();
 
     this.activeSectionService.setSectionId(sectionId);
-    this.scrollToSection(sectionId);
+
+    if (this.content()?.getActiveSectionId() !== sectionId) {
+      this.scrollToSection(sectionId);
+    }
   }
 
   private scrollToSection(sectionId: string): void {
-    requestAnimationFrame(() => this.content()?.scrollToSection(sectionId));
+    this.isProgrammaticScroll = true;
+
+    if (this.programmaticScrollTimeout) {
+      clearTimeout(this.programmaticScrollTimeout);
+    }
+
+    requestAnimationFrame(() => {
+      this.content()?.scrollToSection(sectionId);
+      this.programmaticScrollTimeout = setTimeout(() => {
+        this.isProgrammaticScroll = false;
+        this.programmaticScrollTimeout = undefined;
+      }, 250);
+    });
   }
 
   private watchScrollChanges(): void {
@@ -60,6 +77,7 @@ export class Portfolio implements AfterViewInit {
         auditTime(100),
         map(() => this.content()?.getActiveSectionId() ?? 'hero'),
         distinctUntilChanged(),
+        filter(() => !this.isProgrammaticScroll),
         filter((sectionId) => this.activeSectionService.sectionId() !== sectionId),
         takeUntilDestroyed(this.destroyRef),
       )
@@ -83,5 +101,12 @@ export class Portfolio implements AfterViewInit {
 
   private getRouteForSection(sectionId: string): string {
     return sectionId === 'hero' ? '/' : `/${sectionId}`;
+  }
+
+  private getSectionIdFromUrl(url: string): string {
+    const [path] = url.split(/[?#]/);
+    const sectionId = path.replace(/^\/+/, '');
+
+    return sectionId || 'hero';
   }
 }
