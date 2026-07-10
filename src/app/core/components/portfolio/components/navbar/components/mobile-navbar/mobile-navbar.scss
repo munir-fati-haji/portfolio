@@ -5,9 +5,14 @@
 
   background: var(--portfolio-island-surface);
   border-color: var(--portfolio-glass-outline);
-  backdrop-filter: blur(24px) saturate(150%);
-  filter: drop-shadow(0 1rem 1.75rem var(--portfolio-depth-shadow));
+  backdrop-filter: blur(14px) saturate(128%);
+  filter: drop-shadow(0 0.65rem 1rem var(--portfolio-depth-shadow));
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 0.75rem;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
+  touch-action: pan-x;
 }
 
 .mobile-navbar__island::-webkit-scrollbar {
@@ -16,4 +21,6 @@
 
 .mobile-navbar__link {
   @apply size-11! shrink-0 rounded-full!;
+
+  scroll-snap-align: center;
 }

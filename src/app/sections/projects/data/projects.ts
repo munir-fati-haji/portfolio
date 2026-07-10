@@ -4,6 +4,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     title: 'Automotive Request System Modernization',
     type: 'Freelance project',
+    icon: 'account_tree',
     description:
       'Replaced a VBA and Excel-driven internal workflow with a cleaner request management system for an automotive company.',
     impact: [
@@ -16,6 +17,7 @@ export const PROJECTS: ProjectItem[] = [
   {
     title: 'Multiple Object Tracking for Vehicles',
     type: 'Thesis project',
+    icon: 'track_changes',
     description:
       'Built a video-based vehicle detection and tracking pipeline using YOLOv8 with ByteTrack for multi-object tracking.',
     impact: [

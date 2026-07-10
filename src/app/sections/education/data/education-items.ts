@@ -5,7 +5,7 @@ export const EDUCATION_ITEMS: EducationItem[] = [
     degree: 'M.Sc. Robotics and Automatic Control',
     school: 'Warsaw University of Technology',
     location: 'Warsaw, Poland',
-    period: 'October 2021 - June 2023',
+    period: 'Oct 2021 - Jun 2023',
     grade: 'GPA 4.69 / 5',
     icon: 'precision_manufacturing',
     description:
@@ -28,7 +28,7 @@ export const EDUCATION_ITEMS: EducationItem[] = [
     degree: 'B.Sc. Mechanical Engineering',
     school: 'Debre Berhan University',
     location: 'Debre Berhan, Ethiopia',
-    period: 'October 2015 - January 2021',
+    period: 'Oct 2015 - Jan 2021',
     grade: 'GPA 3.81 / 4',
     icon: 'engineering',
     description:

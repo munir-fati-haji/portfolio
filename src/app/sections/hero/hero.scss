@@ -1,5 +1,9 @@
 @reference '../../../styles.css';
 
+.hero__container {
+  @apply pt-24 sm:pt-28 lg:pt-12;
+}
+
 .hero__intro {
   @apply min-w-0 lg:row-span-2;
 }

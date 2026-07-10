@@ -1,7 +1,7 @@
 @reference '../../../styles.css';
 
 :host {
-  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.72fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-2 gap-4 overflow-x-hidden px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(10rem,0.36fr)_minmax(10rem,0.36fr)] lg:gap-5 lg:px-10 lg:py-12 xl:px-12;
 }
 
 :host > * {
@@ -9,7 +9,7 @@
 }
 
 .working-on__header {
-  @apply lg:col-start-1 lg:row-span-3 lg:row-start-1;
+  @apply col-span-2 lg:col-span-1 lg:col-start-1 lg:row-span-3 lg:row-start-1;
 }
 
 .working-on__focus-card {
@@ -21,15 +21,19 @@
 }
 
 .working-on__focus-card--second {
-  @apply lg:col-start-2 lg:row-start-2;
+  @apply lg:col-start-3 lg:row-start-1;
 }
 
 .working-on__focus-card--third {
-  @apply lg:col-start-2 lg:row-start-3;
+  @apply lg:col-start-2 lg:row-start-2;
+}
+
+.working-on__focus-content {
+  @apply p-4!;
 }
 
 .working-on__focus-title {
-  @apply text-sm leading-6;
+  @apply text-sm leading-5;
 
   color: var(--mat-sys-on-surface-variant);
 }

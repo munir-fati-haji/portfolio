@@ -1,7 +1,7 @@
 @reference '../../../styles.css';
 
 :host {
-  @apply mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 overflow-x-hidden px-4 py-12 sm:px-6 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.72fr)] lg:gap-6 lg:px-10 lg:py-16 xl:px-12;
+  @apply mx-auto grid w-full max-w-7xl grid-cols-2 gap-4 overflow-x-hidden px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(10rem,0.36fr)_minmax(10rem,0.36fr)] lg:gap-5 lg:px-10 lg:py-12 xl:px-12;
 }
 
 :host > * {
@@ -9,7 +9,7 @@
 }
 
 .education__header {
-  @apply lg:col-start-1 lg:row-span-3 lg:row-start-1;
+  @apply col-span-2 lg:col-span-1 lg:col-start-1 lg:row-span-2 lg:row-start-1;
 }
 
 .education__stat-card--degrees {
@@ -17,16 +17,22 @@
 }
 
 .education__stat-card--certificates {
-  @apply lg:col-start-2 lg:row-start-2;
+  @apply lg:col-start-3 lg:row-start-1;
 }
 
 .education__ambassador-link {
-  @apply max-w-full justify-self-start whitespace-normal text-left! leading-5! lg:col-start-2 lg:row-start-3;
+  @apply col-span-2 min-h-10! max-w-full justify-self-start whitespace-normal px-4! text-left! text-sm! leading-5! lg:col-start-2 lg:col-span-2 lg:row-start-2;
 }
 
-.education__item,
-.education__heading-title {
-  @apply lg:col-span-2;
+.education__items,
+.education__heading-title,
+.education__certificates {
+  @apply col-span-2 lg:col-span-3;
+}
+
+.education__items,
+.education__certificates {
+  @apply grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-5;
 }
 
 .education__stat-card,
@@ -35,20 +41,34 @@
   @apply block w-full;
 }
 
+.education__stat-card {
+  @apply min-h-16;
+}
+
+.education__stat-content {
+  @apply grid grid-cols-[auto_auto_1fr] items-center gap-2 p-4!;
+}
+
+.education__stat-content mat-icon {
+  @apply text-xl;
+
+  color: var(--mat-sys-primary);
+}
+
 .education__stat-value {
-  @apply text-3xl font-medium;
+  @apply text-2xl font-medium;
 
   color: var(--mat-sys-primary);
 }
 
 .education__stat-label {
-  @apply mt-1 text-sm leading-6;
+  @apply min-w-0 text-sm leading-5;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .education__heading-title {
-  @apply mt-4 text-sm font-medium uppercase tracking-wide;
+  @apply mt-2 text-sm font-medium uppercase tracking-wide;
 
   color: var(--mat-sys-primary);
 }

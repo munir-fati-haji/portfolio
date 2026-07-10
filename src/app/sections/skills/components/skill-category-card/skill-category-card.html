@@ -5,14 +5,14 @@
     <mat-card-subtitle>{{ category().description }}</mat-card-subtitle>
   </mat-card-header>
 
-  <mat-card-content class="skill-category-card__body">
-    <mat-chip-set class="skill-category-card__skill-list" aria-label="Skills">
-      @for (skill of category().skills; track skill.name) {
-        <mat-chip>
-          <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
-          {{ skill.name }} - {{ skill.level }} - {{ skill.experience }}
-        </mat-chip>
-      }
-    </mat-chip-set>
-  </mat-card-content>
+  <mat-card-actions align="end">
+    <button
+      mat-icon-button
+      type="button"
+      class="skill-category-card__action"
+      aria-label="Open skill details"
+      (click)="openDetails()">
+      <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+    </button>
+  </mat-card-actions>
 </mat-card>

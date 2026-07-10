@@ -1,0 +1,27 @@
+<header class="skill-dialog__header">
+  <mat-icon aria-hidden="true">{{ category.icon }}</mat-icon>
+
+  <p class="skill-dialog__company">Skills</p>
+
+  <h2 mat-dialog-title>{{ category.title }}</h2>
+</header>
+
+<mat-dialog-content>
+  <p class="skill-dialog__summary">{{ category.description }}</p>
+
+  <mat-chip-set aria-label="Skills">
+    @for (skill of category.skills; track skill.name) {
+      <mat-chip>
+        <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
+        {{ skill.name }} - {{ skill.level }}
+        @if (skill.experience) {
+          - {{ skill.experience }}
+        }
+      </mat-chip>
+    }
+  </mat-chip-set>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close type="button">Close</button>
+</mat-dialog-actions>

@@ -1,10 +1,12 @@
 <nav class="mobile-navbar__island" aria-label="Mobile navigation">
   @for (link of links(); track link.label) {
     <button
+      #navLink
       mat-icon-button
       class="mobile-navbar__link"
       routerLinkActive="mobile-navbar__link--active"
       type="button"
+      [class.mobile-navbar__link--active]="isActive(link.route)"
       [routerLinkActiveOptions]="{ exact: link.route === '/' }"
       [routerLink]="link.route"
       [matTooltip]="link.label"

@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, viewChildren } from '@angular/core';
+import { Component, ElementRef, viewChildren } from '@angular/core';
 import { AboutMe } from '@sections/about-me/about-me';
 import { CaseStudy } from '@sections/case-study/case-study';
 import { Contact } from '@sections/contact/contact';
@@ -16,7 +16,6 @@ import { WorkingOn } from '@sections/working-on/working-on';
   styleUrl: './content.scss',
 })
 export class Content {
-  private readonly hostElement = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly sectionElements = viewChildren<unknown, ElementRef<HTMLElement>>('portfolioSection', {
     read: ElementRef,
   });
@@ -26,7 +25,7 @@ export class Content {
   }
 
   public getActiveSectionId(): string {
-    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+    const scrollPosition = window.scrollY + this.getScrollOffset() + window.innerHeight * 0.25;
     const activeSection = this.sectionElements()
       .filter((section) => this.getSectionTop(section.nativeElement) <= scrollPosition)
       .at(-1);
@@ -43,10 +42,19 @@ export class Content {
       return;
     }
 
-    window.scrollTo({ top: this.getSectionTop(sectionElement), behavior: 'auto' });
+    window.scrollTo({
+      top: Math.max(this.getSectionTop(sectionElement) - this.getScrollOffset(), 0),
+      behavior: 'auto',
+    });
   }
 
   private getSectionTop(sectionElement: HTMLElement): number {
     return sectionElement.getBoundingClientRect().top + window.scrollY;
+  }
+
+  private getScrollOffset(): number {
+    const navbar = document.querySelector<HTMLElement>('.navbar__root');
+
+    return (navbar?.getBoundingClientRect().bottom ?? 0) + 16;
   }
 }

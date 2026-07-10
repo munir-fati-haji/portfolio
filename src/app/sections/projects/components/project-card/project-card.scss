@@ -1,7 +1,7 @@
 @reference '../../../../../styles.css';
 
 .project-card__card {
-  @apply h-full overflow-hidden transition duration-200;
+  @apply grid h-full grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-3 overflow-hidden p-3 transition duration-200 sm:grid-cols-[3.75rem_minmax(0,1fr)] sm:gap-4 sm:p-4;
 
   border-color: color-mix(in srgb, var(--mat-sys-tertiary) 18%, var(--portfolio-glass-outline));
 }
@@ -10,39 +10,43 @@
   transform: translateY(-0.2rem);
 }
 
+.project-card__icon {
+  @apply row-span-2 flex h-11 w-11 items-center justify-center rounded-lg text-2xl! sm:h-14 sm:w-14 sm:text-3xl!;
+
+  background: var(--portfolio-icon-surface);
+  color: var(--mat-sys-primary);
+}
+
+.project-card__top-row {
+  @apply grid min-w-0 grid-cols-[minmax(0,1fr)_2.25rem] items-center gap-x-2 sm:grid-cols-[minmax(0,1fr)_2.5rem];
+}
+
+.project-card__title {
+  @apply col-start-1 row-start-1 truncate text-sm font-medium leading-5 sm:text-lg sm:leading-6;
+
+  color: var(--mat-sys-on-surface);
+}
+
+.project-card__type {
+  @apply col-start-1 row-start-2 mt-0.5 truncate text-xs font-medium leading-4 sm:mt-1 sm:text-sm sm:leading-5;
+
+  color: var(--mat-sys-primary);
+}
+
+.project-card__action {
+  @apply col-start-2 row-span-2 row-start-1 justify-self-end;
+}
+
 .project-card__content {
-  @apply p-6!;
+  @apply col-span-2 p-0! pt-2!;
 }
 
 .project-card__description {
-  @apply line-clamp-2 text-sm leading-6;
+  @apply line-clamp-2 text-sm leading-5;
 
   color: var(--mat-sys-on-surface-variant);
 }
 
 .project-card__tech-list {
-  @apply mt-5 flex flex-wrap gap-2;
-}
-
-.project-card__details {
-  @apply mt-5 rounded-2xl px-4 py-3;
-
-  background: var(--portfolio-icon-surface);
-  color: var(--mat-sys-on-surface);
-}
-
-.project-card__details summary {
-  @apply flex cursor-pointer list-none items-center justify-between text-sm font-medium;
-}
-
-.project-card__details summary::-webkit-details-marker {
-  display: none;
-}
-
-.project-card__details[open] summary mat-icon {
-  transform: rotate(180deg);
-}
-
-.project-card__details mat-list {
-  @apply mt-3;
+  @apply mt-3 flex flex-wrap gap-2;
 }

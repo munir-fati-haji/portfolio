@@ -1,8 +1,19 @@
 <mat-card class="project-card__card" appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>{{ project().title }}</mat-card-title>
-    <mat-card-subtitle>{{ project().type }}</mat-card-subtitle>
-  </mat-card-header>
+  <mat-icon class="project-card__icon" aria-hidden="true">{{ project().icon }}</mat-icon>
+
+  <header class="project-card__top-row">
+    <h3 class="project-card__title">{{ project().title }}</h3>
+    <p class="project-card__type">{{ project().type }}</p>
+
+    <button
+      mat-icon-button
+      type="button"
+      class="project-card__action"
+      aria-label="Open project details"
+      (click)="openDetails()">
+      <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+    </button>
+  </header>
 
   <mat-card-content class="project-card__content">
     <p class="project-card__description">{{ project().description }}</p>
@@ -12,21 +23,5 @@
         <mat-chip>{{ item }}</mat-chip>
       }
     </mat-chip-set>
-
-    <details class="project-card__details">
-      <summary>
-        View impact
-        <mat-icon aria-hidden="true">expand_more</mat-icon>
-      </summary>
-
-      <mat-list aria-label="Project impact">
-        @for (item of project().impact; track item) {
-          <mat-list-item>
-            <mat-icon matListItemIcon aria-hidden="true">north_east</mat-icon>
-            <span matListItemTitle>{{ item }}</span>
-          </mat-list-item>
-        }
-      </mat-list>
-    </details>
   </mat-card-content>
 </mat-card>

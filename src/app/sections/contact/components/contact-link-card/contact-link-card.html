@@ -1,11 +1,11 @@
 <mat-card class="contact-link-card__card" appearance="outlined">
   <mat-card-content class="contact-link-card__body">
-    <button mat-button type="button" class="contact-link-card__content" (click)="openExternalUrl(link().href)">
+    <p class="contact-link-card__content">
       <span class="contact-link-card__label">{{ link().label }}</span>
       <span class="contact-link-card__value">
         {{ link().value }}
       </span>
-    </button>
+    </p>
 
     <button
       mat-icon-button

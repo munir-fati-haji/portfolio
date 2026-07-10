@@ -12,10 +12,6 @@
   @apply lg:col-start-1 lg:row-span-2 lg:row-start-1;
 }
 
-.contact__actions {
-  @apply flex flex-wrap gap-3 lg:col-start-1 lg:row-start-3 lg:self-start;
-}
-
 .contact__link-card {
   @apply block w-full;
 }

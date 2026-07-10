@@ -15,13 +15,4 @@ export class ContactLinkCard {
   public readonly link = input.required<ContactLink>();
   public readonly isCopied = input.required<boolean>();
   public readonly copyRequested = output<ContactLink>();
-
-  protected openExternalUrl(url: string): void {
-    if (url.startsWith('mailto:')) {
-      window.location.href = url;
-      return;
-    }
-
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
 }

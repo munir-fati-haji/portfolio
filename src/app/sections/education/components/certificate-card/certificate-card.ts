@@ -1,12 +1,11 @@
 import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { EducationCertificate } from '../../models/education-certificate.model';
 
 @Component({
   selector: 'app-certificate-card',
-  imports: [MatCardModule, MatChipsModule, MatIconModule],
+  imports: [MatCardModule, MatIconModule],
   templateUrl: './certificate-card.html',
   styleUrl: './certificate-card.scss',
   host: { class: 'block' },

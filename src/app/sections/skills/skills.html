@@ -8,19 +8,12 @@
     [class.skills__stat-card--second]="$index === 1"
     [class.skills__stat-card--third]="$index === 2"
     [class.skills__stat-card--fourth]="$index === 3">
-    <mat-card-content>
+    <mat-card-content class="skills__stat-content">
       <p class="skills__stat-value">{{ stat.value }}</p>
       <p class="skills__stat-label">{{ stat.label }}</p>
     </mat-card-content>
   </mat-card>
 }
-
-<mat-chip-set class="skills__legend" aria-label="Skill levels">
-  <mat-chip>Advanced</mat-chip>
-  <mat-chip>Strong</mat-chip>
-  <mat-chip>Practical</mat-chip>
-  <mat-chip>Basic</mat-chip>
-</mat-chip-set>
 
 @for (category of categories; track category.title) {
   <app-skill-category-card class="skills__category-card" [category]="category" />

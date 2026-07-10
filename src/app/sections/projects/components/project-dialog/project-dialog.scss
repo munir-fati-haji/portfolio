@@ -4,7 +4,7 @@
   @apply flex max-h-[calc(100dvh-2rem)] flex-col overflow-hidden;
 }
 
-.experience-dialog__header {
+.project-dialog__header {
   @apply grid shrink-0 grid-cols-[3rem_minmax(0,1fr)] items-center gap-x-4 gap-y-1.5 p-5 pb-3;
 
   border-bottom: 1px solid var(--portfolio-glass-outline);
@@ -16,22 +16,14 @@ mat-list mat-icon {
   color: var(--mat-sys-primary);
 }
 
-.experience-dialog__header > mat-icon,
-.experience-dialog__logo {
+.project-dialog__header > mat-icon {
   @apply mt-1 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-3xl;
 
   background: var(--portfolio-icon-surface);
-}
-
-.experience-dialog__header > mat-icon {
   color: var(--mat-sys-primary);
 }
 
-.experience-dialog__logo {
-  @apply object-contain p-2;
-}
-
-.experience-dialog__company {
+.project-dialog__company {
   @apply min-w-0 truncate text-xs font-medium uppercase tracking-[0.28em];
 
   color: var(--mat-sys-primary);
@@ -43,27 +35,10 @@ h2[mat-dialog-title] {
   color: var(--mat-sys-on-surface);
 }
 
-.experience-dialog__meta,
-.experience-dialog__summary {
-  color: var(--mat-sys-on-surface-variant);
-}
-
-.experience-dialog__meta {
-  @apply col-span-2 flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1 text-sm leading-5;
-}
-
-.experience-dialog__meta span {
-  @apply inline-flex min-w-0 items-center gap-1.5;
-}
-
-.experience-dialog__meta mat-icon {
-  @apply text-base!;
-
-  color: var(--mat-sys-primary);
-}
-
-.experience-dialog__summary {
+.project-dialog__summary {
   @apply mb-5 text-sm leading-6;
+
+  color: var(--mat-sys-on-surface-variant);
 }
 
 mat-dialog-content {
@@ -87,16 +62,15 @@ mat-dialog-actions {
     @apply max-h-[calc(100dvh-1rem)];
   }
 
-  .experience-dialog__header {
+  .project-dialog__header {
     @apply grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3 gap-y-1.5 p-4 pb-3;
   }
 
-  .experience-dialog__header > mat-icon,
-  .experience-dialog__logo {
+  .project-dialog__header > mat-icon {
     @apply h-10 w-10 rounded-xl text-2xl;
   }
 
-  .experience-dialog__company {
+  .project-dialog__company {
     @apply text-[0.625rem] leading-4 tracking-[0.16em];
   }
 
@@ -104,7 +78,7 @@ mat-dialog-actions {
     @apply text-xl! leading-7!;
   }
 
-  .experience-dialog__summary {
+  .project-dialog__summary {
     @apply text-sm leading-6;
   }
 
