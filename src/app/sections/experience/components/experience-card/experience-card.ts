@@ -1,17 +1,31 @@
-import { Component, input } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, inject, input } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { SharedChipButton } from '@shared/components/shared-chip-button/shared-chip-button';
 import { ExperienceItem } from '../../models/experience-item.model';
+import { ExperienceDialog } from '../experience-dialog/experience-dialog';
 
 @Component({
   selector: 'app-experience-card',
-  imports: [MatCardModule, MatIconModule, SharedChipButton],
+  imports: [MatButtonModule, MatCardModule, MatDialogModule, MatIconModule, NgOptimizedImage],
   templateUrl: './experience-card.html',
   styleUrl: './experience-card.scss',
   host: { class: 'block' },
 })
 export class ExperienceCard {
   public readonly experience = input.required<ExperienceItem>();
-  public readonly index = input.required<number>();
+  private readonly dialog = inject(MatDialog);
+
+  public openDetails(): void {
+    this.dialog.open(ExperienceDialog, {
+      autoFocus: false,
+      data: this.experience(),
+      maxHeight: 'calc(100dvh - 2rem)',
+      maxWidth: 'calc(100vw - 2rem)',
+      panelClass: 'portfolio-dialog',
+      width: '44rem',
+    });
+  }
 }

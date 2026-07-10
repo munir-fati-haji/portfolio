@@ -1,51 +1,21 @@
 @reference '../../../../../../../styles.css';
 
-.about-highlight-card__card {
-  @apply rounded-2xl border border-white/10 bg-slate-900/70 p-0 text-white transition hover:border-cyan-300/40 hover:bg-slate-900/90;
-}
-
-:host-context(.app-theme-light) .about-highlight-card__card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  color: var(--portfolio-text) !important;
-}
-
 .about-highlight-card__body {
-  @apply flex gap-4 p-5!;
+  @apply flex gap-3 p-4!;
 }
 
 .about-highlight-card__icon-surface {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur transition group-hover:scale-105 group-hover:bg-cyan-300/15;
-}
+  @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg;
 
-:host-context(.app-theme-light) .about-highlight-card__icon-surface {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
-}
-
-.about-highlight-card__content {
-  @apply min-w-0;
+  color: var(--mat-sys-primary);
 }
 
 .about-highlight-card__title {
-  @apply font-semibold text-white;
-}
-
-:host-context(.app-theme-light) .about-highlight-card__title {
-  color: var(--portfolio-text) !important;
+  @apply font-medium;
 }
 
 .about-highlight-card__description {
-  @apply mt-2 text-sm leading-6 text-slate-400;
-}
+  @apply mt-1 text-sm leading-5;
 
-:host-context(.app-theme-light) .about-highlight-card__description {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--mat-sys-on-surface-variant);
 }

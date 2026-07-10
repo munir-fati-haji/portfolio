@@ -22,7 +22,8 @@ describe('Experience', () => {
 
   it('renders metrics and experience cards from data', () => {
     const fixture = MockRender(Experience);
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
     const cards = ngMocks.findAll(ExperienceCard);
 
     EXPERIENCE_METRICS.forEach((metric) => {
@@ -32,6 +33,5 @@ describe('Experience', () => {
 
     expect(cards).toHaveLength(EXPERIENCE_ITEMS.length);
     expect(ngMocks.input(cards[0], 'experience')).toEqual(EXPERIENCE_ITEMS[0]);
-    expect(ngMocks.input(cards[0], 'index')).toBe(0);
   });
 });

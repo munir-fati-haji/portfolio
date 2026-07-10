@@ -1,13 +1,15 @@
 @reference '../../../styles.css';
 
-.about-me__content {
-  @apply min-w-0;
+.about-me__intro,
+.about-me__skills,
+.about-me__actions {
+  @apply min-w-0 lg:col-start-1;
 }
 
 .about-me__actions {
-  @apply mt-10;
+  @apply justify-self-start;
 }
 
-.about-me__primary-action {
-  @apply inline-flex items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-300/20 transition hover:bg-cyan-200;
+.about-me__highlights {
+  @apply min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-3;
 }

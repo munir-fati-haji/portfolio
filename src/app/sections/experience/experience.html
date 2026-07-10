@@ -1,33 +1,18 @@
-<section id="experience" class="experience__section">
-  <div class="experience__background">
-    <div class="experience__glow-primary"></div>
-    <div class="experience__glow-secondary"></div>
-    <div class="experience__glow-tertiary"></div>
-  </div>
+<app-section-header class="experience__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-  <div class="experience__content">
-    <div class="experience__header-row">
-      <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
+<div class="experience__metrics" aria-label="Career metrics">
+  @for (metric of metrics; track metric.label) {
+    <mat-card appearance="outlined">
+      <mat-card-content class="experience__metric-content">
+        <p class="experience__metric-value">{{ metric.value }}</p>
+        <p class="experience__metric-label">{{ metric.label }}</p>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>
 
-      <div class="experience__metrics-grid">
-        @for (metric of metrics; track metric.label) {
-          <div class="experience__metric">
-            <p class="experience__metric-value">
-              {{ metric.value }}
-            </p>
-
-            <p class="experience__metric-label">
-              {{ metric.label }}
-            </p>
-          </div>
-        }
-      </div>
-    </div>
-
-    <div class="experience__timeline">
-      @for (experience of experiences; track experience.company) {
-        <app-experience-card [experience]="experience" [index]="$index" />
-      }
-    </div>
-  </div>
-</section>
+<div class="experience__grid">
+  @for (item of experiences; track item.role) {
+    <app-experience-card class="experience__card" [experience]="item" />
+  }
+</div>

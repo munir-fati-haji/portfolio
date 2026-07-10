@@ -1,29 +1,22 @@
-<mat-card class="group certificate-card__card" appearance="outlined">
-  <div class="certificate-card__shine"></div>
+<mat-card class="certificate-card__card" appearance="outlined">
+  <mat-card-header>
+    <mat-icon mat-card-avatar aria-hidden="true">{{ certificate().icon }}</mat-icon>
+    <mat-card-title>{{ certificate().school }}</mat-card-title>
+    <mat-card-subtitle>{{ certificate().title }}</mat-card-subtitle>
+  </mat-card-header>
 
-  <mat-card-content class="certificate-card__body">
-    <div class="certificate-card__icon-surface">
-      <div class="certificate-card__icon">
-        <mat-icon>{{ certificate().icon }}</mat-icon>
-      </div>
-
-      <div class="certificate-card__content">
-        <h3 class="certificate-card__school">
-          {{ certificate().school }}
-        </h3>
-
-        <p class="certificate-card__certificate">
-          {{ certificate().title }}
-        </p>
-
-        <p class="certificate-card__period">{{ certificate().location }} - {{ certificate().period }}</p>
-
-        <mat-chip-set class="certificate-card__skill-list" aria-label="Certificate skills">
-          @for (skill of certificate().skills; track skill) {
-            <mat-chip class="certificate-card__skill-chip">{{ skill }}</mat-chip>
-          }
-        </mat-chip-set>
-      </div>
-    </div>
+  <mat-card-content class="certificate-card__meta-row">
+    <span class="certificate-card__meta">
+      <mat-icon aria-hidden="true">workspace_premium</mat-icon>
+      <span>{{ certificate().skills[0] }}</span>
+    </span>
+    <span class="certificate-card__meta">
+      <mat-icon aria-hidden="true">calendar_month</mat-icon>
+      <span>{{ certificate().period }}</span>
+    </span>
+    <span class="certificate-card__meta">
+      <mat-icon aria-hidden="true">location_on</mat-icon>
+      <span>{{ certificate().location }}</span>
+    </span>
   </mat-card-content>
 </mat-card>

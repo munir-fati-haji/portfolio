@@ -1,107 +1,80 @@
 @reference '../../../../../styles.css';
 
 .experience-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-0 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065];
+  @apply grid grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-3 overflow-hidden p-3 transition duration-200 sm:grid-cols-[3.75rem_minmax(0,1fr)] sm:gap-4 sm:p-4;
+
+  border-color: color-mix(in srgb, var(--mat-sys-primary) 22%, var(--portfolio-glass-outline));
 }
 
-:host-context(.app-theme-light) .experience-card__card {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+.experience-card__card:hover {
+  transform: translateY(-0.2rem);
 }
 
-.experience-card__timeline-marker {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
-}
+.experience-card__icon,
+.experience-card__logo {
+  @apply row-span-2 flex h-11 w-11 items-center justify-center rounded-lg text-2xl! sm:h-14 sm:w-14 sm:text-3xl!;
 
-.experience-card__index {
-  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block lg:bottom-6 lg:right-8;
-}
-
-.experience-card__body {
-  @apply p-5! sm:p-7! lg:p-8!;
-}
-
-:host-context(.app-theme-light) .experience-card__index {
-  color: rgba(15, 23, 42, 0.08) !important;
-}
-
-.experience-card__content {
-  @apply relative z-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between;
-}
-
-.experience-card__header {
-  @apply min-w-0;
-}
-
-.experience-card__icon-surface {
-  @apply flex items-start gap-4;
+  background: var(--portfolio-icon-surface);
 }
 
 .experience-card__icon {
-  @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
+  color: var(--mat-sys-primary);
 }
 
-:host-context(.app-theme-light) .experience-card__icon {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+.experience-card__logo {
+  @apply object-contain p-2;
 }
 
-.experience-card__heading {
-  @apply min-w-0;
+.experience-card__top-row {
+  @apply grid min-w-0 grid-cols-[minmax(0,1fr)_2.25rem] items-center gap-x-2 sm:grid-cols-[minmax(0,1fr)_2.5rem];
 }
 
-.experience-card__role {
-  @apply text-2xl font-bold tracking-tight text-white sm:text-3xl;
-}
+.experience-card__title {
+  @apply col-start-1 row-start-1 truncate text-sm font-medium leading-5 sm:text-lg sm:leading-6;
 
-:host-context(.app-theme-light) .experience-card__role {
-  color: var(--portfolio-text) !important;
+  color: var(--mat-sys-on-surface);
 }
 
 .experience-card__company {
-  @apply mt-2 text-sm font-medium text-slate-400;
+  @apply col-start-1 row-start-2 mt-0.5 truncate text-xs font-medium leading-4 sm:mt-1 sm:text-sm sm:leading-5;
+
+  color: var(--mat-sys-primary);
 }
 
-:host-context(.app-theme-light) .experience-card__company {
-  color: var(--portfolio-text-soft) !important;
+.experience-card__meta-row {
+  @apply mt-1.5 flex min-w-0 items-center gap-2 sm:mt-1 sm:gap-2.5;
 }
 
-.experience-card__period {
-  @apply flex flex-wrap gap-2 lg:justify-end;
+.experience-card__meta {
+  @apply flex min-w-0 items-center gap-1 text-[0.6875rem] leading-4 sm:gap-1.5 sm:text-sm sm:leading-5;
+
+  color: var(--mat-sys-on-surface-variant);
 }
 
-.experience-card__description {
-  @apply relative z-10 mt-7 max-w-5xl text-sm leading-7 text-slate-300 sm:text-base;
+.experience-card__meta span {
+  @apply min-w-0 truncate;
 }
 
-:host-context(.app-theme-light) .experience-card__description {
-  color: var(--portfolio-text-muted) !important;
+.experience-card__meta mat-icon {
+  @apply text-sm sm:text-lg;
 }
 
-.experience-card__skill-list {
-  @apply relative z-10 mt-6 flex max-w-5xl flex-wrap gap-2;
+.experience-card__meta + .experience-card__meta {
+  @apply border-l pl-2 sm:pl-3;
+
+  border-color: var(--portfolio-glass-outline);
 }
 
-.experience-card__highlight-list {
-  @apply relative z-10 mt-8 max-w-5xl space-y-3;
+.experience-card__details {
+  @apply col-start-2 row-span-2 row-start-1 justify-self-end;
 }
 
-.experience-card__highlight-item {
-  @apply flex gap-3 text-sm leading-6 text-slate-400;
-}
+@media (width < 23rem) {
+  .experience-card__meta-row {
+    @apply grid grid-cols-1 gap-1;
+  }
 
-:host-context(.app-theme-light) .experience-card__highlight-item {
-  color: var(--portfolio-text-soft) !important;
-}
-
-.experience-card__highlight-marker {
-  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)];
+  .experience-card__meta + .experience-card__meta {
+    @apply border-l-0 pl-0;
+  }
 }

@@ -12,10 +12,12 @@ describe('AboutIntro', () => {
       description: 'First paragraph.',
       secondDescription: 'Second paragraph.',
     });
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
-    expect(fixture.nativeElement.textContent).toContain('About');
-    expect(fixture.nativeElement.textContent).toContain('Clean frontend systems');
-    expect(fixture.nativeElement.textContent).toContain('First paragraph.');
-    expect(fixture.nativeElement.textContent).toContain('Second paragraph.');
+    expect(text).toContain('About');
+    expect(text).toContain('Clean frontend systems');
+    expect(text).toContain('First paragraph.');
+    expect(text).toContain('Second paragraph.');
   });
 });

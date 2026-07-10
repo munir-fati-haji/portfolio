@@ -1,68 +1,27 @@
 @reference '../../../../../../styles.css';
 
 .footer__root {
-  @apply relative hidden! h-auto! min-h-0! overflow-hidden border-t px-4! py-3! shadow-[0_-12px_36px_rgba(0,0,0,0.22)] backdrop-blur-xl xl:flex!;
-}
+  @apply mx-auto mb-4 hidden! min-h-14! max-w-7xl overflow-visible rounded-full border border-solid px-4! py-2! xl:flex!;
 
-.footer__root--dark {
-  @apply border-white/10 bg-[#070b1a]! text-slate-400!;
-}
-
-.footer__root--light {
-  @apply border-slate-200/80 bg-slate-50/95! text-slate-600!;
-}
-
-.footer__backdrop {
-  @apply pointer-events-none absolute left-1/2 top-0 h-16 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300/10 blur-3xl;
-}
-
-:host-context(.app-theme-light) .footer__backdrop {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+  width: calc(100% - 2rem);
 }
 
 .footer__content {
-  @apply relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 text-center text-xs leading-normal sm:flex-row sm:text-left;
+  @apply mx-auto flex w-full items-center justify-between gap-3 text-left text-xs;
 }
 
 .footer__copyright {
-  @apply font-medium text-slate-400;
-}
-
-:host-context(.app-theme-light) .footer__copyright {
-  color: var(--portfolio-text-soft) !important;
+  color: var(--mat-sys-on-surface-variant);
 }
 
 .footer__links {
-  @apply flex items-center justify-center gap-1.5 rounded-full border p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_10px_24px_rgba(0,0,0,0.22)] backdrop-blur-xl;
-}
-
-.footer__links--dark {
-  @apply border-white/10 bg-white/[0.06];
-}
-
-.footer__links--light {
-  @apply border-slate-200 bg-white/80;
+  @apply flex items-center justify-center gap-2 overflow-visible py-1;
 }
 
 .footer__link {
-  @apply inline-flex h-9 w-9 items-center justify-center rounded-full border shadow-sm transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070b1a];
-}
-
-.footer__link--dark {
-  @apply border-white/10 bg-white/[0.08] text-cyan-100 hover:border-cyan-300/50 hover:bg-cyan-300/20 hover:text-white;
-}
-
-.footer__link--light {
-  @apply border-slate-200 bg-white text-cyan-700 hover:border-cyan-500/40 hover:bg-cyan-50 hover:text-cyan-800;
+  @apply flex! size-10! items-center! justify-center! overflow-visible! rounded-full! p-0! leading-none!;
 }
 
 .footer__icon {
-  @apply size-[18px]! text-current! opacity-95 transition group-hover:opacity-100;
-}
-
-.footer__icon svg,
-.footer__icon ::ng-deep svg,
-.footer__icon ::ng-deep svg * {
-  fill: currentColor !important;
-  color: currentColor !important;
+  @apply block! size-5! leading-none!;
 }

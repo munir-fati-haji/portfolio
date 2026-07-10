@@ -1,11 +1,13 @@
 @if (selectable()) {
-  <button mat-button type="button" [class]="chipClasses()" [disabled]="disabled()" (click)="select()">
+  <button mat-stroked-button type="button" [class]="chipClasses()" [disabled]="disabled()" (click)="select()">
     <ng-container [ngTemplateOutlet]="chipContent" />
   </button>
 } @else {
-  <span [class]="chipClasses()">
-    <ng-container [ngTemplateOutlet]="chipContent" />
-  </span>
+  <mat-chip-set class="chip-button-set">
+    <mat-chip [class]="chipClasses()">
+      <ng-container [ngTemplateOutlet]="chipContent" />
+    </mat-chip>
+  </mat-chip-set>
 }
 
 <ng-template #chipContent>

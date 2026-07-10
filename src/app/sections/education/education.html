@@ -1,52 +1,40 @@
-<section id="education" class="education__section">
-  <div class="education__background">
-    <div class="education__glow-primary"></div>
-    <div class="education__glow-secondary"></div>
-    <div class="education__glow-tertiary"></div>
-  </div>
+<app-section-header class="education__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-  <div class="education__content">
-    <div class="education__header-row">
-      <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
+<mat-card class="education__stat-card education__stat-card--degrees" appearance="outlined">
+  <mat-card-content class="education__stat-content">
+    <mat-icon aria-hidden="true">school</mat-icon>
+    <p class="education__stat-value">2</p>
+    <p class="education__stat-label">Academic degrees</p>
+  </mat-card-content>
+</mat-card>
 
-      <div>
-        <div class="education__stats-grid">
-          <div class="education__degree-stat">
-            <p class="education__degree-value">2</p>
-            <p class="education__degree-label">Academic degrees completed</p>
-          </div>
+<mat-card class="education__stat-card education__stat-card--certificates" appearance="outlined">
+  <mat-card-content class="education__stat-content">
+    <mat-icon aria-hidden="true">translate</mat-icon>
+    <p class="education__stat-value">2</p>
+    <p class="education__stat-label">Language certificates</p>
+  </mat-card-content>
+</mat-card>
 
-          <div class="education__certificate-stat">
-            <p class="education__certificate-value">2</p>
-            <p class="education__certificate-label">Language preparation certificates</p>
-          </div>
-        </div>
+<button
+  mat-stroked-button
+  type="button"
+  class="education__ambassador-link"
+  (click)="openExternalUrl(ambassadorProfileUrl)">
+  Open Official WUT Ambassador Profile
+  <mat-icon class="education__external-icon" aria-hidden="true">open_in_new</mat-icon>
+</button>
 
-        <a class="education__ambassador-link" target="_blank" rel="noreferrer" [href]="ambassadorProfileUrl">
-          Open Official WUT Ambassador Profile
-          <span class="education__external-icon" aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </div>
+<div class="education__items">
+  @for (education of educationItems; track education.degree) {
+    <app-education-card class="education__item" [education]="education" />
+  }
+</div>
 
-    <div class="education__timeline">
-      @for (education of educationItems; track education.degree) {
-        <app-education-card [education]="education" [index]="$index" />
-      }
-    </div>
+<p id="education-certificates-title" class="education__heading-title">Language Certificates</p>
 
-    <div class="education__certificates-section">
-      <div class="education__certificates-heading">
-        <div class="education__heading-line-start"></div>
-        <p class="education__heading-title">Language Certificates</p>
-        <div class="education__heading-line-end"></div>
-      </div>
-
-      <div class="education__certificate-grid">
-        @for (certificate of certificates; track certificate.school) {
-          <app-certificate-card [certificate]="certificate" />
-        }
-      </div>
-    </div>
-  </div>
-</section>
+<div class="education__certificates">
+  @for (certificate of certificates; track certificate.school) {
+    <app-certificate-card class="education__certificate" [certificate]="certificate" />
+  }
+</div>

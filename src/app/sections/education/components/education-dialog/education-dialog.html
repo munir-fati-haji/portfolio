@@ -1,0 +1,48 @@
+<header class="education-dialog__header">
+  <mat-icon aria-hidden="true">{{ education.icon }}</mat-icon>
+
+  <p class="education-dialog__company">{{ education.school }}</p>
+
+  <h2 mat-dialog-title>{{ education.degree }}</h2>
+
+  <p class="education-dialog__meta">
+    <span>
+      <mat-icon aria-hidden="true">calendar_month</mat-icon>
+      {{ education.period }}
+    </span>
+    <span>
+      <mat-icon aria-hidden="true">location_on</mat-icon>
+      {{ education.location }}
+    </span>
+  </p>
+</header>
+
+<mat-dialog-content>
+  <mat-chip-set aria-label="Education details">
+    <mat-chip>{{ education.grade }}</mat-chip>
+  </mat-chip-set>
+
+  <p class="education-dialog__summary">{{ education.description }}</p>
+
+  <mat-chip-set aria-label="Education skills">
+    @for (skill of education.skills; track skill.name) {
+      <mat-chip>
+        <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
+        {{ skill.name }}
+      </mat-chip>
+    }
+  </mat-chip-set>
+
+  <mat-list aria-label="Education highlights">
+    @for (highlight of education.highlights; track highlight) {
+      <mat-list-item>
+        <mat-icon matListItemIcon aria-hidden="true">task_alt</mat-icon>
+        <span matListItemTitle>{{ highlight }}</span>
+      </mat-list-item>
+    }
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close type="button">Close</button>
+</mat-dialog-actions>

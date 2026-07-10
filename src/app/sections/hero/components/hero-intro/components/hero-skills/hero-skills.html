@@ -1,18 +1,18 @@
 @for (group of groups(); track group.title) {
   <div>
-    <p class="hero-skills__background">
+    <p class="hero-skills__label">
       {{ group.title }}
     </p>
 
-    <div class="hero-skills__glow-primary">
+    <div class="hero-skills__list">
       @for (skill of group.skills; track skill.label) {
         <button
+          mat-icon-button
           type="button"
-          class="group hero-skills__glow-secondary"
           matTooltipPosition="above"
           [matTooltip]="skill.label"
           [attr.aria-label]="skill.label">
-          <mat-icon class="hero-skills__glow-tertiary" aria-hidden="true" [svgIcon]="skill.icon" />
+          <mat-icon aria-hidden="true" [svgIcon]="skill.icon" />
         </button>
       }
     </div>

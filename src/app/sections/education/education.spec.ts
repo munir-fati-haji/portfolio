@@ -1,4 +1,5 @@
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
+import { vi } from 'vitest';
 
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { CertificateCard } from './components/certificate-card/certificate-card';
@@ -30,17 +31,22 @@ describe('Education', () => {
 
     expect(educationCards).toHaveLength(EDUCATION_ITEMS.length);
     expect(ngMocks.input(educationCards[0], 'education')).toEqual(EDUCATION_ITEMS[0]);
-    expect(ngMocks.input(educationCards[0], 'index')).toBe(0);
     expect(certificateCards).toHaveLength(EDUCATION_CERTIFICATES.length);
     expect(ngMocks.input(certificateCards[0], 'certificate')).toEqual(EDUCATION_CERTIFICATES[0]);
   });
 
-  it('links to the official ambassador profile', () => {
+  it('opens the official ambassador profile from the Material action button', () => {
+    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null);
     const fixture = MockRender(Education);
-    const link = fixture.nativeElement.querySelector('.education__ambassador-link') as HTMLAnchorElement;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const button = nativeElement.querySelector<HTMLButtonElement>('.education__ambassador-link');
 
-    expect(link.href).toBe(WUT_AMBASSADOR_PROFILE_URL);
-    expect(link.target).toBe('_blank');
-    expect(link.rel).toBe('noreferrer');
+    if (button === null) {
+      throw new Error('Education ambassador button was not found.');
+    }
+
+    button.click();
+
+    expect(openSpy).toHaveBeenCalledWith(WUT_AMBASSADOR_PROFILE_URL, '_blank', 'noopener,noreferrer');
   });
 });

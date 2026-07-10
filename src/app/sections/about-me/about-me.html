@@ -1,17 +1,14 @@
 <app-section-container>
-  <div class="about-me__content">
-    <app-about-intro
-      [eyebrow]="eyebrow"
-      [title]="title"
-      [description]="description"
-      [secondDescription]="secondDescription" />
+  <app-about-intro
+    class="about-me__intro"
+    [eyebrow]="eyebrow"
+    [title]="title"
+    [description]="description"
+    [secondDescription]="secondDescription" />
 
-    <app-about-skills [skills]="skills" />
+  <app-about-skills class="about-me__skills" [skills]="skills" />
 
-    <div class="about-me__actions">
-      <a routerLink="/projects" class="about-me__primary-action">View My Work</a>
-    </div>
-  </div>
+  <button mat-flat-button type="button" class="about-me__actions" routerLink="/projects">View My Work</button>
 
-  <app-about-highlights [highlights]="highlights" />
+  <app-about-highlights class="about-me__highlights" [highlights]="highlights" />
 </app-section-container>

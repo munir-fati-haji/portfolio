@@ -1,35 +1,18 @@
-<mat-card class="group skill-category-card__card" appearance="outlined">
-  <div class="skill-category-card__shine"></div>
+<mat-card class="skill-category-card__card" appearance="outlined">
+  <mat-card-header>
+    <mat-icon mat-card-avatar aria-hidden="true">{{ category().icon }}</mat-icon>
+    <mat-card-title>{{ category().title }}</mat-card-title>
+    <mat-card-subtitle>{{ category().description }}</mat-card-subtitle>
+  </mat-card-header>
 
-  <span class="skill-category-card__index"> 0{{ index() + 1 }} </span>
-
-  <mat-card-content class="skill-category-card__body">
-    <div class="skill-category-card__header">
-      <div class="skill-category-card__icon-surface">
-        <mat-icon>{{ category().icon }}</mat-icon>
-      </div>
-
-      <div class="skill-category-card__content">
-        <h3 class="skill-category-card__title">
-          {{ category().title }}
-        </h3>
-
-        <p class="skill-category-card__description">
-          {{ category().description }}
-        </p>
-      </div>
-    </div>
-
-    <div class="skill-category-card__skill-list">
-      @for (skill of category().skills; track skill.name) {
-        <app-shared-chip-button
-          size="sm"
-          [icon]="skill.icon"
-          [label]="skill.name"
-          [badgeLabel]="skill.level"
-          [metaLabel]="skill.experience"
-          [variant]="skill.level | skillLevelVariant" />
-      }
-    </div>
-  </mat-card-content>
+  <mat-card-actions align="end">
+    <button
+      mat-icon-button
+      type="button"
+      class="skill-category-card__action"
+      aria-label="Open skill details"
+      (click)="openDetails()">
+      <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+    </button>
+  </mat-card-actions>
 </mat-card>

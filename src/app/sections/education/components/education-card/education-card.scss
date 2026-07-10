@@ -1,107 +1,42 @@
 @reference '../../../../../styles.css';
 
-.education-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045] p-0 shadow-2xl shadow-black/25 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.065];
+mat-card-header {
+  @apply items-start p-4! pb-2!;
 }
 
-:host-context(.app-theme-light) .education-card__card {
-  border-color: var(--portfolio-border) !important;
+mat-card-header mat-icon {
+  @apply mr-3! flex h-10 w-10 items-center justify-center rounded-lg text-2xl!;
 
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+  background: var(--portfolio-icon-surface);
+  color: var(--mat-sys-primary);
 }
 
-.education-card__timeline-marker {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+mat-card-title {
+  @apply text-base! font-medium! leading-6!;
 }
 
-.education-card__index {
-  @apply pointer-events-none absolute bottom-4 right-6 hidden text-8xl font-black leading-none text-white/[0.04] sm:block lg:bottom-6 lg:right-8;
+mat-card-subtitle {
+  @apply text-sm! leading-5!;
 }
 
-.education-card__body {
-  @apply p-5! sm:p-7! lg:p-8!;
+.education-card__meta-row {
+  @apply grid grid-cols-[max-content_minmax(0,1fr)_2rem] items-center gap-2 px-4! pb-4! pt-2!;
 }
 
-:host-context(.app-theme-light) .education-card__index {
-  color: rgba(15, 23, 42, 0.08) !important;
+.education-card__meta {
+  @apply flex min-w-0 items-center gap-1.5 text-[0.6875rem] leading-5 sm:text-xs;
+
+  color: var(--mat-sys-on-surface-variant);
 }
 
-.education-card__content {
-  @apply relative z-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between;
+.education-card__meta span {
+  @apply min-w-0 truncate;
 }
 
-.education-card__header {
-  @apply min-w-0;
+.education-card__meta mat-icon {
+  @apply text-base;
 }
 
-.education-card__icon-surface {
-  @apply flex items-start gap-4;
-}
-
-.education-card__icon {
-  @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
-}
-
-:host-context(.app-theme-light) .education-card__icon {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
-}
-
-.education-card__heading {
-  @apply min-w-0;
-}
-
-.education-card__school {
-  @apply text-2xl font-bold tracking-tight text-white sm:text-3xl;
-}
-
-:host-context(.app-theme-light) .education-card__school {
-  color: var(--portfolio-text) !important;
-}
-
-.education-card__period {
-  @apply mt-2 text-sm font-medium text-slate-400;
-}
-
-:host-context(.app-theme-light) .education-card__period {
-  color: var(--portfolio-text-soft) !important;
-}
-
-.education-card__degree {
-  @apply flex flex-wrap gap-2 lg:justify-end;
-}
-
-.education-card__description {
-  @apply relative z-10 mt-7 max-w-5xl text-sm leading-7 text-slate-300 sm:text-base;
-}
-
-:host-context(.app-theme-light) .education-card__description {
-  color: var(--portfolio-text-muted) !important;
-}
-
-.education-card__skill-list {
-  @apply relative z-10 mt-6 flex max-w-5xl flex-wrap gap-2;
-}
-
-.education-card__highlight-list {
-  @apply relative z-10 mt-8 max-w-5xl space-y-3;
-}
-
-.education-card__highlight-item {
-  @apply flex gap-3 text-sm leading-6 text-slate-400;
-}
-
-:host-context(.app-theme-light) .education-card__highlight-item {
-  color: var(--portfolio-text-soft) !important;
-}
-
-.education-card__highlight-marker {
-  @apply mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)];
+.education-card__details {
+  @apply justify-self-end;
 }

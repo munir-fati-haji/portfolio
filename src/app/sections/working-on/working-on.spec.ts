@@ -18,12 +18,12 @@ describe('WorkingOn', () => {
     expect(ngMocks.input(sectionHeader, 'description')).toBe(WORKING_ON_DESCRIPTION);
   });
 
-  it('renders each focus area with a display index', () => {
+  it('renders each focus area', () => {
     const fixture = MockRender(WorkingOn);
-    const text = fixture.nativeElement.textContent;
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
-    FOCUS_AREAS.forEach((area, index) => {
-      expect(text).toContain(`0${index + 1}`);
+    FOCUS_AREAS.forEach((area) => {
       expect(text).toContain(area);
     });
   });

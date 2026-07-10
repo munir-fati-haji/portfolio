@@ -9,9 +9,11 @@ describe('AboutHighlightCard', () => {
   it('renders the highlight title, description, and icon', () => {
     const highlight = ABOUT_HIGHLIGHTS[0];
     const fixture = MockRender(AboutHighlightCard, { highlight });
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
-    expect(fixture.nativeElement.textContent).toContain(highlight.title);
-    expect(fixture.nativeElement.textContent).toContain(highlight.description);
-    expect(fixture.nativeElement.textContent).toContain(highlight.icon);
+    expect(text).toContain(highlight.title);
+    expect(text).toContain(highlight.description);
+    expect(text).toContain(highlight.icon);
   });
 });

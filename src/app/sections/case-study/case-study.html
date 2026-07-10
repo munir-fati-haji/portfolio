@@ -1,33 +1,22 @@
 <section class="case-study__section">
-  <div class="case-study__background">
-    <div class="case-study__glow-primary"></div>
-    <div class="case-study__glow-secondary"></div>
-  </div>
+  <app-section-header class="case-study__header" [eyebrow]="eyebrow" [title]="title" [description]="description" />
 
-  <div class="case-study__content">
-    <div class="case-study__layout">
-      <div>
-        <app-section-header [eyebrow]="eyebrow" [title]="title" [description]="description" />
-      </div>
+  <mat-stepper orientation="vertical" class="case-study__stepper">
+    @for (step of steps; track step) {
+      <mat-step>
+        <ng-template matStepLabel>Step {{ $index + 1 }}</ng-template>
+        <p class="case-study__step-text">{{ step }}</p>
+      </mat-step>
+    }
+  </mat-stepper>
 
-      <div class="case-study__panel">
-        <div class="case-study__step-list">
-          @for (step of steps; track step) {
-            <div class="case-study__step-card">
-              <p class="case-study__step-number">Step 0{{ $index + 1 }}</p>
-              <p class="case-study__step-text">{{ step }}</p>
-            </div>
-          }
-        </div>
-
-        <div class="case-study__result-card">
-          <p class="case-study__result-label">Result</p>
-          <p class="case-study__result-text">
-            The goal is always the same: a maintainable solution that is easier to understand, operate, and improve than
-            the process it replaces.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <mat-card class="case-study__result-card" appearance="outlined">
+    <mat-card-content>
+      <p class="case-study__result-label">Result</p>
+      <p class="case-study__result-text">
+        The goal is always the same: a maintainable solution that is easier to understand, operate, and improve than the
+        process it replaces.
+      </p>
+    </mat-card-content>
+  </mat-card>
 </section>

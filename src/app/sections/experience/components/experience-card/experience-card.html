@@ -1,50 +1,32 @@
-<mat-card class="group experience-card__card" appearance="outlined">
-  <div class="experience-card__timeline-marker"></div>
+<mat-card class="experience-card__card" appearance="outlined">
+  @if (experience().logoSrc) {
+    <img class="experience-card__logo" alt="" width="56" height="56" [ngSrc]="experience().logoSrc ?? ''" />
+  } @else {
+    <mat-icon class="experience-card__icon" aria-hidden="true">{{ experience().icon }}</mat-icon>
+  }
 
-  <span class="experience-card__index"> 0{{ index() + 1 }} </span>
+  <header class="experience-card__top-row">
+    <h3 class="experience-card__title">{{ experience().role }}</h3>
+    <p class="experience-card__company">{{ experience().company }}</p>
 
-  <mat-card-content class="experience-card__body">
-    <div class="experience-card__content">
-      <div class="experience-card__header">
-        <div class="experience-card__icon-surface">
-          <div class="experience-card__icon">
-            <mat-icon>{{ experience().icon }}</mat-icon>
-          </div>
+    <button
+      mat-icon-button
+      type="button"
+      class="experience-card__details"
+      aria-label="Open experience details"
+      (click)="openDetails()">
+      <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+    </button>
+  </header>
 
-          <div class="experience-card__heading">
-            <h3 class="experience-card__role">
-              {{ experience().role }}
-            </h3>
-
-            <p class="experience-card__company">{{ experience().company }} - {{ experience().location }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="experience-card__period">
-        <app-shared-chip-button size="xs" variant="cyan" [label]="experience().type" />
-
-        <app-shared-chip-button size="xs" variant="slate" [label]="experience().period" />
-      </div>
-    </div>
-
-    <p class="experience-card__description">
-      {{ experience().summary }}
-    </p>
-
-    <div class="experience-card__skill-list">
-      @for (skill of experience().skills; track skill.name) {
-        <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
-      }
-    </div>
-
-    <ul class="experience-card__highlight-list">
-      @for (highlight of experience().highlights; track highlight) {
-        <li class="experience-card__highlight-item">
-          <span class="experience-card__highlight-marker"></span>
-          <span>{{ highlight }}</span>
-        </li>
-      }
-    </ul>
-  </mat-card-content>
+  <p class="experience-card__meta-row">
+    <span class="experience-card__meta">
+      <mat-icon aria-hidden="true">calendar_month</mat-icon>
+      <span>{{ experience().period }}</span>
+    </span>
+    <span class="experience-card__meta">
+      <mat-icon aria-hidden="true">location_on</mat-icon>
+      <span>{{ experience().location }}</span>
+    </span>
+  </p>
 </mat-card>

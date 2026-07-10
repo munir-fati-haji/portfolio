@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+@use './palettes';
+
+@mixin app-theme($theme-type) {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: $theme-type,
+        primary: palettes.$primary-palette,
+        tertiary: palettes.$tertiary-palette,
+      ),
+      typography: (
+        plain-family: Roboto,
+        brand-family: Roboto,
+        regular-weight: 400,
+        medium-weight: 500,
+        bold-weight: 700,
+      ),
+      density: (
+        scale: 0,
+      ),
+    )
+  );
+}

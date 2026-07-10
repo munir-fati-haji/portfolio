@@ -1,43 +1,45 @@
 @reference '../../../../../styles.css';
 
-:host {
-  @apply block min-w-0 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#10172a] shadow-xl;
+.hero-code-card__card {
+  @apply relative min-w-0 overflow-hidden;
 }
 
-:host-context(.app-theme-light) {
-  border-color: var(--portfolio-border) !important;
+.hero-code-card__card::before,
+.hero-code-card__card::after {
+  @apply absolute top-4 block h-3 w-3 rounded-full;
+
+  content: '';
 }
 
-.hero-code-card__header {
-  @apply flex items-center gap-3 border-b border-white/10 bg-white/3 px-4 py-3 sm:px-6;
+.hero-code-card__card::before {
+  @apply left-5;
+
+  background: var(--mat-sys-error);
 }
 
-:host-context(.app-theme-light) .hero-code-card__header {
-  border-color: var(--portfolio-border) !important;
+.hero-code-card__card::after {
+  @apply left-10;
 
-  background-color: var(--portfolio-bg-elevated) !important;
-}
-
-.hero-code-card__window-action {
-  @apply h-3 w-3 rounded-full;
-}
-
-.hero-code-card__window-action--close {
-  @apply bg-red-400;
-}
-
-.hero-code-card__window-action--minimize {
-  @apply bg-yellow-400;
-}
-
-.hero-code-card__window-action--maximize {
-  @apply bg-green-400;
+  background: radial-gradient(circle at 0.375rem 0.375rem, var(--mat-sys-tertiary) 0 0.34rem, transparent 0.36rem),
+    radial-gradient(circle at 1.625rem 0.375rem, var(--mat-sys-primary) 0 0.34rem, transparent 0.36rem);
+  width: 2rem;
 }
 
 .hero-code-card__body {
-  @apply p-4 sm:p-6;
+  @apply p-4! pt-10! sm:p-6! sm:pt-12!;
 }
 
 .hero-code-card__code {
-  @apply max-w-full overflow-x-auto rounded-xl text-xs leading-6 sm:text-sm sm:leading-7;
+  @apply m-0 max-w-full overflow-x-auto rounded p-4 text-xs leading-6 sm:text-sm sm:leading-7;
+
+  background: var(--mat-sys-surface-container-lowest);
+  color: var(--mat-sys-on-surface);
+  tab-size: 2;
+  white-space: pre;
+}
+
+.hero-code-card__code code {
+  display: block;
+  min-width: max-content;
+  font-family: 'Roboto Mono', Consolas, 'Liberation Mono', monospace;
 }

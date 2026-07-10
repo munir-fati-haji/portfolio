@@ -10,7 +10,9 @@ import { ABOUT_SKILLS } from './data/about-skills';
 import { AboutMe } from './about-me';
 
 describe('AboutMe', () => {
-  beforeEach(() => MockBuilder(AboutMe).mock(SectionContainer).mock(AboutIntro).mock(AboutSkills).mock(AboutHighlights));
+  beforeEach(() =>
+    MockBuilder(AboutMe).mock(SectionContainer).mock(AboutIntro).mock(AboutSkills).mock(AboutHighlights),
+  );
 
   it('passes profile copy to the intro', () => {
     MockRender(AboutMe);

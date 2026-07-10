@@ -1,0 +1,48 @@
+<header class="experience-dialog__header">
+  @if (experience.logoSrc) {
+    <img class="experience-dialog__logo" alt="" width="48" height="48" [ngSrc]="experience.logoSrc ?? ''" />
+  } @else {
+    <mat-icon aria-hidden="true">{{ experience.icon }}</mat-icon>
+  }
+
+  <p class="experience-dialog__company">{{ experience.company }}</p>
+
+  <h2 mat-dialog-title>{{ experience.role }}</h2>
+
+  <p class="experience-dialog__meta">
+    <span>
+      <mat-icon aria-hidden="true">calendar_month</mat-icon>
+      {{ experience.period }}
+    </span>
+    <span>
+      <mat-icon aria-hidden="true">location_on</mat-icon>
+      {{ experience.location }}
+    </span>
+  </p>
+</header>
+
+<mat-dialog-content>
+  <p class="experience-dialog__summary">{{ experience.summary }}</p>
+
+  <mat-chip-set aria-label="Experience skills">
+    @for (skill of skills; track skill.name) {
+      <mat-chip>
+        <mat-icon matChipAvatar aria-hidden="true">{{ skill.icon }}</mat-icon>
+        {{ skill.name }}
+      </mat-chip>
+    }
+  </mat-chip-set>
+
+  <mat-list aria-label="Experience highlights">
+    @for (highlight of highlights; track highlight) {
+      <mat-list-item>
+        <mat-icon matListItemIcon aria-hidden="true">task_alt</mat-icon>
+        <span matListItemTitle>{{ highlight }}</span>
+      </mat-list-item>
+    }
+  </mat-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close type="button">Close</button>
+</mat-dialog-actions>

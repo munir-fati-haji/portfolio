@@ -27,9 +27,8 @@ describe('Content', () => {
 
   it('renders portfolio sections in route order', () => {
     const fixture = MockRender(Content);
-    const sectionIds = Array.from(fixture.point.nativeElement.children as HTMLCollectionOf<Element>).map((element) =>
-      element.getAttribute('data-section-id'),
-    );
+    const nativeElement = fixture.point.nativeElement as HTMLElement;
+    const sectionIds = Array.from(nativeElement.children).map((element) => element.getAttribute('data-section-id'));
 
     expect(sectionIds).toEqual([
       'hero',
@@ -44,9 +43,9 @@ describe('Content', () => {
     ]);
   });
 
-  it('exposes the host element as the scroll element', () => {
+  it('exposes the document root as the scroll element', () => {
     const fixture = MockRender(Content);
 
-    expect(fixture.point.componentInstance.scrollElement).toBe(fixture.point.nativeElement);
+    expect(fixture.point.componentInstance.scrollElement).toBe(document.documentElement);
   });
 });

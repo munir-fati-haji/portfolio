@@ -1,241 +1,225 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
 @import 'highlight.js/styles/github-dark.css';
-
 @custom-variant dark (&:where(.app-theme-dark, .app-theme-dark *));
 
-:root {
-  --portfolio-bg: #070b1a;
-  --portfolio-bg-elevated: rgba(255, 255, 255, 0.045);
-  --portfolio-bg-soft: rgba(255, 255, 255, 0.06);
-  --portfolio-border: rgba(255, 255, 255, 0.1);
-  --portfolio-border-strong: rgba(255, 255, 255, 0.15);
-  --portfolio-text: #ffffff;
-  --portfolio-text-muted: #cbd5e1;
-  --portfolio-text-soft: #94a3b8;
-  --portfolio-card-shadow: rgba(0, 0, 0, 0.25);
+html {
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
 }
 
-.app-theme-light {
-  --portfolio-bg: #f8fafc;
-  --portfolio-bg-elevated: rgba(255, 255, 255, 0.78);
-  --portfolio-bg-soft: rgba(255, 255, 255, 0.64);
-  --portfolio-border: rgba(15, 23, 42, 0.12);
-  --portfolio-border-strong: rgba(15, 23, 42, 0.18);
-  --portfolio-text: #0f172a;
-  --portfolio-text-muted: #334155;
-  --portfolio-text-soft: #64748b;
-  --portfolio-card-shadow: rgba(15, 23, 42, 0.12);
-}
-
-html,
 body {
-  background: var(--portfolio-bg);
+  background: transparent;
+  color: var(--mat-sys-on-surface);
+  position: relative;
+  z-index: 0;
 }
 
-.app-theme-toggle {
-  display: none !important;
+body::before {
+  @apply pointer-events-none fixed inset-x-0 top-0 -z-10 h-screen opacity-100;
+
+  content: '';
+  background:
+    radial-gradient(circle, color-mix(in srgb, var(--mat-sys-primary) 28%, transparent) 0 1px, transparent 1.5px) 0 0 / 2.75rem 2.75rem,
+    radial-gradient(circle, color-mix(in srgb, var(--mat-sys-tertiary) 24%, transparent) 0 1px, transparent 1.5px) 1.375rem 1.375rem / 2.75rem 2.75rem,
+    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--mat-sys-primary) 22%, transparent) 0 18rem, transparent 28rem),
+    radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--mat-sys-tertiary) 20%, transparent) 0 16rem, transparent 26rem),
+    var(--portfolio-app-background);
 }
 
-@media (min-width: 80rem) {
-  .app-theme-toggle {
-    display: inline-flex !important;
+.mat-toolbar.navbar__root,
+.mat-toolbar.footer__root {
+  background: var(--portfolio-island-surface);
+  border-color: var(--portfolio-glass-outline);
+  color: var(--mat-sys-on-surface);
+  backdrop-filter: blur(14px) saturate(128%);
+  filter: drop-shadow(0 0.65rem 1rem var(--portfolio-depth-shadow));
+}
+
+.mat-toolbar.navbar__root {
+  @apply border-b border-solid;
+}
+
+.mat-toolbar.footer__root {
+  @apply border-t border-solid;
+}
+
+.navbar__nav-link.mat-mdc-unelevated-button,
+.navbar__nav-link.mat-mdc-outlined-button {
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--portfolio-icon-surface) 38%, transparent);
+  --mdc-filled-button-label-text-color: var(--mat-sys-on-surface);
+  --mat-filled-button-hover-state-layer-color: var(--mat-sys-primary);
+  --mat-filled-button-focus-state-layer-color: var(--mat-sys-primary);
+  --mat-filled-button-pressed-state-layer-color: var(--mat-sys-primary);
+  --mat-outlined-button-outline-color: color-mix(in srgb, var(--mat-sys-outline-variant) 58%, transparent);
+}
+
+.navbar__nav-link.mat-mdc-unelevated-button.navbar__nav-link--active,
+.navbar__nav-link.mat-mdc-outlined-button.navbar__nav-link--active {
+  --mdc-filled-button-container-color: color-mix(in srgb, var(--mat-sys-primary) 50%, transparent);
+  --mdc-filled-button-label-text-color: var(--mat-sys-on-primary);
+  --mat-outlined-button-label-text-color: var(--mat-sys-on-primary);
+  --mat-outlined-button-outline-color: color-mix(in srgb, var(--mat-sys-primary) 72%, transparent);
+
+  background: color-mix(in srgb, var(--mat-sys-primary) 50%, transparent);
+  color: var(--mat-sys-on-primary);
+}
+
+.navbar__brand.mat-mdc-button,
+.navbar__theme-toggle.mat-mdc-icon-button,
+.mobile-navbar__link.mat-mdc-icon-button,
+.footer__link.mat-mdc-icon-button {
+  --mat-text-button-hover-state-layer-color: var(--mat-sys-primary);
+  --mat-icon-button-hover-state-layer-color: var(--mat-sys-primary);
+
+  background: color-mix(in srgb, var(--portfolio-icon-surface) 34%, transparent);
+  color: var(--mat-sys-on-surface);
+}
+
+.mobile-navbar__link.mat-mdc-icon-button.mobile-navbar__link--active {
+  background: color-mix(in srgb, var(--mat-sys-primary) 48%, transparent);
+  color: var(--mat-sys-on-primary);
+}
+
+.footer__link.mat-mdc-icon-button {
+  color: var(--mat-sys-primary);
+}
+
+.footer__link :where(.footer__icon, .footer__icon svg) {
+  color: currentcolor;
+  fill: currentcolor;
+}
+
+.footer__link :where(.footer__icon svg *:not([fill='none'])) {
+  fill: currentcolor !important;
+}
+
+.footer__link :where(.footer__icon svg *:not([stroke='none'])) {
+  stroke: currentcolor !important;
+}
+
+.mat-mdc-icon-button {
+  @apply overflow-visible;
+}
+
+.mat-mdc-icon-button .mat-icon {
+  @apply inline-flex h-6 w-6 items-center justify-center overflow-visible leading-none;
+}
+
+.mat-mdc-icon-button .mat-icon svg {
+  @apply block h-full w-full overflow-visible;
+}
+
+.mat-mdc-list-item {
+  @apply h-auto! min-h-12! items-start! py-2!;
+}
+
+.mat-mdc-list-item .mdc-list-item__content {
+  @apply overflow-visible;
+}
+
+.mat-mdc-list-item .mdc-list-item__primary-text {
+  @apply overflow-visible whitespace-normal leading-6;
+
+  text-overflow: clip;
+}
+
+.mat-mdc-card {
+  --mat-card-elevated-container-color: var(--portfolio-card-surface);
+  --mat-card-filled-container-color: var(--portfolio-card-surface);
+  --mat-card-outlined-container-color: var(--portfolio-card-surface);
+  --mat-card-outlined-outline-color: var(--portfolio-glass-outline);
+
+  background: color-mix(in srgb, var(--mat-sys-primary) 4%, var(--portfolio-card-surface));
+  border-color: var(--portfolio-glass-outline);
+  filter: drop-shadow(0 0.35rem 0.75rem var(--portfolio-depth-shadow));
+  backdrop-filter: blur(10px) saturate(118%);
+}
+
+.mat-mdc-standard-chip {
+  --mat-chip-elevated-container-color: var(--portfolio-chip-surface);
+  --mat-chip-elevated-disabled-container-color: var(--portfolio-chip-surface);
+  --mat-chip-elevated-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 48%, transparent);
+  --mat-chip-flat-disabled-selected-container-color: color-mix(in srgb, var(--mat-sys-primary) 30%, transparent);
+  --mat-chip-outline-color: var(--portfolio-glass-outline);
+  --mat-chip-outline-width: 1px;
+
+  backdrop-filter: blur(8px) saturate(112%);
+}
+
+.mat-stepper-horizontal,
+.mat-stepper-vertical {
+  --mat-stepper-container-color: transparent;
+  --mat-stepper-header-focus-state-layer-color: transparent;
+  --mat-stepper-header-hover-state-layer-color: transparent;
+
+  background: transparent;
+}
+
+.mat-horizontal-stepper-wrapper,
+.mat-horizontal-content-container,
+.mat-vertical-content-container,
+.mat-vertical-content {
+  background: transparent;
+}
+
+.portfolio-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  background: var(--portfolio-dialog-surface);
+  border: 1px solid var(--portfolio-glass-outline);
+  border-radius: 1.5rem;
+  color: var(--mat-sys-on-surface);
+  backdrop-filter: blur(12px) saturate(122%);
+}
+
+@media (width < 40rem) {
+  .portfolio-dialog .mat-mdc-dialog-content::after {
+    content: '';
+    position: sticky;
+    bottom: -1rem;
+    display: block;
+    height: 0.75rem;
+    margin: 0 -1rem -0.75rem;
+    pointer-events: none;
+    border-bottom: 0.1875rem solid color-mix(in srgb, var(--mat-sys-primary) 34%, transparent);
   }
 }
 
-.app-theme-light [class~='bg-[#070b1a]'],
-.app-theme-light [class~='bg-[#070b1a]!'],
-.app-theme-light [class~='bg-[#070b1a]/80!'],
-.app-theme-light [class~='bg-[#070b1a]/90'] {
-  background-color: var(--portfolio-bg) !important;
+.app-theme-toggle {
+  @apply hidden!;
 }
 
-.app-theme-light [class~='bg-[#030712]/70'] {
-  background-color: rgba(15, 23, 42, 0.28) !important;
+@media (width >= 80rem) {
+  .app-theme-toggle {
+    @apply inline-flex!;
+  }
 }
 
-.app-theme-light [class~='bg-white/[0.035]'],
-.app-theme-light [class~='bg-white/[0.045]'],
-.app-theme-light [class~='bg-white/[0.045]!'],
-.app-theme-light [class~='bg-white/[0.06]'],
-.app-theme-light [class~='bg-white/[0.08]'],
-.app-theme-light [class~='bg-white/3'],
-.app-theme-light [class~='bg-white/5'],
-.app-theme-light [class~='bg-white/10'],
-.app-theme-light [class~='bg-white/10!'] {
-  background-color: var(--portfolio-bg-elevated) !important;
+.app-code-block,
+.app-code-block .hljs {
+  background: var(--mat-sys-surface-container-lowest) !important;
+  color: var(--mat-sys-on-surface) !important;
 }
 
-.app-theme-light [class~='bg-slate-900/70'],
-.app-theme-light [class~='bg-slate-900/90'] {
-  background-color: var(--portfolio-bg-elevated) !important;
+.app-code-block .hljs-keyword,
+.app-code-block .hljs-literal,
+.app-code-block .hljs-built_in,
+.app-code-block .hljs-type {
+  color: var(--mat-sys-tertiary) !important;
 }
 
-.app-theme-light [class~='border-white/10'],
-.app-theme-light [class~='border-white/10!'],
-.app-theme-light [class~='border-white/15'],
-.app-theme-light [class~='border-white/15!'],
-.app-theme-light [class~='border-white/20!'] {
-  border-color: var(--portfolio-border) !important;
+.app-code-block .hljs-string {
+  color: var(--mat-sys-primary) !important;
 }
 
-.app-theme-light [class~='text-white'],
-.app-theme-light [class~='text-white!'] {
-  color: var(--portfolio-text) !important;
+.app-code-block .hljs-title,
+.app-code-block .hljs-attr,
+.app-code-block .hljs-property,
+.app-code-block .hljs-variable,
+.app-code-block .hljs-params {
+  color: var(--mat-sys-primary) !important;
 }
 
-.app-theme-light [class~='text-slate-100'],
-.app-theme-light [class~='text-slate-200'],
-.app-theme-light [class~='text-slate-300'],
-.app-theme-light [class~='text-slate-300!'] {
-  color: var(--portfolio-text-muted) !important;
-}
-
-.app-theme-light [class~='text-slate-400'],
-.app-theme-light [class~='text-slate-500'] {
-  color: var(--portfolio-text-soft) !important;
-}
-
-.app-theme-light [class~='shadow-black/10'],
-.app-theme-light [class~='shadow-black/20'],
-.app-theme-light [class~='shadow-black/25'],
-.app-theme-light [class~='shadow-black/40'] {
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
-}
-
-.app-theme-light [class~='text-white/[0.04]'],
-.app-theme-light [class~='text-white/50'] {
-  color: rgba(15, 23, 42, 0.08) !important;
-}
-
-.app-theme-light .app-navbar,
-.app-theme-light .app-footer {
-  background: rgba(248, 250, 252, 0.86) !important;
-  border-color: rgba(15, 23, 42, 0.12) !important;
-  color: #0f172a !important;
-  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.1) !important;
-}
-
-.app-theme-light .app-footer {
-  box-shadow: 0 -12px 36px rgba(15, 23, 42, 0.08) !important;
-}
-
-.app-theme-light .app-brand {
-  color: #0f172a !important;
-}
-
-.app-theme-light .app-nav-surface,
-.app-theme-light .app-footer-links {
-  background: rgba(255, 255, 255, 0.72) !important;
-  border-color: rgba(15, 23, 42, 0.12) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    0 10px 24px rgba(15, 23, 42, 0.12) !important;
-}
-
-.app-theme-light .app-nav-link,
-.app-theme-light .app-mobile-nav-link,
-.app-theme-light .app-mobile-theme-toggle {
-  color: #334155 !important;
-}
-
-.app-theme-light .app-nav-link:hover,
-.app-theme-light .app-mobile-nav-link:hover,
-.app-theme-light .app-mobile-theme-toggle:hover {
-  background: rgba(8, 145, 178, 0.1) !important;
-  color: #0e7490 !important;
-}
-
-.app-theme-light .app-theme-toggle,
-.app-theme-light .app-menu-toggle,
-.app-theme-light .app-footer-icon {
-  background: rgba(255, 255, 255, 0.78) !important;
-  border-color: rgba(8, 145, 178, 0.22) !important;
-  color: #0891b2 !important;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12) !important;
-}
-
-.app-theme-light .app-mobile-drawer {
-  background: rgba(248, 250, 252, 0.94) !important;
-  border-color: rgba(15, 23, 42, 0.12) !important;
-  color: #0f172a !important;
-  box-shadow: -18px 0 48px rgba(15, 23, 42, 0.16) !important;
-}
-
-.app-theme-light [class~='bg-cyan-300/10'],
-.app-theme-light [class~='bg-cyan-300/10!'],
-.app-theme-light [class~='bg-cyan-300/15'],
-.app-theme-light [class~='bg-cyan-300/15!'] {
-  background-color: rgba(8, 145, 178, 0.1) !important;
-}
-
-.app-theme-light [class~='border-cyan-300/20'],
-.app-theme-light [class~='border-cyan-300/20!'],
-.app-theme-light [class~='border-cyan-300/30'],
-.app-theme-light [class~='border-cyan-300/40'] {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-}
-
-.app-theme-light [class~='text-cyan-100'],
-.app-theme-light [class~='text-cyan-100!'],
-.app-theme-light [class~='text-cyan-200'],
-.app-theme-light [class~='text-cyan-200!'],
-.app-theme-light [class~='text-cyan-300'],
-.app-theme-light [class~='text-cyan-300!'] {
-  color: #0e7490 !important;
-}
-
-.app-theme-light [class~='shadow-cyan-950/20'],
-.app-theme-light [class~='shadow-cyan-950/25'],
-.app-theme-light [class~='shadow-cyan-950/30'] {
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
-}
-
-.app-theme-light .app-secondary-action {
-  border-color: rgba(8, 145, 178, 0.28) !important;
-  color: #0e7490 !important;
-  background: rgba(255, 255, 255, 0.5) !important;
-}
-
-.app-theme-light .app-secondary-action .mdc-button__label {
-  color: #0e7490 !important;
-}
-
-.app-theme-light .app-code-card {
-  background: rgba(255, 255, 255, 0.86) !important;
-  border-color: rgba(15, 23, 42, 0.14) !important;
-  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.14) !important;
-}
-
-.app-theme-light .app-code-card-header {
-  background: rgba(226, 232, 240, 0.9) !important;
-  border-color: rgba(15, 23, 42, 0.12) !important;
-}
-
-.app-theme-light .app-code-block,
-.app-theme-light .app-code-block .hljs {
-  background: #f8fafc !important;
-  color: #0f172a !important;
-}
-
-.app-theme-light .app-code-block .hljs-keyword,
-.app-theme-light .app-code-block .hljs-literal,
-.app-theme-light .app-code-block .hljs-built_in,
-.app-theme-light .app-code-block .hljs-type {
-  color: #7c3aed !important;
-}
-
-.app-theme-light .app-code-block .hljs-string {
-  color: #0369a1 !important;
-}
-
-.app-theme-light .app-code-block .hljs-title,
-.app-theme-light .app-code-block .hljs-attr,
-.app-theme-light .app-code-block .hljs-property {
-  color: #0e7490 !important;
-}
-
-.app-theme-light .app-code-block .hljs-comment {
-  color: #64748b !important;
+.app-code-block .hljs-comment,
+.app-code-block .hljs-punctuation,
+.app-code-block .hljs-operator {
+  color: var(--mat-sys-on-surface-variant) !important;
 }

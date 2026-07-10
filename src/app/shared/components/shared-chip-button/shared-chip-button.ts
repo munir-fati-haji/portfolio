@@ -1,6 +1,7 @@
 import { Component, computed, input, output } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { SHARED_CHIP_BUTTON_DEFAULT_SIZE } from './constants/shared-chip-button-default-size';
 import { SHARED_CHIP_BUTTON_DEFAULT_VARIANT } from './constants/shared-chip-button-default-variant';
@@ -9,7 +10,7 @@ import { SharedChipButtonVariant } from './models/shared-chip-button-variant.mod
 
 @Component({
   selector: 'app-shared-chip-button',
-  imports: [MatButtonModule, MatIconModule, NgTemplateOutlet],
+  imports: [MatButtonModule, MatChipsModule, MatIconModule, NgTemplateOutlet],
   templateUrl: './shared-chip-button.html',
   styleUrl: './shared-chip-button.scss',
 })

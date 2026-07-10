@@ -1,26 +1,19 @@
 <section class="under-construction__section">
-  <div class="under-construction__background">
-    <div class="under-construction__glow-primary"></div>
-    <div class="under-construction__glow-secondary"></div>
-  </div>
-
   <div class="under-construction__content">
-    <div class="under-construction__card">
-      <div class="under-construction__card-glow"></div>
+    <mat-card class="under-construction__card" appearance="outlined">
+      <mat-card-content>
+        <mat-chip-set aria-label="Page status">
+          <mat-chip>Work in progress</mat-chip>
+        </mat-chip-set>
 
-      <span class="under-construction__status"> WIP </span>
-
-      <div class="under-construction__icon-surface">
         <mat-icon class="under-construction__icon"> construction </mat-icon>
-      </div>
 
-      <p class="under-construction__eyebrow">Work in progress</p>
+        <h2 class="under-construction__title">{{ sectionName() }} is under construction</h2>
 
-      <h2 class="under-construction__title">{{ sectionName() }} is under construction</h2>
-
-      <p class="under-construction__description">
-        I am still working on the {{ sectionName() }} section. More content will be added soon.
-      </p>
-    </div>
+        <p class="under-construction__description">
+          I am still working on the {{ sectionName() }} section. More content will be added soon.
+        </p>
+      </mat-card-content>
+    </mat-card>
   </div>
 </section>

@@ -1,50 +1,26 @@
-<mat-card class="group education-card__card" appearance="outlined">
-  <div class="education-card__timeline-marker"></div>
+<mat-card class="education-card__card" appearance="outlined">
+  <mat-card-header>
+    <mat-icon mat-card-avatar aria-hidden="true">{{ education().icon }}</mat-icon>
+    <mat-card-title>{{ education().degree }}</mat-card-title>
+    <mat-card-subtitle>{{ education().school }}</mat-card-subtitle>
+  </mat-card-header>
 
-  <span class="education-card__index"> 0{{ index() + 1 }} </span>
-
-  <mat-card-content class="education-card__body">
-    <div class="education-card__content">
-      <div class="education-card__header">
-        <div class="education-card__icon-surface">
-          <div class="education-card__icon">
-            <mat-icon>{{ education().icon }}</mat-icon>
-          </div>
-
-          <div class="education-card__heading">
-            <h3 class="education-card__school">
-              {{ education().degree }}
-            </h3>
-
-            <p class="education-card__period">{{ education().school }} - {{ education().location }}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="education-card__degree">
-        <app-shared-chip-button size="xs" variant="cyan" [label]="education().grade" />
-
-        <app-shared-chip-button size="xs" variant="slate" [label]="education().period" />
-      </div>
-    </div>
-
-    <p class="education-card__description">
-      {{ education().description }}
-    </p>
-
-    <div class="education-card__skill-list">
-      @for (skill of education().skills; track skill.name) {
-        <app-shared-chip-button size="sm" variant="cyan" [icon]="skill.icon" [label]="skill.name" />
-      }
-    </div>
-
-    <ul class="education-card__highlight-list">
-      @for (highlight of education().highlights; track highlight) {
-        <li class="education-card__highlight-item">
-          <span class="education-card__highlight-marker"></span>
-          <span>{{ highlight }}</span>
-        </li>
-      }
-    </ul>
+  <mat-card-content class="education-card__meta-row">
+    <span class="education-card__meta">
+      <mat-icon aria-hidden="true">calendar_month</mat-icon>
+      <span>{{ education().period }}</span>
+    </span>
+    <span class="education-card__meta">
+      <mat-icon aria-hidden="true">location_on</mat-icon>
+      <span>{{ education().location }}</span>
+    </span>
+    <button
+      mat-icon-button
+      type="button"
+      class="education-card__details"
+      aria-label="Open education details"
+      (click)="openDetails()">
+      <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+    </button>
   </mat-card-content>
 </mat-card>

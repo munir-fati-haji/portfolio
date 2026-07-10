@@ -14,10 +14,12 @@ describe('HeroIntro', () => {
       description: 'Builds Angular applications.',
       skills: SKILL_GROUPS,
     });
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
 
-    expect(fixture.nativeElement.textContent).toContain('Munir');
-    expect(fixture.nativeElement.textContent).toContain('Frontend Developer');
-    expect(fixture.nativeElement.textContent).toContain('Builds Angular applications.');
+    expect(text).toContain('Munir');
+    expect(text).toContain('Frontend Developer');
+    expect(text).toContain('Builds Angular applications.');
   });
 
   it('passes skill groups to the skills component', () => {

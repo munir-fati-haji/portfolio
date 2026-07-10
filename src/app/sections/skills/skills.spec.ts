@@ -1,7 +1,6 @@
 import { MockBuilder, MockRender, ngMocks } from 'ng-mocks';
 
 import { SectionHeader } from '@shared/components/section-header/section-header';
-import { SharedChipButton } from '@shared/components/shared-chip-button/shared-chip-button';
 import { SkillCategoryCard } from './components/skill-category-card/skill-category-card';
 import { SKILL_CATEGORIES } from './data/skill-categories';
 import { SKILL_STATS } from './data/skill-stats';
@@ -9,7 +8,7 @@ import { SKILLS_DESCRIPTION, SKILLS_EYEBROW, SKILLS_TITLE } from './data/skills-
 import { Skills } from './skills';
 
 describe('Skills', () => {
-  beforeEach(() => MockBuilder(Skills).mock(SectionHeader).mock(SharedChipButton).mock(SkillCategoryCard));
+  beforeEach(() => MockBuilder(Skills).mock(SectionHeader).mock(SkillCategoryCard));
 
   it('passes copy to the section header', () => {
     MockRender(Skills);
@@ -21,10 +20,10 @@ describe('Skills', () => {
     expect(ngMocks.input(sectionHeader, 'description')).toBe(SKILLS_DESCRIPTION);
   });
 
-  it('renders stats, legend chips, and category cards from data', () => {
+  it('renders stats and category cards from data', () => {
     const fixture = MockRender(Skills);
-    const text = fixture.nativeElement.textContent;
-    const legendChips = ngMocks.findAll(SharedChipButton);
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const text = nativeElement.textContent;
     const categoryCards = ngMocks.findAll(SkillCategoryCard);
 
     SKILL_STATS.forEach((stat) => {
@@ -32,14 +31,7 @@ describe('Skills', () => {
       expect(text).toContain(stat.label);
     });
 
-    expect(legendChips.map((chip) => ngMocks.input(chip, 'label'))).toEqual([
-      'Advanced',
-      'Strong',
-      'Practical',
-      'Basic',
-    ]);
     expect(categoryCards).toHaveLength(SKILL_CATEGORIES.length);
     expect(ngMocks.input(categoryCards[0], 'category')).toEqual(SKILL_CATEGORIES[0]);
-    expect(ngMocks.input(categoryCards[0], 'index')).toBe(0);
   });
 });

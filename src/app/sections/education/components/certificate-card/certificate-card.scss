@@ -1,99 +1,46 @@
 @reference '../../../../../styles.css';
 
-.certificate-card__card {
-  @apply relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-0 shadow-xl shadow-black/20 backdrop-blur transition hover:border-cyan-300/30 hover:bg-white/[0.055];
+mat-card-header {
+  @apply items-start p-4! pb-2!;
 }
 
-:host-context(.app-theme-light) .certificate-card__card {
-  border-color: var(--portfolio-border) !important;
+mat-card-header mat-icon {
+  @apply mr-3! flex h-10 w-10 items-center justify-center rounded-lg text-2xl!;
 
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+  background: var(--portfolio-icon-surface);
+  color: var(--mat-sys-primary);
 }
 
-.certificate-card__shine {
-  @apply absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent;
+mat-card-title {
+  @apply text-base! font-medium! leading-6!;
 }
 
-.certificate-card__body {
-  @apply p-5! sm:p-6!;
+mat-card-subtitle {
+  @apply text-sm! leading-5!;
 }
 
-.certificate-card__icon-surface {
-  @apply relative z-10 flex items-start gap-4;
+.certificate-card__meta-row {
+  @apply grid grid-cols-[max-content_minmax(0,1fr)_minmax(0,1fr)] items-center gap-2 px-4! pb-4! pt-2!;
 }
 
-.certificate-card__icon {
-  @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-300 shadow-lg shadow-cyan-950/30 backdrop-blur;
+.certificate-card__meta {
+  @apply flex min-w-0 items-center gap-1.5 text-[0.6875rem] leading-5 sm:text-xs;
+
+  color: var(--mat-sys-on-surface-variant);
 }
 
-:host-context(.app-theme-light) .certificate-card__icon {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
-
-  --tw-shadow-color: rgba(8, 145, 178, 0.18) !important;
+.certificate-card__meta span {
+  @apply min-w-0 truncate;
 }
 
-.certificate-card__content {
-  @apply min-w-0;
+.certificate-card__meta mat-icon {
+  @apply text-base;
+
+  color: var(--mat-sys-primary);
 }
 
-.certificate-card__school {
-  @apply text-lg font-bold text-white;
-}
-
-:host-context(.app-theme-light) .certificate-card__school {
-  color: var(--portfolio-text) !important;
-}
-
-.certificate-card__certificate {
-  @apply mt-1 text-sm leading-6 text-slate-300;
-}
-
-:host-context(.app-theme-light) .certificate-card__certificate {
-  color: var(--portfolio-text-muted) !important;
-}
-
-.certificate-card__period {
-  @apply mt-1 text-sm text-slate-500;
-}
-
-:host-context(.app-theme-light) .certificate-card__period {
-  color: var(--portfolio-text-soft) !important;
-}
-
-.certificate-card__skill-list {
-  @apply mt-4 flex flex-wrap gap-2;
-}
-
-.certificate-card__skill-chip {
-  @apply border border-white/12 bg-white/[0.07]! text-slate-300!;
-}
-
-:host-context(.app-theme-dark) .certificate-card__skill-chip {
-  --mat-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
-  --mat-chip-label-text-color: #e2e8f0;
-  --mdc-chip-elevated-container-color: rgba(255, 255, 255, 0.08);
-  --mdc-chip-label-text-color: #e2e8f0;
-  --mdc-chip-outline-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: #e2e8f0 !important;
-}
-
-:host-context(.app-theme-light) .certificate-card__skill-chip {
-  border-color: var(--portfolio-border) !important;
-
-  background-color: var(--portfolio-bg-elevated) !important;
-
-  color: var(--portfolio-text-muted) !important;
-}
-
-:host-context(.app-theme-dark) .certificate-card__skill-chip ::ng-deep .mat-mdc-chip-action-label,
-:host-context(.app-theme-dark) .certificate-card__skill-chip ::ng-deep .mdc-evolution-chip__text-label {
-  color: currentColor !important;
+@media (width < 28rem) {
+  .certificate-card__meta-row {
+    @apply grid-cols-[max-content_minmax(0,1fr)];
+  }
 }

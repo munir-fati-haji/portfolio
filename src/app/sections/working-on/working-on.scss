@@ -1,69 +1,39 @@
 @reference '../../../styles.css';
 
-.working-on__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
+:host {
+  @apply mx-auto grid w-full max-w-7xl grid-cols-2 gap-4 overflow-x-hidden px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[minmax(0,1fr)_minmax(10rem,0.36fr)_minmax(10rem,0.36fr)] lg:gap-5 lg:px-10 lg:py-12 xl:px-12;
 }
 
-:host-context(.app-theme-light) .working-on__section {
-  color: var(--portfolio-text) !important;
-}
-
-.working-on__background {
-  @apply hidden;
-}
-
-.working-on__glow-primary {
-  @apply absolute left-1/2 top-12 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-300/10 blur-3xl;
-}
-
-:host-context(.app-theme-light) .working-on__glow-primary {
-  background-color: rgba(8, 145, 178, 0.1) !important;
-}
-
-.working-on__content {
-  @apply relative mx-auto flex min-h-[calc(100svh-64px)] max-w-6xl items-center;
+:host > * {
+  min-width: 0;
 }
 
 .working-on__header {
-  @apply grid w-full gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center;
-}
-
-.working-on__focus-grid {
-  @apply space-y-4;
+  @apply col-span-2 lg:col-span-1 lg:col-start-1 lg:row-span-3 lg:row-start-1;
 }
 
 .working-on__focus-card {
-  @apply rounded-3xl border border-white/10 bg-white/[0.045] p-5 shadow-xl shadow-black/20 backdrop-blur;
+  @apply block w-full;
 }
 
-:host-context(.app-theme-light) .working-on__focus-card {
-  border-color: var(--portfolio-border) !important;
+.working-on__focus-card--first {
+  @apply lg:col-start-2 lg:row-start-1;
+}
 
-  background-color: var(--portfolio-bg-elevated) !important;
+.working-on__focus-card--second {
+  @apply lg:col-start-3 lg:row-start-1;
+}
 
-  --tw-shadow-color: var(--portfolio-card-shadow) !important;
+.working-on__focus-card--third {
+  @apply lg:col-start-2 lg:row-start-2;
 }
 
 .working-on__focus-content {
-  @apply flex gap-4;
-}
-
-.working-on__focus-index {
-  @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-300/20 bg-cyan-300/10 text-sm font-bold text-cyan-200;
-}
-
-:host-context(.app-theme-light) .working-on__focus-index {
-  border-color: rgba(8, 145, 178, 0.25) !important;
-
-  background-color: rgba(8, 145, 178, 0.1) !important;
-
-  color: #0e7490 !important;
+  @apply p-4!;
 }
 
 .working-on__focus-title {
-  @apply text-sm leading-7 text-slate-300 sm:text-base;
-}
+  @apply text-sm leading-5;
 
-:host-context(.app-theme-light) .working-on__focus-title {
-  color: var(--portfolio-text-muted) !important;
+  color: var(--mat-sys-on-surface-variant);
 }

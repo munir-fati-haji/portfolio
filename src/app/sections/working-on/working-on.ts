@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { FOCUS_AREAS } from './data/focus-areas';
 import { WORKING_ON_DESCRIPTION, WORKING_ON_EYEBROW, WORKING_ON_TITLE } from './data/working-on-copy';
 
 @Component({
   selector: 'app-working-on',
-  imports: [SectionHeader],
+  imports: [MatCardModule, SectionHeader],
   templateUrl: './working-on.html',
   styleUrl: './working-on.scss',
 })

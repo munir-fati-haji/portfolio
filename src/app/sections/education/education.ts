@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { CertificateCard } from './components/certificate-card/certificate-card';
 import { EducationCard } from './components/education-card/education-card';
@@ -9,7 +13,15 @@ import { WUT_AMBASSADOR_PROFILE_URL } from './data/education-links';
 
 @Component({
   selector: 'app-education',
-  imports: [CertificateCard, EducationCard, SectionHeader],
+  imports: [
+    CertificateCard,
+    EducationCard,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
+    SectionHeader,
+  ],
   templateUrl: './education.html',
   styleUrl: './education.scss',
 })
@@ -20,4 +32,8 @@ export class Education {
   public readonly description = EDUCATION_DESCRIPTION;
   public readonly educationItems = EDUCATION_ITEMS;
   public readonly certificates = EDUCATION_CERTIFICATES;
+
+  protected openExternalUrl(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
 }

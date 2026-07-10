@@ -1,13 +1,39 @@
 @reference '../../../../styles.css';
 
+:host {
+  display: flow-root;
+  overflow-x: clip;
+  min-height: 100%;
+  width: 100%;
+  max-width: 100vw;
+}
+
 .portfolio__navbar {
-  @apply shrink-0;
+  @apply block;
+
+  float: inline-start;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 30;
+  width: 100%;
 }
 
 .portfolio__content {
-  @apply min-h-0 flex-1 overflow-y-auto;
+  @apply block overflow-x-hidden;
+
+  float: inline-start;
+  min-height: 0;
+  width: 100%;
 }
 
 .portfolio__footer {
-  @apply shrink-0;
+  @apply block;
+
+  float: inline-start;
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: 30;
+  width: 100%;
 }

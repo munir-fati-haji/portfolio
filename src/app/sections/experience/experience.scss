@@ -1,69 +1,50 @@
 @reference '../../../styles.css';
 
-.experience__section {
-  @apply relative overflow-hidden bg-transparent px-4 py-24 text-white sm:px-6 lg:px-10 xl:px-12;
+:host {
+  @apply mx-auto grid w-full max-w-7xl gap-4 overflow-x-hidden px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-8 lg:px-10 lg:py-12 xl:px-12;
 }
 
-:host-context(.app-theme-light) .experience__section {
-  color: var(--portfolio-text) !important;
+:host > * {
+  min-width: 0;
 }
 
-.experience__background {
-  @apply hidden;
+.experience__header {
+  @apply max-w-3xl lg:col-start-1 lg:row-start-1;
 }
 
-.experience__glow-primary {
-  @apply absolute left-[-10rem] top-20 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl;
+.experience__metrics,
+.experience__grid {
+  @apply grid content-start gap-3;
 }
 
-:host-context(.app-theme-light) .experience__glow-primary {
-  background-color: rgba(8, 145, 178, 0.1) !important;
+.experience__metrics {
+  @apply grid-cols-2 self-start lg:col-start-1 lg:row-start-2;
 }
 
-.experience__glow-secondary {
-  @apply absolute right-[-12rem] top-1/3 h-[32rem] w-[32rem] rounded-full bg-blue-600/10 blur-3xl;
+.experience__grid {
+  @apply grid-cols-1 md:grid-cols-1 lg:col-start-2 lg:row-span-2 lg:row-start-1 xl:grid-cols-1;
 }
 
-.experience__glow-tertiary {
-  @apply absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-300/5 blur-3xl;
+.experience__metrics > mat-card {
+  @apply overflow-hidden;
 }
 
-.experience__content {
-  @apply relative mx-auto max-w-7xl;
-}
-
-.experience__header-row {
-  @apply grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-end;
-}
-
-.experience__metrics-grid {
-  @apply grid gap-5 sm:grid-cols-2;
-}
-
-.experience__metric {
-  @apply border-l border-cyan-300/30 pl-4;
-}
-
-:host-context(.app-theme-light) .experience__metric {
-  border-color: rgba(8, 145, 178, 0.25) !important;
+.experience__metric-content {
+  @apply p-4! lg:p-5!;
 }
 
 .experience__metric-value {
-  @apply text-3xl font-black tracking-tight text-cyan-300;
-}
+  @apply text-2xl font-medium leading-7 lg:text-3xl lg:leading-9;
 
-:host-context(.app-theme-light) .experience__metric-value {
-  color: #0e7490 !important;
+  color: var(--mat-sys-primary);
 }
 
 .experience__metric-label {
-  @apply mt-1 text-sm leading-6 text-slate-400;
+  @apply mt-1 text-sm leading-5 lg:text-base lg:leading-6;
+
+  color: var(--mat-sys-on-surface-variant);
 }
 
-:host-context(.app-theme-light) .experience__metric-label {
-  color: var(--portfolio-text-soft) !important;
-}
-
-.experience__timeline {
-  @apply mt-16 space-y-8;
+.experience__card {
+  @apply block;
 }

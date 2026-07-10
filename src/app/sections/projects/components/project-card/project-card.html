@@ -1,30 +1,26 @@
-<mat-card class="group project-card__card" appearance="outlined">
-  <div class="project-card__shine"></div>
+<mat-card class="project-card__card" appearance="outlined">
+  <mat-icon class="project-card__icon" aria-hidden="true">{{ project().icon }}</mat-icon>
+
+  <header class="project-card__top-row">
+    <h3 class="project-card__title">{{ project().title }}</h3>
+    <p class="project-card__type">{{ project().type }}</p>
+
+    <button
+      mat-icon-button
+      type="button"
+      class="project-card__action"
+      aria-label="Open project details"
+      (click)="openDetails()">
+      <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+    </button>
+  </header>
 
   <mat-card-content class="project-card__content">
-    <div class="project-card__header">
-      <div>
-        <p class="project-card__type">{{ project().type }}</p>
-        <h3 class="project-card__title">{{ project().title }}</h3>
-      </div>
-
-      <mat-chip class="project-card__featured-chip">Featured</mat-chip>
-    </div>
-
     <p class="project-card__description">{{ project().description }}</p>
 
-    <ul class="project-card__feature-list">
-      @for (item of project().impact; track item) {
-        <li class="project-card__feature-item">
-          <span class="project-card__feature-marker"></span>
-          <span>{{ item }}</span>
-        </li>
-      }
-    </ul>
-
-    <mat-chip-set class="project-card__tech-list" aria-label="Project stack">
-      @for (item of project().stack; track item) {
-        <mat-chip class="project-card__tech-chip">{{ item }}</mat-chip>
+    <mat-chip-set class="project-card__tech-list" aria-label="Project stack preview">
+      @for (item of project().stack.slice(0, 4); track item) {
+        <mat-chip>{{ item }}</mat-chip>
       }
     </mat-chip-set>
   </mat-card-content>

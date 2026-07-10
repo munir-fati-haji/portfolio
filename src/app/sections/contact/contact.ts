@@ -1,7 +1,5 @@
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { RouterLink } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
 import { filter, timer } from 'rxjs';
 import { SectionHeader } from '@shared/components/section-header/section-header';
 import { ContactLinkCard } from './components/contact-link-card/contact-link-card';
@@ -11,7 +9,7 @@ import { ContactLink } from './models/contact-link.model';
 
 @Component({
   selector: 'app-contact',
-  imports: [ContactLinkCard, RouterLink, MatButtonModule, SectionHeader],
+  imports: [ContactLinkCard, SectionHeader],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
@@ -37,7 +35,9 @@ export class Contact {
         filter(() => this.copiedLabel() === link.label),
         takeUntilDestroyed(this.destroyRef),
       )
-      .subscribe(() => this.copiedLabel.set(null));
+      .subscribe(() => {
+        this.copiedLabel.set(null);
+      });
   }
 
   private async copyWithFallback(value: string): Promise<void> {

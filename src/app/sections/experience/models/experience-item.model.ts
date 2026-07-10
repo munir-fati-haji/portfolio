@@ -7,6 +7,7 @@ export interface ExperienceItem {
   period: string;
   type: string;
   icon: string;
+  logoSrc?: string;
   summary: string;
   highlights: string[];
   skills: ExperienceSkill[];

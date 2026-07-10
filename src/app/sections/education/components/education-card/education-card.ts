@@ -1,17 +1,30 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { SharedChipButton } from '@shared/components/shared-chip-button/shared-chip-button';
 import { EducationItem } from '../../models/education-item.model';
+import { EducationDialog } from '../education-dialog/education-dialog';
 
 @Component({
   selector: 'app-education-card',
-  imports: [MatCardModule, MatIconModule, SharedChipButton],
+  imports: [MatButtonModule, MatCardModule, MatDialogModule, MatIconModule],
   templateUrl: './education-card.html',
   styleUrl: './education-card.scss',
   host: { class: 'block' },
 })
 export class EducationCard {
   public readonly education = input.required<EducationItem>();
-  public readonly index = input.required<number>();
+  private readonly dialog = inject(MatDialog);
+
+  public openDetails(): void {
+    this.dialog.open(EducationDialog, {
+      autoFocus: false,
+      data: this.education(),
+      maxHeight: 'calc(100dvh - 2rem)',
+      maxWidth: 'calc(100vw - 2rem)',
+      panelClass: 'portfolio-dialog',
+      width: '44rem',
+    });
+  }
 }
