@@ -2,6 +2,7 @@ import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { saveAs } from 'file-saver';
 import { HeroSkills } from './components/hero-skills/hero-skills';
 import { HeroSkillGroup } from './models/hero-skill-group';
 
@@ -19,10 +20,6 @@ export class HeroIntro {
   public readonly skills = input.required<HeroSkillGroup[]>();
 
   public downloadCv(): void {
-    const link = document.createElement('a');
-
-    link.href = new URL('Munir_Fati_Haji_CV.pdf', document.baseURI).href;
-    link.download = 'Munir_Fati_Haji_CV.pdf';
-    link.click();
+    saveAs('Munir_Fati_Haji_CV.pdf', 'Munir_Fati_Haji_CV.pdf');
   }
 }
