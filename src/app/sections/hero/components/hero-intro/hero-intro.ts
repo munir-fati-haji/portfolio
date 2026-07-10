@@ -17,4 +17,12 @@ export class HeroIntro {
   public readonly role = input.required<string>();
   public readonly description = input.required<string>();
   public readonly skills = input.required<HeroSkillGroup[]>();
+
+  public downloadCv(): void {
+    const link = document.createElement('a');
+
+    link.href = new URL('Munir_Fati_Haji_CV.pdf', document.baseURI).href;
+    link.download = 'Munir_Fati_Haji_CV.pdf';
+    link.click();
+  }
 }
