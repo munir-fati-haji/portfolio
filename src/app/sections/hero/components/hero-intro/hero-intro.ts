@@ -20,6 +20,7 @@ export class HeroIntro {
   public readonly skills = input.required<HeroSkillGroup[]>();
 
   public downloadCv(): void {
-    saveAs('Munir_Fati_Haji_CV.pdf', 'Munir_Fati_Haji_CV.pdf');
+    const cvFileName = 'Munir_Fati_Haji_CV.pdf';
+    saveAs(cvFileName, cvFileName);
   }
 }
