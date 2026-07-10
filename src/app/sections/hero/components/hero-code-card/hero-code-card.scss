@@ -18,11 +18,10 @@
 }
 
 .hero-code-card__card::after {
-  @apply left-10;
+  @apply left-10 w-8;
 
   background: radial-gradient(circle at 0.375rem 0.375rem, var(--mat-sys-tertiary) 0 0.34rem, transparent 0.36rem),
     radial-gradient(circle at 1.625rem 0.375rem, var(--mat-sys-primary) 0 0.34rem, transparent 0.36rem);
-  width: 2rem;
 }
 
 .hero-code-card__body {
@@ -39,7 +38,7 @@
 }
 
 .hero-code-card__code code {
-  display: block;
-  min-width: max-content;
+  @apply block min-w-max;
+
   font-family: 'Roboto Mono', Consolas, 'Liberation Mono', monospace;
 }
