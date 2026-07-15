@@ -1,13 +1,17 @@
 @use '@angular/material' as mat;
 @use './palettes';
 
-@mixin app-theme($theme-type) {
+@mixin app-theme(
+  $theme-type,
+  $primary-palette: palettes.$primary-palette,
+  $tertiary-palette: palettes.$tertiary-palette
+) {
   @include mat.theme(
     (
       color: (
         theme-type: $theme-type,
-        primary: palettes.$primary-palette,
-        tertiary: palettes.$tertiary-palette,
+        primary: $primary-palette,
+        tertiary: $tertiary-palette,
       ),
       typography: (
         plain-family: Roboto,

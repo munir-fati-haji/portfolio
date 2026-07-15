@@ -1,3 +1,4 @@
+@use './styles/palettes';
 @use './styles/theme' as app-theme;
 
 html {
@@ -56,6 +57,31 @@ html.app-theme-light {
   --portfolio-chip-surface: color-mix(in srgb, var(--mat-sys-on-surface) 6%, transparent);
   --portfolio-dialog-surface: color-mix(in srgb, var(--mat-sys-surface-container) 50%, transparent);
   --portfolio-depth-shadow: color-mix(in srgb, var(--mat-sys-scrim) 12%, transparent);
+}
+
+html.app-theme-violet {
+  color-scheme: dark;
+
+  @include app-theme.app-theme(dark, palettes.$tertiary-palette, palettes.$primary-palette);
+
+  --portfolio-app-background: radial-gradient(
+      circle at 12% 8%,
+      color-mix(in srgb, var(--mat-sys-primary) 24%, transparent),
+      transparent 36%
+    ),
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--mat-sys-tertiary) 18%, transparent), transparent 34%),
+    linear-gradient(145deg, color-mix(in srgb, var(--mat-sys-surface) 90%, #160d22), var(--mat-sys-surface));
+  --portfolio-glass-surface: color-mix(in srgb, var(--mat-sys-primary-container) 18%, transparent);
+  --portfolio-glass-surface-strong: color-mix(in srgb, var(--mat-sys-surface-container-high) 48%, transparent);
+  --portfolio-glass-outline: color-mix(in srgb, var(--mat-sys-primary) 34%, transparent);
+  --portfolio-focus-ring: color-mix(in srgb, var(--mat-sys-primary) 78%, transparent);
+  --portfolio-icon-surface: color-mix(in srgb, var(--mat-sys-primary-container) 28%, transparent);
+  --portfolio-island-surface: color-mix(in srgb, var(--mat-sys-primary-container) 16%, transparent);
+  --portfolio-island-surface-hover: color-mix(in srgb, var(--mat-sys-primary) 20%, transparent);
+  --portfolio-card-surface: color-mix(in srgb, var(--mat-sys-surface-container-high) 30%, transparent);
+  --portfolio-chip-surface: color-mix(in srgb, var(--mat-sys-primary) 12%, transparent);
+  --portfolio-dialog-surface: color-mix(in srgb, var(--mat-sys-surface-container-high) 52%, transparent);
+  --portfolio-depth-shadow: color-mix(in srgb, #12081c 38%, transparent);
 }
 
 body {
